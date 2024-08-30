@@ -12,6 +12,7 @@ book:
     - intro.qmd
     - summary.qmd
     - references.qmd
+    - matrizes.qmd
     
 
 bibliography: references.bib
