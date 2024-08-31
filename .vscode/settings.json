@@ -1,3 +1,9 @@
 {
-    "cSpell.language": "pt"
+    "cSpell.language": "en,pt,pt-BR",
+    "cSpell.enableFiletypes": [
+        "quarto"
+    ],
+    "cSpell.words": [
+        "bmatrix"
+    ]
 }
