@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cálculo Companheiro - Companheiro para seu curso de Cálculo",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\nveja (TechnicalWriting?) ababaa\n«1: Analytic Geometry» (2013)\n\n\n\n\n«1: Analytic Geometry». 2013. Mathematics LibreTexts. https://math.libretexts.org/Bookshelves/Calculus/Calculus_(Guichard)/01%3A_Analytic_Geometry.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee (knuth84?) for additional discussion of literate programming.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "matrizes.html",
+    "href": "matrizes.html",
+    "title": "3  Matrizes",
+    "section": "",
+    "text": "3.1 Soma e Subtração de Matrizes\nPara somar matrizes, primeiro temos que garantir que elas possuem mesma ordem. Caso, por exmeplo possuam números de linhas e colunas diferentes entre si, não será possível somá-las.\nDessa forma, matrizes com mesma ordem, ou seja, mesmo número de linhas e colunas, podem ser somadas ou subtraídas:\n\\[\n\\begin{aligned}\nM_{i\\times j}+N_{i\\times j}&=\n\\begin{bmatrix}\na_{1,1} & a_{1,2} & \\dots & a_{1,j} \\\\\na_{2,1} & a_{2,2} & \\dots & a_{2,j} \\\\\n\\vdots  & \\vdots & \\ddots & \\vdots \\\\\na_{i,1} & a_{i,2} & \\dots & a_{i,j}\n\\end{bmatrix}\n+\n\\begin{bmatrix}\nb_{1,1} & b_{1,2} & \\dots & b_{1,j} \\\\\nb_{2,1} & b_{2,2} & \\dots & b_{2,j} \\\\\n\\vdots  & \\vdots & \\ddots & \\vdots \\\\\nb_{mi1} & b_{i,2} & \\dots & b_{i,j}\n\\end{bmatrix}\\\\ \\\\\n&=\n\\begin{bmatrix}\na_{1,1} + b_{1,1} & a_{1,2} + b_{1,2} & \\dots & a_{1,j} + b_{1,j} \\\\\na_{2,1} + b_{2,1} & a_{2,2} + b_{2,2} & \\dots & a_{2,j} + b_{2,j} \\\\\n\\vdots  & \\vdots & \\ddots & \\vdots \\\\\na_{i,1} + b_{i,1} & a_{i,2} + b_{i,2} & \\dots & a_{i,j} + b_{i,j}\n\\end{bmatrix}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Matrizes</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "“1: Analytic Geometry.” 2013. Mathematics\nLibreTexts.\nhttps://math.libretexts.org/Bookshelves/Calculus/Calculus_(Guichard)/01%3A_Analytic_Geometry.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "matrizes.html#multiplicação-de-matrizes-por-escalar",
+    "href": "matrizes.html#multiplicação-de-matrizes-por-escalar",
+    "title": "3  Matrizes",
+    "section": "3.2 Multiplicação de matrizes por escalar",
+    "text": "3.2 Multiplicação de matrizes por escalar\nChamamos de escalar um número (normalmente, real ou complexo, aqui chamado de \\(\\lambda\\)) que multiplica um vetor ou matriz. Para multiplicar uma matriz por um escalar, multiplicamos todos seus elementos por ele, idependente de sua ordem:\nM_{mn}=\n\\[\\begin{bmatrix}\na_{1,1} & a_{1,2} & \\dots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\dots & a_{2,n} \\\\\n\\vdots  & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\dots & a_{m,n}\n\\end{bmatrix}\\]\n=\n\\[\\begin{bmatrix}\n\\lambda a_{1,1} & \\lambda a_{1,2} & \\dots & \\lambda a_{1,n} \\\\\n\\lambda a_{2,1} & \\lambda a_{2,2} & \\dots & \\lambda a_{2,n} \\\\\n\\vdots  & \\vdots & \\ddots & \\vdots \\\\\n\\lambda a_{m,1} & \\lambda a_{m,2} & \\dots & \\lambda a_{m,n}\n\\end{bmatrix}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Matrizes</span>"
+    ]
+  },
+  {
+    "objectID": "matrizes.html#multiplicação-de-matrizes",
+    "href": "matrizes.html#multiplicação-de-matrizes",
+    "title": "3  Matrizes",
+    "section": "3.3 Multiplicação de Matrizes",
+    "text": "3.3 Multiplicação de Matrizes\nPara multiplicarmos duas matrizes, é necessário que o número de colunas da primeira matriz seja igual ao número de linhas da segunda matriz. Por esse e outros motivos, dizemos que a multiplicação de matrizes não é comutativa, ou seja, multiplicar uma matriz \\(M\\) por uma matriz \\(N\\) pode nos dar uma matriz resultante diferente do que se multiplicarmos \\(N\\) por \\(M\\), caso essa multiplicação seja se quer possível!\n\\[\n\\begin{aligned}\nM_{i\\times j} \\times N_{j\\times k} &\\checkmark\\\\\nM_{i\\times j} \\times N_{k\\times j} &\\xcancel{\\checkmark}\\\\\nN_{j\\times k} \\times M_{i\\times j} &\\xcancel{\\checkmark}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Matrizes</span>"
+    ]
+  }
+]

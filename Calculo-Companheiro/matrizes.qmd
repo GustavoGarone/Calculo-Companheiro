@@ -1,0 +1,125 @@
+---
+header-includes:
+    - \usepackage[makeroom]{cancel}
+---
+# Matrizes
+
+Uma matriz $m \times n$ tem $m$ linhas e $n$ colunas. Também é comum usarmos $i \times j$, e você pode encontrar essa notação. Chamamos isso de **Ordem** da matriz.
+
+Chamamos uma matriz de quadrada se ela possuí número igual de linhas e colunas, isto é, se $m=n$
+
+
+$$
+M_{m\times n}=
+\begin{bmatrix}
+    a_{1,1} & a_{1,2} & \dots & a_{1,n} \\
+    a_{2,1} & a_{2,2} & \dots & a_{2,n} \\
+    \vdots  & \vdots & \ddots & \vdots \\
+    a_{m,1} & a_{m,2} & \dots & a_{m_n}
+\end{bmatrix}
+$$
+
+## Matriz Identidade
+
+Uma matriz identidade é uma matriz quadrada com $1$s em sua diagonal e $0$ como outros elementos. É comum chamarmos a matriz identidade de ordem $n$ de $I_n$:
+
+$$
+I_{n} =
+\begin{bmatrix}
+    1 & 0 & \dots & 0 \\
+    0 & 1 & \dots & 0 \\
+    \vdots  & \vdots & \ddots & \vdots \\
+    0 & 0 & \dots & 1_{(a_{n,n})}
+\end{bmatrix}
+$$
+
+## Soma e Subtração de Matrizes
+Para somar matrizes, primeiro temos que garantir que elas possuem mesma ordem. Caso, por exmeplo possuam números de linhas e colunas diferentes entre si, não será possível somá-las.
+
+Dessa forma, matrizes com mesma ordem, ou seja, mesmo número de linhas e colunas, podem ser somadas ou subtraídas:
+
+$$
+\begin{aligned}
+    M_{i\times j}+N_{i\times j}&=
+    \begin{bmatrix}
+        a_{1,1} & a_{1,2} & \dots & a_{1,j} \\
+        a_{2,1} & a_{2,2} & \dots & a_{2,j} \\
+        \vdots  & \vdots & \ddots & \vdots \\
+        a_{i,1} & a_{i,2} & \dots & a_{i,j}
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        b_{1,1} & b_{1,2} & \dots & b_{1,j} \\
+        b_{2,1} & b_{2,2} & \dots & b_{2,j} \\
+        \vdots  & \vdots & \ddots & \vdots \\
+        b_{mi1} & b_{i,2} & \dots & b_{i,j}
+    \end{bmatrix}\\ \\
+    &=
+    \begin{bmatrix}
+        a_{1,1} + b_{1,1} & a_{1,2} + b_{1,2} & \dots & a_{1,j} + b_{1,j} \\
+        a_{2,1} + b_{2,1} & a_{2,2} + b_{2,2} & \dots & a_{2,j} + b_{2,j} \\
+        \vdots  & \vdots & \ddots & \vdots \\
+        a_{i,1} + b_{i,1} & a_{i,2} + b_{i,2} & \dots & a_{i,j} + b_{i,j}
+    \end{bmatrix}
+\end{aligned}
+$$
+
+## Multiplicação de matrizes por escalar
+
+Chamamos de escalar um número (normalmente, real ou complexo, aqui chamado de $\lambda$) que multiplica um vetor ou matriz. Para multiplicar uma matriz por um escalar, multiplicamos todos seus elementos por ele, idependente de sua ordem:
+
+$$
+\lambda~ M_{m\times n}=
+\lambda~
+\begin{bmatrix}
+    a_{1,1} & a_{1,2} & \dots & a_{1,n} \\
+    a_{2,1} & a_{2,2} & \dots & a_{2,n} \\
+    \vdots  & \vdots & \ddots & \vdots \\
+    a_{m,1} & a_{m,2} & \dots & a_{m,n}
+\end{bmatrix}
+=
+\begin{bmatrix}
+    \lambda a_{1,1} & \lambda a_{1,2} & \dots & \lambda a_{1,n} \\
+    \lambda a_{2,1} & \lambda a_{2,2} & \dots & \lambda a_{2,n} \\
+    \vdots  & \vdots & \ddots & \vdots \\
+    \lambda a_{m,1} & \lambda a_{m,2} & \dots & \lambda a_{m,n}
+\end{bmatrix}
+$$
+
+## Multiplicação de Matrizes
+
+Para multiplicarmos duas matrizes, é necessário que o número de colunas da primeira matriz seja igual ao número de linhas da segunda matriz. Por esse e outros motivos, dizemos que a multiplicação de matrizes *não é comutativa*, ou seja, multiplicar uma matriz $M$ por uma matriz $N$ pode nos dar uma matriz resultante diferente do que se multiplicarmos $N$ por $M$, caso essa multiplicação seja se quer possível!
+
+$$
+\begin{aligned}
+    M_{i\times j} \times N_{j\times k}, j=j \Rightarrow \checkmark\\
+    M_{i\times j} \times B_{k\times j}, j\neq k \Rightarrow \xcancel{\checkmark}\\
+    N_{j\times k} \times M_{i\times j}. k\neq i \Rightarrow \xcancel{\checkmark}
+\end{aligned}
+$$
+
+Vamos analisar como a operação é feita, e então nos ficará claro o porquê dessa regra existir.
+
+Considere as seguintes matrizes:
+
+$$
+A_{2,3} =
+\begin{bmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6
+\end{bmatrix},~
+B_{3,1} = 
+\begin{bmatrix}
+    7 \\
+    8 \\
+    9
+\end{bmatrix}
+$$
+
+Sabemos que podemos multiplicá-las com A como primeira matriz $A_{2,3}\times B_{3,1}, 3=3\Rightarrow \checkmark$, mas não como segunda matriz: $B_{3,1} \times A_2,3}, 1\neq 2 \Rightarrow \xcancel{\checkmark}$. Iremos então realizar a primeira operação descrita da seguinte maneira:
+
+*Definição.*
+Para multiplicar matrizes, 
+
+
+
