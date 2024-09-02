@@ -75,7 +75,6 @@ $$
 $$
 
 ## Multiplicação de matrizes por escalar
-
 Chamamos de escalar um número (normalmente, real ou complexo, aqui chamado de $\lambda$) que multiplica um vetor ou matriz. Para multiplicar uma matriz por um escalar, multiplicamos todos seus elementos por ele, idependente de sua ordem:
 
 $$
@@ -199,6 +198,99 @@ Prove!
 
 A multiplicação de matrizes, por mais que simples, é extremamente poderosa e é a base por trás de importantes conceitos matemáticos. Um deles é a inversão de matriz, que você verá adiante.
 
-## Inversão de matrizes
+## Determinantes
+Deteminantes são computações especiais realizadas em matrizes quadradas. Possuem significado importante para conceitos de álgebra linear, mas, por hora, apenas aprenderemos como calculá-los para matrizes de até ordem 3.
 
-teste referencia bibtex [@TechnicalWriting][@technica; @GuidorizziUmCurso] @GuidorizziUmCurso
+O determinante de uma matriz de ordem 1 é, simplesmente, o valor nela contido:
+$$
+\det{A_{1\times1}}=
+\begin{vmatrix}
+    3
+\end{vmatrix} = 3
+$$
+
+onde $||$ representa o determinante, e não o módulo, da matriz com único elemento 3.
+
+E para matrizes de maior ordem?
+
+Seja 
+$$
+M_{2\times2} =
+\begin{bmatrix}
+    1 & 2\\
+    3 & 4 
+\end{bmatrix}
+$$
+
+Podemos calcular o determinante de M, $\det{M},\det{(M)}, |M|$, multiplicando a diagonal principal e subtraindo do produto da outra diagonal:
+$$
+\det{(M)}=\begin{vmatrix}
+    1 & 2\\
+    3 & 4 
+\end{vmatrix} = 1 \cdot 4 - (2 \cdot 3) = -2
+$$
+
+E quais seriam as diagonais de uma matriz de ordem 3?
+
+Seja
+$$
+N_{3\times3} =
+\begin{bmatrix}
+    1 & 2 & 3\\
+    4 & 5 & 6\\
+    7 & 8 & 9
+\end{bmatrix}
+$$
+
+Podemos calcular seu determinante com algumas técnicas. A mais comum forma de lembramos desse método é a chamada *Fórmula de Leibniz para Determinantes*. Assim como nas matrizes de ordem 2, iremos somar os produtos das diagonais "principais" (esquerda para direita) e subtrair os produtos das outras diagonais (direita para esquerda). Para visualizarmos tais diagonais "escondidas" na matriz, usaremos a *Regra de Sarrus*: copiar as primeiras duas colunas no final:
+
+$$
+\begin{aligned}
+    |N_{3\times3}| &=
+    \left|\begin{array}{ccc|cc}
+        1 & 2 & 3 & 1 & 2 \\ 
+        4 & 5 & 6 & 4 & 5 \\
+        7 & 8 & 9 & 7 & 8
+    \end{array}\right| \\
+    &= (1 \cdot 5 \cdot 9 + 2 \cdot 6 \cdot 7 + 3 \cdot 4 \cdot 8) \\
+    &- (2 \cdot 4 \cdot 9 + 1 \cdot 6 \cdot 8 + 3 \cdot 5 \cdot 7)\\
+    &= 225 - 225 = 0
+\end{aligned}
+$$
+
+Existem outras formas de calcular determinantes. Para os leitores interesados, recomendamos que busquem a resolução de determinantes pelo *Teorema de Laplace*, também conhecido como expansão de cofatores. Esse é um poderoso teorema nos permite calcular determinantes de matrizes de ordem maior do que 3, além de também poder aplicado na matriz 3x3 para (algumas vezes) cálculos mais simples.
+
+## Inversão de matrizes
+Dizemos que uma matriz quadrada $M_{n\times n}$ é inversível se existe uma outra matriz, $N$, tal que:
+$$
+    M\times N = N \times M = I_n
+$$
+
+### Escalonamento
+
+Uma das formas de chegamos na matriz inversa é considerarmos os seguinte:
+$N$ pode ser escrita como o produto de outras matrizes.
+
+$$
+\begin{cases}
+    M \times N = N \times M = I_{n} \\
+    N = {A \times B}
+\end{cases}\Rightarrow M \times (A \times B) = (A\times B) \times M = I_n 
+$$
+
+> Note que os parênteses aqui são desnecessários: por mais que a multiplicação de matrizes não seja comutativa, ela é associativa! (Recomendamos que prove essa propriedade).
+
+Sabemos também que, pela propriedade da matriz identidade,
+
+$$
+A \times B = A \times B \times I_n = I_n \times A \times B
+$$
+
+Com esse recurso, podemos chegar na matriz inversa através de operações mais simples partindo de uma matriz como a identidade!
+
+Antes de prosseguirmos, note uma interessante propriedade: *Uma matriz é inversível se, e somente se, seu determinante for diferente de $0$. A razão disso não ficará clara agora, mas leitores interessados podem se referir à @sec-material.
+
+
+## Material adicional {#sec-material}
+
+Para os curiosos, este vídeos sobre [Multiplicação de Matrizes](https://youtu.be/XkY2DOUCWMU), este sobre [Determinantes](https://www.youtube.com/watch?v=Ip3X9LOh2dk) e este sobre [Matrizes Inversas e a Identidade](https://youtu.be/uQhTuRlWMxw) do canal no YouTube [3blue1brown](https://www.youtube.com/@3blue1brown) (em inglês, com legendas em português) te darão uma intuição sobre o que estamos fazendo de fato quando multiplicamos matrizes.
