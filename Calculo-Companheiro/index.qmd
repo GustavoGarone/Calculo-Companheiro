@@ -1,1 +1,4 @@
-# Preface {.unnumbered}
+# Prefácio {.unnumbered}
+
+# TODO
+Aqui adicionaremos uma breve introdução técnica e conceitual do livro, para que ele foi feito e como usá-lo. um "meta" capítulo focando em tecnicalidades e não em matemática.
