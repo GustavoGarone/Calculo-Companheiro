@@ -90,11 +90,11 @@
     ]
   },
   {
-    "objectID": "matrizes.html#sec-material",
-    "href": "matrizes.html#sec-material",
+    "objectID": "matrizes.html#sec-material-matrizes",
+    "href": "matrizes.html#sec-material-matrizes",
     "title": "3  Matrizes",
     "section": "3.7 Material adicional",
-    "text": "3.7 Material adicional\nPara os curiosos, este vídeos sobre Multiplicação de Matrizes, este sobre Determinantes e este sobre Matrizes Inversas e a Identidade do canal no YouTube 3blue1brown (em inglês, com legendas em português) te darão uma intuição sobre o que estamos fazendo de fato quando multiplicamos matrizes.\n\n\n\n\nGUIDORIZZI, H. L. Um Curso de Cálculo. 5. ed. Rio de Janeiro: Livros Técnicos e Científicos Editora Ltda., 2001. v. 1",
+    "text": "3.7 Material adicional\nPara os curiosos, este vídeos sobre Multiplicação de Matrizes, este sobre Determinantes e este sobre Matrizes Inversas e a Identidade do canal no YouTube 3blue1brown (em inglês, com legendas em português) te darão uma intuição sobre o que estamos fazendo de fato quando multiplicamos matrizes.\n\n\n\n\nSEKHON, R.; BLOOM, R. Systems of Linear Equations and the Gauss-Jordan Method. Em: Applied Finite Mathematics. LibreTexts Mathematics. Cupertino: De Anza College, 2020.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Matrizes</span>"
     ]
@@ -104,19 +104,9 @@
     "href": "references.html",
     "title": "Referências",
     "section": "",
-    "text": "GUIDORIZZI, H. L. Um Curso de Cálculo. 5.\ned. Rio de Janeiro: Livros Técnicos e\nCientíficos Editora Ltda., 2001. v. 1",
+    "text": "SEKHON, R.; BLOOM, R. Systems\nof Linear Equations and the Gauss-Jordan\nMethod. Em: Applied Finite\nMathematics. LibreTexts Mathematics.\nCupertino: De Anza College, 2020.",
     "crumbs": [
       "Referências"
-    ]
-  },
-  {
-    "objectID": "matrizes.html#sec-material-matrizes",
-    "href": "matrizes.html#sec-material-matrizes",
-    "title": "3  Matrizes",
-    "section": "3.7 Material adicional",
-    "text": "3.7 Material adicional\nPara os curiosos, este vídeos sobre Multiplicação de Matrizes, este sobre Determinantes e este sobre Matrizes Inversas e a Identidade do canal no YouTube 3blue1brown (em inglês, com legendas em português) te darão uma intuição sobre o que estamos fazendo de fato quando multiplicamos matrizes.\n\n\n\n\nSEKHON, R.; BLOOM, R. Systems of Linear Equations and the Gauss-Jordan Method. Em: Applied Finite Mathematics. LibreTexts Mathematics. Cupertino: De Anza College, 2020.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Matrizes</span>"
     ]
   }
 ]

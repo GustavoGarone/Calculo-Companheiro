@@ -5,9 +5,9 @@ project:
 
 book:
   language: pt
-  title: "Cálculo Companheiro - Companheiro para seu curso de Cálculo"
-  author: "Gustavo Garone"
-  date: "08/31/2024"
+  title: "Cálculo Companheiro"
+  author: "Arthur H. Tomita, Eduardo Yukio G. Ishihara, Gustavo S. Garone"
+  date: "12/31/9999"
   chapters:
     - index.qmd
     - summary.qmd
