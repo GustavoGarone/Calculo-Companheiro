@@ -497,7 +497,7 @@ $$
 
 Caso esteja com muita vontade de fazer conta, o leitor pode verificar que $M\times N = I = N \times M$.
 
-Nota: Detalhamos demasiadamente as operações sendo feitas duranto o processo de escalonamento. Quando estiver mais confiente, poderá realizar diversas operações ao mesmo tempo, como, por exemplo, ao invés de $-1\dot I + II -> II, -1*I$, poderia simplesmente fazer $I-II->II$, uma vez que são equivalentes.
+Nota: Detalhamos demasiadamente as operações sendo feitas duranto o processo de escalonamento. Quando estiver mais confiente, poderá realizar diversas operações ao mesmo tempo, como, por exemplo, ao invés de $-1\cdot I + II -> II, -1*I$, poderia simplesmente fazer $I-II->II$, uma vez que são equivalentes.
 
 Leitores atentos podem ter percebido certo padrão em nossa estratégia de escalonamento, e isso não é coincidência: estamos usando uma forma do *Algorítmo ou Método de Gauss-Jordan* @sekhonSystemsLinearEquations2020.
 
