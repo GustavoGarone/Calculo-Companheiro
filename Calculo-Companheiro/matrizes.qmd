@@ -288,7 +288,7 @@ $$
 
 Com esse recurso, podemos chegar na matriz inversa através de operações mais simples partindo de uma matriz como a identidade!
 
-Antes de prosseguirmos, note uma interessante propriedade: *Uma matriz é inversível se, e somente se, seu determinante for diferente de $0$*. A razão disso não ficará clara agora, mas leitores interessados podem se referir à @sec-material - Material Adicional.
+Antes de prosseguirmos, note uma interessante propriedade: *Uma matriz é inversível se, e somente se, seu determinante for diferente de $0$*. A razão disso não ficará clara agora, mas leitores interessados podem se referir à @sec-material-matrizes - Material Adicional.
 
 Para utilizarmos a técnica do escalonamento, precisaremos primeiro definir 3 operações que nos serão de grande ajuda neste processo. O porquê dessas operações serem válidas nos ficará mais claro quando discutirmos sistemas lineares posteriormente neste livro.
 
