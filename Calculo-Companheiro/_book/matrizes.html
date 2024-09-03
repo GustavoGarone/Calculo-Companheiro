@@ -645,10 +645,17 @@ N =
 \end{bmatrix}
 \]</span></p>
 <p>Caso esteja com muita vontade de fazer conta, o leitor pode verificar que <span class="math inline">\(M\times N = I = N \times M\)</span>.</p>
-<p>Nota: Detalhamos demasiadamente as operações sendo feitas duranto o processo de escalonamento. Quando estiver mais confiente, poderá realizar diversas operações ao mesmo tempo, como, por exemplo, ao invés de <span class="math inline">\(-1\dot I + II -&gt; II, -1*I\)</span>, poderia simplesmente fazer <span class="math inline">\(I-II-&gt;II\)</span>, uma vez que são equivalentes.</p>
+<p>Nota: Detalhamos demasiadamente as operações sendo feitas duranto o processo de escalonamento. Quando estiver mais confiente, poderá realizar diversas operações ao mesmo tempo, como, por exemplo, ao invés de <span class="math inline">\(-1\cdot I + II -&gt; II, -1*I\)</span>, poderia simplesmente fazer <span class="math inline">\(I-II-&gt;II\)</span>, uma vez que são equivalentes.</p>
 <p>Leitores atentos podem ter percebido certo padrão em nossa estratégia de escalonamento, e isso não é coincidência: estamos usando uma forma do <em>Algorítmo ou Método de Gauss-Jordan</em> <span class="citation" data-cites="sekhonSystemsLinearEquations2020">SEKHON; BLOOM (<a href="references.html#ref-sekhonSystemsLinearEquations2020" role="doc-biblioref">2020</a>)</span>.</p>
 <p>Apenas enunciaremos o algoritmo aqui, mas recomendamos que leitores interessados busquem mais sobre sua origem, interessante história e sua prova.</p>
-<p><strong>Método de Gauss-Jordan</strong> 1. Troque as linhas para obter um elemento não-nulo na posição 1,1 da matriz pela operação 1; 2. Use a operação 2 para transformar o elemento 1,1 em 1; 3. Use as operações 2 e 3 para transformar todos os outros elementos da coluna em 0; 4. Use a operação 1 para obter um elemento não nulo na posição 2,2 da matriz; 5. Repita a partir do 2 até a matriz estar escalonada, alterando o passo 4 para a posição 3,3, 4,4 e assim por diante.</p>
+<p><strong>Método de Gauss-Jordan</strong></p>
+<ol type="1">
+<li><p>Troque as linhas para obter um elemento não-nulo na posição 1,1 da matriz pela operação 1;</p></li>
+<li><p>Use a operação 2 para transformar o elemento 1,1 em 1;</p></li>
+<li><p>Use as operações 2 e 3 para transformar todos os outros elementos da coluna em 0;</p></li>
+<li><p>Use a operação 1 para obter um elemento não nulo na posição 2,2 da matriz;</p></li>
+<li><p>Repita a partir do 2 até a matriz estar escalonada, alterando o passo 4 para a posição 3,3, 4,4 e assim por diante.</p></li>
+</ol>
 </section>
 </section>
 <section id="sec-material-matrizes" class="level2" data-number="3.7">
