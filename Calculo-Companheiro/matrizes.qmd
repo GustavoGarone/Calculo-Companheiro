@@ -288,9 +288,229 @@ $$
 
 Com esse recurso, podemos chegar na matriz inversa através de operações mais simples partindo de uma matriz como a identidade!
 
-Antes de prosseguirmos, note uma interessante propriedade: *Uma matriz é inversível se, e somente se, seu determinante for diferente de $0$. A razão disso não ficará clara agora, mas leitores interessados podem se referir à @sec-material.
+Antes de prosseguirmos, note uma interessante propriedade: *Uma matriz é inversível se, e somente se, seu determinante for diferente de $0$*. A razão disso não ficará clara agora, mas leitores interessados podem se referir à @sec-material - Material Adicional.
+
+Para utilizarmos a técnica do escalonamento, precisaremos primeiro definir 3 operações que nos serão de grande ajuda neste processo. O porquê dessas operações serem válidas nos ficará mais claro quando discutirmos sistemas lineares posteriormente neste livro.
+
+*Operação 1.*
+No escalonamento, podemos trocar linhas da matriz de lugar.
+$$
+\begin{bmatrix}
+    1 & 2 \\
+    3 & 4
+\end{bmatrix} \stackrel{\text{Operação 1}}{\rightarrow}
+\begin{bmatrix}
+    3 & 4 \\
+    1 & 2
+\end{bmatrix}
+$$
+
+*Operação 2.*
+No escalonamento, podemos multiplicar qualquer linha por um número real $\lambda \neq 0$
+$$
+\begin{bmatrix}
+    1 & 2 \\
+    3 & 4
+\end{bmatrix} \stackrel{\text{Operação 2: $-1\cdot$I}}{\rightarrow}
+\begin{bmatrix}
+    -1 & -2 \\
+    3& 4
+\end{bmatrix}
+$$
+
+*Operação 3.*
+No escalonamento, podemos somar linhas e substituílas pelo valor da soma
+
+$$
+\begin{bmatrix}
+    1 & 2 \\
+    3 & 4
+\end{bmatrix} \stackrel{\text{Operação 3: I + II -> II}}{\rightarrow}
+\begin{bmatrix}
+    1 & 2 \\
+    4 & 6
+\end{bmatrix}
+$$
+
+Note que essas operações alteram a matriz, mas podem ser utilizadas no escalonamento, uma vez que podem ser traduzidas como multiplicações por outras matrizes e, como discutimos, podemos descontruir a matriz inversa como o produto de outras matrizes ($N=(A\times B)$)
+
+- - -
+
+Curiosidade: Um exemplo de uma matriz que, quando muliplicamos, realiza uma dessas operações (no caso, a 1), é a seguinte:
+
+Seja
+$$
+V = \begin{bmatrix}
+    a & b \\
+    d & e \\
+    g & h
+\end{bmatrix}
+$$
+
+então a matriz que troca as linhas I e II de lugar pode ser descrita como
+
+$$
+\begin{bmatrix}
+    0 & 1 & 0\\
+    1 & 0 & 0\\
+    0 & 0 & 1
+\end{bmatrix}
+$$
+
+Tente resolver o produto
+$$
+\begin{bmatrix}
+    0 & 1 & 0\\
+    1 & 0 & 0\\
+    0 & 0 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+    a & b \\
+    d & e \\
+    g & h
+\end{bmatrix}
+$$
+
+e verifique o resultado!
+
+Você consegue encontrar outras matrizes que realizam as outras operações? Dica: todas essas matrizes são próximas da matriz identidade.
+
+- - -
+
+Vamos partir para um exemplo de como inverter uma matriz.
+
+Seja
+
+$$
+M = 
+\begin{bmatrix}
+    1 & 3 & 2 \\
+    2 & 1 & 5 \\
+    4 & 2 & 3
+\end{bmatrix}
+$$
+
+Encorajamos o leitor a verificar que o determinante dessa matriz é difernete de 0, ou seja, é inversível.
+
+Usaremos uma técnica de escalonamento que consiste em comparar nossa matriz original com a matriz identidade de mesma ordem, buscando transformá-la na matriz identidade matriz e catalogando nossas mudanças na segunda matriz que então se revelerá como inversa.
+
+Lembre-se: nosso objetivo é agora transformar a matriz original na matriz identidade, ou seja, zerar todos os elementos que não sejam os da diagonal principal e tornar os elementos dessa 1.
+
+Nossa estratégia será a seguinte: zerar todos os elementos fora da diagonal principal, coluna por coluna, e então transformar os elementos da diagonal principal em 1 através da operação 2.
+$$
+\begin{aligned}
+    &\left[\begin{array}{ccc|ccc}
+        1 & 3 & 2 & 1 & 0 & 0 \\
+        2 & 1 & 5 & 0 & 1 & 0 \\
+        4 & 2 & 3 & 0 & 0 & 1
+    \end{array}\right]  \stackrel{-2\cdot I}{\rightarrow}
+    \left[\begin{array}{ccc|ccc}
+        -2 & -6 & -4 & -2 & 0 & 0 \\
+        2 & 1 & 5 & 0 & 1 & 0 \\
+        4 & 2 & 3 & 0 & 0 & 1
+    \end{array}\right] \\
+    \stackrel{I+II->II}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        -2 & -6 & -4 & -2 & 0 & 0 \\
+        0 & -5 & 1 & -2 & 1 & 0 \\
+        4 & 2 & 3 & 0 & 0 & 1
+    \end{array}\right] \\
+    \stackrel{I+III->III}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        -4 & -12 & -8 & -4 & 0 & 0 \\
+        0 & -5 & 1 & -2 & 1 & 0 \\
+        0 & -10 & -5 & -4 & 0 & 1
+    \end{array}\right] ~~\text{Zeramos a primeira coluna!} \\
+    \stackrel{-\frac{1}{4}\cdot I}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        1 & 3 & 2 & 1 & 0 & 0 \\
+        0 & -5 & 1 & -2 & 1 & 0 \\
+        0 & -10 & -5 & -4 & 0 & 1
+    \end{array}\right] \\
+    \stackrel{5\cdot I+3\cdot II -> I}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        5 & 0 & 13 & -1 & 3 & 0 \\
+        0 & -15 & 3 & -6 & 3 & 0 \\
+        0 & -10 & -5 & -4 & 0 & 1
+    \end{array}\right] \\
+    \stackrel{\frac{1}{3}II}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        5 & 0 & 13 & -1 & 3 & 0 \\
+        0 & -5 & 1 & -2 & 1 & 0 \\
+        0 & -10 & -5 & -4 & 0 & 1
+    \end{array}\right] \\
+    \stackrel{-2\cdot II + III -> III}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        5 & 0 & 13 & -1 & 3 & 0 \\
+        0 & 10 & -2 & 4 & -2 & 0 \\
+        0 & 0 & -7 & 0 & -2 & 1
+    \end{array}\right] ~~\text{Zeramos a segunda coluna!}\\
+    \stackrel{7\cdot I + 13\cdot III -> I}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        35 & 0 & 0 & -7 & -5 & 13 \\
+        0 & 10 & -2 & 4 & -2 & 0 \\
+        0 & 0 & -91 & 0 & -26 & 13
+    \end{array}\right]  \\
+    \stackrel{\frac{1}{13}\cdot III}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        35 & 0 & 0 & -7 & -5 & 13 \\
+        0 & 10 & -2 & 4 & -2 & 0 \\
+        0 & 0 & -7 & 0 & -2 & 1
+    \end{array}\right]  \\
+    \stackrel{-7\cdot II + 2 \cdot III -> II}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        35 & 0 & 0 & -7 & -5 & 13 \\
+        0 & -70 & 0 & -28 & 10 & 2 \\
+        0 & 0 & -14 & 0 & -4 & 2
+    \end{array}\right]\\ \\
+    &\text{Podemos agora transformar os elementos da diagonal em 1.} \\
+    \\
+    \stackrel{\frac{1}{35}\cdot I, -\frac{1}{70} \cdot II, -\frac{1}{14} \cdot III}{\rightarrow}
+    &
+    \left[\begin{array}{ccc|ccc}
+        1 & 0 & 0 & -\frac{7}{35} & -\frac{5}{35} & \frac{13}{35} \\
+        0 & 1 & 0 & \frac{14}{35} & -\frac{5}{35} & -\frac{1}{35} \\
+        0 & 0 & 1 & 0 & \frac{2}{7} & -\frac{1}{7}
+    \end{array}\right]
+\end{aligned}
+$$
+
+Portanto, finalmente, a matriz inversa de $M$ é
+
+$$
+N = 
+\begin{bmatrix}
+    -\frac{7}{35} & -\frac{5}{35} & \frac{13}{35} \\
+    \frac{14}{35} & -\frac{5}{35} & -\frac{1}{35} \\
+    0 &\frac{2}{7} & -\frac{1}{7}
+\end{bmatrix}
+$$
+
+Caso esteja com muita vontade de fazer conta, o leitor pode verificar que $M\times N = I = N \times M$.
+
+Nota: Detalhamos demasiadamente as operações sendo feitas duranto o processo de escalonamento. Quando estiver mais confiente, poderá realizar diversas operações ao mesmo tempo, como, por exemplo, ao invés de $-1\dot I + II -> II, -1*I$, poderia simplesmente fazer $I-II->II$, uma vez que são equivalentes.
+
+Leitores atentos podem ter percebido certo padrão em nossa estratégia de escalonamento, e isso não é coincidência: estamos usando uma forma do *Algorítmo ou Método de Gauss-Jordan* @sekhonSystemsLinearEquations2020.
+
+Apenas enunciaremos o algoritmo aqui, mas recomendamos que leitores interessados busquem mais sobre sua origem, interessante história e sua prova.
+
+**Método de Gauss-Jordan**
+1. Troque as linhas para obter um elemento não-nulo na posição 1,1 da matriz pela operação 1;
+2. Use a operação 2 para transformar o elemento 1,1 em 1;
+3. Use as operações 2 e 3 para transformar todos os outros elementos da coluna em 0;
+4. Use a operação 1 para obter um elemento não nulo na posição 2,2 da matriz;
+5. Repita a partir do 2 até a matriz estar escalonada, alterando o passo 4 para a posição 3,3, 4,4 e assim por diante.
 
 
-## Material adicional {#sec-material}
+## Material adicional {#sec-material-matrizes}
 
 Para os curiosos, este vídeos sobre [Multiplicação de Matrizes](https://youtu.be/XkY2DOUCWMU), este sobre [Determinantes](https://www.youtube.com/watch?v=Ip3X9LOh2dk) e este sobre [Matrizes Inversas e a Identidade](https://youtu.be/uQhTuRlWMxw) do canal no YouTube [3blue1brown](https://www.youtube.com/@3blue1brown) (em inglês, com legendas em português) te darão uma intuição sobre o que estamos fazendo de fato quando multiplicamos matrizes.
