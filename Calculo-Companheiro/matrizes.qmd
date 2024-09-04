@@ -515,6 +515,71 @@ Apenas enunciaremos o algoritmo aqui, mas recomendamos que leitores interessados
 
 5. Repita a partir do 2 até a matriz estar escalonada, alterando o passo 4 para a posição 3,3, 4,4 e assim por diante.
 
+## Transposição de matrizes
+
+Transpor uma matriz nada mais é que inverter suas colunas e linhas @hartmanMatrixTranspose2021. Mostraremos alguns exemplos dessa inversão e então ressaltaremos alguns fatos interessantes sobre a transposição e suas propriedades.
+
+Seja
+$$
+A = \begin{bmatrix}
+    a & b & c \\
+    d & e & f
+\end{bmatrix}
+$$
+
+Então a transposta de $A$, $A^{t}$ é
+
+$$
+\begin{bmatrix}
+    a & d \\
+    b & e \\
+    c & f
+\end{bmatrix}
+$$
+
+Note que apenas "invertemos" as matrizes e as colunas. Aqui vai então nosso primeiro fato interessante.
+
+Inverter uma matriz quadrada é apenas espelhar sua diagonal:
+
+$$
+B = \begin{bmatrix}
+    1 & 5 & 7 \\
+    9 & 2 & 4 \\
+    8 & 0 & 3
+\end{bmatrix} \Rightarrow B^{t} =
+\begin{bmatrix}
+    1 & 9 & 8 \\
+    5 & 2 & 0 \\
+    7 & 4 & 3
+\end{bmatrix}
+$$
+
+
+Um outro fato interessante: uma matriz é chamada de *simétrica* se ela é igual à sua transposta.
+
+Verifique se a matriz
+$$
+C = \begin{bmatrix}
+    2 & 1 & 2\\
+    1 & 1 & 1\\
+    2 & 1 & 0 
+\end{bmatrix}
+$$
+
+é simétrica.
+
+Iremos agora enunciar algumas *Propriedades da Transposição*:
+$$
+\begin{aligned}
+1.&~ (A^{t})^{t} = A \\
+2.&~ (\lambda A)^{t} = \lambda A^{t} \\
+3.&~ (AB)^{t} = B^t A^t ~~~~~ \text{Por que invertemos a ordem?} \\
+4.&~ (A \pm B)^{t} = A^t \pm B^t \\
+5.&~ (A^{-1})^{t} = (A^{t})^{-1}
+\end{aligned}
+$$
+
+Encorajamos o leitor a tentar provar, ou pelo menos fornecer um exemplo, para cada uma dessas propriedades.
 
 ## Material adicional {#sec-material-matrizes}
 
