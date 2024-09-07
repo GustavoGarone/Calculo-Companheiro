@@ -204,7 +204,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#escalonamento" id="toc-escalonamento" class="nav-link" data-scroll-target="#escalonamento"><span class="header-section-number">3.6.1</span> Escalonamento</a></li>
   </ul></li>
-  <li><a href="#sec-material-matrizes" id="toc-sec-material-matrizes" class="nav-link" data-scroll-target="#sec-material-matrizes"><span class="header-section-number">3.7</span> Material adicional</a></li>
+  <li><a href="#transposição-de-matrizes" id="toc-transposição-de-matrizes" class="nav-link" data-scroll-target="#transposição-de-matrizes"><span class="header-section-number">3.7</span> Transposição de matrizes</a></li>
+  <li><a href="#sec-material-matrizes" id="toc-sec-material-matrizes" class="nav-link" data-scroll-target="#sec-material-matrizes"><span class="header-section-number">3.8</span> Material adicional</a></li>
   </ul>
 </nav>
     </div>
@@ -234,7 +235,7 @@ window.Quarto = {
 header-includes:
     - \usepackage[makeroom]{cancel}
 --- -->
-<p>Uma matriz <span class="math inline">\(m \times n\)</span> tem <span class="math inline">\(m\)</span> linhas e <span class="math inline">\(n\)</span> colunas. Também é comum usarmos <span class="math inline">\(i \times j\)</span>, e você pode encontrar essa notação. Chamamos isso de <strong>Ordem</strong> da matriz.</p>
+<p>Uma matriz <span class="math inline">\(m \times n\)</span> tem <span class="math inline">\(m\)</span> linhas,a na horizontal, e <span class="math inline">\(n\)</span> colunas, na vertical. Também é comum usarmos <span class="math inline">\(i \times j\)</span>, e você pode encontrar essa notação. Chamamos isso de <strong>Ordem</strong> da matriz.</p>
 <p>Chamamos uma matriz de quadrada se ela possuí número igual de linhas e colunas, isto é, se <span class="math inline">\(m=n\)</span></p>
 <p><span class="math display">\[
 M_{m\times n}=
@@ -247,7 +248,7 @@ M_{m\times n}=
 \]</span></p>
 <section id="matriz-identidade" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="matriz-identidade"><span class="header-section-number">3.1</span> Matriz Identidade</h2>
-<p>Uma matriz identidade é uma matriz quadrada com <span class="math inline">\(1\)</span>s em sua diagonal e <span class="math inline">\(0\)</span> como outros elementos. É comum chamarmos a matriz identidade de ordem <span class="math inline">\(n\)</span> de <span class="math inline">\(I_n\)</span>: <span class="math display">\[
+<p>Uma matriz identidade é uma matriz quadrada com <span class="math inline">\(1\)</span>s em sua diagonal e <span class="math inline">\(0\)</span> como outros elementos. É comum chamarmos a matriz identidade de ordem <span class="math inline">\(n\)</span>, ou seja, com <span class="math inline">\(n\)</span> linhas e <span class="math inline">\(n\)</span> colunas, de <span class="math inline">\(I_n\)</span>: <span class="math display">\[
 I_{1} =
 \begin{bmatrix}
 1
@@ -266,8 +267,7 @@ I_{n} =
 </section>
 <section id="soma-e-subtração-de-matrizes" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="soma-e-subtração-de-matrizes"><span class="header-section-number">3.2</span> Soma e Subtração de Matrizes</h2>
-<p>Para somar matrizes, primeiro temos que garantir que elas possuem mesma ordem. Caso, por exmeplo possuam números de linhas e colunas diferentes entre si, não será possível somá-las.</p>
-<p>Dessa forma, matrizes com mesma ordem, ou seja, mesmo número de linhas e colunas, podem ser somadas ou subtraídas:</p>
+<p>Para somar ou subtrair matrizes, basta realizar a operação elemento por elemento, obtendo uma nova matriz:</p>
 <p><span class="math display">\[
 \begin{aligned}
     M_{i\times j}+N_{i\times j}&amp;=
@@ -282,7 +282,7 @@ I_{n} =
         b_{1,1} &amp; b_{1,2} &amp; \dots &amp; b_{1,j} \\
         b_{2,1} &amp; b_{2,2} &amp; \dots &amp; b_{2,j} \\
         \vdots  &amp; \vdots &amp; \ddots &amp; \vdots \\
-        b_{mi1} &amp; b_{i,2} &amp; \dots &amp; b_{i,j}
+        b_{i,1} &amp; b_{i,2} &amp; \dots &amp; b_{i,j}
     \end{bmatrix}\\ \\
     &amp;=
     \begin{bmatrix}
@@ -293,10 +293,11 @@ I_{n} =
     \end{bmatrix}
 \end{aligned}
 \]</span></p>
+<p>Dessa forma, podemos nos perguntar o que aconteceria se tentássemos somar uma matriz <span class="math inline">\(3\times 3\)</span> por uma <span class="math inline">\(2 \times 2\)</span>. Pode parecer intuitivo pensar que essa soma poderia ser feita, deixando a linha 3 e coluna 3 da primeira matriz intacta, mas esse pensamento está <strong>Incorreto</strong>: <em>Podemos apenas somar e subtraír matrizes de mesma ordem.</em></p>
 </section>
 <section id="multiplicação-de-matrizes-por-escalar" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="multiplicação-de-matrizes-por-escalar"><span class="header-section-number">3.3</span> Multiplicação de matrizes por escalar</h2>
-<p>Chamamos de escalar um número (normalmente, real ou complexo, aqui chamado de <span class="math inline">\(\lambda\)</span>) que multiplica um vetor ou matriz. Para multiplicar uma matriz por um escalar, multiplicamos todos seus elementos por ele, idependente de sua ordem:</p>
+<p>Chamamos de escalar um número (normalmente real, aqui chamado de <span class="math inline">\(\lambda\)</span>) que multiplica um vetor ou matriz. Para multiplicar uma matriz por um escalar, multiplicamos todos seus elementos por ele, um a um, idependente de sua ordem. Isso recebe o nome de produto por escalar</p>
 <p><span class="math display">\[
 \lambda~ M_{m\times n}=
 \lambda~
@@ -314,37 +315,42 @@ I_{n} =
     \lambda a_{m,1} &amp; \lambda a_{m,2} &amp; \dots &amp; \lambda a_{m,n}
 \end{bmatrix}
 \]</span></p>
+<p><em>Atenção</em>: Você pode já ter ouvido sobre <strong>Produto Escalar</strong>. Isso <strong>Não</strong> é o produto de uma matriz por um escalar, mas sim uma operação distinta que estudaremos em algebra linear.</p>
+<p><em>Produto Escalar</em>: Operação entre duas matrizes (vetores) que nos dá um escalar <em>Produto POR Escalar</em>: Operação que acabamos de estudar entre matriz e um escalar que nos dá uma matriz.</p>
 </section>
 <section id="multiplicação-de-matrizes" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="multiplicação-de-matrizes"><span class="header-section-number">3.4</span> Multiplicação de Matrizes</h2>
 <p>Para multiplicarmos duas matrizes, é necessário que o número de colunas da primeira matriz seja igual ao número de linhas da segunda matriz. Por esse e outros motivos, dizemos que a multiplicação de matrizes <em>não é comutativa</em>, ou seja, multiplicar uma matriz <span class="math inline">\(M\)</span> por uma matriz <span class="math inline">\(N\)</span> pode nos dar uma matriz resultante diferente do que se multiplicarmos <span class="math inline">\(N\)</span> por <span class="math inline">\(M\)</span>, caso essa multiplicação seja se quer possível!</p>
 <p><span class="math display">\[
 \begin{aligned}
-    M_{i\times j} \times N_{j\times k}, j=j \Rightarrow \checkmark\\
-    M_{i\times j} \times B_{k\times j}, j\neq k \Rightarrow \xcancel{\checkmark}\\
-    N_{j\times k} \times M_{i\times j}. k\neq i \Rightarrow \xcancel{\checkmark}
+    M_{i\times j} \times N_{j\times k}, j=j \Rightarrow \checkmark \\
+    M_{i\times j} \times B_{k\times j}, j\neq k \Rightarrow ✘ \\
+    N_{j\times k} \times M_{i\times j}. k\neq i \Rightarrow ✘
 \end{aligned}
 \]</span></p>
-<p>Vamos analisar como a operação é feita, e então nos ficará claro o porquê dessa regra existir. sadasdsad asdsa</p>
+<p>Vamos analisar como a operação é feita, e então nos ficará claro o porquê dessa regra existir.</p>
 <p>Considere as seguintes matrizes:</p>
 <p><span class="math display">\[
-A_{2,3} =
-\begin{bmatrix}
-    1 &amp; 2 &amp; 3 \\
-    4 &amp; 5 &amp; 6
-\end{bmatrix},~
-B_{3,1} =
-\begin{bmatrix}
-    7 \\
-    8 \\
-    9
-\end{bmatrix}
+\begin{aligned}
+    &amp;A_{2\times 3} =
+    \begin{bmatrix}
+        1 &amp; 2 &amp; 3 \\
+        4 &amp; 5 &amp; 6
+    \end{bmatrix} \\ \\
+    &amp;B_{3\times 1} =
+    \begin{bmatrix}
+        7 \\
+        8 \\
+        9
+    \end{bmatrix}
+\end{aligned}
 \]</span></p>
-<p>Sabemos que podemos multiplicá-las com A como primeira matriz <span class="math inline">\(A_{2,3}\times B_{3,1}, 3=3\Rightarrow \checkmark\)</span>, mas não como segunda matriz: <span class="math inline">\(B_{3,1} \times A_{2,3}, 1\neq 2 \Rightarrow \xcancel{\checkmark}\)</span>. Iremos então realizar a primeira operação descrita da seguinte maneira:</p>
+<p>Sabemos que podemos multiplicá-las com A como primeira matriz <span class="math inline">\(A_{2\times 3}\times B_{3\times 1}, 3=3\Rightarrow \checkmark\)</span>, mas não como segunda matriz: <span class="math inline">\(B_{3\times 1} \times A_{2\times 3}, 1\neq 2 \Rightarrow ✘\)</span>. Iremos então realizar a primeira operação descrita da seguinte maneira:</p>
 <p><em>Definição.</em> Para multiplicar matrizes, somaremos cada linha da primeira multiplicada por um elemento equivalente de cada coluna:</p>
 <p><span class="math display">\[
 \begin{aligned}
-    A \times B &amp;=
+    &amp;A \times B \\
+    &amp;=
     \begin{bmatrix}
         1 &amp; 2 &amp; 3 \\
         4 &amp; 5 &amp; 6
@@ -354,12 +360,12 @@ B_{3,1} =
         7 \\
         8 \\
         9
-    \end{bmatrix}\\
+    \end{bmatrix}\\ \\
     &amp;=
     \begin{bmatrix}
         1 \cdot 7 + 2 \cdot 8 + 3 \cdot 9 \\
         4 \cdot 7 + 5 \cdot 8 + 6 \cdot 9
-    \end{bmatrix} \\
+    \end{bmatrix} \\ \\
     &amp;=
     \begin{bmatrix}
         50 \\
@@ -370,7 +376,8 @@ B_{3,1} =
 <p>É importante que você se familiarize com o “pareamento” feito entre as linhas da primeira matriz com as linhas da segunda. Você pode agora estar se perguntando o que aconteceria caso houvesse mais de uma coluna na segunda matriz. A resposta pode ser bastante intuitiva para você: a matriz resultante terá mais uma coluna.</p>
 <p><span class="math display">\[
 \begin{aligned}
-    &amp;C \times D =
+    &amp;C \times D  \\
+    &amp;=
     \begin{bmatrix}
         a &amp; b &amp; c \\
         d &amp; e &amp; f
@@ -380,7 +387,7 @@ B_{3,1} =
         g &amp; h \\
         i &amp; j\\
         k &amp; l
-    \end{bmatrix}\\
+    \end{bmatrix}\\  \\
     &amp;=
     \begin{bmatrix}
         a \cdot g + b \cdot i + c \cdot k &amp; a \cdot h + b \cdot j + c \cdot k\\
@@ -388,12 +395,15 @@ B_{3,1} =
     \end{bmatrix}
 \end{aligned}
 \]</span></p>
-<p>Note que o número de linhas da matriz resultate da multiplicação entre matrizes é sempre igual ao número de linhas da primeira matriz e o de colunas igual ao da segunda.</p>
+<p>Note que o número de linhas da matriz resultate da multiplicação entre matrizes é sempre igual ao número de linhas da primeira matriz e o de colunas igual ao da segunda. Ou seja, <em>Para multiplicarmos, os números de “dentro” devem ser iguais, e a matriz resultante terá dimensões iguais aos números de “fora”</em>:</p>
+<p><span class="math display">\[
+M_{3\times 2} \times N_{2 \times 4} \stackrel{2=2}{=} H_{3 \times 4}
+\]</span></p>
 <hr>
 <p>E onde a matriz identidade entra no jogo?</p>
-<p>Para qualquer matriz <span class="math inline">\(M_{i,j}\)</span>,</p>
+<p>Para qualquer matriz <span class="math inline">\(M_{i\times j}\)</span>,</p>
 <p><span class="math display">\[
-I_{i} \times M_{i,j} = M_{i,j} = M_{i,j}\times I_{j}
+I_{i} \times M_{i\times j} = M_{i\times j} = M_{i\times j}\times I_{j}
 \]</span></p>
 <p>Prove!</p>
 <hr>
@@ -402,7 +412,8 @@ I_{i} \times M_{i,j} = M_{i,j} = M_{i,j}\times I_{j}
 <section id="determinantes" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="determinantes"><span class="header-section-number">3.5</span> Determinantes</h2>
 <p>Deteminantes são computações especiais realizadas em matrizes quadradas. Possuem significado importante para conceitos de álgebra linear, mas, por hora, apenas aprenderemos como calculá-los para matrizes de até ordem 3.</p>
-<p>O determinante de uma matriz de ordem 1 é, simplesmente, o valor nela contido: <span class="math display">\[
+<p>O determinante de uma matriz de ordem 1 é, simplesmente, o valor nela contido:</p>
+<p><span class="math display">\[
 \det{A_{1\times1}}=
 \begin{vmatrix}
     3
@@ -410,21 +421,24 @@ I_{i} \times M_{i,j} = M_{i,j} = M_{i,j}\times I_{j}
 \]</span></p>
 <p>onde <span class="math inline">\(||\)</span> representa o determinante, e não o módulo, da matriz com único elemento 3.</p>
 <p>E para matrizes de maior ordem?</p>
-<p>Seja <span class="math display">\[
+<p>Seja</p>
+<p><span class="math display">\[
 M_{2\times2} =
 \begin{bmatrix}
     1 &amp; 2\\
     3 &amp; 4
 \end{bmatrix}
 \]</span></p>
-<p>Podemos calcular o determinante de M, <span class="math inline">\(\det{M},\det{(M)}, |M|\)</span>, multiplicando a diagonal principal e subtraindo do produto da outra diagonal: <span class="math display">\[
+<p>Podemos calcular o determinante de M, <span class="math inline">\(\det{M},\det{(M)}, |M|\)</span>, multiplicando a diagonal principal e subtraindo do produto da outra diagonal:</p>
+<p><span class="math display">\[
 \det{(M)}=\begin{vmatrix}
     1 &amp; 2\\
     3 &amp; 4
 \end{vmatrix} = 1 \cdot 4 - (2 \cdot 3) = -2
 \]</span></p>
 <p>E quais seriam as diagonais de uma matriz de ordem 3?</p>
-<p>Seja <span class="math display">\[
+<p>Seja</p>
+<p><span class="math display">\[
 N_{3\times3} =
 \begin{bmatrix}
     1 &amp; 2 &amp; 3\\
@@ -450,7 +464,8 @@ N_{3\times3} =
 </section>
 <section id="inversão-de-matrizes" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="inversão-de-matrizes"><span class="header-section-number">3.6</span> Inversão de matrizes</h2>
-<p>Dizemos que uma matriz quadrada <span class="math inline">\(M_{n\times n}\)</span> é inversível se existe uma outra matriz, <span class="math inline">\(N\)</span>, tal que: <span class="math display">\[
+<p>Dizemos que uma matriz quadrada <span class="math inline">\(M_{n\times n}\)</span> é inversível se existe uma outra matriz, <span class="math inline">\(N\)</span>, tal que:</p>
+<p><span class="math display">\[
     M\times N = N \times M = I_n
 \]</span></p>
 <section id="escalonamento" class="level3" data-number="3.6.1">
@@ -470,9 +485,10 @@ N_{3\times3} =
 A \times B = A \times B \times I_n = I_n \times A \times B
 \]</span></p>
 <p>Com esse recurso, podemos chegar na matriz inversa através de operações mais simples partindo de uma matriz como a identidade!</p>
-<p>Antes de prosseguirmos, note uma interessante propriedade: <em>Uma matriz é inversível se, e somente se, seu determinante for diferente de <span class="math inline">\(0\)</span></em>. A razão disso não ficará clara agora, mas leitores interessados podem se referir à <a href="#sec-material-matrizes" class="quarto-xref"><span>Seção 3.7</span></a> - Material Adicional.</p>
+<p>Antes de prosseguirmos, note uma interessante propriedade: <em>Uma matriz é inversível se, e somente se, seu determinante for diferente de</em> <span class="math inline">\(0\)</span>. A razão disso não ficará clara agora, mas leitores interessados podem se referir à <a href="#sec-material-matrizes" class="quarto-xref"><span>Seção 3.8</span></a> - Material Adicional.</p>
 <p>Para utilizarmos a técnica do escalonamento, precisaremos primeiro definir 3 operações que nos serão de grande ajuda neste processo. O porquê dessas operações serem válidas nos ficará mais claro quando discutirmos sistemas lineares posteriormente neste livro.</p>
-<p><em>Operação 1.</em> No escalonamento, podemos trocar linhas da matriz de lugar. <span class="math display">\[
+<p><em>Operação 1.</em> No escalonamento, podemos trocar linhas da matriz de lugar.</p>
+<p><span class="math display">\[
 \begin{bmatrix}
     1 &amp; 2 \\
     3 &amp; 4
@@ -482,7 +498,8 @@ A \times B = A \times B \times I_n = I_n \times A \times B
     1 &amp; 2
 \end{bmatrix}
 \]</span></p>
-<p><em>Operação 2.</em> No escalonamento, podemos multiplicar qualquer linha por um número real <span class="math inline">\(\lambda \neq 0\)</span> <span class="math display">\[
+<p><em>Operação 2.</em> No escalonamento, podemos multiplicar qualquer linha por um número real <span class="math inline">\(\lambda \neq 0\)</span></p>
+<p><span class="math display">\[
 \begin{bmatrix}
     1 &amp; 2 \\
     3 &amp; 4
@@ -506,7 +523,8 @@ A \times B = A \times B \times I_n = I_n \times A \times B
 <p>Note que essas operações alteram a matriz, mas podem ser utilizadas no escalonamento, uma vez que podem ser traduzidas como multiplicações por outras matrizes e, como discutimos, podemos descontruir a matriz inversa como o produto de outras matrizes (<span class="math inline">\(N=(A\times B)\)</span>)</p>
 <hr>
 <p>Curiosidade: Um exemplo de uma matriz que, quando muliplicamos, realiza uma dessas operações (no caso, a 1), é a seguinte:</p>
-<p>Seja <span class="math display">\[
+<p>Seja</p>
+<p><span class="math display">\[
 V = \begin{bmatrix}
     a &amp; b \\
     d &amp; e \\
@@ -521,7 +539,8 @@ V = \begin{bmatrix}
     0 &amp; 0 &amp; 1
 \end{bmatrix}
 \]</span></p>
-<p>Tente resolver o produto <span class="math display">\[
+<p>Tente resolver o produto</p>
+<p><span class="math display">\[
 \begin{bmatrix}
     0 &amp; 1 &amp; 0\\
     1 &amp; 0 &amp; 0\\
@@ -549,7 +568,8 @@ M =
 <p>Encorajamos o leitor a verificar que o determinante dessa matriz é difernete de 0, ou seja, é inversível.</p>
 <p>Usaremos uma técnica de escalonamento que consiste em comparar nossa matriz original com a matriz identidade de mesma ordem, buscando transformá-la na matriz identidade matriz e catalogando nossas mudanças na segunda matriz que então se revelerá como inversa.</p>
 <p>Lembre-se: nosso objetivo é agora transformar a matriz original na matriz identidade, ou seja, zerar todos os elementos que não sejam os da diagonal principal e tornar os elementos dessa 1.</p>
-<p>Nossa estratégia será a seguinte: zerar todos os elementos fora da diagonal principal, coluna por coluna, e então transformar os elementos da diagonal principal em 1 através da operação 2. <span class="math display">\[
+<p>Nossa estratégia será a seguinte: zerar todos os elementos fora da diagonal principal, coluna por coluna, e então transformar os elementos da diagonal principal em 1 através da operação 2.</p>
+<p><span class="math display">\[
 \begin{aligned}
     &amp;\left[\begin{array}{ccc|ccc}
         1 &amp; 3 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
@@ -560,63 +580,63 @@ M =
         -2 &amp; -6 &amp; -4 &amp; -2 &amp; 0 &amp; 0 \\
         2 &amp; 1 &amp; 5 &amp; 0 &amp; 1 &amp; 0 \\
         4 &amp; 2 &amp; 3 &amp; 0 &amp; 0 &amp; 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{I+II-&gt;II}{\rightarrow}
     &amp;
     \left[\begin{array}{ccc|ccc}
         -2 &amp; -6 &amp; -4 &amp; -2 &amp; 0 &amp; 0 \\
         0 &amp; -5 &amp; 1 &amp; -2 &amp; 1 &amp; 0 \\
         4 &amp; 2 &amp; 3 &amp; 0 &amp; 0 &amp; 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{I+III-&gt;III}{\rightarrow}
     &amp;
     \left[\begin{array}{ccc|ccc}
         -4 &amp; -12 &amp; -8 &amp; -4 &amp; 0 &amp; 0 \\
         0 &amp; -5 &amp; 1 &amp; -2 &amp; 1 &amp; 0 \\
         0 &amp; -10 &amp; -5 &amp; -4 &amp; 0 &amp; 1
-    \end{array}\right] ~~\text{Zeramos a primeira coluna!} \\
+    \end{array}\right] ~~\text{Zeramos a primeira coluna!} \\ \\
     \stackrel{-\frac{1}{4}\cdot I}{\rightarrow}
     &amp;
     \left[\begin{array}{ccc|ccc}
         1 &amp; 3 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
         0 &amp; -5 &amp; 1 &amp; -2 &amp; 1 &amp; 0 \\
         0 &amp; -10 &amp; -5 &amp; -4 &amp; 0 &amp; 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{5\cdot I+3\cdot II -&gt; I}{\rightarrow}
     &amp;
     \left[\begin{array}{ccc|ccc}
         5 &amp; 0 &amp; 13 &amp; -1 &amp; 3 &amp; 0 \\
         0 &amp; -15 &amp; 3 &amp; -6 &amp; 3 &amp; 0 \\
         0 &amp; -10 &amp; -5 &amp; -4 &amp; 0 &amp; 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{\frac{1}{3}II}{\rightarrow}
     &amp;
     \left[\begin{array}{ccc|ccc}
         5 &amp; 0 &amp; 13 &amp; -1 &amp; 3 &amp; 0 \\
         0 &amp; -5 &amp; 1 &amp; -2 &amp; 1 &amp; 0 \\
         0 &amp; -10 &amp; -5 &amp; -4 &amp; 0 &amp; 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{-2\cdot II + III -&gt; III}{\rightarrow}
     &amp;
     \left[\begin{array}{ccc|ccc}
         5 &amp; 0 &amp; 13 &amp; -1 &amp; 3 &amp; 0 \\
         0 &amp; 10 &amp; -2 &amp; 4 &amp; -2 &amp; 0 \\
         0 &amp; 0 &amp; -7 &amp; 0 &amp; -2 &amp; 1
-    \end{array}\right] ~~\text{Zeramos a segunda coluna!}\\
+    \end{array}\right] ~~\text{Zeramos a segunda coluna!}\\ \\
     \stackrel{7\cdot I + 13\cdot III -&gt; I}{\rightarrow}
     &amp;
     \left[\begin{array}{ccc|ccc}
         35 &amp; 0 &amp; 0 &amp; -7 &amp; -5 &amp; 13 \\
         0 &amp; 10 &amp; -2 &amp; 4 &amp; -2 &amp; 0 \\
         0 &amp; 0 &amp; -91 &amp; 0 &amp; -26 &amp; 13
-    \end{array}\right]  \\
+    \end{array}\right]  \\ \\
     \stackrel{\frac{1}{13}\cdot III}{\rightarrow}
     &amp;
     \left[\begin{array}{ccc|ccc}
         35 &amp; 0 &amp; 0 &amp; -7 &amp; -5 &amp; 13 \\
         0 &amp; 10 &amp; -2 &amp; 4 &amp; -2 &amp; 0 \\
         0 &amp; 0 &amp; -7 &amp; 0 &amp; -2 &amp; 1
-    \end{array}\right]  \\
+    \end{array}\right]  \\ \\
     \stackrel{-7\cdot II + 2 \cdot III -&gt; II}{\rightarrow}
     &amp;
     \left[\begin{array}{ccc|ccc}
@@ -658,14 +678,71 @@ N =
 </ol>
 </section>
 </section>
-<section id="sec-material-matrizes" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="sec-material-matrizes"><span class="header-section-number">3.7</span> Material adicional</h2>
+<section id="transposição-de-matrizes" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="transposição-de-matrizes"><span class="header-section-number">3.7</span> Transposição de matrizes</h2>
+<p>Transpor uma matriz nada mais é que inverter suas colunas e linhas <span class="citation" data-cites="hartmanMatrixTranspose2021">HARTMAN (<a href="references.html#ref-hartmanMatrixTranspose2021" role="doc-biblioref">2021</a>)</span>. Mostraremos alguns exemplos dessa inversão e então ressaltaremos alguns fatos interessantes sobre a transposição e suas propriedades.</p>
+<p>Seja</p>
+<p><span class="math display">\[
+A = \begin{bmatrix}
+    a &amp; b &amp; c \\
+    d &amp; e &amp; f
+\end{bmatrix}
+\]</span></p>
+<p>Então a transposta de <span class="math inline">\(A\)</span>, <span class="math inline">\(A^{t}\)</span> é</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+    a &amp; d \\
+    b &amp; e \\
+    c &amp; f
+\end{bmatrix}
+\]</span></p>
+<p>Note que apenas “invertemos” as matrizes e as colunas. Aqui vai então nosso primeiro fato interessante.</p>
+<p>Inverter uma matriz quadrada é apenas espelhar sua diagonal:</p>
+<p><span class="math display">\[
+B = \begin{bmatrix}
+    1 &amp; 5 &amp; 7 \\
+    9 &amp; 2 &amp; 4 \\
+    8 &amp; 0 &amp; 3
+\end{bmatrix} \Rightarrow B^{t} =
+\begin{bmatrix}
+    1 &amp; 9 &amp; 8 \\
+    5 &amp; 2 &amp; 0 \\
+    7 &amp; 4 &amp; 3
+\end{bmatrix}
+\]</span></p>
+<p>Um outro fato interessante: uma matriz é chamada de <em>simétrica</em> se ela é igual à sua transposta.</p>
+<p>Verifique se a matriz</p>
+<p><span class="math display">\[
+C = \begin{bmatrix}
+    2 &amp; 1 &amp; 2\\
+    1 &amp; 1 &amp; 1\\
+    2 &amp; 1 &amp; 0
+\end{bmatrix}
+\]</span></p>
+<p>é simétrica.</p>
+<p>Iremos agora enunciar algumas <em>Propriedades da Transposição</em>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+1.&amp;~ (A^{t})^{t} = A \\
+2.&amp;~ (\lambda A)^{t} = \lambda A^{t} \\
+3.&amp;~ (AB)^{t} = B^t A^t ~~~~~ \text{Por que invertemos a ordem?} \\
+4.&amp;~ (A \pm B)^{t} = A^t \pm B^t \\
+5.&amp;~ (A^{-1})^{t} = (A^{t})^{-1}
+\end{aligned}
+\]</span></p>
+<p>Encorajamos o leitor a tentar provar, ou pelo menos fornecer um exemplo, para cada uma dessas propriedades.</p>
+</section>
+<section id="sec-material-matrizes" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="sec-material-matrizes"><span class="header-section-number">3.8</span> Material adicional</h2>
 <p>Para os curiosos, este vídeos sobre <a href="https://youtu.be/XkY2DOUCWMU">Multiplicação de Matrizes</a>, este sobre <a href="https://www.youtube.com/watch?v=Ip3X9LOh2dk">Determinantes</a> e este sobre <a href="https://youtu.be/uQhTuRlWMxw">Matrizes Inversas e a Identidade</a> do canal no YouTube <a href="https://www.youtube.com/@3blue1brown">3blue1brown</a> (em inglês, com legendas em português) te darão uma intuição sobre o que estamos fazendo de fato quando multiplicamos matrizes.</p>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list" style="display: none">
+<div id="ref-hartmanMatrixTranspose2021" class="csl-entry" role="listitem">
+HARTMAN, G. <a href="https://math.libretexts.org/Bookshelves/Linear_Algebra/Fundamentals_of_Matrix_Algebra_(Hartman)/03%3A_Operations_on_Matrices/3.01%3A_The_Matrix_Transpose">The <span>Matrix Transpose</span></a>. Em: <strong>Fundamentals of <span>Matrix Algebra</span></strong>. Mathematics <span>LibreTexts</span>. Lexington: Virginia Military Institute, 2021.
+</div>
 <div id="ref-sekhonSystemsLinearEquations2020" class="csl-entry" role="listitem">
-SEKHON, R.; BLOOM, R. <a href="https://math.libretexts.org/Bookshelves/Applied_Mathematics/Applied_Finite_Mathematics_(Sekhon_and_Bloom)/02%3A_Matrices/2.02%3A_Systems_of_Linear_Equations_and_the_Gauss-Jordan_Method">Systems of <span>Linear Equations</span> and the <span>Gauss-Jordan Method</span></a>. Em: <strong>Applied <span>Finite Mathematics</span></strong>. <span>LibreTexts Mathematics</span>. Cupertino: De Anza College, 2020.
+SEKHON, R.; BLOOM, R. <a href="https://math.libretexts.org/Bookshelves/Applied_Mathematics/Applied_Finite_Mathematics_(Sekhon_and_Bloom)/02%3A_Matrices/2.02%3A_Systems_of_Linear_Equations_and_the_Gauss-Jordan_Method">Systems of <span>Linear Equations</span> and the <span>Gauss-Jordan Method</span></a>. Em: <strong>Applied <span>Finite Mathematics</span></strong>. Mathematics <span>LibreTexts</span>. Cupertino: De Anza College, 2020.
 </div>
 </div>
 </section>

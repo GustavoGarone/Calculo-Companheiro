@@ -5,7 +5,7 @@ header-includes:
 
 # Matrizes
 
-Uma matriz $m \times n$ tem $m$ linhas e $n$ colunas. Também é comum usarmos $i \times j$, e você pode encontrar essa notação. Chamamos isso de **Ordem** da matriz.
+Uma matriz $m \times n$ tem $m$ linhas,a na horizontal, e $n$ colunas, na vertical. Também é comum usarmos $i \times j$, e você pode encontrar essa notação. Chamamos isso de **Ordem** da matriz.
 
 Chamamos uma matriz de quadrada se ela possuí número igual de linhas e colunas, isto é, se $m=n$
 
@@ -21,7 +21,7 @@ $$
 
 ## Matriz Identidade
 
-Uma matriz identidade é uma matriz quadrada com $1$s em sua diagonal e $0$ como outros elementos. É comum chamarmos a matriz identidade de ordem $n$ de $I_n$: 
+Uma matriz identidade é uma matriz quadrada com $1$s em sua diagonal e $0$ como outros elementos. É comum chamarmos a matriz identidade de ordem $n$, ou seja, com $n$ linhas e $n$ colunas, de $I_n$: 
 $$
 I_{1} = 
 \begin{bmatrix}
@@ -43,10 +43,7 @@ Esse nome, "identidade", fará mais sentido quando discutirmos multiplicação d
 
 ## Soma e Subtração de Matrizes
 
-Para somar matrizes, primeiro temos que garantir que elas possuem mesma ordem. Caso, por exmeplo possuam números de linhas e colunas diferentes entre si, não será possível somá-las.
-
-Dessa forma, matrizes com mesma ordem, ou seja, mesmo número de linhas e colunas, podem ser somadas ou subtraídas:
-
+Para somar ou subtrair matrizes, basta realizar a operação elemento por elemento, obtendo uma nova matriz:
 
 $$
 \begin{aligned}
@@ -62,7 +59,7 @@ $$
         b_{1,1} & b_{1,2} & \dots & b_{1,j} \\
         b_{2,1} & b_{2,2} & \dots & b_{2,j} \\
         \vdots  & \vdots & \ddots & \vdots \\
-        b_{mi1} & b_{i,2} & \dots & b_{i,j}
+        b_{i,1} & b_{i,2} & \dots & b_{i,j}
     \end{bmatrix}\\ \\
     &=
     \begin{bmatrix}
@@ -74,8 +71,11 @@ $$
 \end{aligned}
 $$
 
+Dessa forma, podemos nos perguntar o que aconteceria se tentássemos somar uma matriz $3\times 3$ por uma $2 \times 2$. Pode parecer intuitivo pensar que essa soma poderia ser feita, deixando a linha 3 e coluna 3 da primeira matriz intacta, mas esse pensamento está **Incorreto**: *Podemos apenas somar e subtraír matrizes de mesma ordem.*
+
 ## Multiplicação de matrizes por escalar
-Chamamos de escalar um número (normalmente, real ou complexo, aqui chamado de $\lambda$) que multiplica um vetor ou matriz. Para multiplicar uma matriz por um escalar, multiplicamos todos seus elementos por ele, idependente de sua ordem:
+
+Chamamos de escalar um número (normalmente real, aqui chamado de $\lambda$) que multiplica um vetor ou matriz. Para multiplicar uma matriz por um escalar, multiplicamos todos seus elementos por ele, um a um, idependente de sua ordem. Isso recebe o nome de produto por escalar
 
 $$
 \lambda~ M_{m\times n}=
@@ -95,45 +95,50 @@ $$
 \end{bmatrix}
 $$
 
+*Atenção*: Você pode já ter ouvido sobre **Produto Escalar**. Isso **Não** é o produto de uma matriz por um escalar, mas sim uma operação distinta que estudaremos em algebra linear.
+
+*Produto Escalar*: Operação entre duas matrizes (vetores) que nos dá um escalar *Produto POR Escalar*: Operação que acabamos de estudar entre matriz e um escalar que nos dá uma matriz.
+
 ## Multiplicação de Matrizes
 
 Para multiplicarmos duas matrizes, é necessário que o número de colunas da primeira matriz seja igual ao número de linhas da segunda matriz. Por esse e outros motivos, dizemos que a multiplicação de matrizes *não é comutativa*, ou seja, multiplicar uma matriz $M$ por uma matriz $N$ pode nos dar uma matriz resultante diferente do que se multiplicarmos $N$ por $M$, caso essa multiplicação seja se quer possível!
 
 $$
 \begin{aligned}
-    M_{i\times j} \times N_{j\times k}, j=j \Rightarrow \checkmark\\
-    M_{i\times j} \times B_{k\times j}, j\neq k \Rightarrow \xcancel{\checkmark}\\
-    N_{j\times k} \times M_{i\times j}. k\neq i \Rightarrow \xcancel{\checkmark}
+    M_{i\times j} \times N_{j\times k}, j=j \Rightarrow \checkmark \\
+    M_{i\times j} \times B_{k\times j}, j\neq k \Rightarrow ✘ \\
+    N_{j\times k} \times M_{i\times j}. k\neq i \Rightarrow ✘
 \end{aligned}
 $$
 
 Vamos analisar como a operação é feita, e então nos ficará claro o porquê dessa regra existir.
-sadasdsad
-asdsa
 
 Considere as seguintes matrizes:
 
 $$
-A_{2,3} =
-\begin{bmatrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6
-\end{bmatrix},~
-B_{3,1} = 
-\begin{bmatrix}
-    7 \\
-    8 \\
-    9
-\end{bmatrix}
+\begin{aligned}
+    &A_{2\times 3} =
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6
+    \end{bmatrix} \\ \\
+    &B_{3\times 1} = 
+    \begin{bmatrix}
+        7 \\
+        8 \\
+        9
+    \end{bmatrix}
+\end{aligned}
 $$
 
-Sabemos que podemos multiplicá-las com A como primeira matriz $A_{2,3}\times B_{3,1}, 3=3\Rightarrow \checkmark$, mas não como segunda matriz: $B_{3,1} \times A_{2,3}, 1\neq 2 \Rightarrow \xcancel{\checkmark}$. Iremos então realizar a primeira operação descrita da seguinte maneira:
+Sabemos que podemos multiplicá-las com A como primeira matriz $A_{2\times 3}\times B_{3\times 1}, 3=3\Rightarrow \checkmark$, mas não como segunda matriz: $B_{3\times 1} \times A_{2\times 3}, 1\neq 2 \Rightarrow ✘$. Iremos então realizar a primeira operação descrita da seguinte maneira:
 
 *Definição.* Para multiplicar matrizes, somaremos cada linha da primeira multiplicada por um elemento equivalente de cada coluna:
 
 $$
 \begin{aligned}
-    A \times B &= 
+    &A \times B \\
+    &=
     \begin{bmatrix}
         1 & 2 & 3 \\
         4 & 5 & 6
@@ -143,12 +148,12 @@ $$
         7 \\
         8 \\
         9
-    \end{bmatrix}\\
+    \end{bmatrix}\\ \\
     &=
     \begin{bmatrix}
         1 \cdot 7 + 2 \cdot 8 + 3 \cdot 9 \\
         4 \cdot 7 + 5 \cdot 8 + 6 \cdot 9
-    \end{bmatrix} \\
+    \end{bmatrix} \\ \\
     &=
     \begin{bmatrix}
         50 \\
@@ -161,7 +166,8 @@ $$
 
 $$
 \begin{aligned}
-    &C \times D = 
+    &C \times D  \\
+    &= 
     \begin{bmatrix}
         a & b & c \\
         d & e & f
@@ -171,7 +177,7 @@ $$
         g & h \\
         i & j\\
         k & l
-    \end{bmatrix}\\
+    \end{bmatrix}\\  \\
     &=
     \begin{bmatrix}
         a \cdot g + b \cdot i + c \cdot k & a \cdot h + b \cdot j + c \cdot k\\
@@ -180,16 +186,20 @@ $$
 \end{aligned}
 $$
 
-Note que o número de linhas da matriz resultate da multiplicação entre matrizes é sempre igual ao número de linhas da primeira matriz e o de colunas igual ao da segunda.
+Note que o número de linhas da matriz resultate da multiplicação entre matrizes é sempre igual ao número de linhas da primeira matriz e o de colunas igual ao da segunda. Ou seja, *Para multiplicarmos, os números de "dentro" devem ser iguais, e a matriz resultante terá dimensões iguais aos números de "fora"*: 
+
+$$
+M_{3\times 2} \times N_{2 \times 4} \stackrel{2=2}{=} H_{3 \times 4}
+$$
 
 ------------------------------------------------------------------------
 
 E onde a matriz identidade entra no jogo?
 
-Para qualquer matriz $M_{i,j}$, 
+Para qualquer matriz $M_{i\times j}$,
 
 $$
-I_{i} \times M_{i,j} = M_{i,j} = M_{i,j}\times I_{j}
+I_{i} \times M_{i\times j} = M_{i\times j} = M_{i\times j}\times I_{j}
 $$
 
 Prove!
@@ -199,9 +209,11 @@ Prove!
 A multiplicação de matrizes, por mais que simples, é extremamente poderosa e é a base por trás de importantes conceitos matemáticos. Um deles é a inversão de matriz, que você verá adiante.
 
 ## Determinantes
+
 Deteminantes são computações especiais realizadas em matrizes quadradas. Possuem significado importante para conceitos de álgebra linear, mas, por hora, apenas aprenderemos como calculá-los para matrizes de até ordem 3.
 
-O determinante de uma matriz de ordem 1 é, simplesmente, o valor nela contido:
+O determinante de uma matriz de ordem 1 é, simplesmente, o valor nela contido: 
+
 $$
 \det{A_{1\times1}}=
 \begin{vmatrix}
@@ -214,6 +226,7 @@ onde $||$ representa o determinante, e não o módulo, da matriz com único elem
 E para matrizes de maior ordem?
 
 Seja 
+
 $$
 M_{2\times2} =
 \begin{bmatrix}
@@ -222,7 +235,8 @@ M_{2\times2} =
 \end{bmatrix}
 $$
 
-Podemos calcular o determinante de M, $\det{M},\det{(M)}, |M|$, multiplicando a diagonal principal e subtraindo do produto da outra diagonal:
+Podemos calcular o determinante de M, $\det{M},\det{(M)}, |M|$, multiplicando a diagonal principal e subtraindo do produto da outra diagonal: 
+
 $$
 \det{(M)}=\begin{vmatrix}
     1 & 2\\
@@ -232,7 +246,8 @@ $$
 
 E quais seriam as diagonais de uma matriz de ordem 3?
 
-Seja
+Seja 
+
 $$
 N_{3\times3} =
 \begin{bmatrix}
@@ -261,15 +276,16 @@ $$
 Existem outras formas de calcular determinantes. Para os leitores interesados, recomendamos que busquem a resolução de determinantes pelo *Teorema de Laplace*, também conhecido como expansão de cofatores. Esse é um poderoso teorema nos permite calcular determinantes de matrizes de ordem maior do que 3, além de também poder aplicado na matriz 3x3 para (algumas vezes) cálculos mais simples.
 
 ## Inversão de matrizes
-Dizemos que uma matriz quadrada $M_{n\times n}$ é inversível se existe uma outra matriz, $N$, tal que:
+
+Dizemos que uma matriz quadrada $M_{n\times n}$ é inversível se existe uma outra matriz, $N$, tal que: 
+
 $$
     M\times N = N \times M = I_n
 $$
 
 ### Escalonamento
 
-Uma das formas de chegamos na matriz inversa é considerarmos os seguinte:
-$N$ pode ser escrita como o produto de outras matrizes.
+Uma das formas de chegamos na matriz inversa é considerarmos os seguinte: $N$ pode ser escrita como o produto de outras matrizes.
 
 $$
 \begin{cases}
@@ -288,12 +304,12 @@ $$
 
 Com esse recurso, podemos chegar na matriz inversa através de operações mais simples partindo de uma matriz como a identidade!
 
-Antes de prosseguirmos, note uma interessante propriedade: *Uma matriz é inversível se, e somente se, seu determinante for diferente de $0$*. A razão disso não ficará clara agora, mas leitores interessados podem se referir à @sec-material-matrizes - Material Adicional.
+Antes de prosseguirmos, note uma interessante propriedade: *Uma matriz é inversível se, e somente se, seu determinante for diferente de* $0$. A razão disso não ficará clara agora, mas leitores interessados podem se referir à @sec-material-matrizes - Material Adicional.
 
 Para utilizarmos a técnica do escalonamento, precisaremos primeiro definir 3 operações que nos serão de grande ajuda neste processo. O porquê dessas operações serem válidas nos ficará mais claro quando discutirmos sistemas lineares posteriormente neste livro.
 
-*Operação 1.*
-No escalonamento, podemos trocar linhas da matriz de lugar.
+*Operação 1.* No escalonamento, podemos trocar linhas da matriz de lugar. 
+
 $$
 \begin{bmatrix}
     1 & 2 \\
@@ -305,8 +321,8 @@ $$
 \end{bmatrix}
 $$
 
-*Operação 2.*
-No escalonamento, podemos multiplicar qualquer linha por um número real $\lambda \neq 0$
+*Operação 2.* No escalonamento, podemos multiplicar qualquer linha por um número real $\lambda \neq 0$ 
+
 $$
 \begin{bmatrix}
     1 & 2 \\
@@ -318,8 +334,7 @@ $$
 \end{bmatrix}
 $$
 
-*Operação 3.*
-No escalonamento, podemos somar linhas e substituílas pelo valor da soma
+*Operação 3.* No escalonamento, podemos somar linhas e substituílas pelo valor da soma
 
 $$
 \begin{bmatrix}
@@ -334,11 +349,12 @@ $$
 
 Note que essas operações alteram a matriz, mas podem ser utilizadas no escalonamento, uma vez que podem ser traduzidas como multiplicações por outras matrizes e, como discutimos, podemos descontruir a matriz inversa como o produto de outras matrizes ($N=(A\times B)$)
 
-- - -
+------------------------------------------------------------------------
 
 Curiosidade: Um exemplo de uma matriz que, quando muliplicamos, realiza uma dessas operações (no caso, a 1), é a seguinte:
 
-Seja
+Seja 
+
 $$
 V = \begin{bmatrix}
     a & b \\
@@ -357,7 +373,8 @@ $$
 \end{bmatrix}
 $$
 
-Tente resolver o produto
+Tente resolver o produto 
+
 $$
 \begin{bmatrix}
     0 & 1 & 0\\
@@ -375,7 +392,7 @@ e verifique o resultado!
 
 Você consegue encontrar outras matrizes que realizam as outras operações? Dica: todas essas matrizes são próximas da matriz identidade.
 
-- - -
+------------------------------------------------------------------------
 
 Vamos partir para um exemplo de como inverter uma matriz.
 
@@ -396,7 +413,8 @@ Usaremos uma técnica de escalonamento que consiste em comparar nossa matriz ori
 
 Lembre-se: nosso objetivo é agora transformar a matriz original na matriz identidade, ou seja, zerar todos os elementos que não sejam os da diagonal principal e tornar os elementos dessa 1.
 
-Nossa estratégia será a seguinte: zerar todos os elementos fora da diagonal principal, coluna por coluna, e então transformar os elementos da diagonal principal em 1 através da operação 2.
+Nossa estratégia será a seguinte: zerar todos os elementos fora da diagonal principal, coluna por coluna, e então transformar os elementos da diagonal principal em 1 através da operação 2. 
+
 $$
 \begin{aligned}
     &\left[\begin{array}{ccc|ccc}
@@ -408,63 +426,63 @@ $$
         -2 & -6 & -4 & -2 & 0 & 0 \\
         2 & 1 & 5 & 0 & 1 & 0 \\
         4 & 2 & 3 & 0 & 0 & 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{I+II->II}{\rightarrow}
     &
     \left[\begin{array}{ccc|ccc}
         -2 & -6 & -4 & -2 & 0 & 0 \\
         0 & -5 & 1 & -2 & 1 & 0 \\
         4 & 2 & 3 & 0 & 0 & 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{I+III->III}{\rightarrow}
     &
     \left[\begin{array}{ccc|ccc}
         -4 & -12 & -8 & -4 & 0 & 0 \\
         0 & -5 & 1 & -2 & 1 & 0 \\
         0 & -10 & -5 & -4 & 0 & 1
-    \end{array}\right] ~~\text{Zeramos a primeira coluna!} \\
+    \end{array}\right] ~~\text{Zeramos a primeira coluna!} \\ \\
     \stackrel{-\frac{1}{4}\cdot I}{\rightarrow}
     &
     \left[\begin{array}{ccc|ccc}
         1 & 3 & 2 & 1 & 0 & 0 \\
         0 & -5 & 1 & -2 & 1 & 0 \\
         0 & -10 & -5 & -4 & 0 & 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{5\cdot I+3\cdot II -> I}{\rightarrow}
     &
     \left[\begin{array}{ccc|ccc}
         5 & 0 & 13 & -1 & 3 & 0 \\
         0 & -15 & 3 & -6 & 3 & 0 \\
         0 & -10 & -5 & -4 & 0 & 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{\frac{1}{3}II}{\rightarrow}
     &
     \left[\begin{array}{ccc|ccc}
         5 & 0 & 13 & -1 & 3 & 0 \\
         0 & -5 & 1 & -2 & 1 & 0 \\
         0 & -10 & -5 & -4 & 0 & 1
-    \end{array}\right] \\
+    \end{array}\right] \\ \\
     \stackrel{-2\cdot II + III -> III}{\rightarrow}
     &
     \left[\begin{array}{ccc|ccc}
         5 & 0 & 13 & -1 & 3 & 0 \\
         0 & 10 & -2 & 4 & -2 & 0 \\
         0 & 0 & -7 & 0 & -2 & 1
-    \end{array}\right] ~~\text{Zeramos a segunda coluna!}\\
+    \end{array}\right] ~~\text{Zeramos a segunda coluna!}\\ \\
     \stackrel{7\cdot I + 13\cdot III -> I}{\rightarrow}
     &
     \left[\begin{array}{ccc|ccc}
         35 & 0 & 0 & -7 & -5 & 13 \\
         0 & 10 & -2 & 4 & -2 & 0 \\
         0 & 0 & -91 & 0 & -26 & 13
-    \end{array}\right]  \\
+    \end{array}\right]  \\ \\
     \stackrel{\frac{1}{13}\cdot III}{\rightarrow}
     &
     \left[\begin{array}{ccc|ccc}
         35 & 0 & 0 & -7 & -5 & 13 \\
         0 & 10 & -2 & 4 & -2 & 0 \\
         0 & 0 & -7 & 0 & -2 & 1
-    \end{array}\right]  \\
+    \end{array}\right]  \\ \\
     \stackrel{-7\cdot II + 2 \cdot III -> II}{\rightarrow}
     &
     \left[\begin{array}{ccc|ccc}
@@ -472,7 +490,7 @@ $$
         0 & -70 & 0 & -28 & 10 & 2 \\
         0 & 0 & -14 & 0 & -4 & 2
     \end{array}\right]\\ \\
-    &\text{Podemos agora transformar os elementos da diagonal em 1.} \\
+    &\text{Podemos agora transformar os elementos da diagonal em 1.} \\ 
     \\
     \stackrel{\frac{1}{35}\cdot I, -\frac{1}{70} \cdot II, -\frac{1}{14} \cdot III}{\rightarrow}
     &
@@ -505,21 +523,22 @@ Apenas enunciaremos o algoritmo aqui, mas recomendamos que leitores interessados
 
 **Método de Gauss-Jordan**
 
-1. Troque as linhas para obter um elemento não-nulo na posição 1,1 da matriz pela operação 1;
+1.  Troque as linhas para obter um elemento não-nulo na posição 1,1 da matriz pela operação 1;
 
-2. Use a operação 2 para transformar o elemento 1,1 em 1;
+2.  Use a operação 2 para transformar o elemento 1,1 em 1;
 
-3. Use as operações 2 e 3 para transformar todos os outros elementos da coluna em 0;
+3.  Use as operações 2 e 3 para transformar todos os outros elementos da coluna em 0;
 
-4. Use a operação 1 para obter um elemento não nulo na posição 2,2 da matriz;
+4.  Use a operação 1 para obter um elemento não nulo na posição 2,2 da matriz;
 
-5. Repita a partir do 2 até a matriz estar escalonada, alterando o passo 4 para a posição 3,3, 4,4 e assim por diante.
+5.  Repita a partir do 2 até a matriz estar escalonada, alterando o passo 4 para a posição 3,3, 4,4 e assim por diante.
 
 ## Transposição de matrizes
 
 Transpor uma matriz nada mais é que inverter suas colunas e linhas @hartmanMatrixTranspose2021. Mostraremos alguns exemplos dessa inversão e então ressaltaremos alguns fatos interessantes sobre a transposição e suas propriedades.
 
-Seja
+Seja 
+
 $$
 A = \begin{bmatrix}
     a & b & c \\
@@ -554,10 +573,10 @@ B = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-
 Um outro fato interessante: uma matriz é chamada de *simétrica* se ela é igual à sua transposta.
 
-Verifique se a matriz
+Verifique se a matriz 
+
 $$
 C = \begin{bmatrix}
     2 & 1 & 2\\
@@ -568,7 +587,8 @@ $$
 
 é simétrica.
 
-Iremos agora enunciar algumas *Propriedades da Transposição*:
+Iremos agora enunciar algumas *Propriedades da Transposição*: 
+
 $$
 \begin{aligned}
 1.&~ (A^{t})^{t} = A \\
