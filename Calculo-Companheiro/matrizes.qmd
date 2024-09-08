@@ -5,7 +5,7 @@ header-includes:
 
 # Matrizes
 
-Uma matriz $m \times n$ tem $m$ linhas,a na horizontal, e $n$ colunas, na vertical. Também é comum usarmos $i \times j$, e você pode encontrar essa notação. Chamamos isso de **Ordem** da matriz.
+Uma matriz $m \times n$ tem $m$ linhas, $m$ na horizontal, e $n$ colunas, na vertical. Também é comum usarmos $i \times j$, e você pode encontrar essa notação. Chamamos isso de **Ordem** da matriz.
 
 Chamamos uma matriz de quadrada se ela possuí número igual de linhas e colunas, isto é, se $m=n$
 
