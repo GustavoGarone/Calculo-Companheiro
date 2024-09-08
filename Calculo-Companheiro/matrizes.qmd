@@ -22,8 +22,10 @@ $$
 ## Igualdade de Matrizes
 
 Duas matrizes são ditas iguais se, e somente se, elas têm os mesmo tamanho e todos os elementos correspondentes são iguais.
-$A_{m\times n} = B_{o\times p} \rightleftarrows$
+
 $$
+A_{m\times n} = B_{o\times p} \rightleftarrows 
+\newline
 \begin{cases}
     a_{1,1} = b_{1,1} \\
     a_{2,1} = b_{2,1} \\
@@ -35,13 +37,13 @@ $$
 \end{cases}
 $$
 
-Alternatimente, é possível expressar a afirmação acima com uma notação matemática mais formal. Nos capítulos iniciais deste livro, oferecemos mais de uma notação para acostumar o leitor à escrita matemática, mas em capítulos futuros exibiremos exclusivamente a notação formal., veja o exemplo:
+Alternatimente, é possível expressar a afirmação acima com uma notação matemática mais formal. Nos capítulos iniciais deste livro, oferecemos mais de uma notação para acostumar o leitor à escrita matemática, mas, em capítulos futuros, exibiremos exclusivamente a notação formal. Veja o exemplo:
 
 $$
 A_{m,n} = B_{o,p} \; \rightleftarrows \; m=o  \; \land \; n=p \; \land \; \forall i \in [1,m], \;\forall j \in [1,n], \; \; a_{i,j} = b_{i,j}
 $$
 
-Lê-se: "A matriz $A$, $m$ por $n$, é igual à matriz $B$, $o$ por $p$, se, e somente se, $m$ é igual a $o$ e $n$ é igual a $p$ e, para todo elemento $i$ pertencente ao intervalo de 1 a $m$ e todo $j$ pertencente ao intervalo de 1 a $n$, o elemento $a$ $i,j$ é igual ao elemento $b$ $i,j$.
+Lê-se: "A matriz $A$, $m$ por $n$, é igual à matriz $B$, $o$ por $p$, se, e somente se, $m$ é igual a $o$ e $n$ é igual a $p$ e, para todo elemento $i$ pertencente ao conjuntno de 1 a $m$ e todo $j$ pertencente ao conjunto de 1 a $n$, o elemento $a$ $i,j$ é igual ao elemento $b$ $i,j$.
 
 ## Matriz Quadrada
 
