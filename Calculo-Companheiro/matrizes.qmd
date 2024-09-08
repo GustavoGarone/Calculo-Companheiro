@@ -22,9 +22,8 @@ $$
 ## Igualdade de Matrizes
 
 Duas matrizes são ditas iguais se, e somente se, elas têm os mesmo tamanho e todos os elementos correspondentes são iguais.
-
+$A_{m\times n} = B_{o\times p} \rightleftarrows$
 $$
-A_{m\times n} = B_{o\times p} \rightleftarrows \\
 \begin{cases}
     a_{1,1} = b_{1,1} \\
     a_{2,1} = b_{2,1} \\
