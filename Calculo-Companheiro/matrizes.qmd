@@ -5,23 +5,70 @@ header-includes:
 
 # Matrizes
 
-Uma matriz $m \times n$ tem $m$ linhas, $m$ na horizontal, e $n$ colunas, na vertical. Também é comum usarmos $i \times j$, e você pode encontrar essa notação. Chamamos isso de **Ordem** da matriz.
+Uma matriz $m \times n$ (lemos: "m por n") tem $m$ linhas, na horizontal, e $n$ colunas, na vertical. Também é comum usarmos $i \times j$, para indicar o tamanho ou  **Ordem** da matriz. 
 
-Chamamos uma matriz de quadrada se ela possuí número igual de linhas e colunas, isto é, se $m=n$
+Para indicar os elementos de uma matriz $M_{m\times n}$, usamos a mesma letra que indicamos a matriz, mas em caixa baixa. Ou seja, na matriz $M$ indicada abaixo, o elemento $m_{2,3}$ é o elemento dessa matriz que está na 2ª linha e 3ª coluna.
 
 $$
 M_{m\times n}=
 \begin{bmatrix}
-    a_{1,1} & a_{1,2} & \dots & a_{1,n} \\
-    a_{2,1} & a_{2,2} & \dots & a_{2,n} \\
+    m_{1,1} & m_{1,2} & \dots & m_{1,n} \\
+    m_{2,1} & m_{2,2} & \dots & m_{2,n} \\
     \vdots  & \vdots & \ddots & \vdots \\
-    a_{m,1} & a_{m,2} & \dots & a_{m_n}
+    m_{m,1} & m_{m,2} & \dots & m_{m_n}
 \end{bmatrix}
 $$
 
+## Igualdade de Matrizes
+
+Duas matrizes são ditas iguais se, e somente se, elas têm os mesmo tamanho e todos os elementos correspondentes são iguais.
+
+$$
+A_{m\times n} = B_{o\times p} \rightleftarrows 
+\begin{cases}
+    a_{1,1} = b_{1,1} \\
+    a_{2,1} = b_{2,1} \\
+    \vdots  \\
+    a_{m,n} = b_{m,n}
+    m = o
+    n = p
+    
+\end{cases}
+$$
+
+Alternatimente, é possível expressar a afirmação acima com uma notação matemática mais formal. Nos capítulos iniciais deste livro, oferecemos mais de uma notação para acostumar o leitor à escrita matemática, mas em capítulos futuros exibiremos exclusivamente a notação formal., veja o exemplo:
+
+$$
+A_{m,n} = B_{o,p} \; \rightleftarrows \; m=o  \; \land \; n=p \; \land \; \forall i \in [1,m], \;\forall j \in [1,n], \; \; a_{i,j} = b_{i,j}
+$$
+
+Lê-se: "A matriz $A$, $m$ por $n$, é igual à matriz $B$, $o$ por $p$, se, e somente se, $m$ é igual a $o$ e $n$ é igual a $p$ e, para todo elemento $i$ pertencente ao intervalo de 1 a $m$ e todo $j$ pertencente ao intervalo de 1 a $n$, o elemento $a$ $i,j$ é igual ao elemento $b$ $i,j$.
+
+## Matriz Quadrada
+
+Uma matriz é dita quadrada se, e somento se, o número de linhas é igual ao número de colunas. $A_{m,n}$ é quadrada $\rightleftarrows m=n$
+
+Nas matrizes quadradas, há elementos que chamamos de diagonal principal e diagonal secundária. 
+
+## Matriz Nula
+
+Uma matriz é dita nula se, e somente se, todos os seus elementos são iguais a zero. Alternativamente, A é nula $\rightleftarrows \forall a \in A, \; a = 0$. Como notação de uma matriz nula, utilizamos o próprio algarismo 0, mas com o índice correspondente ao tamanho da matriz.
+$$
+0_{3\times 2}=
+\begin{bmatrix}
+    0 & 0  \\
+    0 & 0  \\
+    0 & 0
+\end{bmatrix}
+
+$$
+{Se possível, tem como colocar uma chave indicando m linhas e n colunas???}
+
+Por mais que seja possível diferenciar a matriz nula do número $0$ a partir do índice, recomendamos que sempre atentem-se a que tipo de objeto matemática estamos trabalhando. Posteriormente, quando trabalharmos com vetores e espaços vetoriais, encontraremos mais um objeto cuja notação é $0$. Sempre que possível, reforçaremos ou explicitaremos qual objeto estamos lidando, mas tal diferenciação não estará presente na maioria dos materiais que encontrará durante sua jornada acadêmica.
+
 ## Matriz Identidade
 
-Uma matriz identidade é uma matriz quadrada com $1$s em sua diagonal e $0$ como outros elementos. É comum chamarmos a matriz identidade de ordem $n$, ou seja, com $n$ linhas e $n$ colunas, de $I_n$: 
+Uma matriz identidade é uma matriz quadrada com $1$'s em sua diagonal e $0$'s como outros elementos. É comum chamarmos a matriz identidade de ordem $n$, ou seja, com $n$ linhas e $n$ colunas, de $I_n$: 
 $$
 I_{1} = 
 \begin{bmatrix}
