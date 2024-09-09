@@ -23,7 +23,8 @@ $$
 
 Duas matrizes são ditas iguais se, e somente se, elas têm os mesmo tamanho e todos os elementos correspondentes são iguais.
 
-$$A_{m\times n} = B_{o\times p} \rightleftarrows 
+$$
+A_{m\times n} = B_{o\times p} \rightleftarrows 
 \newline
 \begin{cases}
     a_{1,1} = b_{1,1} \\
@@ -61,8 +62,7 @@ $$
     0 & 0  \\
     0 & 0  \\
     0 & 0
-\end{bmatrix}}_{2}\Bigg\} ~ 3
-
+\end{bmatrix}}_{2}\Bigg\} ~_{3}
 $$
 
 
@@ -263,7 +263,7 @@ A multiplicação de matrizes, por mais que simples, é extremamente poderosa e 
 
 ## Determinantes
 
-Deteminantes são computações especiais realizadas em matrizes quadradas. Os determinantes possuem interpretações muito interessantes, sobretudo na geometria e são amplamente aplicados no estuda da álgbera linear, mas, por hora, apenas aprenderemos como calculá-los, especialmente até matrizes de ordem 3 e apresentaremos superficialmente métodos para calcular determinantes de ordem superior. Limitaremos o estudo aprofundado à ordem 3, pois o trabalho para calcular o determinante de matrizes de ordem maior do que 3 cresce exponencialmente e dificilmente será pedido ao aluno para fazer essas contas. Como diria Mary Lilian, "Quem sabe teoria não faz conta".
+Deteminantes são computações especiais realizadas em matrizes quadradas. Os determinantes possuem interpretações muito interessantes, sobretudo na geometria e são amplamente aplicados no estuda da álgbera linear, mas, por hora, apenas aprenderemos como calculá-los, especialmente até matrizes de ordem 3 e apresentaremos superficialmente métodos para calcular determinantes de ordem superior. Limitaremos o estudo aprofundado à ordem 3, pois o trabalho para calcular o determinante de matrizes de ordem maior do que 3 cresce exponencialmente e dificilmente será pedido ao aluno para fazer essas contas. Como diz a Profa. Dra. Mary Lilian, "Quem sabe teoria não faz conta".
 
 O determinante de uma matriz de ordem 1 é, simplesmente, o valor nela contido: 
 
