@@ -344,9 +344,8 @@ A_{3\times3} =
     0 & 2 & 3\\
     0 & 5 & 6\\
     0 & 8 & 9 \\
-\end{bmatrix} \\
+\end{bmatrix}
 \rightarrow det(A) = 0
-
 $$
 
 $$
@@ -759,7 +758,7 @@ Apenas enunciaremos o algoritmo aqui, mas recomendamos que leitores interessados
 
 5.  Repita a partir do 2 até a matriz estar escalonada, alterando o passo 4 para a posição 3,3, 4,4 e assim por diante.
 
-**8ª propeidade dos determinantes - Matriz Inversa**
+**8ª propridade dos determinantes - Matriz Inversa**
 $det(A^{-1}) = [det(A)]^{-1} = \frac{1}{det(A)}$
 Exemplo:
 $$
