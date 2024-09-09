@@ -325,6 +325,7 @@ $$
     &= 225 - 225 = 0
 \end{aligned}
 $$
+
 Algumas versões da Regra de Sarrus copiam as duas primeiras linhas da matriz abaixo da matriz e efetuam um cálculo semelhante: somam as "diagonais principais" e  subtraem as "diagonais secundárias". Teste os dois métodos e verifique se há diferença dos resultados e quais são as diferenças no procedimento!
 
 Existem outras formas de calcular determinantes. Para os leitores interesados, recomendamos que busquem a resolução de determinantes pelo *Teorema de Laplace*, também conhecido como expansão de cofatores. Esse é um poderoso teorema nos permite calcular determinantes de matrizes de ordem maior do que 3, além de também poder aplicado na matriz 3x3 para (algumas vezes) cálculos mais simples. A desvantagem deste método é que calcular o determinante cresce exponencialmente conforme a ordem da matriz cresce.
@@ -395,7 +396,9 @@ A_{3\times3} =
 \end{bmatrix}  \\
 \rightarrow det(A) = -5
 $$
+
 Multiplicando-se a primeira coluna de $A$ por 5:
+
 $$
 A'_{3\times3} =
 \begin{bmatrix}
@@ -405,7 +408,9 @@ A'_{3\times3} =
 \end{bmatrix}  \\
 \rightarrow det(A') = -25
 $$
+
 Multiplicando-se a matriz $A$ por 2:
+
 $$
 2\cdot A_{3\times3} =
 \begin{bmatrix}
@@ -442,6 +447,7 @@ $$
 **5ª propriedade - Proporcionalidade de Filas**
 Se uma fila pode ser escrita como combinação linear de outras filas paralelas, o determinante é igual a $0$. Note que é simples demonstrar essa propriedade, pois se uma fila é combinação linear de outras filas paralelas, basta tomar o oposto dessa combinação linear para produzir uma fila nula. Particularmente, se duas filas são iguais ou proporcionais, é simples verificar que o determinante é igual a $0$.
 Exemplo:
+
 $$
 A_{3\times3} =
 \begin{bmatrix}
@@ -451,11 +457,13 @@ A_{3\times3} =
 \end{bmatrix}  \\
 \rightarrow det(A) = 0
 $$
+
 Note que a primeira coluna é igual à primeira fileira multiplicada por $-5$: $-5 = 1 \cdot -5$, $-10 = 2 \cdot -5$, $10 = -2 \cdot -5$.
 
 **6ª propriedade - Determinante do Produto**
 Sejam $A$ e $B$ matrizes quadradas de mesma ordem (e portanto multiplicáveis), $det(A \cdot B) = det(A) \cdot det(B)$.
 Exemplo:
+
 $$
 A_{2\times2} =
 \begin{bmatrix}
@@ -464,6 +472,7 @@ A_{2\times2} =
 \end{bmatrix}  \\
 \rightarrow det(A) = 10
 $$
+
 $$
 B_{2\times2} =
 \begin{bmatrix}
@@ -472,6 +481,7 @@ B_{2\times2} =
 \end{bmatrix}  \\
 \rightarrow det(B) = 6
 $$
+
 $$
 A \cdot B =
 \begin{bmatrix}
@@ -763,6 +773,7 @@ Apenas enunciaremos o algoritmo aqui, mas recomendamos que leitores interessados
 **8ª propridade dos determinantes - Matriz Inversa**
 $det(A^{-1}) = [det(A)]^{-1} = \frac{1}{det(A)}$
 Exemplo:
+
 $$
 A_{3\times3} =
 \begin{bmatrix}
@@ -854,6 +865,7 @@ Encorajamos o leitor a tentar provar, ou pelo menos fornecer um exemplo, para ca
 **9ª propriedade dos determinantes - Determinante da Transposta**
 Seja $A^t$ a transposta da matriz $A$. $det(A^t) = det(A)$.
 Exemplo:
+
 $$
 A_{3\times3} =
 \begin{bmatrix}
@@ -863,6 +875,7 @@ A_{3\times3} =
 \end{bmatrix}  \\
 \rightarrow det(A) = 30
 $$
+
 $$
 A^t_{3\times3} =
 \begin{bmatrix}
