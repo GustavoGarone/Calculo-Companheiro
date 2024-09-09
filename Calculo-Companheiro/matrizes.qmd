@@ -54,16 +54,17 @@ Nas matrizes quadradas, há elementos que chamamos de diagonal principal e diago
 ## Matriz Nula
 
 Uma matriz é dita nula se, e somente se, todos os seus elementos são iguais a zero. Alternativamente, A é nula $\rightleftarrows \forall a \in A, \; a = 0$ (lê-se: "A é nula se, e somente se, para todo elemento $a$ pertencente à matriz $A$, tal elemento é igual a $0$."). Como notação de uma matriz nula, utilizamos o próprio algarismo 0, mas com o índice correspondente ao tamanho da matriz.
+
 $$
 0_{3\times 2}=
-\begin{bmatrix}
+\underbrace{\begin{bmatrix}
     0 & 0  \\
     0 & 0  \\
     0 & 0
-\end{bmatrix}
+\end{bmatrix}}_{2}\Bigg\} ~ 3
 
 $$
-{Se possível, tem como colocar uma chave indicando m linhas e n colunas???}
+
 
 Por mais que seja possível diferenciar a matriz nula do número $0$ por conta do índice, recomendamos que sempre atentem-se a que tipo de objeto matemática estamos trabalhando. Posteriormente, quando trabalharmos com vetores e espaços vetoriais, encontraremos mais um objeto cuja notação é $0$. Sempre que possível, reforçaremos ou explicitaremos qual objeto estamos lidando, mas tal diferenciação não estará presente na maioria dos materiais que encontrará durante sua jornada acadêmica.
 
@@ -328,6 +329,7 @@ Algumas versões da Regra de Sarrus copiam as duas primeiras linhas da matriz ab
 
 Existem outras formas de calcular determinantes. Para os leitores interesados, recomendamos que busquem a resolução de determinantes pelo *Teorema de Laplace*, também conhecido como expansão de cofatores. Esse é um poderoso teorema nos permite calcular determinantes de matrizes de ordem maior do que 3, além de também poder aplicado na matriz 3x3 para (algumas vezes) cálculos mais simples. A desvantagem deste método é que calcular o determinante cresce exponencialmente conforme a ordem da matriz cresce.
 Um segundo método para calcular o determinante de matrizes quadradas é conhecido como *Regra de Chió*. Trata-se de um algoritmo que, em cada execução, diminui em um a ordem de uma matriz quadrada. Assim como o método anterior, este também apresenta um crescimento exponencial do trabalho necessário para calcular o determinante de matrizes de ordens superiores.
+
 ## Aqui eu queria incluir um quadrado, ou qualquer coisa que dê destaque para ensinarmos as pessoas a usarem um site para verificar o determinante 
 
 ### Propriedados dos determinantes
