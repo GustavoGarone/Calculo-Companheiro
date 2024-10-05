@@ -1,4 +1,20 @@
 # Prefácio {.unnumbered}
 
-# TODO
-Aqui adicionaremos uma breve introdução técnica e conceitual do livro, para que ele foi feito e como usá-lo. um "meta" capítulo focando em tecnicalidades e não em matemática.
+# Propósito do Livro
+Esse livro foi criado com inteção de fornecer um material acessível a estudantes
+da graduação para seus estudos de Cálculo introdutório (Cálculo I) e multivariado
+(Cáculo II).
+
+Buscamos escrever esse livro com uma linguagem metematicamente mais acessível,
+usando de paralelos, exemplos e construções a partir de simplficiações para
+desenvolvermos a intuição matemática do leitor, ponto chave no desempenho de
+qualquer pessoa nas matérias de exatas.
+
+Esse livro é aberto para uso por toda a comunidade e possui pouco ou nenhum material
+de uso restrito ou de código fechado, conforme as recomendações da UNESCO para
+a ciência aberta  
+# Como usar esse livro
+
+# Quem Somos
+
+# Agradecimentos
