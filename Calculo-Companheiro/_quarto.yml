@@ -9,14 +9,20 @@ book:
   author: "Artur H. Tomita, Eduardo Yukio G. Ishihara, Gustavo S. Garone"
   date: last-modified
   chapters:
-    - companheiro.qmd
+    - index.qmd
+    - prefacio.qmd
     - part: "Bem-Vindo!"
       chapters:
-        - prefacio.qmd
         - intro.qmd
     - part: "Matemática Elementar"
       chapters:
         - matrizes.qmd
+    - part: "Introdução ao Cálculo"
+    - part: "Aplicações do Cálculo"
+    - part: "Álgebra Linear"
+    - part: "Cálculo Multivariado"
+      chapters:
+        - limites-multivariados.qmd
     - references.qmd
 
 bibliography: references.bib
