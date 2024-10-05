@@ -1,4 +1,4 @@
-# Prefácio {.unnumbered}
+# Calculo Companheiro {.unnumbered}
 
 ## Propósito do Livro
 Esse livro foi criado com inteção de fornecer um material acessível a estudantes

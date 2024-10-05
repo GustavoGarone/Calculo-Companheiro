@@ -9,10 +9,14 @@ book:
   author: "Artur H. Tomita, Eduardo Yukio G. Ishihara, Gustavo S. Garone"
   date: last-modified
   chapters:
-    - index.qmd
-    - summary.qmd
-    - intro.qmd
-    - matrizes.qmd
+    - part: "Bem-Vindo!"
+      chapters:
+        - companheiro.qmd
+        - prefacio.qmd
+        - intro.qmd
+    - part: "Matemática Elementar"
+      chapters:
+        - matrizes.qmd
     - references.qmd
 
 bibliography: references.bib
