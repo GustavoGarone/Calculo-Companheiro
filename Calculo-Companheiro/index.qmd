@@ -1,6 +1,6 @@
 # Prefácio {.unnumbered}
 
-# Propósito do Livro
+## Propósito do Livro
 Esse livro foi criado com inteção de fornecer um material acessível a estudantes
 da graduação para seus estudos de Cálculo introdutório (Cálculo I) e multivariado
 (Cáculo II).
@@ -8,13 +8,30 @@ da graduação para seus estudos de Cálculo introdutório (Cálculo I) e multiv
 Buscamos escrever esse livro com uma linguagem metematicamente mais acessível,
 usando de paralelos, exemplos e construções a partir de simplficiações para
 desenvolvermos a intuição matemática do leitor, ponto chave no desempenho de
-qualquer pessoa nas matérias de exatas.
+qualquer pessoa nas matérias de exatas. Temos como principal alvo alunos no primeiro ano da graduação nos cursos de exatas,
+quando são expostos pela primeira vez ao Cálculo, ou aos publicos de outros cursos que frequentam a matéria.
 
 Esse livro é aberto para uso por toda a comunidade e possui pouco ou nenhum material
-de uso restrito ou de código fechado, conforme as recomendações da UNESCO para
-a ciência aberta  
-# Como usar esse livro
+de uso restrito ou de código fechado, conforme as recomendações da @unesco_recomendacao_2022 para
+a ciência aberta.
 
-# Quem Somos
+## Como usar esse livro
+Como esse livro foi pensado para servir de referência e suporte das matérias de cálculo, você pode não ver muita 
+vantagem em ler o livro "de cabo a rabo", e sim em consultar o que você está com dificuldade ou não conseguiu assimilar
+muito bem em aula. Uma boa forma de usar esse livro é ler nosso capítulo sobre determinado assunto que você gostaria de
+estudar e então partir para material mais "pesado", como os livros de cálculo do Guidorizzi, Stewart, Apostol e afins.
 
-# Agradecimentos
+Busque no sumário (ou, na versão online, a tabela de conteúdos à esquerda) pelo conteúdo desejado. Caso queira algo mais
+específico, como algum teorema específico ou conceito que não conseguiu encontrar pelos títulos dos capítulos, consulte
+o índice no fim do livro.
+
+## Quem Somos
+Esse livro foi escrito pelos alunos do Bacharelado em Estatística do IME-USP, Gustavo S. Garone e Eduardo Yukio G. Ishihara
+Sob supervisão do [Prof. Artur Hideyuki Tomita](https://www.ime.usp.br/~tomita/) do departamento de matemática do IME-USP.
+
+Você pode nos contatar via email em [gustavo.garone arroba usp.br](mailto:gustavo.garone@usp.br)
+
+## Agradecimentos
+
+Esse projeto foi parcialmente financiado pelo [Programa Unificado de Bolsas](https://prip.usp.br/pub/) da 
+Universidade de São Paulo.
