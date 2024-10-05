@@ -9,9 +9,9 @@ book:
   author: "Artur H. Tomita, Eduardo Yukio G. Ishihara, Gustavo S. Garone"
   date: last-modified
   chapters:
+    - companheiro.qmd
     - part: "Bem-Vindo!"
       chapters:
-        - companheiro.qmd
         - prefacio.qmd
         - intro.qmd
     - part: "Matemática Elementar"
