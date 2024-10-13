@@ -1,7 +1,5 @@
 # Introdução
 
-# Introdução
-
 ## Apresentação do material
 
 Bom dia, boa tarde, boa noite e, para os desesperados, boa madrugada! 👋
@@ -94,8 +92,8 @@ quanto você!
 
 ## Hora de começarmos!
 
-A você, que dedicou seu tempo a ler as dicas e os textos introdutórios, devemos agradecer, é você a quem dedicamos 
-~~muitas~~ horas na produção de material e esperamos que a sua experiência com cálculo deixe de ser a história de terror 
-contada por muitos veteranos e torne-se uma agradável introdução ao fazer matemático! 
+A você, que dedicou seu tempo a ler as dicas e os textos introdutórios, devemos agradecer, é você a quem investimos 
+~~muitas~~ horas na produção do material e esperamos que a sua experiência com cálculo deixe de ser a história de terror 
+contada por muitos veteranos e torne-se uma agradável introdução ao fazer matemático!
 
 Nos vemos nos próximos capítulos! 🤩
