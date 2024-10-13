@@ -16,13 +16,17 @@ book:
         - intro.qmd
     - part: "Matemática Elementar"
       chapters:
+        - polinomios.qmd
         - matrizes.qmd
         - polinomio.qmd
     - part: "Introdução ao Cálculo"
     - part: "Aplicações do Cálculo"
     - part: "Álgebra Linear"
+      chapters:
+        - espacos-vetoriais.qmd
     - part: "Cálculo Multivariado"
       chapters:
+        - curvas.qmd
         - limites-multivariados.qmd
     - references.qmd
 
