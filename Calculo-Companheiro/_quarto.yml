@@ -18,7 +18,6 @@ book:
       chapters:
         - polinomios.qmd
         - matrizes.qmd
-        - polinomio.qmd
     - part: "Introdução ao Cálculo"
     - part: "Aplicações do Cálculo"
     - part: "Álgebra Linear"

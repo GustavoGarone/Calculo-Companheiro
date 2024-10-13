@@ -1,16 +1,101 @@
 # Introdução
 
+# Introdução
+
 ## Apresentação do material
 
 Bom dia, boa tarde, boa noite e, para os desesperados, boa madrugada! 👋
 
-Este material de apoio aos estudo e preparação para as disciplinas de Cálculo I e II foi financiado pelo [Programa Unificado de Bolsas](https://prip.usp.br/pub/) como um projeto de ensino do [Professor Dr. Artur Hideyuki Tomita](https://www.ime.usp.br/~tomita/) e produzido pelos discentes [Gustavo Silva Garone](gustavo.garone@usp.br) e [Eduardo Yukio G. Ishihara](eduardoyukio.ishihara@usp.br), ambos do Instituto de Matemática e Estatística (:red_circle: :white_circle: ). Por favor, sinta-se livre para enviar-nos um e-mail com correções, recomendações, elogios ou críticas. Este projeto está constantemente sendo produzido, mantido e corrigido, então ficaremos mais do que felizes em receber sua opinião.
+Este material de apoio aos estudo e preparação para as disciplinas de Cálculo I e II foi financiado pelo 
+[Programa Unificado de Bolsas](https://prip.usp.br/pub/) como um projeto de ensino do 
+[Professor Dr. Artur Hideyuki Tomita](https://www.ime.usp.br/~tomita/) e produzido pelos discentes 
+[Gustavo Silva Garone](gustavo.garone@usp.br) e [Eduardo Yukio G. Ishihara](eduardoyukio.ishihara@usp.br), ambos do 
+Instituto de Matemática e Estatística (🔴⚪). Por favor, sinta-se livre para enviar-nos um e-mail com correções, 
+recomendações, elogios ou críticas. Este projeto está constantemente sendo produzido, mantido e corrigido, então 
+ficaremos mais do que felizes em receber sua opinião.
 
-Independentemente se este é o seu primeiro ano ou não da faculdade, muito provavelmente já ouviu atrocidades sobre ~~o terror dos cursos de exatas~~ Cálculo Diferencial e Integral. É exatamente por conta dessa mística construída ao redor de uma das disciplinas mais fundamentais para a matemática que nasce o projeto. Somos estudantes fazendo um material para estudantes (sob a supervisão de um professor), o que nos dá uma visão muito mais próxima da real experiência que você, leitor, provavelmente está passando agora. Buscamos o equilíbrio entre o rigor exigido pelo fazer matemático e a informalidade que gera interesse.
+Independentemente se este é o seu primeiro ano ou não da faculdade, muito provavelmente já ouviu atrocidades sobre 
+~~o terror dos cursos de exatas~~ Cálculo Diferencial e Integral. É exatamente por conta dessa mística construída ao 
+redor de uma das disciplinas mais fundamentais para a matemática que nasce o projeto. Somos estudantes fazendo um 
+material para estudantes (sob a supervisão de um professor), o que nos dá uma visão muito mais próxima da real 
+experiência que você, leitor, provavelmente está passando agora. Buscamos o equilíbrio entre o rigor exigido pelo fazer 
+matemático e a informalidade que gera interesse.
 
-Para todos os tópicos, tentaremos apresentá-los seguindo uma sequência lógica e didática composta por uma introdução fundamentada na sua intuição, algumas aplicações reais do tópico para os diversos cursos, introdução à teoria, formalização da teoria, formalização dos exemplos, alguns exercícios de apoio e, por fim, soluções comentadas. Uma segunda característica notável no material é a divisão dos temas em "importantes" e "opcionais". Por mais que sejamos obrigados a dizer que todos os tópicos da matéria são igualmente importantes em sua íntegra, alguns terão menor aplicações e outros serão frequentemente requeridos em matérias futuras. Por fim, sempre que possível, apresentaremos interpretações alternativas aos conceitos debatidos em cada tópico. Por exemplo, no estudo do determinante de matrizes, trataremos os determinantes primeiro como uma construção algébrica, pois, apesar de abstrato, é mais direto e é o mínimo necessário para a sua aplicação, apesar de raso, e, em seguida, apresentaremos o determinante sob uma perspectiva geométrica, que é um primeiro contato com a algebra linear e as transformações lineares.
+Para todos os tópicos, tentaremos apresentá-los seguindo uma sequência lógica e didática composta por uma introdução 
+fundamentada na sua intuição, algumas aplicações reais do tópico para os diversos cursos, introdução à teoria, 
+formalização da teoria, formalização dos exemplos, alguns exercícios de apoio e, por fim, soluções comentadas. 
+Uma segunda característica notável no material é a divisão dos temas em "importantes" e "opcionais". Por mais que 
+sejamos obrigados a dizer que todos os tópicos da matéria são igualmente importantes em sua íntegra, alguns terão menor 
+aplicações e outros serão frequentemente requeridos em matérias futuras. 
+
+Finalmente, sempre que possível, apresentaremos interpretações alternativas aos conceitos debatidos em cada tópico. Por 
+exemplo, no estudo do determinante de matrizes, trataremos os determinantes primeiro como uma construção algébrica, 
+pois, apesar de abstrato, é mais direto e é o mínimo necessário para a sua aplicação, apesar de raso, e, em seguida, 
+apresentaremos o determinante sob uma perspectiva geométrica, que é um primeiro contato com a algebra linear e as 
+transformações lineares.
 
 ## Estudando Matemática
 
-Se você é do IME, este tópico provavelmente estendê-se-á a quase todas as outras matérias, mas, para os outros institutos, o estudo rigoros da matemática pode ser um tópico exótico até agora. Uma parte significativa dos docentes diria que as notas devem ser a menor preocupação do aluno e que o verdadeiro objetivo da disciplina é aprender o conteúdo e, se possível, divertir-se no processo, mas sabemos que tal realidade é muito distante para quase todos nós meros mortais.
-A primeira caractarística notável que você pode notar na matemática é que é impossível decorar tudo que pode cair numa prova
+Se você é do IME, este tópico provavelmente estendê-se-á a quase todas as outras matérias, mas, para os outros 
+institutos, o estudo rigoros da matemática pode ser um tópico exótico até agora. Uma parte significativa dos docentes 
+diria que as notas devem ser a menor preocupação do aluno e que o verdadeiro objetivo da disciplina é aprender o 
+conteúdo e, se possível, divertir-se no processo, mas sabemos que tal realidade é muito distante para quase todos nós 
+meros mortais.
+
+### A aquisição da Intuição
+
+Aprender matemática ocorre por meio do entendimento dos processos e pelo desenvolvimento disto que podemos chamar de 
+"intuição matemática". Considere o seguinte problema:
+
+>Um laboratório de química contém tubos de ensaios idênticos e não identificados. Cada tubo de ensaio contém 5g ou 8g 
+de um sal. Um estudante chegou ao laboratório e notou que 10 tubos estavam vazios e o seus conteúdos foram depositado 
+em um becker. Após os devidos procedimentos, o estudante constatou que havia 59g do sal no becker.
+Quantos tubos de cada tipo foram usados?
+
+Apesar de nunca ter visto este exato problema antes, não é difícil perceber que ele requer um sistema linear não 
+homogêneo (tudo bem se você não compreende muito bem o que todas essas palavras querem dizer) e conclua que foram 
+usados 7 tubos de 5g e 3 tubos de 8g. O seu primeiro passo para resolver o problema foi, muito provavelmente, lê-lo. Em 
+seguida, sua intuição e sua experiência indicaram que a estrutura do problema assemelha-se aos problemas de sistemas 
+lineares vistos anteriormente na sua vida. Então, você aplicou os valores corretos e atribuiu as variáveis corretas para 
+montar e sistema e, por fim, resolveu-o utilizando o seu método favorito. Tudo isso ocorre sem que você tenha, 
+necessariamente, notado. Essa é a "intuição matemática".
+
+Alternativamente, algumas pessoas podem ter resolvido com um método alternativo de Cálculo Hipotético Universal Técnico 
+Estimativo (CHUTE), mas saiba que também há muita intuição por trás disso! Teoricamente, havia infinitas possibilidades 
+para serem "chutadas". Como sabemos que $\pi$ não é a resposta? E, talvéz, $(5.2, 8,5, \sqrt{5}, 3)$?
+Chutar 7 tubos de 5g e 3 tubos de 8g não é tão óbvio (evitaremos essa palavra no decorrer do texto por motivos óbvios) 
+quanto pode parecer, apesar do problema ser simples. Para chegar à resposta, a pessoa deve compreender algumas coisas:
+
+* A resposta deve ser o número de tubos de 8g e o número de tubos de 5g (dois números ao todo)
+* O número de tubos é um número natural (inteiro não negativo)
+* 8 vezes o número de tubos de 8g mais 5 vezes o número de tubos de 5g é igual a 65g
+
+Acredite ou não, você também chegou a todas essas conclusões sem nem pensar sobre! Parabéns, esse é o passo fundamental 
+para a nossa jornada de aprender matemática, em especial Cálculo I e II!
+
+### A prática leva à perfeição
+
+A próxima lição sobre o aprendizado da matemática pode soar repetitiva, mas gostaríamos de lembrar: apender matemática é 
+um processo muito difícil de ser acelerado. Tentar aprender um conteúdo na noite antes da prova é como tentar pegar uma 
+faca caindo: pode ser um feito sensacional ou uma épica tragédia! Apesar de defendermos o papel da intuição no fazer 
+matemáico, não podemos estar limitados a ela e é daí que surge o rigor matemático. Quando formalizamos um conceito, 
+ganhamos a capacidade de facilmente aplicar aquele método em situações semelhantes e conseguimos explorar até o extremo. 
+É assim que muitas das áreas da matemática foram criadas (ou descobertas). Primeiro, você aprendeu a "tirar a raiz 
+quadrada" de números quadrados perfeitos (1, 4, 9, 25...). Depois, estendeu o conceitos para outros números inteiros o 
+que gerou o conjunto dos números irracionais (aqueles que não podem ser escritos como uma fração de inteiros). Por fim, 
+pode ter estendido a raiz quadrada para os números negativos, o que gerou o conjuntos dos números imaginários (fique
+tranquilo, pois este não é um conteúdo obrigatório para cálculo, mas ainda assim preparamos uma sessão dedicada a eles).
+
+Uma boa prática é dedicar uma hora de estudo para essa disciplina nos dias em que ela é oferecida, assim como para as 
+outras matérias. Se possível, revise a matéria, faça exercícios indicados pelo professor ou os que escontrar neste 
+material, estudo em grupo e, acima de tudo, ajude seus colegas. Ensinar outra pessoa é uma das melhores maneiras de 
+ficar e testa os seus conhecimentos, além de ajudar uma pessoa que provavelmente não entendeu o conteúdo tão rapidamente 
+quanto você!
+
+## Hora de começarmos!
+
+A você, que dedicou seu tempo a ler as dicas e os textos introdutórios, devemos agradecer, é você a quem dedicamos 
+~~muitas~~ horas na produção de material e esperamos que a sua experiência com cálculo deixe de ser a história de terror 
+contada por muitos veteranos e torne-se uma agradável introdução ao fazer matemático! 
+
+Nos vemos nos próximos capítulos! 🤩
