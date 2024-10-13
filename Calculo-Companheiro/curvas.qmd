@@ -76,10 +76,10 @@ $$
 Dessa forma, assim como as funções univariadas que estamos acostumados, uma curva é contínua em determinado ponto se existe
 o limite dela nesse ponto.
 
-## Derivadas
+## Derivadas e integrais
 Para os atenciosos, reconhecer que podemos tirar o limite de uma curva em determinado ponto já soa um sinal.
 Podemos encontrar as derivadas? Vamos tentar aplicar a definição da derivada univariada em a de uma curva $\gamma(t) = (t^2, t)$
-$$
+$$''
 \lim_{t\rightarrow a} \frac{\gamma(t)-\gamma(a)}{t-a}
 $$
 
@@ -92,6 +92,7 @@ $$
 
 Concluímos que $\gamma(t)' = (f_{1}(t)', f_{2}(t)')$.
 
-## Integrais
-
-
+Com o mesmo raciocínio, podemos integrar curvas
+$$
+\int_{a}^{b} \gamma(t)dt = \left(\int_{a}^{b} f_{1}(t)dt, \int_{a}^{b}f_{2}(t)dt\right)
+$$
