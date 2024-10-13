@@ -17,6 +17,7 @@ book:
     - part: "Matemática Elementar"
       chapters:
         - matrizes.qmd
+        - polinomio.qmd
     - part: "Introdução ao Cálculo"
     - part: "Aplicações do Cálculo"
     - part: "Álgebra Linear"
