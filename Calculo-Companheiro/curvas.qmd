@@ -1,0 +1,98 @@
+# Curvas
+
+Um dos principais objetos matemáticos no estudo de cálculo são as *curvas*, funções contínuas que mapeiam intervalos dos
+números reais para espaços vetoriais, como $\mathbb{R}^2, \mathbb{R}^3,\ldots,\mathbb{R}^n$, ou seja, para um intervalo 
+$I$, dos reais, uma curva é tal que $\gamma : I \rightarrow \mathbb{R}^n$. Dessa forma, seu domínio é o próprio intervalo
+$I$, seu contradomínio é $\mathbb{R}^n$ e sua imagem é o conjunto $\{\gamma(t) \in \mathbb{R}^n : t \in I\}$. Essa imagem,
+também chamada de trajetória de $\gamma$, é o lugar geométrico descrito como o resultado dessa função conforme t varia por
+seu domínio.
+
+um exemplo de uma simples curva parametrizada por $t$:
+$$
+\begin{aligned}
+    \gamma(t) = (t, -t) \Rightarrow \gamma(1) = (1, -1); \gamma(0) = (0,0). \mathrm{Imagem}\gamma = 
+    \text{ reta de equações paramétricas } 
+    \begin{cases}
+        x = t \\
+        y = -t
+    \end{cases}
+\end{aligned}
+$$
+
+Dessa forma, vimos que curvas podem ser coisas muito simples, como a reta acima, ou figuras mais complexas, como parábolas
+$\gamma(t) = (t, t^2 + t + 1)$, circunferências $\gamma(t) = (\cos(t),\mathrm{sin}(t)), t \in [0, 2\pi]$ ou até espirais, 
+como nosso DNA, $\gamma(t) = (t, \cos(t), \mathrm{sin}(t))$ (note que esse é 3d! podemos escolher qualquer dimensão para
+nossas curvas).
+
+## Domínio de uma curva
+
+Ao criarmos curvas, precisamos nos atentar ao seu domínio. Uma curva parametrizada por $t$ deve ter seus $t$s num intervalo
+que faça sentido para sua forma. Por exemplo, em uma curva como $\gamma : I \rightarrow \mathbb{R}^2, \gamma(t) = (-t, \sqrt(2))$,
+t só pode assumir valores positivos por seu contradomínio ser um vetor de números reais ($\mathbb{R}^2$) e não os números
+complexos $\mathbb{C}$. Dessa forma, podemos descrever o domínio de $\gamma$ como $\mathbb{R}^{+}$, os números reais positivos.
+
+As vezes precisamos ser ainda mais precisos. Considere a curva 
+$\gamma : I \rightarrow \mathbb{R}^2, \gamma(t) = \left(t^2, \frac{1}{t-2}\right)$. Com algum cuidado, percebemos
+rapidamente que essa função não estaria definida para $t = 2$ (por quê?). Sendo assim, seu domínio, $I$, pode ser descrito
+como $\mathbb{R} \setminus \{2\}$, ou seja, todo o conjunto de números reais *exceto* o número 2.
+
+## Operações numa curva
+
+Curvas comportam-se similarmente à funções que conhecemos. Podemos multiplicá-los por valores reais
+$$
+\lambda \in \mathbb{R}, (\lambda\gamma)(t) = \lambda\gamma(t)
+$$
+
+Podemos somá-las
+$$
+(\gamma_{1} + \gamma_{2})(t) = \gamma_{1}(t) + \gamma_{2}(t); 
+$$
+
+Podemos multiplicá-las por funções com contradomínio nos reais e de mesmo domínio, (chamadas funções escalares, 
+$f : I \rightarrow \mathbb{R}$, são as funções que conhecemos e trabalhamos em cáculo univariado).
+$$
+(f\gamma)(t) = f(t)\gamma(t)
+$$
+
+Podemos também obter o *produto escalar* entre duas curvas como vimos em nosso estudo de espaços vetoriais
+$$
+(\gamma_{1} \cdot \gamma_{2})(t) = \gamma_{1}(t) \cdot \gamma_{2}(t)
+$$
+
+**Exercício** Dado as curvas $gamma_{1} = (t, 7 - t), \gamma_{2} = \left(\frac{t}{3}, t^2\right)$, a função escalar $f(t) = \mathrm{e}^t$
+e uma constante real $\lambda = 2\pi$, verifique as propriedades acima. Você consegue esboçar os gráficos da imagem de $\gamma_{1}$
+e $\gamma_{2}$?
+
+## Continuidade e limites de curvas
+
+Ao tomarmos um limite de uma curva num ponto a, $\lim_{t\rightarrow a} \gamma(t)$, pode ser avaliado como o limite de cada
+componente do vetor da imagem. Ou seja, para uma curva como $\gamma(t) = \left(\frac{\mathrm{sen}(t)}{t}, \frac{1}{\ln{t}}\right)$
+temos 
+$$
+\lim_{t\rightarrow 0}\gamma(t) = \left(\lim_{t\rightarrow 0} \frac{\mathrm{sen}(t)}{t}, 
+\lim_{t\rightarrow 0} \frac{1}{\ln{t}}\right)  = (1, 0)
+$$
+
+Dessa forma, assim como as funções univariadas que estamos acostumados, uma curva é contínua em determinado ponto se existe
+o limite dela nesse ponto.
+
+## Derivadas e integrais
+Para os atenciosos, reconhecer que podemos tirar o limite de uma curva em determinado ponto já soa um sinal.
+Podemos encontrar as derivadas? Vamos tentar aplicar a definição da derivada univariada em a de uma curva $\gamma(t) = (t^2, t)$
+$$''
+\lim_{t\rightarrow a} \frac{\gamma(t)-\gamma(a)}{t-a}
+$$
+
+Chamando os componentes de $\gamma(t)$ de $f_{1}(t)$ e $f_{2}(t)$, podemos aplicar o que vimos anteriormente dos limites
+para passar a derivada "para o lado de dentro"
+$$
+\lim_{t\rightarrow a} \frac{\gamma(t) - \gamma(a)}{t-a} = \left(\lim_{t \rightarrow a} \frac{f_{1}(t) - f_{1}(a)}{t-a},
+\lim_{t \rightarrow a}\frac{f_{2}(t)-f_{2}(a}{t-a} \right) = (2a, 1)
+$$
+
+Concluímos que $\gamma(t)' = (f_{1}(t)', f_{2}(t)')$.
+
+Com o mesmo raciocínio, podemos integrar curvas
+$$
+\int_{a}^{b} \gamma(t)dt = \left(\int_{a}^{b} f_{1}(t)dt, \int_{a}^{b}f_{2}(t)dt\right)
+$$

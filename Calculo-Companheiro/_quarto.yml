@@ -6,13 +6,23 @@ project:
 book:
   language: pt
   title: "Cálculo Companheiro"
-  author: "Arthur H. Tomita, Eduardo Yukio G. Ishihara, Gustavo S. Garone"
-  date: "12/31/9999"
+  author: "Artur H. Tomita, Eduardo Yukio G. Ishihara, Gustavo S. Garone"
+  date: last-modified
   chapters:
     - index.qmd
-    - summary.qmd
-    - intro.qmd
-    - matrizes.qmd
+    - prefacio.qmd
+    - part: "Bem-Vindo!"
+      chapters:
+        - intro.qmd
+    - part: "Matemática Elementar"
+      chapters:
+        - matrizes.qmd
+    - part: "Introdução ao Cálculo"
+    - part: "Aplicações do Cálculo"
+    - part: "Álgebra Linear"
+    - part: "Cálculo Multivariado"
+      chapters:
+        - limites-multivariados.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -26,8 +36,13 @@ format:
     documentclass: scrreprt
     # cite-method: biblatex
     include-in-header:
-      - text: |
-          \usepackage[makeroom]{cancel}
+      text: |
+        \usepackage[makeroom]{cancel}
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body:
+      text: |
+        \printindex
 
 # header-includes:
     # - \usepackage[makeroom]{cancel}
