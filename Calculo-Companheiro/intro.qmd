@@ -2,3 +2,14 @@
 
 # TODO
 texto bonitinho sobre matematica e como estudar e tals etc etc
+
+Bom dia, boa tarde, boa noite e, para os desesperados, boa madrugada. 
+
+Este material de apoio aos estudo e preparação para as disciplinas de Cálculo I e II foi produzido como um projeto de ensino do [Professor Dr. Artur Hideyuki Tomita](https://www.ime.usp.br/~tomita/) pelos discentes [Gustavo Silva Garone]() e [Eduardo Yukio G. Ishihara]().
+
+Independentemente se este é o seu primeiro ano ou não da faculdade, muito provavelmente já ouviu atrocidades sobre o "terror dos cursos de exatas": Cálculo Diferencial e Integral. É exatamente por conta dessa mística construída ao redor de uma das disciplinas mais fundamentais para a matemática que nasce o projeto. Somos estudantes fazendo um material para estudantes (sob a supervisão de um professor), o que nos dá uma visão muito mais próxima da real experiência que você, leitor, provavelmente está passando agora. 
+
+Para todos os tópicos, tentaremos apresentá-los seguindo uma sequência lógica e didática composta por uma introdução intuitiva, algumas aplicações reais para diversos cursos, introdução à teoria, formalização da teoria, formalização dos exemplos e alguns exercícios de apoio. Uma segunda característica notável no material é a divisão dos temas em "importantes" e "opcionais". Por mais que sejamos obrigados a dizer que todos os tópicos da matéria são importantes em sua íntgra, alguns terão menor aplicações e outros serão frequentemente requeridos em matérias futuras. Por fim, sempre que possível, apresentaremos interpretações alternativas aos conceitos debatidos em cada tópico, por exemplo, no estudo do determinante de matrizes, trataremos os determinantes primeiro como uma construção algébrica, pois é mais simples, apesar de mais raso, e, em seguida, apresentaremos o determinante sob uma perspectiva geométrica, que é um primeiro contato com a algebra linear e as transformações lineares.
+
+
+texto só pra dar um commit, sla! aaaaa

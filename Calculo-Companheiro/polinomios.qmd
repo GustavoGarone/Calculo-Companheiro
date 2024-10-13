@@ -1,0 +1,2 @@
+# TODO
+Definição de polinômio, grau, adição, multiplicação fatoração, equações, relações de Girards, binômio de newton, teorema do resto, divisão de polinômios pelo método da chave e Briot-ruffini, o que são as raízes de um polinômio, introdução ao desenho de polinômios (sem cálculo), polinômios como funções compostas, aplicações de polinômios, interpolação, introdução aos números complexos e uma menção ao conceito de séries.
