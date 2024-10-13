@@ -10,7 +10,8 @@ seu domínio.
 um exemplo de uma simples curva parametrizada por $t$:
 $$
 \begin{aligned}
-    \gamma(t) = (t, -t) \Rightarrow \gamma(1) = (1, -1); \gamma(0) = (0,0). \mathrm{Imagem}\gamma = 
+    \gamma(t) = (t, -t) \Rightarrow \gamma(1) = (1, -1); \gamma(0) = (0,0). \\ 
+    \mathrm{Imagem}\gamma = \mathrm{Im}\gamma =
     \text{ reta de equações paramétricas } 
     \begin{cases}
         x = t \\
@@ -48,8 +49,8 @@ $$
 (\gamma_{1} + \gamma_{2})(t) = \gamma_{1}(t) + \gamma_{2}(t); 
 $$
 
-Podemos multiplicá-las por funções com contradomínio nos reais e de mesmo domínio, (chamadas funções escalares, 
-$f : I \rightarrow \mathbb{R}$, são as funções que conhecemos e trabalhamos em cáculo univariado).
+Podemos multiplicá-las por funções com contradomínio nos reais e de mesmo domínio, (chamadas funções escalares, $f : I \rightarrow \mathbb{R}$,
+são as funções que conhecemos e trabalhamos em cáculo univariado).
 $$
 (f\gamma)(t) = f(t)\gamma(t)
 $$
