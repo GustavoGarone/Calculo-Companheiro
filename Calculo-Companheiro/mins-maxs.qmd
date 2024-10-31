@@ -1,0 +1,3 @@
+# Mínimos e Máximos
+
+Veremos nesse capítulo uma retomada do que aprendemos quando falamos do [Teorema de Weierstrass]
