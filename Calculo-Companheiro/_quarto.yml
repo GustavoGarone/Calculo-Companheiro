@@ -2,6 +2,9 @@ lang: pt
 
 project:
   type: book
+  
+filters:
+  - diagram
 
 book:
   language: pt
@@ -19,6 +22,8 @@ book:
         - polinomios.qmd
         - matrizes.qmd
     - part: "Introdução ao Cálculo"
+      chapters:
+        - weierstrass.qmd
     - part: "Aplicações do Cálculo"
     - part: "Álgebra Linear"
       chapters:
@@ -39,7 +44,7 @@ format:
     # cite-method: biblatex
   pdf:
     documentclass: scrreprt
-    # cite-method: biblatex
+    cite-method: biblatex
     include-in-header:
       text: |
         \usepackage[makeroom]{cancel}

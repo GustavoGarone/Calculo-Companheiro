@@ -1,3 +1,34 @@
 # Mínimos e Máximos
+<!-- ```{=latex}
+\begin{tikzpicture}
+\draw (0,0) grid (5,5);
+\end{tikzpicture}
+```  -->
 
-Veremos nesse capítulo uma retomada do que aprendemos quando falamos do [Teorema de Weierstrass]
+```{r, engine = 'tikz'}
+\begin{tikzpicture}
+\draw (0,0) -- (5,5);
+\begin{tikzpicture}
+```
+
+Veremos primeiro nesse capítulo uma retomada do que aprendemos quando falamos do [Teorema de Weierstrass](weierstrass.qmd),
+então exploraremos com mais formalidade o que são mínimos e máximos e algumas técnicas para encontrá-los quando falamos de
+funções multivariadas.
+
+## Valor de mínimo/máximo e ponto de mínimo/máximo
+Chamamos de valor máximo ou simplesmente máximo de uma função $f: A \rightarrow B$, o valor $f(x)$ tal que
+$f(x) \geq f(a)$ para todo $a$ no domínio $A$ da função, ou seja, o maior que uma função pode atingir!
+
+O mesmo se aplica para o mínimo: $f(x)$ é chamado de valor mínimo se $f(x) \leq f(a)$ para todo $a$ no domínio.
+
+Nesses casos, como $f(x)$ é chamado de valor de máximo/mínimo, $x$ é chamado de ponto de máximo/mínimo.
+
+## Condições para existência de um máximo e mínimo
+
+Algumas funções possuem mínimo, mas não máximo, como a clássica parábola $f(x) = x^2$. Outras, por sua vez, possuem máximo,
+mas não mínimo, como o gêmeo do mal dessa última função: $g(x) = -x^2$. Outras funções, por sua vez, não gostam de se limitar:
+$h(x) = x$ não possuí máximo ou mínimo.
+
+Se você está bem iterado com nosso capítulo sobre o Teorema de Weierstrass do cálculo univariado, você prontamente se lembra
+que, para uma função garantidamente possuir máximo e mínimo, basta que seu domínio seja *limitado* (ou seja, não vá para
+mais ou menos infinito) e *fechado*
