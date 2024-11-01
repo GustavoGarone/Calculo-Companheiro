@@ -5,6 +5,8 @@ project:
   
 filters:
   - diagram
+diagram:
+  cache: false
 
 book:
   language: pt
@@ -42,6 +44,7 @@ format:
   html:
     theme: cosmo
     # cite-method: biblatex
+    extract-media: ./tikzdesigns/
   pdf:
     documentclass: scrreprt
     cite-method: biblatex

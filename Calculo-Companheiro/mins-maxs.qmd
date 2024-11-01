@@ -1,15 +1,20 @@
-# Mínimos e Máximos
-<!-- ```{=latex}
-\begin{tikzpicture}
-\draw (0,0) grid (5,5);
-\end{tikzpicture}
-```  -->
+# Teste Tikz
+This renders TiKZ diagrams in markdown.
 
-```{r, engine = 'tikz'}
+``` tikz
+%%| format: svg
+%%| filename: exemplo-tikz
 \begin{tikzpicture}
-\draw (0,0) -- (5,5);
-\begin{tikzpicture}
+\node[draw, circle] (A) at (0,0) {A};
+\node[draw, circle] (B) at (2,2) {$\phi$};
+\node[draw, circle] (C) at (4,0) {C};
+\node[draw, circle] (seven) at (5,1) {888888};
+\draw[->] (A) -- (B);
+\draw[->] (B) -- (C);
+\draw[->] (C) -- (A);
+\end{tikzpicture}
 ```
+# Mínimos e Máximos - Aprofundamento
 
 Veremos primeiro nesse capítulo uma retomada do que aprendemos quando falamos do [Teorema de Weierstrass](weierstrass.qmd),
 então exploraremos com mais formalidade o que são mínimos e máximos e algumas técnicas para encontrá-los quando falamos de
