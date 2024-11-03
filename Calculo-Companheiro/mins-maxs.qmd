@@ -1,19 +1,3 @@
-# Teste Tikz
-This renders TiKZ diagrams in markdown.
-
-``` tikz
-%%| format: svg
-%%| filename: exemplo-tikz
-\begin{tikzpicture}
-\node[draw, circle] (A) at (0,0) {A};
-\node[draw, circle] (B) at (2,2) {$\phi$};
-\node[draw, circle] (C) at (4,0) {C};
-\node[draw, circle] (seven) at (5,1) {888888};
-\draw[->] (A) -- (B);
-\draw[->] (B) -- (C);
-\draw[->] (C) -- (A);
-\end{tikzpicture}
-```
 # Mínimos e Máximos - Aprofundamento
 
 Veremos primeiro nesse capítulo uma retomada do que aprendemos quando falamos do [Teorema de Weierstrass](weierstrass.qmd),
@@ -28,12 +12,68 @@ O mesmo se aplica para o mínimo: $f(x)$ é chamado de valor mínimo se $f(x) \l
 
 Nesses casos, como $f(x)$ é chamado de valor de máximo/mínimo, $x$ é chamado de ponto de máximo/mínimo.
 
+Também podemos considerar, ao invés de mínimos e máximos de toda a função, mínimos e máximos locais.
+
 ## Condições para existência de um máximo e mínimo
 
-Algumas funções possuem mínimo, mas não máximo, como a clássica parábola $f(x) = x^2$. Outras, por sua vez, possuem máximo,
-mas não mínimo, como o gêmeo do mal dessa última função: $g(x) = -x^2$. Outras funções, por sua vez, não gostam de se limitar:
-$h(x) = x$ não possuí máximo ou mínimo.
+Algumas funções possuem mínimo global, mas não máximo, como a clássica parábola $f(x) = x^2$.
+
+``` tikz
+%%| format: svg
+%%| filename: parabolaMin
+\begin{tikzpicture}[domain=-2:2]
+    \draw[very thin, color =gray] (-3.9,-0.9) grid (3.9,3.9)
+    \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
+    \draw[->] (0,-1.1) -- (0,4.1) node[above] {$f(x)$};
+    \draw[color=blue] plot (\x, \x*\x) node[right] {$f(x)=x^2$}
+    \draw[fill=black] \Point circle (0.05) node[below right] {$\text{Mínimo}$};
+\end{tikzpicture}
+```
+
+Outras, por sua vez, possuem máximo,
+mas não mínimo, como o gêmeo do mal dessa última função: $g(x) = -x^2$. 
+``` tikz
+%%| format: svg
+%%| filename: parabolaMax
+\begin{tikzpicture}[domain=-2:2]
+    \draw[very thin, color =gray] (-3.9,-3.9) grid (3.9,0.9)
+    \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
+    \draw[->] (0,-4.1) -- (0,1.1) node[above] {$f(x)$};
+    \draw[color=red] plot (\x, -\x*\x) node[right] {$f(x)=-x^2$}
+    \draw[fill=black] \Point circle (0.05) node[above right] {$\text{Máximo}$};
+\end{tikzpicture}
+```
+Outras funções, por sua vez, não gostam de se limitar: $h(x) = x$ não possuí máximo ou mínimo.
+``` tikz
+%%| format: svg
+%%| filename: identidade
+\begin{tikzpicture}[domain=-2.2:2.2]
+    \draw[very thin, color =gray] (-2.1,-2.1) grid (2.1,2.1)
+    \draw[->] (-2.1,0) -- (2.1,0) node[right] {$x$};
+    \draw[->] (0,-2.1) -- (0,2.1) node[above] {$f(x)$};
+    \draw[color=blue] plot (\x, \x) node[right] {$f(x)=x$}
+\end{tikzpicture}
+```
 
 Se você está bem iterado com nosso capítulo sobre o Teorema de Weierstrass do cálculo univariado, você prontamente se lembra
 que, para uma função garantidamente possuir máximo e mínimo, basta que seu domínio seja *limitado* (ou seja, não vá para
-mais ou menos infinito) e *fechado*
+mais ou menos infinito) e *fechado*. Uma consequência disso é que, caso escolhamos olhar para uma função qualquer em um intervalo fechado de seu domínio, conseguiremos encontrar pontos de *máximo e mínimo locais*. Vamos tomar nossa última função, $f(x) = x$ como exemplo limitando-a ao intervalo $[-1,1]$
+
+``` tikz
+%%| format: svg
+%%| filename: identidadeLimitada
+\begin{tikzpicture}[domain=-2.2:2.2]
+    \draw[very thin, color =gray] (-2.1,-2.1) grid (2.1,2.1)
+    \draw[->] (-2.1,0) -- (2.1,0) node[right] {$x$};
+    \draw[->] (0,-2.1) -- (0,2.1) node[above] {$f(x)$};
+    \draw[dashed, color = red] (-1,-2) -- (-1,2) node [above] {$x=1$}
+    \draw[dashed, color = red] (1,-2) -- (1,2) node [above] {$x=-1$}
+    \draw[color=blue, domain=-1:1] plot (\x, \x) node[below right] {$f(x)=x, x \in [-1,1]$}
+    \draw[color=lightblue, domain=-2:-1, dotted] plot (\x, \x) node[right]
+    \draw[color=lightblue, domain=1:2, dotted] plot (\x, \x) node[right]
+    \draw[fill=black] (-1,-1) \Point circle (0.05) node [above] {$\text{Min. Local}$}
+    \draw[fill=black] (1,1) \Point circle (0.05) node [above] {$\text{Max. Local}$}
+\end{tikzpicture}
+```
+
+Temos uma visualização do Teorema de Weierstrass: toda função fechada e limitada possuí ponto de máximo e mínimo.
