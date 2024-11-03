@@ -22,11 +22,11 @@ Algumas funções possuem mínimo global, mas não máximo, como a clássica par
 %%| format: svg
 %%| filename: parabolaMin
 \begin{tikzpicture}[domain=-2:2]
-    \draw[very thin, color =gray] (-3.9,-0.9) grid (3.9,3.9)
+    \draw[very thin, color =gray] (-3.9,-0.9) grid (3.9,3.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
     \draw[->] (0,-1.1) -- (0,4.1) node[above] {$f(x)$};
-    \draw[color=blue] plot (\x, \x*\x) node[right] {$f(x)=x^2$}
-    \draw[fill=black] \Point circle (0.05) node[below right] {$\text{Mínimo}$};
+    \draw[color=blue] plot (\x, \x*\x) node[right] {$f(x)=x^2$};
+    \draw[fill=black] (0,0) circle (0.05) node[below right] {Mínimo};
 \end{tikzpicture}
 ```
 
@@ -36,11 +36,11 @@ mas não mínimo, como o gêmeo do mal dessa última função: $g(x) = -x^2$.
 %%| format: svg
 %%| filename: parabolaMax
 \begin{tikzpicture}[domain=-2:2]
-    \draw[very thin, color =gray] (-3.9,-3.9) grid (3.9,0.9)
+    \draw[very thin, color =gray] (-3.9,-3.9) grid (3.9,0.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
     \draw[->] (0,-4.1) -- (0,1.1) node[above] {$f(x)$};
-    \draw[color=red] plot (\x, -\x*\x) node[right] {$f(x)=-x^2$}
-    \draw[fill=black] \Point circle (0.05) node[above right] {$\text{Máximo}$};
+    \draw[color=red] plot (\x, -\x*\x) node[right] {$f(x)=-x^2$};
+    \draw[fill=black] (0,0) circle (0.05) node[above right] {Máximo};
 \end{tikzpicture}
 ```
 Outras funções, por sua vez, não gostam de se limitar: $h(x) = x$ não possuí máximo ou mínimo.
@@ -48,10 +48,10 @@ Outras funções, por sua vez, não gostam de se limitar: $h(x) = x$ não possu�
 %%| format: svg
 %%| filename: identidade
 \begin{tikzpicture}[domain=-2.2:2.2]
-    \draw[very thin, color =gray] (-2.1,-2.1) grid (2.1,2.1)
+    \draw[very thin, color =gray] (-2.1,-2.1) grid (2.1,2.1);
     \draw[->] (-2.1,0) -- (2.1,0) node[right] {$x$};
     \draw[->] (0,-2.1) -- (0,2.1) node[above] {$f(x)$};
-    \draw[color=blue] plot (\x, \x) node[right] {$f(x)=x$}
+    \draw[color=blue] plot (\x, \x) node[right] {$f(x)=x$};
 \end{tikzpicture}
 ```
 
@@ -63,17 +63,16 @@ mais ou menos infinito) e *fechado*. Uma consequência disso é que, caso escolh
 %%| format: svg
 %%| filename: identidadeLimitada
 \begin{tikzpicture}[domain=-2.2:2.2]
-    \draw[very thin, color =gray] (-2.1,-2.1) grid (2.1,2.1)
+    \draw[very thin, color =gray] (-2.1,-2.1) grid (2.1,2.1);
     \draw[->] (-2.1,0) -- (2.1,0) node[right] {$x$};
     \draw[->] (0,-2.1) -- (0,2.1) node[above] {$f(x)$};
-    \draw[dashed, color = red] (-1,-2) -- (-1,2) node [above] {$x=1$}
-    \draw[dashed, color = red] (1,-2) -- (1,2) node [above] {$x=-1$}
-    \draw[color=blue, domain=-1:1] plot (\x, \x) node[below right] {$f(x)=x, x \in [-1,1]$}
-    \draw[color=lightblue, domain=-2:-1, dotted] plot (\x, \x) node[right]
-    \draw[color=lightblue, domain=1:2, dotted] plot (\x, \x) node[right]
-    \draw[fill=black] (-1,-1) \Point circle (0.05) node [above] {$\text{Min. Local}$}
-    \draw[fill=black] (1,1) \Point circle (0.05) node [above] {$\text{Max. Local}$}
+    \draw[dashed, color = red] (-1,-2) -- (-1,2) node [above] {$x=1$};
+    \draw[dashed, color = red] (1,-2) -- (1,2) node [above] {$x=-1$};
+    \draw[color=blue, domain=-1:1] plot (\x, \x) node[below right] {$f(x)=x, x \in [-1,1]$};
+    \draw[color=blue, domain=-2:-1, dotted] plot (\x, \x);
+    \draw[color=blue, domain=1:2, dotted] plot (\x, \x);
+    \draw[fill=black] (-1,-1) circle (0.05) node [above] {Min. Local};
+    \draw[fill=black] (1,1) circle (0.05) node [above] {Max. Local};
 \end{tikzpicture}
 ```
-
 Temos uma visualização do Teorema de Weierstrass: toda função fechada e limitada possuí ponto de máximo e mínimo.
