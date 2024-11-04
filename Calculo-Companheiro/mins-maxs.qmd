@@ -196,3 +196,14 @@ parábola está para baixo.
 
 Complementando esses conceitos, a segunda derivada no ponto $(0,0)$ da nossa função problemática, $f(x) = x^4$, ainda é 0:
 $f''(x) = 6x \Rightarrow f''(0) =0$, o que não nos permite concluir se $(0,0)$ é ponto de máximo, mínimo ou nenhum.
+
+Portanto, podemos construir uma tabela para analisarmos máximos e mínimos
+$$
+\begin{array}{c|c|c|c}
+    \text{Função} & f'(0) & f''(0) & (0,0) \\
+    \hline
+    f(x) = x^2 &  0 &  > 0 ~\forall x & \text{Mínimo} \\
+    f(x) = -x^2 &  0 &  < 0 ~\forall x & \text{Máximo} \\
+    f(x) = x^3 &  0 &  \in \mathbb{R} & \text{Inconclusivo} 
+\end{array}
+$$
