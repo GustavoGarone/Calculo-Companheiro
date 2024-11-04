@@ -153,4 +153,46 @@ A derivada no ponto $x=0$ é, de fato, $0$ (note que a tangente é o próprio ei
 máximo da função que, por sua vez, não apresenta nenhum valor de máximo ou mínimo global.
 
 Com isso em mente, precisaremos de mais informações para deduzirmos se um desses pontos é ponto de máximo, mínimo ou nenhum
-dos dois se formos analisar apenas as derivadas, sem o auxílio de gráficos. Voltando para nossas parábolas, 
+dos dois se formos analisar apenas as derivadas, sem o auxílio de gráficos.
+ 
+Voltando para nossas parábolas, caso derivarmos novamente a primeira função, $f(x) = x^2$, teremos $f'(x) = 2x$ e $f''(x) = 2$
+um valor sempre positivo. Se você se lembra da interpretação das derivadas, isso significa que, analisando a primeira
+derivada, a função é decrescente no intervalo $(-\infty, 0)$ e crescente no intervalo $(0, \infty)$. Da cada segunda
+derivada, sempre positiva, temos que a taxa de variação em si é sempre crescente (quando decresce, decresce cada vez mais
+rápido e quando cresce, cresce cada vez mais rápido). Dessa forma, como no ponto $(0,0)$ nossa primeira derivada é 0,
+a função passa de decrescente para crescente e, pela segunda derivada, a concavidade dessa parábola está para cima. Por
+isso, esse ponto é o ponto de mínimo da função.
+
+``` tikz
+%%| format: svg
+%%| filename: parabolaMinSetas
+\begin{tikzpicture}[domain=-2:2]
+    \draw[very thin, color =gray] (-3.9,-0.9) grid (3.9,3.9);
+    \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
+    \draw[->] (0,-1.1) -- (0,4.1) node[above] {$f(x)$};
+    \draw[->, very thick] (0.5, 1.2) -- (0.5, 2.5)
+    \draw[->, very thick] (-0.5, 1.2) -- (-0.5, 2.5)
+    \draw[color=blue] plot (\x, \x*\x) node[right] {$f(x)=x^2$};
+    \draw[fill=black] (0,0) circle (0.05) node[below right] {Mínimo};
+\end{tikzpicture}
+```
+
+Com a mesma lógica, usando a segunda derivada da função $f(x) = -2x^2, f''(x) = -2$, temos que a concavidade de nossa
+parábola está para baixo.
+
+``` tikz
+%%| format: svg
+%%| filename: parabolaMaxSetas
+\begin{tikzpicture}[domain=-2:2]
+    \draw[very thin, color =gray] (-3.9,-3.9) grid (3.9,0.9);
+    \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
+    \draw[->] (0,-4.1) -- (0,1.1) node[above] {$f(x)$};
+    \draw[->, very thick] (0.5, -1.2) -- (0.5, -2.5)
+    \draw[->, very thick] (-0.5, -1.2) -- (-0.5, -2.5)
+    \draw[color=red] plot (\x, -\x*\x) node[right] {$f(x)=-x^2$};
+    \draw[fill=black] (0,0) circle (0.05) node[below right] {Máximo};
+\end{tikzpicture}
+```
+
+Complementando esses conceitos, a segunda derivada no ponto $(0,0)$ da nossa função problemática, $f(x) = x^4$, ainda é 0:
+$f''(x) = 6x \Rightarrow f''(0) =0$, o que não nos permite concluir se $(0,0)$ é ponto de máximo, mínimo ou nenhum.
