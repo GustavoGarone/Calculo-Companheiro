@@ -170,8 +170,8 @@ isso, esse ponto é o ponto de mínimo da função.
     \draw[very thin, color =gray] (-3.9,-0.9) grid (3.9,3.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
     \draw[->] (0,-1.1) -- (0,4.1) node[above] {$f(x)$};
-    \draw[->, very thick] (0.5, 1.2) -- (0.5, 2.5)
-    \draw[->, very thick] (-0.5, 1.2) -- (-0.5, 2.5)
+    \draw[->, very thick] (0.5, 1.2) -- (0.5, 2.5);
+    \draw[->, very thick] (-0.5, 1.2) -- (-0.5, 2.5);
     \draw[color=blue] plot (\x, \x*\x) node[right] {$f(x)=x^2$};
     \draw[fill=black] (0,0) circle (0.05) node[below right] {Mínimo};
 \end{tikzpicture}
@@ -187,8 +187,8 @@ parábola está para baixo.
     \draw[very thin, color =gray] (-3.9,-3.9) grid (3.9,0.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
     \draw[->] (0,-4.1) -- (0,1.1) node[above] {$f(x)$};
-    \draw[->, very thick] (0.5, -1.2) -- (0.5, -2.5)
-    \draw[->, very thick] (-0.5, -1.2) -- (-0.5, -2.5)
+    \draw[->, very thick] (0.5, -1.2) -- (0.5, -2.5);
+    \draw[->, very thick] (-0.5, -1.2) -- (-0.5, -2.5);
     \draw[color=red] plot (\x, -\x*\x) node[right] {$f(x)=-x^2$};
     \draw[fill=black] (0,0) circle (0.05) node[below right] {Máximo};
 \end{tikzpicture}
