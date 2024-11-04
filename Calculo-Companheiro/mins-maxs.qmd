@@ -76,3 +76,81 @@ mais ou menos infinito) e *fechado*. Uma consequência disso é que, caso escolh
 \end{tikzpicture}
 ```
 Temos uma visualização do Teorema de Weierstrass: toda função fechada e limitada possuí ponto de máximo e mínimo.
+
+## Técnicas para encontrar máximos e mínimos
+
+Vamos nos lembrar da aplicação do Teorema de Weierstrass que vimos anteriormente para encontrar máximos e mínimos.
+
+Primeiro, podemos perceber que, nos pontos de máximo e mínimo, quando existem, se traçarmos uma reta tangente a estes
+teremos quase sempre uma reta horizontal/perpendicular ao eixo $x$ (Verifique o último caso em que limitamos a função
+identidade: isso nem sempre vale!).
+
+
+``` tikz
+%%| format: svg
+%%| filename: parabolaMinTangente
+\begin{tikzpicture}[domain=-1.8:1.8]
+    \draw[very thin, color =gray] (-3.9,-0.9) grid (3.9,3.9);
+    \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
+    \draw[->] (0,-1.1) -- (0,4.1) node[above] {$f(x)$};
+    \draw[color=blue] plot (\x, \x*\x + 1) node[right] {$f(x)=x^2 + 1$};
+    \draw[fill=black] (0,1) circle (0.05) node[below right] {Mínimo};
+    \draw[color=green] (-4,1) -- (4, 1) node [above left] {Tangente ao Min.};
+\end{tikzpicture}
+```
+
+``` tikz
+%%| format: svg
+%%| filename: parabolaMaxTangente
+\begin{tikzpicture}[domain=-1.8:1.8]
+    \draw[very thin, color =gray] (-3.9,-3.9) grid (3.9,0.9);
+    \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
+    \draw[->] (0,-4.1) -- (0,1.1) node[above] {$f(x)$};
+    \draw[color=red] plot (\x, -\x*\x -1) node[right] {$f(x)=-(x^2 +1 1)$};
+    \draw[fill=black] (0,-1) circle (0.05) node[above right] {Máximo};
+    \draw[color=green] (-4,-1) -- (4, -1) node [below left] {Tangente ao Max.};
+\end{tikzpicture}
+```
+
+Podemos visualizar isso de forma analítica através da seguinte proposição:
+
+*Proposição*
+Seja $f: A\rightarrow B$ uma função diferenciável. Se $f(x)$ é ponto de máximo ou mínimo, $f'(x) = 0$
+<!-- Deveriamos escrever a prova disso? -->
+
+Precisamos tomar atenção com a ordem dessa implicação! Um ponto de máximo ou mínimo de uma função diferenciável implica
+que a derivada dessa função neste ponto, se existe, é sempre 0. Contudo, um ponto com derivada 0 não necessariamente é 
+ponto de máximo ou mínimo! Dos gráficos acima, vimos que $(0,0)$ é o ponto de mínimo e máximo das funções $x^2$ e $-x^2$,
+respectivamente. Vamos conferir suas derivadas:
+
+$$
+\begin{aligned}
+    f(x) = x^2 \Rightarrow f'(x) = 2x \therefore f'(0) = 0~ \checkmark \\
+    f(x) = -x^2 \Rightarrow f'(x) = -2x \therefore f'(0) = 0 ~\checkmark \\
+\end{aligned}
+$$
+
+Mas podemos encontrar derivadas com valor 0 em determinados pontos que não são de máximo ou mínimo!
+
+$$
+f(x) = x^3 \Rightarrow f'(x) = 3x^2 \therefore f'(x) = 0 \Rightarrow x = 0
+$$
+
+Vamos visualizar o gráfico dessa função e conferir se $(0,0)$ é ponto de máximo ou mínimo:
+
+``` tikz
+%%| format: svg
+%%| filename: xcuboSemMinMax
+\begin{tikzpicture}[domain=-1.5:1.5]
+    \draw[very thin, color =gray] (-1.9,-1.9) grid (1.9,1.9);
+    \draw[->] (-1.6,0) -- (1.6,0) node[right] {$x$};
+    \draw[->] (0,-1.6) -- (0,1.6) node[above] {$f(x)$};
+    \draw[color=blue] plot (\x, \x^2 ) node[right] {$f(x)=x^3$};
+    \draw[fill=black] (0,0) circle (0.0) node[below right] {$(0,0)$};
+\end{tikzpicture}
+```
+A derivada no ponto $x=0$ é, de fato, $0$ (note que a tangente é o próprio eixo x), contudo, esse ponto não é mínimo nem
+máximo da função que, por sua vez, não apresenta nenhum valor de máximo ou mínimo global.
+
+Com isso em mente, precisaremos de mais informações para deduzirmos se um desses pontos é ponto de máximo, mínimo ou nenhum
+dos dois se formos analisar apenas as derivadas, sem o auxílio de gráficos. Voltando para nossas parábolas, 
