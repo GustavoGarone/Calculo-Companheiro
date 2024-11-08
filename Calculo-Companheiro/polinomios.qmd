@@ -113,7 +113,7 @@ O grau de um polinômio, notado $gr(P)$ ou $grau(P)$, refere-se ao maior expoent
 
 Particularmente, alguns polinômios de grau pequeno recebem alguns nomes especiais.
 
-| Grau do Polinômio | Tipo do Polinômio |
+| Grau do Polinômio | Nome do Polinômio |
 |------------------:|:------------------|
 | 0                 |         Constante |
 | 1                 |            Linear |
