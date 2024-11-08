@@ -46,6 +46,7 @@ Note que todos os termos $a_i$ são números e os expoentes também são número
 
 
 Todavia, como nem tudo na matemática são flores, polinômios nem sempre terão a cara de polinômios. Veja os exemplos abaixo:
+
 > $f(x) =\frac{x^2-1}{x+1}$, com $x\neq1$
 > 
 > $f(x)=\frac{x^2-1}{x+1}=  \frac{(x+1)(x-1)}{(x+1)} =x-1$
@@ -75,6 +76,7 @@ Determinar se uma função é polinomial trata-se, portanto, de verificar se aqu
 O grau de um polinômio, notado $gr(P)$ ou $grau(P)$, refere-se ao maior expoente da variável. Genericamente, temos que o grau de um polinômio é $n$ tal que $a_n \neq 0$. Ou seja, o maior número ao qual $x$ está sendo elevado, quando trata-se de um polinômio em $x$ e a constante não é 0.
 
 Particularmente, alguns polinômios de grau pequeno recebem alguns nomes especiais.
+
 | Grau do Polinômio | Tipo do Polinômio |
 |-------------------|------------------:|
 | 0                 |         Constante |
@@ -163,6 +165,7 @@ Por agora, preste muita atenção quando dizemos "o polinômio só tem uma raiz 
 ### Para polinômios de grau maior que 2:
 
 Existe [um ramo da matemática](https://en.wikipedia.org/wiki/Galois_theory) que nasceu do estudo das raízes de um polinômio. Desta área, trazemos a você, leitor, um resultado muito triste: não existe uma fórmula para as raízes de um polinômio de grau 5 ou superior. Todavia, para grau 3 e 4 há fórmulas explicitadas a partir dos coeficientes do polinômio. Para a alegria de todos, tais fórmulas são muito grandes para trazermos nesse material ou para você encontrar uma aplicação para elas.
+
 >Mas o que fazer se eu precisar achar as raízes de um polinômio de grau 3 ou maior?
 
 Não se preocupe, a próxima seção dedicar-se-á exclusivamente a métodos alternativos para achar a raiz sem o uso de fórmulas como as anteriores.
