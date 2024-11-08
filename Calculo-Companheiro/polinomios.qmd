@@ -1,20 +1,14 @@
-
-# TODO
+<!-- # TODO
 
 Adição, multiplicação fatoração, equações, relações de Girard, binômio de newton, teorema do resto, divisão de 
 polinômios pelo método da chave e Briot-ruffini, introdução ao desenho de polinômios (sem cálculo), polinômios como 
-funções compostas, interpolação, introdução aos números complexos e uma menção ao conceito de séries.
+funções compostas, interpolação, introdução aos números complexos e uma menção ao conceito de séries. -->
 
   
 
 # Funções Polinomiais
 
-  
-
 ## Introdução
-
-  
-
 Neste, capítulo, daremos início ao estudo de funções polinomiais, ou apenas polinômios daqui para frente. Funções 
 polinomiais são um conjunto de funções muito bem definidas e simples, o que torna-as adequadas para modelar situações 
 extremamente variadas. Ademais, funções polinomiais geralmente são as funções mais simples que podemos trabalhar em 
@@ -41,9 +35,9 @@ $t(d) = \frac{d^2}{20}-\frac{11d}{4}+85$
 
 Estes dois últimos exemplos utilizam um polinômio para modelar uma situação, mas é fácil perceber que o grande objetivo 
 por trás dos experimentos é maximizar a produção de oxigênio e minimizar o tempo gasto. Tal classe de problemas recebe o
- nome de **Problemas de Otimização** e será tratado num capítulo a parte, pois o estudo rigoroso requer o uso de 
- derivadas. Por agora, ao tentarmos encontrar estes pontos de máximo e mínimo, vamos recorrer a um método mais 
- rudimentar: olhar o gráfico.
+nome de **Problemas de Otimização** e será tratado num capítulo a parte, pois o estudo rigoroso requer o uso de 
+derivadas. Por agora, ao tentarmos encontrar estes pontos de máximo e mínimo, vamos recorrer a um método mais 
+rudimentar: olhar o gráfico.
 
 Até agora, tivemos um contato inicial com os polinômios e apenas uma intuição do que eles são. Analisando os polinômios 
 obtidos em cada exemplo, você deve ter notado algumas características comuns. Portanto, vamos dar início à formalização 
@@ -51,8 +45,8 @@ dessa intuição!
 
 ## Anatomia de um polinômio de uma variável
 Primeiro, vamos definir a parte mais fundamental de uma função: seu domínio e contradomínio. Polinômios são funções cujo
- domínio são os complexos e o contradomínio também são os complexos: $f(x): \mathbb{C} \to\mathbb{C}$ (lê-se "f de x 
- leva de complexos em complexos").
+domínio são os complexos e o contradomínio também são os complexos: $f(x): \mathbb{C} \to\mathbb{C}$ (lê-se "f de x 
+leva de complexos em complexos").
 
 A palavra "polinômio" vem da junção de "*poli*", que  vem do grego e significa "muitos" e "*nomen*", que vem do latim e 
 significa "nome", ou, mais vulgarmente, "temo". Em suma, polinômios são várias coisas! Vamos, agora, à definição de fato.
@@ -61,8 +55,7 @@ significa "nome", ou, mais vulgarmente, "temo". Em suma, polinômios são vária
 multiplicação e exponenciação por inteiros não negativos.  
 
 Ou seja, de forma genérica, um polinômio de x é da forma 
-
-$p(x) = a_nx^n+a_{n-1}x^{n-1}+\dots+a_2x^2+a_1x+a_0$ = $\sum_{i=0}^na_ix^i$
+$$p(x) = a_nx^n+a_{n-1}x^{n-1}+\dots+a_2x^2+a_1x+a_0$ = \sum_{i=0}^{n} a_{i} x^{i}$$
 
 Apesar de não explicitados, perceba que $a_1x = a_1x^1$ e $a_0 = a_0x^0 = a_0\times1$.
 
@@ -89,27 +82,26 @@ abaixo:
 
 No exemplo acima, tome muito cuidado ao manipular funções trigonométricas. $tg(arctg(f(x))=f(x)$, mas $arctg(tg(f(x))$ 
 nem sempre é igual a $f(x)$. Isso ocorre por conta dos domínios das funções e onde podem ser invertidas, mas tal assunto
- é tratado em outro capítulo.
+é tratado em outro capítulo.
 
 >$f(x) = e^{ln(5 x^{-1})}$
 >
 >$f(x) = e^{ln(5 x^{-1})} = 5x^{-1}$
 >
 >Portanto, $f(x) = e^{ln(5 x^{-1})}$ não é um polinômio, pois o $x$ tem um expoente negativo, ou seja, não é positivo 
-nem nulo.
+> nem nulo.
 
 Determinar se uma função é polinomial trata-se, portanto, de verificar se aquela função pode ser reescrita como uma soma
- de potências de $x$ multiplicadas por uma constante. Neste momento, trataremos apenas de polinômios com quantidade 
- finita de termos. O uso de polinômios com infinitos termos, apesar de parecer pouco intuitivo, é uma técnica muito 
- usada para aproximar funções genéricas por um polinômio, o que tem aplicações nas mais diversas áreas, sobretudo na 
- computação.
+de potências de $x$ multiplicadas por uma constante. Neste momento, trataremos apenas de polinômios com quantidade 
+finita de termos. O uso de polinômios com infinitos termos, apesar de parecer pouco intuitivo, é uma técnica muito 
+usada para aproximar funções genéricas por um polinômio, o que tem aplicações nas mais diversas áreas, sobretudo na 
+computação.
 
 
 ### Grau de um polinômio
-
 O grau de um polinômio, notado $gr(P)$ ou $grau(P)$, refere-se ao maior expoente da variável. Genericamente, temos que o
- grau de um polinômio é $n$ tal que $a_n \neq 0$. Ou seja, o maior número ao qual $x$ está sendo elevado, quando 
- trata-se de um polinômio em $x$ e a constante não é 0.
+grau de um polinômio é $n$ tal que $a_n \neq 0$. Ou seja, o maior número ao qual $x$ está sendo elevado, quando 
+trata-se de um polinômio em $x$ e a constante não é 0.
 
 Particularmente, alguns polinômios de grau pequeno recebem alguns nomes especiais.
 
@@ -137,7 +129,6 @@ Polinômios de grau superior não recebem nomes especiais, pois são menos frequ
 propriedades facilmente generalizadas, como é o caso da parábola e a reta.
 
 ### Raízes de um Polinômio
-
 Encontrar as raízes de um polinômio nada mais é do que encontrar os pontos em que $p(x) = 0$, ou seja, quando o 
 polinômio intercepta o eixo $x$.
 
@@ -148,57 +139,45 @@ com o Teorema do Valor Intermediário, o processo de encontrar as raízes de um 
 
 #### Para polinômios de grau 0:
 Um polinômio de grau 0 pode ter zero raízes ou infinitas raízes!
-
 Quando $a_0=0$, o polinômio coincide com o eixo $x$ em todos os pontos, portanto todos os pontos são raízes e há 
 infinitos sobre sobre o eixo $x$.
-
 Quando $a_0 \neq 0$, o polinômio é paralelo ao eixo$x$ e não coincidente, portanto $p(x)$ nunca é igual a $0$, ou 
 seja, não há nenhuma raiz.
 
 
 #### Para polinômios de grau 1:
-$p(x) = a_1x+a_0 =0 \iff a_1x=-a_0 \iff x = -\frac{a_0}{a_1}$
-
+$p(x) = a_1x+a_0 =0 \Leftrightarrow a_1x=-a_0 \Leftrightarrow x = -\frac{a_0}{a_1}$
 A única raiz de um polinômio de grau 1 é $x=-\frac{a_0}{a_1}$
 
-
 #### Para polinômios de grau 2:
-
 Para achar as raízes de um polinômio de grau 2, temos uma fórmula muito conhecida por nós brasileiros: a fórmula de 
 Bhaskara, que não foi descoberta por 
 [Bhaskara](https://pt.wikipedia.org/wiki/F%C3%B3rmula_quadr%C3%A1tica#Desenvolvimento_hist%C3%B3rico). Segue aqui uma 
 demonstração da fórmula:
-
-
-$p(x) = a_2x^2+a_1x+a_0 = 0$ 
-
-$\iff \dfrac{a_2x^2+a_1x+a_0}{a_2} = \dfrac{0}{a^2}$
-
-$\iff x^2 + \dfrac{a_1x}{a_2} + \dfrac{a_0}{a_2} = 0$
-
-$\iff x^2 + \dfrac{a_1x}{a_2} = - \dfrac{a_0}{a_2}$
-
-$\iff x^2 + \dfrac{a_1x}{a_2} + \left(\dfrac{a_1}{2a_2}\right)^2 = - \dfrac{a_0}{a_2}+\left(\dfrac{a_1}{2a_2}\right)^2$
-
-$\iff x^2 + \dfrac{a_1x}{a_2} + \dfrac{{a_1}^2}{4{a_2}^2} = - \dfrac{a_0}{a_2}+\dfrac{{a_1}^2}{{4a_2}^2}$
+$$
+\begin{aligned}
+    p(x) &= a_2x^2+a_1x+a_0 = 0 \\
+    &\Leftrightarrow \dfrac{a_2x^2+a_1x+a_0}{a_2} = \dfrac{0}{a^2} \\
+    &\Leftrightarrow x^2 + \dfrac{a_1x}{a_2} + \dfrac{a_0}{a_2} = 0 \\
+    &\Leftrightarrow x^2 + \dfrac{a_1x}{a_2} = - \dfrac{a_0}{a_2} \\
+    &\Leftrightarrow x^2 + \dfrac{a_1x}{a_2} + \left(\dfrac{a_1}{2a_2}\right)^2 = - \dfrac{a_0}{a_2}+\left(\dfrac{a_1}{2a_2}\right)^2 \\
+    &\Leftrightarrow x^2 + \dfrac{a_1x}{a_2} + \dfrac{{a_1}^2}{4{a_2}^2} = - \dfrac{a_0}{a_2}+\dfrac{{a_1}^2}{{4a_2}^2}
+\end{aligned}
+$$
 
 Trata-se de um produto notável!
-
-$\iff  \left(x+\dfrac{a_1}{2a_2}\right)^2 = - \dfrac{a_0}{a_2}+\dfrac{{a_1}^2}{{4a_2}^2}$
-
-$\iff  \left(x+\dfrac{a_1}{2a_2}\right)^2 = \dfrac{{a_1}^2-4 \cdot a_0 \cdot a_2}{{4a_2}^2}$
-
-$\iff  \sqrt{\left(x+\dfrac{a_1}{2a_2}\right)^2}=\sqrt{ \dfrac{{a_1}^2-4 \cdot a_0 \cdot a_2}{{4a_2}^2}}$
-
-$\iff  x+\dfrac{a_1}{2a_2} = \pm \sqrt{ \dfrac{{a_1}^2-4 \cdot a_0 \cdot a_2}{{4a_2}^2}}$
-
-$\iff  x+\dfrac{a_1}{2a_2} = \pm { \dfrac{\sqrt{{a_1}^2-4 \cdot a_0 \cdot a_2}}{\sqrt{{4a_2}^2}}}$
-
-$\iff  x+\dfrac{a_1}{2a_2} = \pm { \dfrac{\sqrt{{a_1}^2-4 \cdot a_0 \cdot a_2}}{2a_2}}$
-
-$\iff  x = \pm { \dfrac{\sqrt{{a_1}^2-4 \cdot a_0 \cdot a_2}}{2a_2}}-\dfrac{a_1}{2a_2}$
-
-$\iff  x = { \dfrac{-a_1 \pm\sqrt{{a_1}^2-4 \cdot a_0 \cdot a_2}}{2a_2}}$
+$$
+\begin{aligned}
+    &\Leftrightarrow  \left(x+\dfrac{a_1}{2a_2}\right)^2 = - \dfrac{a_0}{a_2}+\dfrac{{a_1}^2}{{4a_2}^2} \\
+    &\Leftrightarrow  \left(x+\dfrac{a_1}{2a_2}\right)^2 = \dfrac{{a_1}^2-4 \cdot a_0 \cdot a_2}{{4a_2}^2} \\
+    &\Leftrightarrow  \sqrt{\left(x+\dfrac{a_1}{2a_2}\right)^2}=\sqrt{ \dfrac{{a_1}^2-4 \cdot a_0 \cdot a_2}{{4a_2}^2}} \\
+    &\Leftrightarrow  x+\dfrac{a_1}{2a_2} = \pm \sqrt{ \dfrac{{a_1}^2-4 \cdot a_0 \cdot a_2}{{4a_2}^2}} \\
+    &\Leftrightarrow  x+\dfrac{a_1}{2a_2} = \pm { \dfrac{\sqrt{{a_1}^2-4 \cdot a_0 \cdot a_2}}{\sqrt{{4a_2}^2}}} \\
+    &\Leftrightarrow  x+\dfrac{a_1}{2a_2} = \pm { \dfrac{\sqrt{{a_1}^2-4 \cdot a_0 \cdot a_2}}{2a_2}} \\
+    &\Leftrightarrow  x = \pm { \dfrac{\sqrt{{a_1}^2-4 \cdot a_0 \cdot a_2}}{2a_2}}-\dfrac{a_1}{2a_2} \\
+    &\Leftrightarrow  x = { \dfrac{-a_1 \pm\sqrt{{a_1}^2-4 \cdot a_0 \cdot a_2}}{2a_2}}
+\end{aligned}
+$$
 
 $p(x) = a_2x^2+a_1x+a_0 = ax^2+bx+c$
 
@@ -207,7 +186,6 @@ médio. Portanto,
 $x = \dfrac{-b \pm \sqrt{b^2-4 \cdot a \cdot c }}{2a}$
 
 Tomando $\Delta = b^2-4 \cdot a \cdot c$ :
-
 $x=\dfrac{-b \pm \sqrt{\Delta}}{2a}$
 
 Da fórmula, segue que, quando $\Delta>0$, o polinômio tem duas raízes reais, quando $\Delta=0$, o polinômio só tem uma 
@@ -217,12 +195,11 @@ Por agora, preste muita atenção quando dizemos "o polinômio só tem uma raiz 
 raiz real", pois em breve tais fatos não nos impedirão de fazer mais contas!
 
 ### Para polinômios de grau maior que 2:
-
 Existe [um ramo da matemática](https://en.wikipedia.org/wiki/Galois_theory) que nasceu do estudo das raízes de um 
 polinômio. Desta área, trazemos a você, leitor, um resultado muito triste: não existe uma fórmula para as raízes de um 
 polinômio de grau 5 ou superior. Todavia, para grau 3 e 4 há fórmulas explicitadas a partir dos coeficientes do 
 polinômio. Para a alegria de todos, tais fórmulas são muito grandes para trazermos nesse material ou para você encontrar
- uma aplicação para elas.
+uma aplicação para elas.
 
 >Mas o que fazer se eu precisar achar as raízes de um polinômio de grau 3 ou maior?
 

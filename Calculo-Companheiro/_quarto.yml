@@ -6,7 +6,11 @@ project:
 filters:
   - diagram
 diagram:
-  cache: false
+  cache: true
+  engine:
+    tikz:
+      header-includes:
+        - '\usetikzlibrary{patterns}'
 
 book:
   language: pt
@@ -34,6 +38,9 @@ book:
       chapters:
         - curvas.qmd
         - limites-multivariados.qmd
+        - d-gradiente.qmd
+        - d-ordem-superior.qmd
+        - taylor-multi.qmd
         - mins-maxs.qmd
     - references.qmd
 
