@@ -1,7 +1,9 @@
 
 # TODO
 
-Adição, multiplicação fatoração, equações, relações de Girard, binômio de newton, teorema do resto, divisão de polinômios pelo método da chave e Briot-ruffini, introdução ao desenho de polinômios (sem cálculo), polinômios como funções compostas, interpolação, introdução aos números complexos e uma menção ao conceito de séries.
+Adição, multiplicação fatoração, equações, relações de Girard, binômio de newton, teorema do resto, divisão de 
+polinômios pelo método da chave e Briot-ruffini, introdução ao desenho de polinômios (sem cálculo), polinômios como 
+funções compostas, interpolação, introdução aos números complexos e uma menção ao conceito de séries.
 
   
 
@@ -13,28 +15,50 @@ Adição, multiplicação fatoração, equações, relações de Girard, binômi
 
   
 
-Neste, capítulo, daremos início ao estudo de funções polinomiais, ou apenas polinômios daqui para frente. Funções polinomiais são um conjunto de funções muito bem definidas e simples, o que torna-as adequadas para modelar situações extremamente variadas. Ademais, funções polinomiais geralmente são as funções mais simples que podemos trabalhar em diversos contextos (desde cálculo a modelagem de dados), então serão as primeiras funções a efetivamente aprofundarmos!
+Neste, capítulo, daremos início ao estudo de funções polinomiais, ou apenas polinômios daqui para frente. Funções 
+polinomiais são um conjunto de funções muito bem definidas e simples, o que torna-as adequadas para modelar situações 
+extremamente variadas. Ademais, funções polinomiais geralmente são as funções mais simples que podemos trabalhar em 
+diversos contextos (desde cálculo a modelagem de dados), então serão as primeiras funções a efetivamente aprofundarmos!
 
 Vamos ver alguns exemplos:
 
->1- Um projétil foi atirado de um canhão de cima de uma plataforma. Um físico determinou que a altura do objeto, em função do tempo após o lançamento, pode ser descrita por $h(t) = 4.9t^2+100t+8$
+>1- Um projétil foi atirado de um canhão de cima de uma plataforma. Um físico determinou que a altura do objeto, em 
+função do tempo após o lançamento, pode ser descrita por $h(t) = 4.9t^2+100t+8$
 
->2- Após analisar o valor das ações de uma empresa, um economista determinou que a [média móvel](https://pt.wikipedia.org/wiki/Média_móvel) dos valores do ativo, em função do tempo, pode ser modelado por $v(t) = −0.0002t^3+31.664t^2–10^6t+2×1010$
+>2- Após analisar o valor das ações de uma empresa, um economista determinou que a 
+[média móvel](https://pt.wikipedia.org/wiki/Média_móvel) dos valores do ativo, em função do tempo, pode ser modelado por
+ $v(t) = −0.0002t^3+31.664t^2–10^6t+2×1010$
 
->3- Uma biólogo, ao medir várias vezes o volume de oxigênio (em unidade desconhecida) produzido por uma população de algas, notou que a produção variava de acordo com a concentração de algas em seu aquário. A concentração variava de 0 gramas de algas por L a 100g de algas por litro. A biólogo notou que a produção era modelada pela função $p(c) = \frac{-5}{1000}(c^2-120c)$
+>3- Uma biólogo, ao medir várias vezes o volume de oxigênio (em unidade desconhecida) produzido por uma população de 
+algas, notou que a produção variava de acordo com a concentração de algas em seu aquário. A concentração variava de 0 
+gramas de algas por L a 100g de algas por litro. A biólogo notou que a produção era modelada pela função 
+$p(c) = \frac{-5}{1000}(c^2-120c)$
 
->4- Um triatleta precisa atravessar de um lado de um lago para o outro. Sua velocidade em terra é diferente da velocidade em água e a distância em terra é de 50m. Seu preparador físico modelou o problema e determinou que o tempo gasto para chegar ao destino, em função da distância percorrida em terra é dado pelo polinômio $t(d) = \frac{d^2}{20}-\frac{11d}{4}+85$
+>4- Um triatleta precisa atravessar de um lado de um lago para o outro. Sua velocidade em terra é diferente da 
+velocidade em água e a distância em terra é de 50m. Seu preparador físico modelou o problema e determinou que o tempo 
+gasto para chegar ao destino, em função da distância percorrida em terra é dado pelo polinômio 
+$t(d) = \frac{d^2}{20}-\frac{11d}{4}+85$
 
-Estes dois últimos exemplos utilizam um polinômio para modelar uma situação, mas é fácil perceber que o grande objetivo por trás dos experimentos é maximizar a produção de oxigênio e minimizar o tempo gasto. Tal classe de problemas recebe o nome de **Problemas de Otimização** e será tratado num capítulo a parte, pois o estudo rigoroso requer o uso de derivadas. Por agora, ao tentarmos encontrar estes pontos de máximo e mínimo, vamos recorrer a um método mais rudimentar: olhar o gráfico.
+Estes dois últimos exemplos utilizam um polinômio para modelar uma situação, mas é fácil perceber que o grande objetivo 
+por trás dos experimentos é maximizar a produção de oxigênio e minimizar o tempo gasto. Tal classe de problemas recebe o
+ nome de **Problemas de Otimização** e será tratado num capítulo a parte, pois o estudo rigoroso requer o uso de 
+ derivadas. Por agora, ao tentarmos encontrar estes pontos de máximo e mínimo, vamos recorrer a um método mais 
+ rudimentar: olhar o gráfico.
 
-Até agora, tivemos um contato inicial com os polinômios e apenas uma intuição do que eles são. Analisando os polinômios obtidos em cada exemplo, você deve ter notado algumas características comuns. Portanto, vamos dar início à formalização dessa intuição!
+Até agora, tivemos um contato inicial com os polinômios e apenas uma intuição do que eles são. Analisando os polinômios 
+obtidos em cada exemplo, você deve ter notado algumas características comuns. Portanto, vamos dar início à formalização 
+dessa intuição!
 
 ## Anatomia de um polinômio de uma variável
-Primeiro, vamos definir a parte mais fundamental de uma função: seu domínio e contradomínio. Polinômios são funções cujo domínio são os complexos e o contradomínio também são os complexos: $f(x): \mathbb{C} \to\mathbb{C}$ (lê-se "f de x leva de complexos em complexos").
+Primeiro, vamos definir a parte mais fundamental de uma função: seu domínio e contradomínio. Polinômios são funções cujo
+ domínio são os complexos e o contradomínio também são os complexos: $f(x): \mathbb{C} \to\mathbb{C}$ (lê-se "f de x 
+ leva de complexos em complexos").
 
-A palavra "polinômio" vem da junção de "*poli*", que  vem do grego e significa "muitos" e "*nomen*", que vem do latim e significa "nome", ou, mais vulgarmente, "temo". Em suma, polinômios são várias coisas! Vamos, agora, à definição de fato.
+A palavra "polinômio" vem da junção de "*poli*", que  vem do grego e significa "muitos" e "*nomen*", que vem do latim e 
+significa "nome", ou, mais vulgarmente, "temo". Em suma, polinômios são várias coisas! Vamos, agora, à definição de fato.
 
->Polinômios são expressões que podem ser construídas a partir de constantes e variáveis por meio de soma, subtração, multiplicação e exponenciação por inteiros não negativos.  
+>Polinômios são expressões que podem ser construídas a partir de constantes e variáveis por meio de soma, subtração, 
+multiplicação e exponenciação por inteiros não negativos.  
 
 Ou seja, de forma genérica, um polinômio de x é da forma 
 
@@ -42,10 +66,13 @@ $p(x) = a_nx^n+a_{n-1}x^{n-1}+\dots+a_2x^2+a_1x+a_0$ = $\sum_{i=0}^na_ix^i$
 
 Apesar de não explicitados, perceba que $a_1x = a_1x^1$ e $a_0 = a_0x^0 = a_0\times1$.
 
-Note que todos os termos $a_i$ são números e os expoentes também são números. É importante garantir tal fato, pois pode gerar problemas ao definirmos o grau do polinômio e ao verificarmos outras propriedades, um $x$ no expoente gera uma função exponencial, não uma polinomial!
+Note que todos os termos $a_i$ são números e os expoentes também são números. É importante garantir tal fato, pois pode 
+gerar problemas ao definirmos o grau do polinômio e ao verificarmos outras propriedades, um $x$ no expoente gera uma 
+função exponencial, não uma polinomial!
 
 
-Todavia, como nem tudo na matemática são flores, polinômios nem sempre terão a cara de polinômios. Veja os exemplos abaixo:
+Todavia, como nem tudo na matemática são flores, polinômios nem sempre terão a cara de polinômios. Veja os exemplos 
+abaixo:
 
 > $f(x) =\frac{x^2-1}{x+1}$, com $x\neq1$
 > 
@@ -60,20 +87,29 @@ Todavia, como nem tudo na matemática são flores, polinômios nem sempre terão
 >
 >Portanto, $f(x)=tg(arctg(5x^2-\pi))$ é um polinômio.
 
-No exemplo acima, tome muito cuidado ao manipular funções trigonométricas. $tg(arctg(f(x))=f(x)$, mas $arctg(tg(f(x))$ nem sempre é igual a $f(x)$. Isso ocorre por conta dos domínios das funções e onde podem ser invertidas, mas tal assunto é tratado em outro capítulo.
+No exemplo acima, tome muito cuidado ao manipular funções trigonométricas. $tg(arctg(f(x))=f(x)$, mas $arctg(tg(f(x))$ 
+nem sempre é igual a $f(x)$. Isso ocorre por conta dos domínios das funções e onde podem ser invertidas, mas tal assunto
+ é tratado em outro capítulo.
 
 >$f(x) = e^{ln(5 x^{-1})}$
 >
 >$f(x) = e^{ln(5 x^{-1})} = 5x^{-1}$
 >
->Portanto, $f(x) = e^{ln(5 x^{-1})}$ não é um polinômio, pois o $x$ tem um expoente negativo, ou seja, não é positivo nem nulo.
+>Portanto, $f(x) = e^{ln(5 x^{-1})}$ não é um polinômio, pois o $x$ tem um expoente negativo, ou seja, não é positivo 
+nem nulo.
 
-Determinar se uma função é polinomial trata-se, portanto, de verificar se aquela função pode ser reescrita como uma soma de potências de $x$ multiplicadas por uma constante. Neste momento, trataremos apenas de polinômios com quantidade finita de termos. O uso de polinômios com infinitos termos, apesar de parecer pouco intuitivo, é uma técnica muito usada para aproximar funções genéricas por um polinômio, o que tem aplicações nas mais diversas áreas, sobretudo na computação.
+Determinar se uma função é polinomial trata-se, portanto, de verificar se aquela função pode ser reescrita como uma soma
+ de potências de $x$ multiplicadas por uma constante. Neste momento, trataremos apenas de polinômios com quantidade 
+ finita de termos. O uso de polinômios com infinitos termos, apesar de parecer pouco intuitivo, é uma técnica muito 
+ usada para aproximar funções genéricas por um polinômio, o que tem aplicações nas mais diversas áreas, sobretudo na 
+ computação.
 
 
 ### Grau de um polinômio
 
-O grau de um polinômio, notado $gr(P)$ ou $grau(P)$, refere-se ao maior expoente da variável. Genericamente, temos que o grau de um polinômio é $n$ tal que $a_n \neq 0$. Ou seja, o maior número ao qual $x$ está sendo elevado, quando trata-se de um polinômio em $x$ e a constante não é 0.
+O grau de um polinômio, notado $gr(P)$ ou $grau(P)$, refere-se ao maior expoente da variável. Genericamente, temos que o
+ grau de um polinômio é $n$ tal que $a_n \neq 0$. Ou seja, o maior número ao qual $x$ está sendo elevado, quando 
+ trata-se de um polinômio em $x$ e a constante não é 0.
 
 Particularmente, alguns polinômios de grau pequeno recebem alguns nomes especiais.
 
@@ -84,28 +120,40 @@ Particularmente, alguns polinômios de grau pequeno recebem alguns nomes especia
 | 2                 |        Quadrático |
 | 3                 |            Cúbico |
 
-Um polinômio constante é, simplesmente, um número, ou seja, $p(x)=a_0$ e seu gráfico é uma linha horizontal que intercepta o eixo $y$ no ponto $(0,a_0)$.
+Um polinômio constante é, simplesmente, um número, ou seja, $p(x)=a_0$ e seu gráfico é uma linha horizontal que 
+intercepta o eixo $y$ no ponto $(0,a_0)$.
 
-Um polinômio linear é da forma $p(x) = a_1x+a_0$. Ele intercepta o eixo $y$ no ponto $(0,a_0)$. Seu gráfico é uma reta não paralela a nenhum dos eixos.
+Um polinômio linear é da forma $p(x) = a_1x+a_0$. Ele intercepta o eixo $y$ no ponto $(0,a_0)$. Seu gráfico é uma reta 
+não paralela a nenhum dos eixos.
 
-Um polinômio quadrático é da forma $p(x) = a_2x^2+a_1x+a_0$. Você já deve imaginar onde ele intercepta o eixo $y$. O gráfico de um polinômio quadrático é uma parábola.
+Um polinômio quadrático é da forma $p(x) = a_2x^2+a_1x+a_0$. Você já deve imaginar onde ele intercepta o eixo $y$. O 
+gráfico de um polinômio quadrático é uma parábola.
 
-Um polinômio cúbico é da forma $p(x) = a_3x^3+a_2x^2+a_1x+a_0$. Mais uma vez, não é difícil inferir onde ele intercepta o eixo $y$. Seu gráfico pode variar de acordo com os parâmetros, mas geralmente forma uma letra "n" e explode para infinito positivo e infinito negativo em cada uma das suas extremidades.
+Um polinômio cúbico é da forma $p(x) = a_3x^3+a_2x^2+a_1x+a_0$. Mais uma vez, não é difícil inferir onde ele intercepta 
+o eixo $y$. Seu gráfico pode variar de acordo com os parâmetros, mas geralmente forma uma letra "n" e explode para 
+infinito positivo e infinito negativo em cada uma das suas extremidades.
 
-Polinômios de grau superior não recebem nomes especiais, pois são menos frequentemente trabalhados em aula e não têm propriedades facilmente generalizadas, como é o caso da parábola e a reta.
+Polinômios de grau superior não recebem nomes especiais, pois são menos frequentemente trabalhados em aula e não têm 
+propriedades facilmente generalizadas, como é o caso da parábola e a reta.
 
 ### Raízes de um Polinômio
 
-Encontrar as raízes de um polinômio nada mais é do que encontrar os pontos em que $p(x) = 0$, ou seja, quando o polinômio intercepta o eixo $x$.
+Encontrar as raízes de um polinômio nada mais é do que encontrar os pontos em que $p(x) = 0$, ou seja, quando o 
+polinômio intercepta o eixo $x$.
 
-Encontrar as raízes de um polinômio é um processo cujo trabalho cresce exponencialmente de acordo com o grau do polinômio, por isso traremos algumas técnicas algorítmicas para encontrar as raízes, fórmulas e intuições. No futuro, com o Teorema do Valor Intermediário, o processo de encontrar as raízes de um polinômio pode tornar-se mais fácil (e bonito), mas nunca trivial!
+Encontrar as raízes de um polinômio é um processo cujo trabalho cresce exponencialmente de acordo com o grau do 
+polinômio, por isso traremos algumas técnicas algorítmicas para encontrar as raízes, fórmulas e intuições. No futuro, 
+com o Teorema do Valor Intermediário, o processo de encontrar as raízes de um polinômio pode tornar-se mais fácil 
+(e bonito), mas nunca trivial!
 
 #### Para polinômios de grau 0:
 Um polinômio de grau 0 pode ter zero raízes ou infinitas raízes!
 
-Quando $a_0=0$, o polinômio coincide com o eixo $x$ em todos os pontos, portanto todos os pontos são raízes e há infinitos sobre sobre o eixo $x$.
+Quando $a_0=0$, o polinômio coincide com o eixo $x$ em todos os pontos, portanto todos os pontos são raízes e há 
+infinitos sobre sobre o eixo $x$.
 
-Quando $a_0 \neq 0$, o polinômio é paralelo ao eixo$x$ e não coincidente, portanto $p(x)$ nunca é igual a $0$, ou seja, não há nenhuma raiz.
+Quando $a_0 \neq 0$, o polinômio é paralelo ao eixo$x$ e não coincidente, portanto $p(x)$ nunca é igual a $0$, ou 
+seja, não há nenhuma raiz.
 
 
 #### Para polinômios de grau 1:
@@ -116,7 +164,10 @@ A única raiz de um polinômio de grau 1 é $x=-\frac{a_0}{a_1}$
 
 #### Para polinômios de grau 2:
 
-Para achar as raízes de um polinômio de grau 2, temos uma fórmula muito conhecida por nós brasileiros: a fórmula de Bhaskara, que não foi descoberta por [Bhaskara](https://pt.wikipedia.org/wiki/F%C3%B3rmula_quadr%C3%A1tica#Desenvolvimento_hist%C3%B3rico). Segue aqui uma demonstração da fórmula:
+Para achar as raízes de um polinômio de grau 2, temos uma fórmula muito conhecida por nós brasileiros: a fórmula de 
+Bhaskara, que não foi descoberta por 
+[Bhaskara](https://pt.wikipedia.org/wiki/F%C3%B3rmula_quadr%C3%A1tica#Desenvolvimento_hist%C3%B3rico). Segue aqui uma 
+demonstração da fórmula:
 
 
 $p(x) = a_2x^2+a_1x+a_0 = 0$ 
@@ -151,21 +202,29 @@ $\iff  x = { \dfrac{-a_1 \pm\sqrt{{a_1}^2-4 \cdot a_0 \cdot a_2}}{2a_2}}$
 
 $p(x) = a_2x^2+a_1x+a_0 = ax^2+bx+c$
 
-Renomeamos as variáveis acima apenas para facilitar a sua identificação dos termos em relação ao padrão usado no ensino médio. Portanto,
+Renomeamos as variáveis acima apenas para facilitar a sua identificação dos termos em relação ao padrão usado no ensino 
+médio. Portanto,
 $x = \dfrac{-b \pm \sqrt{b^2-4 \cdot a \cdot c }}{2a}$
 
 Tomando $\Delta = b^2-4 \cdot a \cdot c$ :
 
 $x=\dfrac{-b \pm \sqrt{\Delta}}{2a}$
 
-Da fórmula, segue que, quando $\Delta>0$, o polinômio tem duas raízes reais, quando $\Delta=0$, o polinômio só tem uma raiz distinta, quando $\Delta<0$, o polinômio não tem nenhuma raiz real.
+Da fórmula, segue que, quando $\Delta>0$, o polinômio tem duas raízes reais, quando $\Delta=0$, o polinômio só tem uma 
+raiz distinta, quando $\Delta<0$, o polinômio não tem nenhuma raiz real.
 
-Por agora, preste muita atenção quando dizemos "o polinômio só tem uma raiz distinta" e "o polinômio não tem nenhuma raiz real", pois em breve tais fatos não nos impedirão de fazer mais contas!
+Por agora, preste muita atenção quando dizemos "o polinômio só tem uma raiz distinta" e "o polinômio não tem nenhuma 
+raiz real", pois em breve tais fatos não nos impedirão de fazer mais contas!
 
 ### Para polinômios de grau maior que 2:
 
-Existe [um ramo da matemática](https://en.wikipedia.org/wiki/Galois_theory) que nasceu do estudo das raízes de um polinômio. Desta área, trazemos a você, leitor, um resultado muito triste: não existe uma fórmula para as raízes de um polinômio de grau 5 ou superior. Todavia, para grau 3 e 4 há fórmulas explicitadas a partir dos coeficientes do polinômio. Para a alegria de todos, tais fórmulas são muito grandes para trazermos nesse material ou para você encontrar uma aplicação para elas.
+Existe [um ramo da matemática](https://en.wikipedia.org/wiki/Galois_theory) que nasceu do estudo das raízes de um 
+polinômio. Desta área, trazemos a você, leitor, um resultado muito triste: não existe uma fórmula para as raízes de um 
+polinômio de grau 5 ou superior. Todavia, para grau 3 e 4 há fórmulas explicitadas a partir dos coeficientes do 
+polinômio. Para a alegria de todos, tais fórmulas são muito grandes para trazermos nesse material ou para você encontrar
+ uma aplicação para elas.
 
 >Mas o que fazer se eu precisar achar as raízes de um polinômio de grau 3 ou maior?
 
-Não se preocupe, a próxima seção dedicar-se-á exclusivamente a métodos alternativos para achar a raiz sem o uso de fórmulas como as anteriores.
+Não se preocupe, a próxima seção dedicar-se-á exclusivamente a métodos alternativos para achar a raiz sem o uso de 
+fórmulas como as anteriores.
