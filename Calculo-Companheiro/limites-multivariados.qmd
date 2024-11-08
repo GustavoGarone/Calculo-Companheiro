@@ -1,0 +1,3 @@
+# Limites de mais de uma variável
+
+No cálculo univariado, 

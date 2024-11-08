@@ -46,9 +46,9 @@ Aprender matemática ocorre por meio do entendimento dos processos e pelo desenv
 "intuição matemática". Considere o seguinte problema:
 
 >Um laboratório de química contém tubos de ensaios idênticos e não identificados. Cada tubo de ensaio contém 5g ou 8g 
-de um sal. Um estudante chegou ao laboratório e notou que 10 tubos estavam vazios e o seus conteúdos foram depositado 
-em um becker. Após os devidos procedimentos, o estudante constatou que havia 59g do sal no becker.
-Quantos tubos de cada tipo foram usados?
+>de um sal. Um estudante chegou ao laboratório e notou que 10 tubos estavam vazios e o seus conteúdos foram depositado 
+>em um becker. Após os devidos procedimentos, o estudante constatou que havia 59g do sal no becker.
+>Quantos tubos de cada tipo foram usados?
 
 Apesar de nunca ter visto este exato problema antes, não é difícil perceber que ele requer um sistema linear não 
 homogêneo (tudo bem se você não compreende muito bem o que todas essas palavras querem dizer) e conclua que foram 
@@ -64,9 +64,9 @@ para serem "chutadas". Como sabemos que $\pi$ não é a resposta? E, talvéz, $(
 Chutar 7 tubos de 5g e 3 tubos de 8g não é tão óbvio (evitaremos essa palavra no decorrer do texto por motivos óbvios) 
 quanto pode parecer, apesar do problema ser simples. Para chegar à resposta, a pessoa deve compreender algumas coisas:
 
-* A resposta deve ser o número de tubos de 8g e o número de tubos de 5g (dois números ao todo)
-* O número de tubos é um número natural (inteiro não negativo)
-* 8 vezes o número de tubos de 8g mais 5 vezes o número de tubos de 5g é igual a 65g
+- A resposta deve ser o número de tubos de 8g e o número de tubos de 5g (dois números ao todo)
+- O número de tubos é um número natural (inteiro não negativo)
+- 8 vezes o número de tubos de 8g mais 5 vezes o número de tubos de 5g é igual a 65g
 
 Acredite ou não, você também chegou a todas essas conclusões sem nem pensar sobre! Parabéns, esse é o passo fundamental 
 para a nossa jornada de aprender matemática, em especial Cálculo I e II!
