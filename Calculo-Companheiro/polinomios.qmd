@@ -3,9 +3,6 @@
 Adição, multiplicação fatoração, equações, relações de Girard, binômio de newton, teorema do resto, divisão de 
 polinômios pelo método da chave e Briot-ruffini, introdução ao desenho de polinômios (sem cálculo), polinômios como 
 funções compostas, interpolação, introdução aos números complexos e uma menção ao conceito de séries. -->
-
-  
-
 # Funções Polinomiais
 
 ## Introdução
@@ -23,7 +20,7 @@ função do tempo após o lançamento, pode ser descrita por $h(t) = 4.9t^2+100t
 [média móvel](https://pt.wikipedia.org/wiki/Média_móvel) dos valores do ativo, em função do tempo, pode ser modelado por
  $v(t) = −0.0002t^3+31.664t^2–10^6t+2×1010$
 
->3- Uma biólogo, ao medir várias vezes o volume de oxigênio (em unidade desconhecida) produzido por uma população de 
+>3- Uma bióloga, ao medir várias vezes o volume de oxigênio (em unidade desconhecida) produzido por uma população de 
 algas, notou que a produção variava de acordo com a concentração de algas em seu aquário. A concentração variava de 0 
 gramas de algas por L a 100g de algas por litro. A biólogo notou que a produção era modelada pela função 
 $p(c) = \frac{-5}{1000}(c^2-120c)$
