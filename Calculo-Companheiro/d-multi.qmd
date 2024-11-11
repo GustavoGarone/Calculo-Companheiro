@@ -1,0 +1,54 @@
+# Derivadas em múltiplas dimensões
+
+Quando tratamos de [derivadas](d-simples.qmd) simples no cálculo univariado, estávamos, como o nome indica, sempre 
+tratando de funções com uma variável. Isto é, a função estava sempre presa a um plano, e era fácil para nós encontrarmos
+a reta tangente a qualquer um de seus pontos, caso existisse, pela sua derivada.
+
+Contudo, essas funções agora tem muito mais liberdade no cálculo multivariado. No espaço tridimensional que vivemos, por
+exemplo, as funções podem tomar formas muito além de simples curvas e retas num plano. Sendo assim, não podemos encontrar
+apenas uma reta tangente a algum ponto dessa função. Na verdade, se diferenciável, podemos encontrar *infinitas* retas
+tangentes num ponto, uma vez que, em funções desse tipo, pontos possuem um *plano tangente*:
+
+![Plano tangente à esfera](Imagens/esferaPlanoTangente.png)
+
+Observe que o plano representa todas as retas tangentes ao ponto A.
+
+Dessa forma, diferente de como pensamos no cálculo univariado, agora as derivadas não representam um coeficiente angular
+duma reta tangente, mas sim nos dão informações sobre o plano tangente ao ponto.
+
+## Derivadas Direcionais e Parciais
+Uma das formas de usar essa informação é através da *derivada direcional*. De maneira bem simples, como agora temos 
+infinitas retas tangentes a um ponto, podemos escolher uma direção e observar a derivada das retas nessa direção. Isso nada
+mais é que analisar a derivada na direção do vetor diretor dessas retas.
+
+Vamos nos lembrar da definição de derivada de uma função $f$ num ponto $x$ no cálculo univariado:
+$$
+f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
+$$
+
+Essa definição se estende para mais dimensões ao escolhermos uma direção para avaliar essa derivada. Chamaremos essa
+direção de $y$, um vetor. Temos assim derivada duma função $f$ na direção de $y$ do *ponto* $x$
+$$
+f'(\pmb{x};\pmb{y}) = \frac{f(\pmb{x}+h\pmb{y})-f(\pmb{x})}{h} 
+$$
+
+Temos quase a definição de nossa derivada parcial, mas ainda existe um problema na nossa fórmula acima: por mais que ela
+meça a taxa de variação de $\pmb{x}$ na direção do vetor $\pmb{y}$, ela não nos dá necessariamente, em termos de escala,
+uma boa medida.
+
+Isso acontece pois o vetor $\pmb{y}$ pode não ser unitário, ou seja,sua *norma*, $\lVert \pmb{y} \rVert$ pode ser diferente
+de 1. Dessa forma, nos convém sempre normalizar o vetor que direciona esse tipo de derivada. Vamos chamar esse $\pmb{y}$
+normado de $\pmb{v}$, também conhecido como *versor* de $\pmb{y}$:
+$$
+\pmb{v} = \frac{\pmb{y}}{\lVert \pmb{y} \rVert} \Rightarrow \lVert \pmb{v} \rVert = 1
+$$
+
+Com isso, temos a definição da derivada direcional de $f$ no ponto $\pmb{x}$ na direção do versor $\pmb{v}$ de $\pmb{y}$,
+denotada por $D_$
+$$
+f'(\pmb{x};\pmb{v})= D_{\pmb{v}} = \frac{f(\pmb{x}+h\pmb{y})-f(\pmb{x})}{h} 
+$$
+
+Vamos bota-la em prática!
+
+## Gradiente

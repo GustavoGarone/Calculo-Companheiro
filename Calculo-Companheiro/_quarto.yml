@@ -11,6 +11,10 @@ diagram:
     tikz:
       header-includes:
         - '\usetikzlibrary{patterns}'
+        - '\usetikzlibrary{arrows}'
+        - '\usepackage{pgfplots}'
+        - '\usepackage{mathrsfs}'
+        - '\pgfplotsset{compat=1.16}'
 
 book:
   language: pt
@@ -38,7 +42,7 @@ book:
       chapters:
         - curvas.qmd
         - limites-multivariados.qmd
-        - d-gradiente.qmd
+        - d-multi.qmd
         - d-ordem-superior.qmd
         - taylor-multi.qmd
         - mins-maxs.qmd
