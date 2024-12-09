@@ -100,7 +100,7 @@ $$
 
 ### Comprimento de curvas
 
-<!-- Impossível explicar isso, boa sorte! (Guidorizzi V.2 Capt. 7)
+<!-- Impossível explicar isso, boa sorte! (Guidorizzi V.2 Capt. 7) Rascunho anterior:
 Diferente de um segmento de reta, não podemos calcular o comprimento de uma curva como a distância entre suas extremidades.
 Tente você mesmo! Desenhe uma curva qualquer, como um rabisco, ou a letra J, e você perceberá que o comprimento dessa não
 é simplesmente a distância das extremidades - onde você começou e acabou o desenho - mas um pouco mais complicado que isso.
