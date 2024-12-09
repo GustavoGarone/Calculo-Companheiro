@@ -51,8 +51,10 @@ significa "nome", ou, mais vulgarmente, "temo". Em suma, polinômios são vária
 >Polinômios são expressões que podem ser construídas a partir de constantes e variáveis por meio de soma, subtração, 
 multiplicação e exponenciação por inteiros não negativos.  
 
-Ou seja, de forma genérica, um polinômio de x é da forma 
-$$p(x) = a_nx^n+a_{n-1}x^{n-1}+\dots+a_2x^2+a_1x+a_0$ = \sum_{i=0}^{n} a_{i} x^{i}$$
+Ou seja, de forma genérica, um polinômio de x é da forma
+$$
+p(x) = a_{n}x^{n} + a_{n-1} x^{n-1} + \dots + a_{2}x^{2}+a_{1}x+a_{0} = \sum_{i=0}^{n} a_{i} x^{i}
+$$
 
 Apesar de não explicitados, perceba que $a_1x = a_1x^1$ e $a_0 = a_0x^0 = a_0\times1$.
 
