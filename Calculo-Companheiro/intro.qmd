@@ -60,7 +60,7 @@ necessariamente, notado. Essa é a "intuição matemática".
 
 Alternativamente, algumas pessoas podem ter resolvido com um método alternativo de Cálculo Hipotético Universal Técnico 
 Estimativo (CHUTE), mas saiba que também há muita intuição por trás disso! Teoricamente, havia infinitas possibilidades 
-para serem "chutadas". Como sabemos que $\pi$ não é a resposta? E, talvéz, $(5.2, 8,5, \sqrt{5}, 3)$?
+para serem "chutadas". Como sabemos que $\pi$ não é a resposta? E, talvez, $(5.2, 8, 5, \sqrt{5}, 3)$?
 Chutar 7 tubos de 5g e 3 tubos de 8g não é tão óbvio (evitaremos essa palavra no decorrer do texto por motivos óbvios) 
 quanto pode parecer, apesar do problema ser simples. Para chegar à resposta, a pessoa deve compreender algumas coisas:
 
@@ -86,13 +86,13 @@ tranquilo, pois este não é um conteúdo obrigatório para cálculo, mas ainda 
 
 Uma boa prática é dedicar uma hora de estudo para essa disciplina nos dias em que ela é oferecida, assim como para as 
 outras matérias. Se possível, revise a matéria, faça exercícios indicados pelo professor ou os que escontrar neste 
-material, estudo em grupo e, acima de tudo, ajude seus colegas. Ensinar outra pessoa é uma das melhores maneiras de 
-ficar e testa os seus conhecimentos, além de ajudar uma pessoa que provavelmente não entendeu o conteúdo tão rapidamente 
+material, estude em grupo e, acima de tudo, ajude seus colegas. Ensinar outra pessoa é uma das melhores maneiras de 
+fixar e testa os seus conhecimentos, além de ajudar uma pessoa que provavelmente não entendeu o conteúdo tão rapidamente 
 quanto você!
 
 ## Hora de começarmos!
 
-A você, que dedicou seu tempo a ler as dicas e os textos introdutórios, devemos agradecer, é você a quem investimos 
+A você, que dedicou seu tempo a ler as dicas e os textos introdutórios, devemos agradecer, é você em quem investimos 
 ~~muitas~~ horas na produção do material e esperamos que a sua experiência com cálculo deixe de ser a história de terror 
 contada por muitos veteranos e torne-se uma agradável introdução ao fazer matemático!
 
