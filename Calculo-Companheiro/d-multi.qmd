@@ -189,4 +189,54 @@ derivadas parciais *contínuas* nesse ponto.
 <!-- TODO: adicionar exercícios de diferenciabiidade -->
 
 ## Gradiente
+Conseguimos vários conceitos sobre as derivadas em mais dimensões. Observamos
+o que significa derivar em uma determinada direção, o que acontece quando
+derivamos na direção de um dos eixos e o que significa ser diferenciável. Mas,
+afinal, se temos uma função $f : \mathbb{R}^2 \rightarrow \mathbb{R}$, o que
+significa a "derivada da $f$" ou "$f'$"?
+
+Quando dizemos "derivada da função $f$", normalmente nos referimos ao *gradiente*
+dessa função, um vetor que conteḿ as derivadas parciais dela no ponto. Por exemplo,
+o gradiente da função $f$ no ponto $(x,y)$ é dado por
+$$
+\nabla f(x,y) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)
+$$
+
+Adaptando ao sistema de coordenadas $\hat{\imath}, \hat{\jmath}$, numa notação vetorial, teríamos que
+$$
+\vec{\nabla} f(x,y) = \frac{\partial f}{\partial x} \hat{\imath} +
+\frac{\partial f}{\partial y} \hat{j}
+$$
+
+Nesse livro, optamos por não utilizar a notação vetorial, mas pode ser que você
+a encontre especialmente em cursos de física!
+
+Na função simples $f(x,y) = x^2y^2$ teríamos, portanto, $\nabla f(x,y) = (2xy^2, 2x^2y)$.
+
+Podemos interpretar o gradiente geometricamente como um vetor aplicado a um ponto $\pmb{p}$.
+Acontece que, como veremos quando abordamos a [regra da cadeia](cadeia-tfi.qmd),
+esse é um vetor perpendicular ao ponto $\pmb{p}$, ou, como chamado na física,
+normal à [curva de nível](curvas.qmd) nesse ponto.
+
+<!-- TODO: Adicionar imagem do plot com o vetor destacado: ver Guidorizzi 2 6ed pag 223 -->
+
+Algo muito útil dessa propriedade é que, como é perpendicular ao ponto $\pmb{p}$, é também
+perpendicular à reta tangente que passa por esse ponto. Com isso, temos a equação
+da reta tangente
+$$
+\nabla f (\pmb{p}) \cdot [(x,y) - \pmb{p}] = 0
+$$
+
+Conseguimos estender isso para um plano tangente quando tratamos de três variáveis
+$$
+\nabla f (\pmb{p}) \cdot [(x,y,z) - \pmb{p}] = 0
+$$
+
+E encontrar a reta normal à essa superfície de nível de $f(x,y,z)$
+$$
+(x,y,z) = \pmb{p} + \lambda \nabla f (\pmb{p}), \lambda \in \mathbb{R}
+$$
+
+<!-- TODO: Relação grandiente-derivada direcional. Não consegui traduzir em uma
+explicação intuitiva -->
 
