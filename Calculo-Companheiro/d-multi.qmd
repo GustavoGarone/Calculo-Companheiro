@@ -186,5 +186,7 @@ muito útil:
 Para que uma função $f$ seja diferenciável em um ponto $\pmb{p}$, basta que admita
 derivadas parciais *contínuas* nesse ponto.
 
+<!-- TODO: adicionar exercícios de diferenciabiidade -->
+
 ## Gradiente
 
