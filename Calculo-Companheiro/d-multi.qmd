@@ -43,7 +43,7 @@ $$
 \pmb{v} = \frac{\pmb{y}}{\lVert \pmb{y} \rVert} \Rightarrow \lVert \pmb{v} \rVert = 1
 $$
 
-Com isso, temos a definição da derivada direcional de $f$ no ponto $\pmb{x}$ na direção do versor $\pmb{v}$ de $\pmb{y}$,
+Com isso, temos a definição da derivada direcional de $f$ no ponto $\pmb{p}$ na direção do versor $\pmb{v}$ de $\pmb{y}$,
 denotada por $D_{\pmb{v}}\rvert_{\pmb{p}}$
 $$
 f'(\pmb{p};\pmb{v})= D_{\pmb{v}}\rvert_{\pmb{p}} = \lim_{h\rightarrow 0} \frac{f(\pmb{p}+h\pmb{v})-f(\pmb{p})}{h} 
@@ -240,3 +240,27 @@ $$
 <!-- TODO: Relação grandiente-derivada direcional. Não consegui traduzir em uma
 explicação intuitiva -->
 
+Com esse recurso, conseguimos calcular quase qualquer derivada direcional através
+dessa relação:
+$$
+f'(\pmb{p}; \pmb{v}) = D_{\pmb{v}} \rvert_{\pmb{p}} =  \nabla f (\pmb{p}) \cdot \pmb{v}
+$$
+Ou seja, o produto interno entre o gradiente de $f$ calculado no ponto $\pmb{p}$
+e o versor da direção $\pmb{v}$.
+
+Vamos testar com um exempo que já fizemos quando calculamos a derivada direcional
+de $f(x,y) = xy$ no ponto $\pmb{p} = (2,1)$ na direção de $\pmb{u} = (1,1)$.
+
+Lembrando que precisamos normalizar esse vetor!
+$$
+\pmb{v} = \frac{\pmb{u}}{\lVert \pmb{u} \rVert} = \left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right)
+$$
+Calculando o gradiente, temos:
+$$
+\nabla f(\pmb{p}) = (1,2)
+$$
+Finalmente,
+$$
+D_{\pmb{u}}\rvert_{\pmb{p}} = (1,2) \cdot \pmb{v} = \frac{1}{\sqrt{2}}+\frac{2}{\sqrt{2}} = \frac{3}{\sqrt{2}} = \frac{3}{2} \sqrt{2}
+$$
+O que confere com nosso [resultado anterior](d-multi.qmd#exercício---derivada-direcional)
