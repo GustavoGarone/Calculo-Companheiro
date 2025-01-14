@@ -1,3 +1,75 @@
 # Limites de mais de uma variável
 
-No cálculo univariado, 
+Quando estudamos os [limites no cálculo univariado](limites.qmd), vimos a
+importância deste conceito para além de seu papel fundamental na construção
+formal do cáculo. Isto é, estudamos como são importantes no estudo do mundo natural,
+como na física e química, e até mesmo nas humanidades, como na economia.
+
+Entretanto, poucas coisas na realidade comportam-se apenas com uma única variável.
+Por isso, precisamos estender o conceito de limites para funções multivariadas,
+e esse será o objetivo desse capítulo.
+
+## Outras formas de dividirmos o domínio
+No cálculo de uma variável, costumamos dividir o domínio em duas partes, "à esquerda"
+com $\{x: x < a\}$ e "à direita" com $\{x : x > a \}$. Contudo, poderíamos também
+dividir o domínio de outras formas. Vamos trabalhar um exemplo
+
+$$
+f(x) = \begin{cases}
+\sqrt{2}x, x \in \mathbb{Q} \\
+x^2, x \in \mathbb{R} \setminus \mathbb{Q}
+\end{cases}
+$$
+
+*Nota:* $\mathbb{R} \setminus \mathbb{Q}$ significa o conjunto que contém todos 
+os números reais que não são racionais
+
+podemos expressar os limites de $x$ se aproximando de um valor arbitrário $a$
+como
+$$
+\begin{aligned}
+\lim_{\begin{aligned}x&\rightarrow a \\ x& \in\mathbb{Q}\end{aligned}} f(x) =
+\lim_{\begin{aligned}x&\rightarrow a \\ x& \in\mathbb{Q}\end{aligned}} \sqrt{2} x=
+\sqrt{2} a \\
+\lim_{\begin{aligned}x&\rightarrow a \\ x& \in \mathbb{R}\setminus\mathbb{Q}
+\end{aligned}} f(x) =
+\lim_{\begin{aligned}x&\rightarrow a \\ x& \in\mathbb{R}\setminus\mathbb{Q}
+\end{aligned}} x^2 = a^2
+\end{aligned}
+$$
+
+Dividindo o domínio em pedaços, temos que
+$$
+\lim_{x\rightarrow a} f(x) = L \Leftrightarrow
+\lim_{\begin{aligned}x&\rightarrow a \\ x& \in\mathbb{R}\setminus\mathbb{Q}
+\end{aligned}} f(x) = L = 
+\lim_{\begin{aligned}x&\rightarrow a \\ x& \in\mathbb{Q}\end{aligned}}
+$$
+
+Para que a igualdade à direita exista, necessitamos que $\sqrt{2}a = a^2$. Assim,
+a iguldade vale para $a=0$ e $a=\sqrt{2}$. Logo, $\lim_{x\rightarrow a} f(x)$
+existe somente para $a=0$ e $a=\sqrt{2}$! Isso significa que a função é contínua
+apenas em $0$ (onde assume o valor de 0) e em $\sqrt{2}$ (onde assume o valor de 2).
+
+Essa técnica de dividir o domínio é muito importante para calcularmos limites
+de várias variáveis. Vamos fazer um exemplo
+
+### Calculando limites com duas variáveis
+
+Temos uma função simpels, $f(x) = \frac{x^3y^6}{x^4+y^8}$. Note que essa função
+só existe quando $x$ e $y$ são *ambos* diferentes de 0. Mas, se quisermos
+descobrir o que acontece na região do $\mathbb{R}^2$ próxima do ponto $(0,0)$,
+podemos calcular o seguinte limite:
+
+$$
+\lim_{(x,y) \rightarrow (0,0)} \frac{x^3y^6}{x^4+y^8}
+$$
+
+Vamos utilizar a técnica anterior e dividir o domínio. Para isso, precisamos
+buscar um valor positivo $\alpha$ tal que $\lvert x \rvert \leq \lvert y \rvert^{\alpha}$
+
+$$
+\left\lvert \frac{x^3y^6}{x^4+y^8} \right\rvert = \frac{\lvert x \rvert^3 \lvert y \rvert^6}
+{x^4+y^8} \leq \frac{\lvert y \rvert ^{3\alpha} \lvert y \rvert^6}{x^4 + y^8} =
+\frac{\lvert y \rvert^{6+3\alpha}}{x^4 + y^8}
+$$
