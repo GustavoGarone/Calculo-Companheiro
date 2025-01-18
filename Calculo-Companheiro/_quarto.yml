@@ -33,6 +33,7 @@ book:
         - matrizes.qmd
     - part: "Introdução ao Cálculo"
       chapters:
+        - limites.qmd
         - weierstrass.qmd
     - part: "Aplicações do Cálculo"
     - part: "Álgebra Linear"

@@ -68,8 +68,67 @@ $$
 Vamos utilizar a técnica anterior e dividir o domínio. Para isso, precisamos
 buscar um valor positivo $\alpha$ tal que $\lvert x \rvert \leq \lvert y \rvert^{\alpha}$
 
+#### Exemplo 1
+
 $$
 \left\lvert \frac{x^3y^6}{x^4+y^8} \right\rvert = \frac{\lvert x \rvert^3 \lvert y \rvert^6}
 {x^4+y^8} \leq \frac{\lvert y \rvert ^{3\alpha} \lvert y \rvert^6}{x^4 + y^8} =
 \frac{\lvert y \rvert^{6+3\alpha}}{x^4 + y^8}
 $$
+
+Se $6+3\alpha > 8$, temos
+
+$$
+\cancelto{0}{\lvert y \rvert^{6+3\alpha-8}} \cdot
+\underbrace{\frac{\lvert y \rvert^{8}}{x^4+y^8}}_{\text{Limitada}}
+$$
+
+Assim, se $6+3\alpha > 8$, pelo [teorema do confronto](limites.qmd#sec-confronto)
+
+$$
+\lim_{\begin{aligned}(x,y)&\rightarrow (0,0) 
+\\ \lvert x \rvert &\leq \lvert y \rvert^{\alpha} \end{aligned}} 
+\left\lvert \frac{x^3 y^6}{x^4+y^8} \right\rvert = 0 
+$$
+
+Portanto,
+
+$$
+\lim_{\begin{aligned}(x,y)&\rightarrow (0,0) 
+\\ \lvert x \rvert &\leq \lvert y \rvert^{\alpha} \end{aligned}} 
+\frac{x^3 y^6}{x^4+y^8} = 0
+$$
+
+Vamos analisar esse número $\alpha$. Sabemos que $6 + 3\alpha - 8 >0$.
+
+$$
+\begin{aligned}
+  &6 + 3\alpha - 8 > 0 \\
+  \Leftrightarrow& 3\alpha > 2 \\
+  \Leftrightarrow& \alpha > \frac{2}{3}
+\end{aligned}
+$$
+
+Dessa forma, para termos os dois limites nessa repartição, vasta considerar
+$\alpha$ com $\frac{2}{3}<\alpha<6$. Podemos, por exempo, tomar $\alpha = 1$.
+Com isso,
+
+$$
+\lim_{\begin{aligned}
+(x,y)&\rightarrow(0,0)\\ \lvert x \rvert &\leq \lvert y \rvert
+\end{aligned}}
+\frac{x^3y^6}{x^4+y^8} = 0 =
+\lim_{\begin{aligned}
+(x,y)&\rightarrow(0,0)\\ \lvert x \rvert &\geq \lvert y \rvert
+\end{aligned}}
+\frac{x^3y^6}{x^4+y^8}
+$$
+
+Assim, calculamos nosso limite após dividí-lo em relação ao módulo de $x$ e $y$
+e obtermos um mesmo valor $L=0$
+
+$$
+\lim_{(x,y)\rightarrow(0,0)}
+\frac{x^3y^6}{x^4+y^8} = 0
+$$
+
