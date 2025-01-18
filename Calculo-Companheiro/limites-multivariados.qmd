@@ -66,10 +66,13 @@ $$
 $$
 
 Vamos utilizar a técnica anterior e dividir o domínio. Para isso, precisamos
-buscar um valor positivo $\alpha$ tal que $\lvert x \rvert \leq \lvert y \rvert^{\alpha}$
+buscar uma relação entre $\lvert x \rvert$ e $\lvert y \rvert$. Tentaremos
+encontrar $\alpha > 0$ tal que $\lvert x \rvert \leq \lvert y \rvert^\alpha$ e
+$\lvert x \rvert \geq \lvert y \rvert^{\alpha} \Leftrightarrow \lvert y \rvert \leq \lvert x \rvert^{\frac{1}{\alpha}}$
 
 #### Exemplo 1
 
+1. $\lvert x \rvert \leq \lvert y \rvert^{\alpha}$
 $$
 \left\lvert \frac{x^3y^6}{x^4+y^8} \right\rvert = \frac{\lvert x \rvert^3 \lvert y \rvert^6}
 {x^4+y^8} \leq \frac{\lvert y \rvert ^{3\alpha} \lvert y \rvert^6}{x^4 + y^8} =
@@ -80,7 +83,7 @@ Se $6+3\alpha > 8$, temos
 
 $$
 \cancelto{0}{\lvert y \rvert^{6+3\alpha-8}} \cdot
-\underbrace{\frac{\lvert y \rvert^{8}}{x^4+y^8}}_{\text{Limitada}}
+\underbrace{\frac{\lvert y \rvert^{8}}{x^4+y^8}}_{\text{Limitado}}
 $$
 
 Assim, se $6+3\alpha > 8$, pelo [teorema do confronto](limites.qmd#sec-confronto)
@@ -99,15 +102,55 @@ $$
 \frac{x^3 y^6}{x^4+y^8} = 0
 $$
 
-Vamos analisar esse número $\alpha$. Sabemos que $6 + 3\alpha - 8 >0$.
+2. $\lvert x \rvert \geq \lvert y \rvert^{\alpha} \Leftrightarrow \lvert y \rvert \leq \lvert x \rvert^{\frac{1}{\alpha}}$
 
 $$
+0 \leq \left\lvert \frac{x^3y^6}{x^4+y^8} \right\rvert = 
+\frac{\lvert x \rvert^3 \lvert y \rvert^6}{x^4+y^8} \leq
+\frac{\lvert x \rvert^3 \lvert x \rvert^{\frac{6}{\alpha}}}{x^4+y^8}
+$$
+
+Se $3 + \frac{6}{\alpha} > 4$, então
+$$
+\leq \frac{\lvert x \rvert^{3 \frac{6}{\alpha}}}{x^4+y^8} =
+\cancelto{0}{\lvert x \rvert^{3 + \frac{6}{\alpha} - 4}} \cdot
+\underbrace{\frac{\lvert x \rvert^4}{x^4+y^8}}_{\text{Limitado}}
+$$
+
+Para $3 + \frac{6}{\alpha} > 4$ temos pelo [teorema do confronto](limites.qmd$sec-confronto),
+
+$$
+\lim_{\begin{aligned}(x,y)&\rightarrow (0,0) \\ 
+\lvert x \rvert & \geq \lvert y \rvert^{\alpha} \end{aligned}}
+\left\lvert \frac{x^3y^6}{x^4+y^8} \right\rvert = 0
+$$
+
+Portanto,
+
+$$
+\lim_{\begin{aligned}(x,y)&\rightarrow (0,0) \\ 
+\lvert x \rvert & \geq \lvert y \rvert^{\alpha} \end{aligned}}
+\frac{x^3y^6}{x^4+y^8}  = 0
+$$
+
+Vamos analisar esse número $\alpha$. Sabemos pelo ponto 1. que $6 + 3\alpha - 8 >0$
+e pelo ponto 2. que $3 + \frac{6}{\alpha} - 4 >0$.
+
+$$
+1. ~~~
 \begin{aligned}
   &6 + 3\alpha - 8 > 0 \\
-  \Leftrightarrow& 3\alpha > 2 \\
-  \Leftrightarrow& \alpha > \frac{2}{3}
+  &\Leftrightarrow 3\alpha > 2 \\
+  &\Leftrightarrow \alpha > \frac{2}{3} \\
+\end{aligned} ~~~~~~~~
+2. ~~~
+\begin{aligned}
+  &3 + \frac{6}{\alpha} > 4 \\
+  &\Leftrightarrow \frac{6}{\alpha} > 1 \\
+  &\Leftrightarrow \alpha < 6
 \end{aligned}
 $$
+
 
 Dessa forma, para termos os dois limites nessa repartição, vasta considerar
 $\alpha$ com $\frac{2}{3}<\alpha<6$. Podemos, por exempo, tomar $\alpha = 1$.
@@ -131,4 +174,17 @@ $$
 \lim_{(x,y)\rightarrow(0,0)}
 \frac{x^3y^6}{x^4+y^8} = 0
 $$
+
+#### Exemplo 2
+
+$$
+\lim_{(x,y)\rightarrow (0,0)} \frac{x^3y^3}{x^4+y^8}
+$$
+
+Tentaremos novamente dividir o domínio através de uma relação entre o módulo
+de $x$ e o módulo de $y$. Isto é, vamos tentar encontrar $\alpha>0$ tal que
+
+
+
+
 
