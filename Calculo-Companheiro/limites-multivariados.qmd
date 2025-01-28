@@ -74,7 +74,7 @@ $\lvert x \rvert \geq \lvert y \rvert^{\alpha} \Leftrightarrow \lvert y \rvert \
 
 1. $\lvert x \rvert \leq \lvert y \rvert^{\alpha}$
 $$
-\left\lvert \frac{x^3y^6}{x^4+y^8} \right\rvert = \frac{\lvert x \rvert^3 \lvert y \rvert^6}
+0 \leq \left\lvert \frac{x^3y^6}{x^4+y^8} \right\rvert = \frac{\lvert x \rvert^3 \lvert y \rvert^6}
 {x^4+y^8} \leq \frac{\lvert y \rvert ^{3\alpha} \lvert y \rvert^6}{x^4 + y^8} =
 \frac{\lvert y \rvert^{6+3\alpha}}{x^4 + y^8}
 $$
@@ -183,8 +183,90 @@ $$
 
 Tentaremos novamente dividir o domínio através de uma relação entre o módulo
 de $x$ e o módulo de $y$. Isto é, vamos tentar encontrar $\alpha>0$ tal que
+$\lvert x \rvert \leq \lvert y \rvert^{\alpha}$ e 
+$\lvert x \rvert \geq \lvert y \rvert^{\alpha}$
 
+1. $\lvert x \rvert \leq \lvert y \rvert^{\alpha}$
 
+$$
+0 \leq \left\lvert \frac{x^3y^3}{x^4+y^8}\right\rvert
+\leq \frac{\lvert y \rvert^{3\alpha}\lvert y \rvert^{3}}{x^4+y^8}
+$$
 
+Se $3 \alpha + 3 > 8$
 
+$$
+= \cancelto{0}{\lvert y \rvert ^{3\alpha + 3 - 8}} \cdot
+\underbrace{\frac{\lvert y \rvert^8}{x^4+y^8}}_{\text{Limitado}} = 0
+$$
+
+Se $3 \alpha + 3 > 8$, então pelo [teorema do confronto](limites.qmd$sec-confronto),
+
+$$
+\lim_{\begin{aligned}(x,y)\rightarrow (0,0)
+\\ \lvert x \rvert \leq \lvert y \rvert^{\alpha}
+\end{aligned}} \left\lvert \frac{x^3y^3}{x^4+y^8} \right\rvert = 0
+$$
+
+Logo,
+$$
+\lim_{\begin{aligned}(x,y)\rightarrow (0,0)
+\\ \lvert x \rvert \leq \lvert y \rvert^{\alpha}
+\end{aligned}} \frac{x^3y^3}{x^4+y^8} = 0
+$$
+
+2. $\lvert x \rvert \geq \lvert y \rvert^{\alpha}$, o que é equivalente a
+$\lvert y \rvert \leq \lvert x \rvert^{\frac{1}{\alpha}}$
+
+$$
+0 \leq \left\lvert \frac{x^3y^3}{x^4+y^8}\right\rvert = 
+\frac{\lvert x \rvert^3 \lvert y \rvert^3}{x^4+y^8}
+\leq \frac{\lvert x \rvert^3 \lvert x \rvert^{\frac{3}{\alpha}}}{x^4+y^8}
+$$
+
+Se $3 + \frac{3}{\alpha} > 4$, temos
+
+$$
+= \cancelto{0}{\lvert x \rvert^{3+ \frac{3}{\alpha}-4}} \cdot
+\underbrace{\frac{\lvert x \rvert^4}{x^4+y^8}}_{\text{Limitado}} = 0
+$$
+
+Assim, se $3 + \frac{3}{\alpha} > 4$, então pelo [teorema do confronto](limites.qmd$sec-confronto),
+
+$$
+\lim_{\begin{aligned}(x,y)\rightarrow (0,0)
+\\ \lvert x \rvert \geq \lvert y \rvert^{\alpha}
+\end{aligned}} \frac{x^3y^3}{x^4+y^8} = 0
+$$
+
+$$
+1. ~~~
+\begin{aligned}
+  &3 + 3\alpha - 8 > 0 \\
+  &\Leftrightarrow 3\alpha > 5 \\
+  &\Leftrightarrow \alpha > \frac{5}{3} \\
+\end{aligned} ~~~~~~~~
+2. ~~~
+\begin{aligned}
+  &3 + \frac{3}{\alpha} > 4 \\
+  &\Leftrightarrow \frac{3}{\alpha} > 1 \\
+  &\Leftrightarrow \alpha < 3
+\end{aligned}
+$$
+
+Como $3 > \frac{5}{3}$, podemos fixar um $\alpha$ tal que
+$$
+\frac{5}{3} < \alpha < 3
+$$
+
+Vamos usar, por exemplo, $\alpha = 2$. Assim,
+
+$$
+\lim_{\begin{aligned}(x,y)\rightarrow (0,0)
+\\ \lvert x \rvert \leq \lvert y \rvert^{2}
+\end{aligned}} \frac{x^3y^3}{x^4+y^8} = 0 = 
+\lim_{\begin{aligned}(x,y)\rightarrow (0,0)
+\\ \lvert x \rvert \geq \lvert y \rvert^{2}
+\end{aligned}} \frac{x^3y^3}{x^4+y^8}
+$$
 
