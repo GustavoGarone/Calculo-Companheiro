@@ -270,3 +270,188 @@ $$
 \end{aligned}} \frac{x^3y^3}{x^4+y^8}
 $$
 
+#### Exemplo 3
+$$
+\lim_{(x,y)\rightarrow(0,0)} \frac{x^3y^2}{x^4+y^8}
+$$
+
+1. $\lvert x \rvert \leq \lvert y \rvert^{\alpha}$
+
+$$
+0 \leq \left\lvert\frac{x^3 y^2}{x^4+y^8} \right\rvert=
+\frac{\lvert x \rvert^3 \lvert y \rvert^2}{x^4+y^8} \leq
+\frac{\lvert y \rvert^{3\alpha} \lvert y \rvert^2}{x^4+y^8} \\
+$$
+
+Se $3\alpha + 2 > 8$,
+
+$$
+\leq \cancelto{0}{\lvert y \rvert^{3\alpha+2-8}}
+\underbrace{\frac{\lvert y \rvert^{8}}{x^4+y^8}}_{\text{Limitado}} = 0
+$$
+
+Para $3\alpha + 2 > 8$, pelo teorema do confronto, temos
+$$
+\lim_{\begin{aligned}(x,y)&\rightarrow (0,0) \\ 
+\lvert x \rvert & \leq \lvert y \rvert^{\alpha} \end{aligned}}
+\left\lvert \frac{x^3y^2}{x^4+y^8} \right\rvert = 0 \Rightarrow
+\lim_{\begin{aligned}(x,y)&\rightarrow (0,0) \\ 
+\lvert x \rvert & \leq \lvert y \rvert^{\alpha} \end{aligned}}
+\frac{x^3y^2}{x^4+y^8} = 0
+$$
+
+2. $\lvert x \rvert \geq \lvert y \rvert^{\alpha} \Leftrightarrow \lvert y \rvert \leq \lvert x \rvert^{\frac{1}{\alpha}}$
+
+$$
+0 \leq \left\lvert\frac{x^3y^2}{x^4+y^8} \right\rvert=
+\frac{\lvert x \rvert^3 \lvert y \rvert^2}{x^4+y^8} \leq
+\frac{\lvert x \rvert^{3} \lvert x \rvert^{\frac{2}{\alpha}}}{x^4+y^8} \\
+$$
+
+Se $3 + \frac{2}{\alpha} > 4$,
+
+$$
+\leq \cancelto{0}{\lvert x \rvert^{3+\frac{2}{\alpha}-4}}
+\underbrace{\frac{\lvert x \rvert^{4}}{x^4+y^8}}_{\text{Limitado}} = 0
+$$
+
+Para $3 + \frac{2}{\alpha}$ temos pelo teorema do confronto,
+
+$$
+\lim_{\begin{aligned}(x,y)&\rightarrow (0,0) \\ 
+\lvert x \rvert & \geq \lvert y \rvert^{\alpha} \end{aligned}}
+\left\lvert \frac{x^3y^2}{x^4+y^8} \right\rvert = 0 \Rightarrow
+\lim_{\begin{aligned}(x,y)&\rightarrow (0,0) \\ 
+\lvert x \rvert & \geq \lvert y \rvert^{\alpha} \end{aligned}}
+\frac{x^3y^2}{x^4+y^8} = 0
+$$
+
+$$
+1. ~~~
+\begin{aligned}
+  &3\alpha + 2 > 8 \\
+  &\Leftrightarrow 3\alpha > 6 \\
+  &\Leftrightarrow \alpha > 2 \\
+\end{aligned} ~~~~~~~~
+2. ~~~
+\begin{aligned}
+  &3 + \frac{2}{\alpha} > 4 \\
+  &\Leftrightarrow \frac{2}{\alpha} > 1 \\
+  &\Leftrightarrow \alpha < 2
+\end{aligned}
+$$
+
+Como não existe um número $\alpha$ tal que $2 < \alpha < 2$, não podemos usar
+essa estratégia para concluir se o limite existe e falhamos em satisfazer as desigualdades
+para $\alpha = 2$
+
+Vamos tentar outra estratégia usando $x = y^2$, parametrizando uma curva
+$\gamma(t)=(t^2,t) \Rightarrow \gamma(0) = (0,0)$
+
+$$
+\lim_{t\rightarrow 0} f \circ \gamma (t) = \lim_{t\rightarrow 0}
+\frac{t^6 t^2}{t^8 + t^8} = \lim_{t\rightarrow 0} \frac{t^8}{2t^8} = \frac{1}{2}
+$$
+
+Vamos testar outra curva e conferir se temos um resultado único entre elas
+$\phi(t) = (0,t) \Rightarrow \phi(0) = (0,0)$
+
+$$
+\lim_{t\rightarrow 0} f \circ \phi (t) = \lim_{t\rightarrow 0} \frac{0^3 t^2}{0^4+t^8} = 0
+$$
+
+Como $\lim_{t\rightarrow 0} f \circ \gamma (t) \neq \lim_{t\rightarrow 0} f \circ \phi(t)$,
+segue que esse $\lim_{(x,y)\rightarrow (0,0)} f(x,y)$ não existe.
+
+Note que essa estratégia é útil para demonstrar que certos limites não existem,
+mas caso o limite exista, teríamos que testar infinitas curvas para provar sua existência?
+
+#### Exemplo 4
+
+$$
+\lim_{(x,y) \rightarrow (0,0)} \frac{x^3 y^2}{x-y}
+$$
+
+Neste exemplo temos que o denominador zera num conjunto que se acumula em (0,0).
+Assim para mostrar que o limite não existe, vamos nos aproximar rapidamente do conjunto
+$\{(x,y):x-y =0\}$. Para que o denominador vá para $0$ mais rápido do que o numerador.
+
+Uma parametrização desse conjunto pode ser dada por $(t,t)$. Como não queremos
+"andar" sobre $\{(x,y):x-y =0\}$, tomaremos $\gamma_n (t) = (t+t^n,t)$, assim o
+denominador vai rapido para 0 dependendo de $n$, pois $t+t^n-t = t^n$.
+
+Para isto, $n>0$, então
+
+$$
+\begin{aligned}
+\lim_{t\rightarrow 0} f \circ \gamma_{n}(t) &= \lim_{t\rightarrow 0}
+\frac{(t+t^n)^3t^2}{t+t^n-t} \\
+\lim_{t\rightarrow 0} \frac{t^3 (1+t^{n-3})t^2}{t^n}
+\lim_{t\rightarrow 0} \frac{t^5 (1+t^{n-3})}{t^n}
+\lim_{t\rightarrow 0} \frac{(1+t^{n-3})}{t^{n-5}}
+\end{aligned}
+$$
+
+Pelo nuemrador, vemos que precisamos de $n\geq 3$. Pelo denominador, precisamos
+de $n \geq 5$.
+
+$$
+\lim_{t\rightarrow 0} f\circ \gamma_5 (t) = \lim_{t\rightarrow 0} \frac{1+t^2}{1} = 1
+$$
+
+$$
+\lim_{t\rightarrow 0} f\circ \gamma_6 (t) = \lim_{t\rightarrow 0} \frac{1+t^3}{t} = +\infty
+$$
+
+assim, como esses limites são diferentes, não existe
+$$
+\lim_{(x,y)\rightarrow(0,0)} f(x,y)
+$$
+
+Neste exercício, observamos um potencial ponto falho que abriria um caminho para
+mostrar que o limite não existe (nesse caso, o denominador), e utilizamos uma estratégia
+para encontrar curvas que demonstrassem isso.
+
+#### Exemplo 5
+
+$$
+\lim_{(x,y)\rightarrow(0,0)} \frac{x^4 y^9}{x^2-y^5} = f(x,y)
+$$
+
+$(t^\frac{1}{2}, t^{\frac{1}{5}}), t > 0$ parametriza $\{(x,y):x^2-y^5=0, x>0, y>0\}$
+
+Vamos usar $\gamma_n(t) = \left((t+t^n)^{\frac{1}{2}}, t^{\frac{1}{5}}\right), \gamma_n(0) = (0,0)$
+novamente com a ideia de manter um denominador que fica pequeno dependendo de $n$
+atraveś de $((t+t^n)^{\frac{1}{2}})^2 - (t^{\frac{1}{5}})^5 = t+t^n -t = t^n$.
+
+$$
+\begin{aligned}
+\lim_{t\rightarrow 0} f \circ \gamma_n(t) &= \lim_{t\rightarrow 0}
+\frac{\left((t+t^n)^{\frac{1}{2}}\right)^4 (t^\frac{1}{5})^9}{t^n} \\
+& = \lim_{t\rightarrow 0} \frac{(t+t^n)^2 t^{\frac{9}{5}}}{t^n} \\
+& = \lim_{t\rightarrow 0} \frac{t^2 (1+t^{n-1})^2 t^{\frac{9}{5}}}{t^n} \\
+& = \lim_{t\rightarrow 0} \frac{(1+t^{n-1})^2}{t^{n-2-\frac{9}{5}}}
+\end{aligned}
+$$
+
+Pelo numerador, precisamos de $n \geq 1$. pelo denominador, precisamos de $n \geq \frac{19}{5}$.
+Vamos usar $n = 4$,
+
+$$
+\lim_{t\rightarrow 0^{+}} f \circ \gamma_4(t) = \lim_{t\rightarrow 0^{+}}
+\frac{(1+t^3)^2}{t^{4-\frac{19}{5}}} = +\infty
+$$
+
+Vamos usar outra curva para verificar o limite: $\phi(t) = (t,0) \Rightarrow \phi(0) = (0,0)$
+
+$$
+\lim_{t\rightarrow 0} f \circ \phi (t) = \lim_{t \rightarrow 0} \frac{t^4 0^9}{0^2 -t^5} 
+= \lim_{t\rightarrow 0} \frac{0}{-t^5} = 0
+$$
+
+Assim, $\lim_{t\rightarrow 0} f \circ \gamma_4(t) \neq \lim_{t\rightarrow 0} f \circ \phi (t)$.
+
+Portanto, $\lim_{(x,y) \rightarrow (0,0)} f(x,y)$ não existe.
+
+
+
