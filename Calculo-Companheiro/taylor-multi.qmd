@@ -1,28 +1,37 @@
+{{< include macros.qmd >}}
 # Polinômio de Taylor de Duas Variáveis
 
-Familiarizado com o Polinômio de Taylor de Uma Variável e com o conceito de funções de duas variáveis, é natural que também definamos o Polinômio de Taylor de Duas Variáveis! Ainda que tentemos trazer uma introdução ao assunto nesse capítulo, é crucial que você tenha certa familiaridade com o caso de uma variável ou tenha lido o capítulo próprio.
+Familiarizado com o Polinômio de Taylor de Uma Variável e com o conceito de funções de duas variáveis, é natural que também
+definamos o Polinômio de Taylor de Duas Variáveis! Ainda que tentemos trazer uma introdução ao assunto nesse capítulo, é
+crucial que você tenha certa familiaridade com o caso de uma variável ou tenha lido o capítulo próprio.
 
-Diferentemente do caso com uma variável, quando lidamos com duas variáveis, calcular os polinômios de ordens superiores mostra-se um trabalho exponencialmente mais complexo, então vamos restringir nossa abordagem até a segunda ordem.
+Diferentemente do caso com uma variável, quando lidamos com duas variáveis, calcular os polinômios de ordens superiores
+mostra-se um trabalho exponencialmente mais complexo, então vamos restringir nossa abordagem até a segunda ordem.
 
 ## Polinômio de Taylor de Primeira Ordem
 
 $$
-\newcommand{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}}
-
 P_1(x,y) = f(x_0, y_0) + 
 \left. \frac{\partial f(x,y)}{\partial x} \right |_{(x_0,y_0)} (x-x_0) +
 \left. \frac{\partial f(x,y)}{\partial y} \right |_{(x_0,y_0)} (y-y_0) \\
 $$
 
-Em um primeiro momento, a fórmula pode parecer assustadora, mas vamos analisar pedaço por pedaço para entender como calculá-la e o que ela representa.
+Em um primeiro momento, a fórmula pode parecer assustadora, mas vamos analisar pedaço por pedaço para entender como
+calculá-la e o que ela representa.
 
-Em primeiro lugar, dizemos que estamos calculando o Polinômio de Taylor de primeira ordem da função $f(x,y)$ em torno do ponto $(x_0,y_0)$. Ou seja, estamos usando um polinômio de até primeiro grau para aproximar a função $f(x,y)$ usando o ponto $(x_0,y_0)$ como "ponto de ancoragem".
+Em primeiro lugar, dizemos que estamos calculando o Polinômio de Taylor de primeira ordem da função $f(x,y)$ em torno do
+ponto $(x_0,y_0)$. Ou seja, estamos usando um polinômio de até primeiro grau para aproximar a função $f(x,y)$ usando
+o ponto $(x_0,y_0)$ como "ponto de ancoragem".
 
 $f(x_0,y_0)$: O valor da função no ponto $(x_0, y_0)$
 
-$\left. \frac{\partial f(x,y)}{\partial x} \right |_{(x_0,y_0)} (x-x_0)$: A derivada parcial da função em termos de $x$ calculada no ponto $(x_0, y_0)$ e multiplicada por $(x-x_0)$. Note que a primeira parte é um número e a segunda parte contém uma variável e um número.
+$\left. \frac{\partial f(x,y)}{\partial x} \right |_{(x_0,y_0)} (x-x_0)$: A derivada parcial da função em termos de $x$
+calculada no ponto $(x_0, y_0)$ e multiplicada por $(x-x_0)$. Note que a primeira parte é um número e a segunda parte
+contém uma variável e um número.
 
-$\left. \frac{\partial f(x,y)}{\partial y} \right |_{(x_0,y_0)} (y-y_0)$: A derivada parcial da função em termos de $y$ calculada no ponto $(x_0, y_0)$ e multiplicada por $(y-y_0)$. Note que a primeira parte é um número e a segunda parte contém uma variável e um número.
+$\left. \frac{\partial f(x,y)}{\partial y} \right |_{(x_0,y_0)} (y-y_0)$: A derivada parcial da função em termos de $y$
+calculada no ponto $(x_0, y_0)$ e multiplicada por $(y-y_0)$. Note que a primeira parte é um número e a segunda parte
+contém uma variável e um número.
 
 Juntando todos os termos, temos um plano que aproxima $f(x,y)$ em torno do ponto $(x_0, y_0)$.
 
@@ -30,9 +39,9 @@ Juntando todos os termos, temos um plano que aproxima $f(x,y)$ em torno do ponto
 
 ## Polinômio de Taylor de Segunda Ordem
 
-Antes de dar sequência para o polinômio de segunda ordem, recomendamos que você tenha certa familiaridade com a Matriz Jacobiana ou leia sobre ela em [Derivadas de Ordem Superior]((d-simples.qmd)).
+Antes de dar sequência para o polinômio de segunda ordem, recomendamos que você tenha certa familiaridade com a Matriz
+Jacobiana ou leia sobre ela em [Derivadas de Ordem Superior]((d-simples.qmd)).
 $$
-\newcommand{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}}
 \begin{aligned}
 P_2(x,y) = & \phantom{;;} f(x_0, y_0) + 
 \left. \frac{\partial f(x,y)}{\partial x} \right |_{(x_0,y_0)} (x-x_0) +
@@ -45,93 +54,91 @@ P_2(x,y) = & \phantom{;;} f(x_0, y_0) +
 $$
 
 
-Mais uma vez, a fórmula para o polinômio pode parecer extremamente complicada, mas vamos decompô-la em partes menores para facilitar a compreensão. Note que a primeira linha é exatamente igual ao polinômio de primeira ordem, então só será necessário atentarmo-nos à segunda linha.
+Mais uma vez, a fórmula para o polinômio pode parecer extremamente complicada, mas vamos decompô-la em partes menores para
+facilitar a compreensão. Note que a primeira linha é exatamente igual ao polinômio de primeira ordem, então só será
+necessário atentarmo-nos à segunda linha.
 
 $\frac{1}{2} \begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}
 \left. \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
 				\pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix}\right |_{(x_0,y_0)}
-\begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix}$: Trata-se da metade do produto do vetor linha $\begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}$ pela Matriz Jacobiana calculada no ponto $(x_0, y_0)$ multiplicado pelo vetor coluna $\begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix}$. Note que, ao final das operações, temos um produto de matrizes de tamanho $1 \times 2$, $2 \times 2$ e $2 \times 1$, respectivamente, o que resulta numa matriz $1 \times 1$, que podemos interpretar como um mero número ou, neste caso, uma função.
+\begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix}$: Trata-se da metade do produto do vetor linha
+$\begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}$ pela Matriz Jacobiana calculada no ponto $(x_0, y_0)$ multiplicado pelo vetor
+coluna $\begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix}$. Note que, ao final das operações, temos um produto de matrizes de
+tamanho $1 \times 2$, $2 \times 2$ e $2 \times 1$, respectivamente, o que resulta numa matriz $1 \times 1$, que podemos
+interpretar como um mero número ou, neste caso, uma função.
 
-Ao calcular a matriz jacobiana no ponto, recomendamos atenção redobrada para evitar substituir uma das variáveis pelo valor no ponto. Tal erro acarreta em um novo polinômio de primeira ordem que está a uma constante de distância do Polinômio de Taylor de Primeira Ordem, além de ser muito diferente do Polinômio de Taylor de Segunda Ordem, que seria o polinômio buscado.
+Ao calcular a matriz jacobiana no ponto, recomendamos atenção redobrada para evitar substituir uma das variáveis pelo valor
+no ponto. Tal erro acarreta em um novo polinômio de primeira ordem que está a uma constante de distância do Polinômio de
+Taylor de Primeira Ordem, além de ser muito diferente do Polinômio de Taylor de Segunda Ordem, que seria o polinômio buscado.
 
 ## Exemplos de Polinômios de Taylor de Duas Variáveis
 
 $f(x,y) = x^2+y^2+3xy+5x+4y-9 \phantom{---} (x_0,y_0) = (0,0)$
 
-> $f(0,0) = (0)^2+(0)^2+3(0)(0)+5(0)+4(0)-9=-9$
->
-> $\left. \frac{\partial f(x,y)}{\partial x} \right |_{(0,0)} (x-x_0) = \left. 2x+3y+5 \right |_{(0,0)}(x-0)=5x$
->
-> $\left. \frac{\partial f(x,y)}{\partial y} \right |_{(0,0)} (y-y_0) = \left. 2y+3x+4 \right |_{(0,0)}(y-0)=4y$
-> $$
-> \newcommand{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}}
-> \begin{flalign}
-> & \frac{1}{2} \begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}
-> \left. \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
-> 				\pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix}
-> 				\right |_{(x_0,y_0)}
-> \begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix} & \\ \\
-> 
-> & = \frac{1}{2} \begin{bmatrix} x-0 & y-0 \end{bmatrix}
-> \left. \begin{bmatrix} 2 & 3\\ 
-> 					   3 & 2 \end{bmatrix}
-> 					   \right |_{(0,0)}
-> \begin{bmatrix} x-0 \\ y-0 \end{bmatrix} & \\
-> 
-> & = \frac{1}{2} \begin{bmatrix} x & y \end{bmatrix}
-> \begin{bmatrix} 2 & 3 \\ 3 & 2 \end{bmatrix}
-> \begin{bmatrix} x \\ y \end{bmatrix} & \\
-> 
-> & = \frac{1}{2} \begin{bmatrix} 2x+3y & 3x+2y \end{bmatrix}
-> \begin{bmatrix} x \\ y \end{bmatrix} & \\
-> 
-> & = \frac{1}{2} \begin{bmatrix} 2x^2+2y^2+6xy \end{bmatrix} &\\
-> 
-> & = x^2+y^2+3xy &
-> 
-> \end{flalign}
-> $$
->
+$f(0,0) = (0)^2+(0)^2+3(0)(0)+5(0)+4(0)-9=-9$
 
-Portanto, temos que $P_2(x,y) = x^2+y^2+3xy+5x+4y-9$. Note que a melhor aproximação de um polinômio de segundo grau usando um polinômio de até segundo grau é o próprio polinômio! Tente fazer esse mesmo processo em torno do ponto $(1,1)$, você deve obter a mesma função.
+$\left. \frac{\partial f(x,y)}{\partial x} \right |_{(0,0)} (x-x_0) = \left. 2x+3y+5 \right |_{(0,0)}(x-0)=5x$
+
+$\left. \frac{\partial f(x,y)}{\partial y} \right |_{(0,0)} (y-y_0) = \left. 2y+3x+4 \right |_{(0,0)}(y-0)=4y$
+
+$$
+\begin{aligned}
+& \frac{1}{2} \begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}
+\left. \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
+      \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix}
+      \right |_{(x_0,y_0)}
+\begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix} & \\ \\
+& = \frac{1}{2} \begin{bmatrix} x-0 & y-0 \end{bmatrix}
+\left. \begin{bmatrix} 2 & 3\\ 
+           3 & 2 \end{bmatrix}
+           \right |_{(0,0)}
+\begin{bmatrix} x-0 \\ y-0 \end{bmatrix} & \\
+& = \frac{1}{2} \begin{bmatrix} x & y \end{bmatrix}
+\begin{bmatrix} 2 & 3 \\ 3 & 2 \end{bmatrix}
+\begin{bmatrix} x \\ y \end{bmatrix} & \\
+& = \frac{1}{2} \begin{bmatrix} 2x+3y & 3x+2y \end{bmatrix}
+\begin{bmatrix} x \\ y \end{bmatrix} & \\
+& = \frac{1}{2} \begin{bmatrix} 2x^2+2y^2+6xy \end{bmatrix} &\\
+& = x^2+y^2+3xy &
+\end{aligned}
+$$
+
+
+Portanto, temos que $P_2(x,y) = x^2+y^2+3xy+5x+4y-9$. Note que a melhor aproximação de um polinômio de segundo grau
+usando um polinômio de até segundo grau é o próprio polinômio! Tente fazer esse mesmo processo em torno do ponto $(1,1)$,
+você deve obter a mesma função.
 
 
 
 $f(x,y) = x \sin(y) \phantom{---} (x_0,y_0) = (1,0)$
 
-> $f(1,0) = (1) \sin(0) = 0$
->
-> $\left. \frac{\partial f(x,y)}{\partial x} \right |_{(1,0)} (x-x_0) = \left. \sin(y) \right |_{(1,0)}(x-1)=0$
->
-> $\left. \frac{\partial f(x,y)}{\partial y} \right |_{(1,0)} (y-y_0) = \left.  x\cos(y) \right |_{(1,0)}(y-0)=y$
-> $$
-> \newcommand{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}}
-> \begin{flalign}
-> & \frac{1}{2} \begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}
-> \left. \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
-> 				\pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix}
-> 				\right |_{(x_0,y_0)}
-> \begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix} & \\ \\
-> 
-> & = \frac{1}{2} \begin{bmatrix} x-1 & y-0 \end{bmatrix}
-> \left. \begin{bmatrix} 0 & \cos(y)\\ 
-> 					   \cos(y) & -x \sin(y) \end{bmatrix}
-> 					   \right |_{(1,0)}
-> \begin{bmatrix} x-1 \\ y-0 \end{bmatrix} & \\
-> 
-> & = \frac{1}{2} \begin{bmatrix} x-1 & y \end{bmatrix}
-> \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
-> \begin{bmatrix} x-1 \\ y \end{bmatrix} & \\
-> 
-> & = \frac{1}{2} \begin{bmatrix} y & x-1 \end{bmatrix}
-> \begin{bmatrix} x-1 \\ y \end{bmatrix} & \\
-> 
-> & = \frac{1}{2} \begin{bmatrix} -2y+2xy \end{bmatrix} &\\
-> 
-> & = -y+xy &
-> 
-> \end{flalign}
-> $$
+$f(1,0) = (1) \sin(0) = 0$
 
-$P_2(x,y) = xy$. Ou seja, a melhor aproximação com um polinômio de grau até 2 para a função $f(x,y)=x \sin(y)$ em torno do ponto $(1,0)$ é $P_2(x,y)=xy$.
+$\left. \frac{\partial f(x,y)}{\partial x} \right |_{(1,0)} (x-x_0) = \left. \sin(y) \right |_{(1,0)}(x-1)=0$
+
+$\left. \frac{\partial f(x,y)}{\partial y} \right |_{(1,0)} (y-y_0) = \left.  x\cos(y) \right |_{(1,0)}(y-0)=y$
+$$
+\begin{aligned}
+& \frac{1}{2} \begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}
+\left. \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
+      \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix}
+      \right |_{(x_0,y_0)}
+\begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix} & \\ \\
+& = \frac{1}{2} \begin{bmatrix} x-1 & y-0 \end{bmatrix}
+\left. \begin{bmatrix} 0 & \cos(y)\\ 
+           \cos(y) & -x \sin(y) \end{bmatrix}
+           \right |_{(1,0)}
+\begin{bmatrix} x-1 \\ y-0 \end{bmatrix} & \\
+& = \frac{1}{2} \begin{bmatrix} x-1 & y \end{bmatrix}
+\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
+\begin{bmatrix} x-1 \\ y \end{bmatrix} & \\
+& = \frac{1}{2} \begin{bmatrix} y & x-1 \end{bmatrix}
+\begin{bmatrix} x-1 \\ y \end{bmatrix} & \\
+& = \frac{1}{2} \begin{bmatrix} -2y+2xy \end{bmatrix} &\\
+& = -y+xy &
+\end{aligned}
+$$
+
+$P_2(x,y) = xy$. Ou seja, a melhor aproximação com um polinômio de grau até 2 para a função $f(x,y)=x \sin(y)$ em torno
+do ponto $(1,0)$ é $P_2(x,y)=xy$.
 

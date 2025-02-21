@@ -1,8 +1,7 @@
-# Mínimos e Máximos - Aprofundamento
+# Mínimos e Máximos 
 
 Veremos primeiro nesse capítulo uma retomada do que aprendemos quando falamos do [Teorema de Weierstrass](weierstrass.qmd),
-então exploraremos com mais formalidade o que são mínimos e máximos e algumas técnicas para encontrá-los quando falamos de
-funções multivariadas.
+então exploraremos com mais formalidade o que são mínimos e máximos e algumas técnicas para encontrá-los.
 
 ## Valor de mínimo/máximo e ponto de mínimo/máximo
 Chamamos de valor máximo ou simplesmente máximo de uma função $f: A \rightarrow B$, o valor $f(x)$ tal que
@@ -207,22 +206,3 @@ $$
     f(x) = x^3 &  0 &  \in \mathbb{R} & \text{Inconclusivo} 
 \end{array}
 $$
-
-## Mínimos e máximos de funções bivariadas
-Antes de prosseguir para uma análise multivariada de mínimos e máximos, recomendamos que você releia nosso capítulo sobre
-o [Polinômio de Taylor com mais Variáveis](taylor-multi.qmd) e sobre [Derivadas de Ordem Superior](d-ordem-superior.qmd).
-
-o [Teorema de Weierstrass](weierstrass.qmd) não se restringe apenas ao cálculo univariado!
-Tome como exemplo $F: \mathbb{R}^2 \rightarrow \mathbb{R}$ uma função diferenciável. Se limitarmos um retângulo em $R^2$,
-teremos um intervalo fechado como domínio, e, portanto, mínimo e máximo de $F$:
-``` tikz
-%%| format: svg
-%%| filename: quadradoFechadoMinMax
-\begin{tikzpicture}[domain=-2:2]
-    \draw[very thin, color =gray] (0,0) grid (3.9,3.9);
-    \draw[->] (0,0) -- (4.1,0) node[right] {$\mathbb{R}$};
-    \draw[->] (0,0) -- (0,4.1) node[above] {$\mathbb{R}$};
-    \draw (0,0)
-    \draw[pattern=north west lines, pattern color=blue] (1,1) rectangle (3,3);
-\end{tikzpicture}
-```

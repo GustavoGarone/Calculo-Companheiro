@@ -1,5 +1,8 @@
 # Calculo Companheiro {.unnumbered}
 
+\newcommand{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}}
+\newcommand{\ptd}[3]{\left. \frac{\partial^2{#1}}{\partial{#2}\partial{#3}} \right \rvert_{(x_0,y_0)}}
+
 ## Propósito do Livro
 Esse livro foi criado com inteção de fornecer um material acessível a estudantes
 da graduação para seus estudos de Cálculo introdutório (Cálculo I) e multivariado

@@ -1,51 +1,67 @@
 # Espaços Vetoriais
 
-
-
-Neste curso, poderemos contentarmo-nos com a intuição de que *"espaço vetorial"* é simplesmente o espaço onde habitam os elementos com que faremos as nossas contas. Cada um desses elementos do espaço vetorial receberá um nome especial: *"vetor"*. Muito provavelmente, você deve recordar-se dos vetores como aquelas "setinhas" que usávamos nas aulas de física para representar as forças atuando sobre um corpo. Por sorte, compreender os vetores como uma "setinha" ainda é uma interpretação geométrica muito funcional para a maior parte do curso! 
+Neste curso, poderemos contentarmo-nos com a intuição de que *"espaço vetorial"* é simplesmente o espaço onde habitam os
+elementos com que faremos as nossas contas. Cada um desses elementos do espaço vetorial receberá um nome especial: *"vetor"*.
+Muito provavelmente, você deve recordar-se dos vetores como aquelas "setinhas" que usávamos nas aulas de física para representar
+as forças atuando sobre um corpo. Por sorte, compreender os vetores como uma "setinha" ainda é uma interpretação geométrica
+muito funcional para a maior parte do curso! 
 
 ## Exemplos de espaços vetoriais
 
 1.  O exemplo mais fundamental são os vetores usados pela física para representar forças
-2.  Uma rede de supermercados possui cinco filiais. Cada filial registra, a cada dia, o saldo ao final do dia de cada uma das suas três caixas registradores na forma de uma lista ($caixa_{1}$, $caixa_{2}$, $caixa_{3}$)
+2.  Uma rede de supermercados possui cinco filiais. Cada filial registra, a cada dia, o saldo ao final do dia de cada uma
+das suas três caixas registradores na forma de uma lista ($caixa_{1}$, $caixa_{2}$, $caixa_{3}$)
 3. A velocidade de um cometa em relação ao planeta Terra
 4. A velocidade de quatro cometas em relação ao planeta Terra ($cometa_{1}$, $cometa_{2}$, $cometa_{3}$, $cometa_{4}$)
 
 ## Formalizando o espaço vetorial e seus elementos
 
-Para os mais interessados, vamos começar fornecendo os critérios fundamentais para um conjunto ser chamado de espaço vetorial. Não é fundamental decorar as propriedades, leia apenas se você tiver interesse em compreender melhor o tópico.
+Para os mais interessados, vamos começar fornecendo os critérios fundamentais para um conjunto ser chamado de espaço vetorial.
+Não é fundamental decorar as propriedades, leia apenas se você tiver interesse em compreender melhor o tópico.
 
-> Um conjunto não vazio V é um espaço-vetorial sobre um corpo $\mathbb{K}$ (um objeto matemático em que as operações $+, -, \times,\div$ funcionam como nós conhecemos) se, em seus elementos, denominados vetores, estiverem definidas a soma de vetores, a multiplicação por escalar e valerem as seguintes oito propriedades:
->
-> Para a Adição:
->
-> (A1) $u+v = v+u, \: \forall \: u,v \in V$  (propriedade comutativa)
->
-> (A2) $(u+v)+w = u+(v+w), \: \forall \: u,v,w \in V$  (propriedade associativa)
->
-> (A3) existe um vetor $v$, chamado "vetor nulo" e denotado $0$, tal que $0+v=v,\; \forall v \in V$  (elemento neutro da soma)
->
-> (A4) a cada vetor $v \in V$, existe um vetor em $V$, denotado por $-v$, tal que $v+(-v)=0$  (existência do oposto)
->
-> Para a Multiplicação por escalar (número real na maioria dos casos):
->
-> (M1) $(\alpha \beta) \cdot v = \alpha (\beta \cdot v)$, $ \forall \: \alpha, \beta \in \mathbb{K} $ e $ \forall \: v \in V $  (propriedade associativa)
->
-> (M2) $1 \cdot v = v, \: \forall v \in V$  (elemento neutro da multiplicação)
->
-> (M3) $\alpha \cdot (u+v)=\alpha \cdot u + \alpha \cdot v$, $ \forall \: \alpha \in \mathbb{K}$ e $ \forall \: u,v \in V$
->
-> (M4) $( \alpha + \beta) \cdot v = \alpha \cdot u + \beta \cdot u $, $ \forall \: \alpha, \beta \in \mathbb{K}$ e $ \forall \: v \in V$
+Um conjunto não vazio V é um espaço-vetorial sobre um corpo $\mathbb{K}$ (um objeto matemático em que as operações
+$+, -, \times,\div$ funcionam como nós conhecemos) se, em seus elementos, denominados vetores, estiverem definidas a
+soma de vetores, a multiplicação por escalar e valerem as seguintes oito propriedades:
 
-Dessa extensa definição, basta tirar a seguinte interpretação: chamamos de vetor cada um dos elementos pertencentes ao conjunto em que estamos definindo o espaço vetorial. Podemos somar os vetores, podemos multiplicar os vetores por um escalar (número real) e aquelas velhas propriedades que aprendemos na escola ainda valem: a ordem dos elementos não afeta a soma nem a multiplicação, podemos usar parênteses para alterar a ordem das operações e vale a propriedade distributiva.
+Para a Adição:
 
-Durante os cursos de cálculo, veremos o espaço vetorial diversas vezes, mas trabalharemos sempre com múltiplos do conjunto dos reais ($ \mathbb{R}$). 
+(A1) $u+v = v+u,  \forall  u,v \in V$  (propriedade comutativa)
+
+(A2) $(u+v)+w = u+(v+w),  \forall  u,v,w \in V$  (propriedade associativa)
+
+(A3) existe um vetor $v$, chamado "vetor nulo" e denotado $0$, tal que $0+v=v, \forall v \in V$  (elemento neutro da soma)
+
+(A4) a cada vetor $v \in V$, existe um vetor em $V$, denotado por $-v$, tal que $v+(-v)=0$  (existência do oposto)
+
+Para a Multiplicação por escalar (número real na maioria dos casos):
+
+(M1) $(\alpha \beta) \cdot v = \alpha (\beta \cdot v), \forall \alpha , \beta \in \mathbb{K} \text{ e } \forall  v \in V$
+(propriedade associativa)
+
+(M2) $1 \cdot v = v,  \forall v \in V$  (elemento neutro da multiplicação)
+
+(M3) $\alpha \cdot (u+v)=\alpha \cdot u + \alpha \cdot v,  \forall \alpha \in \mathbb{K} \text{ e } \forall u,v \in V$
+
+(M4) $(\alpha + \beta) \cdot v = \alpha \cdot u + \beta \cdot u, \forall \alpha, \beta \in \mathbb{K} \text{ e } \forall v \in V$
+
+Dessa extensa definição, basta tirar a seguinte interpretação: chamamos de vetor cada um dos elementos pertencentes ao
+conjunto em que estamos definindo o espaço vetorial. Podemos somar os vetores, podemos multiplicar os vetores por um escalar
+(número real) e aquelas velhas propriedades que aprendemos na escola ainda valem: a ordem dos elementos não afeta a soma
+nem a multiplicação, podemos usar parênteses para alterar a ordem das operações e vale a propriedade distributiva.
+
+Durante os cursos de cálculo, veremos o espaço vetorial diversas vezes, mas trabalharemos sempre com múltiplos do conjunto
+dos reais ($\mathbb{R}$). 
 
 ## Vetores aplicados a Cálculo
 
-Ainda que seja ótimo desenvolvermos um certo rigor com a matemática, nem sempre é necessário e pode gerar mais confusões do que entendimentos. Desse ponto em diante, traremos o conteúdo de vetores e o espaço vetorial da maneiras mais sucinta possível!
+Ainda que seja ótimo desenvolvermos um certo rigor com a matemática, nem sempre é necessário e pode gerar mais confusões
+do que entendimentos. Desse ponto em diante, traremos o conteúdo de vetores e o espaço vetorial da maneiras mais sucinta possível!
 
-Considere o espaço $R^2$. Nossa melhor maneira de representá-lo é por meio do plano cartesiano. Cada ponto no plano cartesiano é representado por uma dupla $(x, y)$. Por convenção, adotamos que o primeiro elemento é sempre a coordenada $x$ e o segundo elemento é a coordenada $y$. Fixe, agora, um ponto qualquer no plano, por exemplo $(3,4)$ e construa uma seta que liga o ponto à origem $(0,0)$. Essa seta que acabamos de criar é a representação gráfica do vetor $(3,4)$. Note que o vetor e o ponto têm a mesma notação, isso ocorre, pois são conceitos muito próximos e com muitas interações.
+Considere o espaço $R^2$. Nossa melhor maneira de representá-lo é por meio do plano cartesiano. Cada ponto no plano cartesiano
+é representado por uma dupla $(x, y)$. Por convenção, adotamos que o primeiro elemento é sempre a coordenada $x$ e o segundo
+elemento é a coordenada $y$. Fixe, agora, um ponto qualquer no plano, por exemplo $(3,4)$ e construa uma seta que liga o
+ponto à origem $(0,0)$. Essa seta que acabamos de criar é a representação gráfica do vetor $(3,4)$. Note que o vetor e o
+ponto têm a mesma notação, isso ocorre, pois são conceitos muito próximos e com muitas interações.
 
 Durante seus estudos, você também pode ver os vetores representados como $[x,y]$. Ou até mesmo verticalmente:
 $$
@@ -54,102 +70,84 @@ $$
   y 
 \end{bmatrix}
 $$
-Uma outra maneira de interpretar vetores é enxergando-os como uma matriz de dimensão $1 \times 2$ ou $2 \times 1$, respectivamente. Chamamos de vetor linha linha e vetor coluna, ainda que sejam, conceitualmente, objetos muito próximos. 
+Uma outra maneira de interpretar vetores é enxergando-os como uma matriz de dimensão $1 \times 2$ ou $2 \times 1$,
+respectivamente. Chamamos de vetor linha linha e vetor coluna, ainda que sejam, conceitualmente, objetos muito próximos. 
 
-Ao utilizar vetores, é muito comum separar os seus elementos por uma vírgula ou apenas separá-los com um espaçamento maior. Durante seus estudos, opte por uma notação e tome cuidado para não confundir a vírgula usada para separar os elementos com a vírgula usada para expressar casas decimais! Para evitar a confusão, sugerimos que você adote o ponto (.) como separador decimal ou use o ponto e vírgula (;) para separar os elementos do vetor.
+Ao utilizar vetores, é muito comum separar os seus elementos por uma vírgula ou apenas separá-los com um espaçamento maior.
+Durante seus estudos, opte por uma notação e tome cuidado para não confundir a vírgula usada para separar os elementos com
+a vírgula usada para expressar casas decimais! Para evitar a confusão, sugerimos que você adote o ponto (.) como separador
+decimal ou use o ponto e vírgula (;) para separar os elementos do vetor.
 
 ## Somando Vetores
 
-A soma de vetores é uma operação extremamente simples, mas segue algumas pequenas regras: só é possível somar vetores de mesmo tamanho (comprimento) e cada elemento do vetor resultante é igual à soma dos correspondes. Acompanhe os exemplos:
+A soma de vetores é uma operação extremamente simples, mas segue algumas pequenas regras: só é possível somar vetores de mesmo
+tamanho (comprimento) e cada elemento do vetor resultante é igual à soma dos correspondes. Acompanhe os exemplos:
 
 1. $(x_1, y_1) + (x_2, y_2) = (x_1+x_2 \phantom{-}
    , \phantom{-} y_1 + y_2)$ 
-
 2. $(x_1, y_1) - (x_2, y_2) = (x_1-x_2 \phantom{-}
    , \phantom{-} y_1 - y_2)$ 
-
 3. $(0,5)+(2,4)=(2,9)$
-
 4. $(0,5)-(2,4)=(-2,1)$
-
 5. $(\pi, e)+(1,2) = (\pi+1, e+2)$
-
 6. $(\pi, e)-(1,2) = (\pi-1, e-2)$
-
 7. $[1,3]+[4,-6]=[5,-3]$
-
 8. $[1,3]-[4,-6]=[-3,9]$
-
 9. $$
-   \begin{flalign}
-   &\begin{bmatrix} 4  \\  8 \end{bmatrix}+
+   \begin{bmatrix} 4  \\  8 \end{bmatrix}+
    \begin{bmatrix} 3  \\  1 \end{bmatrix}=
-   \begin{bmatrix} 7  \\  9 \end{bmatrix}&
-   \end{flalign}
+   \begin{bmatrix} 7  \\  9 \end{bmatrix}
    $$
-
 10. $$
-    \begin{flalign}
-    &\begin{bmatrix} 4  \\  8 \end{bmatrix}-
+    \begin{bmatrix} 4  \\  8 \end{bmatrix}-
     \begin{bmatrix} 3  \\  1 \end{bmatrix}=
-    \begin{bmatrix} 1  \\  7 \end{bmatrix}&
-    \end{flalign}
+    \begin{bmatrix} 1  \\  7 \end{bmatrix}
     $$
-
-    
 
 ## Multiplicando Vetores
 
-A multiplicação de vetores é uma operação muito simples e intuitiva. Atente-se que só é possível multiplicar um vetor por um escalar (geralmente um número real). Para efetuar a operação, basta multiplicar cada um dos elementos do vetor pelo escalar. Lembre-se que dividir por um número é equivalente a multiplicar pelo inverso: $x \div 5 = x \times \frac{1}{5}$ e que a multiplicação é comutativa, ou seja, podemos inverter a ordem dos termos. Veja os exemplos:
+A multiplicação de vetores é uma operação muito simples e intuitiva. Atente-se que só é possível multiplicar um vetor por 
+um escalar (geralmente um número real). Para efetuar a operação, basta multiplicar cada um dos elementos do vetor pelo escalar. 
+Lembre-se que dividir por um número é equivalente a multiplicar pelo inverso: $x \div 5 = x \times \frac{1}{5}$ e que a
+multiplicação é comutativa, ou seja, podemos inverter a ordem dos termos. Veja os exemplos:
 
 1. $\lambda \times (x,y) = (x,y) \times \lambda = (x \times \lambda, y \times \lambda)$
-
 2. $(x,y) \div \lambda = (x,y) \times \frac{1}{\lambda} = \frac{1}{\lambda} \times (x,y) = (\frac{x}{\lambda}, \frac{y}{\lambda})$
-
 3. $(2,5) \times 3 = (6,15)$
-
 4. $(2,5) \div 3 = (\frac{2}{3}, \frac{5}{3})$
-
 5. $7(0, 8) = (0,56)$
-
 6. $[10, 20] \div 5 = [2, 4]$
-
 7. $$
-   \begin{flalign}
-   &\begin{bmatrix} 144  \\  96 \end{bmatrix} \div
+   \begin{bmatrix} 144  \\  96 \end{bmatrix} \div
    12=
-   \begin{bmatrix} 12  \\  8 \end{bmatrix}&
-   \end{flalign}
+   \begin{bmatrix} 12  \\  8 \end{bmatrix}
    $$
-
 8. $$
-   \begin{flalign}
-   &\begin{bmatrix} \frac{5}{7}  \\  \frac{17}{6} \end{bmatrix} \times
+   \begin{bmatrix} \frac{5}{7}  \\  \frac{17}{6} \end{bmatrix} \times
    \frac{3}{8} =
-   \begin{bmatrix} \frac{15}{56}  \\  \frac{17}{16} \end{bmatrix}&
-   \end{flalign}
+   \begin{bmatrix} \frac{15}{56}  \\  \frac{17}{16} \end{bmatrix}
    $$
 
 Note que não é possível dividir um escalar por um vetor e tampouco é possível multiplicar ou dividir vetores entre si!
 
 ## Produto Interno
 
-Nessa seção, introduziremos uma nova operação entre dois vetores: o produto interno. Em um curso de álgebra linear, tal operação pode ser definida de diversas maneiras diferentes, mas restringiremo-nos ao "produto interno usual", que é assim definido:
+Nessa seção, introduziremos uma nova operação entre dois vetores: o produto interno. Em um curso de álgebra linear,
+tal operação pode ser definida de diversas maneiras diferentes, mas restringiremo-nos ao "produto interno usual", que é
+assim definido:
 $$
 (x_1, y_1) \cdot (x_2, y_2) = x_1 \times x_2 + y_1 \times y_2
 $$
 
-
-Note que o produto interno é uma operação que recebe dois vetores de mesmo tamanho e resulta em um número. Tal operação possui outras notações e nomes, como "produto escalar", mas trata-se do mesmo processo.
+Note que o produto interno é uma operação que recebe dois vetores de mesmo tamanho e resulta em um número. Tal operação
+possui outras notações e nomes, como "produto escalar", mas trata-se do mesmo processo.
 $$
 (x_1, y_1) \cdot (x_2, y_2) = \langle (x_1, y_1),(x_2, y_2) \rangle
 $$
 
-
 A notação $\langle a,b \rangle$ é comumente usada na física, mas não é raro ver matemáticos usando-as também.
 
 Veja alguns exemplos:
-
 1. $(2,4) \cdot (3,7) = 6+28=34$
 2. $(4,2) \cdot (4,2) = 16+4 = 20$
 3. $(0,21) \cdot (13, 0) = 0+0=0$
@@ -157,13 +155,19 @@ Veja alguns exemplos:
 
 ### Norma de um Vetor
 
-Ainda considerando o produto interno, vamos definir uma segunda operação com um vetor: a norma. A norma de um vetor nada mais é do que a raiz quadrado do produto interno do vetor com ele mesmo, usamos $|| a ||$ para representar a norma de um vetor.
+Ainda considerando o produto interno, vamos definir uma segunda operação com um vetor: a norma. A norma de um vetor nada
+mais é do que a raiz quadrado do produto interno do vetor com ele mesmo, usamos $|| a ||$ para representar a norma de um vetor.
 $$
 ||a|| = \sqrt{a \cdot a} = \sqrt{\langle a,a \rangle}
 $$
-Geometricamente, entende-se a norma de um vetor como o seu "comprimento". Usando a nossa primeira intuição de vetores como uma seta ligando a origem a um ponto, desenhe o vetor $(3,4)$ e calcule seu comprimento usando o Teorema de Pitágoras. Em seguida, calcule a norma do vetor. Se todas as contas estiverem corretas, você deve ter concluído que tanto a norma quando o comprimento do vetor são 5.
+Geometricamente, entende-se a norma de um vetor como o seu "comprimento". Usando a nossa primeira intuição de vetores
+como uma seta ligando a origem a um ponto, desenhe o vetor $(3,4)$ e calcule seu comprimento usando o Teorema de Pitágoras.
+Em seguida, calcule a norma do vetor. Se todas as contas estiverem corretas, você deve ter concluído que tanto a norma
+quando o comprimento do vetor são 5.
 
-Você deve estar familiarizado com o operador $|a|$, que é o módulo de $a$. Matematicamente, define-se o módulo de um número como $|a| = \sqrt{a^2}$. Note que essa definição é apenas a norma de um vetor de tamanho um, ou seja, calcular o módulo de um número nada mais é do que calcular o seu "tamanho", ou o quão longe está da origem.
+Você deve estar familiarizado com o operador $|a|$, que é o módulo de $a$. Matematicamente, define-se o módulo de um número
+como $|a| = \sqrt{a^2}$. Note que essa definição é apenas a norma de um vetor de tamanho um, ou seja, calcular o módulo
+de um número nada mais é do que calcular o seu "tamanho", ou o quão longe está da origem.
 
 Acompanhe alguns exemplos do cálculo de uma norma:
 
@@ -174,15 +178,21 @@ Acompanhe alguns exemplos do cálculo de uma norma:
 
 ### Vetores Perpendiculares
 
-Uma característica particularmente útil do produto interno é que ele é capaz de nos revelar quando dois vetores são ortogonais. Ainda que não sejam equivalentes, pode-se considerar ortogonalidade como um sinônimo de perpendicularidade, ou seja, quando o produto interno de dois vetores é 0, eles "formam um ângulo de $90 \degree$ entre si".
+Uma característica particularmente útil do produto interno é que ele é capaz de nos revelar quando dois vetores são ortogonais.
+Ainda que não sejam equivalentes, pode-se considerar ortogonalidade como um sinônimo de perpendicularidade, ou seja, quando o
+produto interno de dois vetores é 0, eles "formam um ângulo de $90^{\circ}$ entre si".
 
-Para testar tal propriedade, desenhe no plano cartesiano os vetores $(3,0)$ e $(0,5)$ e calcule o produto interno entre eles. Repita o mesmo processo, num novo plano, com os vetores $(-3,4)$ e $(8,-6)$. Você consegue encontrar mais um vetor que seja ortogonal ao vetor $(-3,4)$? Pegue o vetor que você encontrou e divida-o pela sua norma. Você deve ter chegado em $(\frac{4}{5}, \frac{3}{5})$ ou $(-\frac{4}{5}, -\frac{3}{5})$.
+Para testar tal propriedade, desenhe no plano cartesiano os vetores $(3,0)$ e $(0,5)$ e calcule o produto interno entre eles.
+Repita o mesmo processo, num novo plano, com os vetores $(-3,4)$ e $(8,-6)$. Você consegue encontrar mais um vetor que
+seja ortogonal ao vetor $(-3,4)$? Pegue o vetor que você encontrou e divida-o pela sua norma. Você deve ter chegado em
+$(\frac{4}{5}, \frac{3}{5})$ ou $(-\frac{4}{5}, -\frac{3}{5})$.
 
 ### Versores
 
-Durante o estudo do Cálculo, é muito comum que as formulações utilizem versores ao invés dos usuais vetores. Por sorte, todo o conteúdo vistos até agora nesse capítulo nos permite compreender facilmente o que é um versor!
+Durante o estudo do Cálculo, é muito comum que as formulações utilizem versores ao invés dos usuais vetores. Por sorte,
+todo o conteúdo vistos até agora nesse capítulo nos permite compreender facilmente o que é um versor!
 
-> Define-se o versos como um vetor unitário que tem mesma direção e sentido que outro vetor. 
+*Define-se o versos como um vetor unitário que tem mesma direção e sentido que outro vetor.*
 
 Ou seja, um versor de um vetor é uma versão daquele mesmo vetor, mas com norma igual a $1$.
 
@@ -193,6 +203,9 @@ $$
 Alguns exemplos de versores:
 
 1. $a = (6,8) \rightarrow \hat{a} = \frac{(6,8)}{||(6,8)||}=\frac{(6,8)}{10} = (\frac{3}{5}, \frac{4}{5})$
-2. $a = (4,2) \rightarrow \hat{a} = \frac{(4,2)}{||(4,2)||}=\frac{(4,2)}{\sqrt{20}} = (\frac{4}{\sqrt{20}}, \frac{2}{\sqrt{20}})=(\frac{\sqrt{20}}{5}, \frac{\sqrt{20}}{10})$
+2. $a = (4,2) \rightarrow \hat{a} = \frac{(4,2)}{||(4,2)||}=\frac{(4,2)}{\sqrt{20}} = (\frac{4}{\sqrt{20}},
+    \frac{2}{\sqrt{20}})=(\frac{\sqrt{20}}{5}, \frac{\sqrt{20}}{10})$
 
-Em um plano cartesiano, desenhe o vetor $(-6,8)$, calcule sua norma, desenhe o seu versos e, por fim, desenhe um círculo de raio $1$ centrado na origem. Você verá uma das muitas belezas dos vetores. Tente repetir este processo com outros vetores, todos terão a mesma propriedade que você acabou de visualizar. Tente provar esse resultado!
+Em um plano cartesiano, desenhe o vetor $(-6,8)$, calcule sua norma, desenhe o seu versos e, por fim, desenhe um círculo
+de raio $1$ centrado na origem. Você verá uma das muitas belezas dos vetores. Tente repetir este processo com outros vetores,
+todos terão a mesma propriedade que você acabou de visualizar. Tente provar esse resultado!
