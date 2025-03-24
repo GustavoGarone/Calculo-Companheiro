@@ -1,4 +1,6 @@
 # Mínimos e Máximos de Funções de Duas Variáveis
+\newcommand{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}}
+\newcommand{\ptd}[3]{\left. \frac{\partial^2{#1}}{\partial{#2}\partial{#3}} \right \rvert_{(x_0,y_0)}}
 
 Antes de prosseguir para uma análise multivariada de mínimos e máximos, recomendamos que você releia nosso capítulo sobre
 o [Polinômio de Taylor com mais Variáveis](taylor-multi.qmd) e sobre [Derivadas de Ordem Superior](d-ordem-superior.qmd).
@@ -15,164 +17,170 @@ par. Dada uma distribuição, qual é o par $(x,y)$ com maior densidade de proba
 3. Um químico percebe que o rendimento médio de uma reação pode ser descrito como uma função da temperatura e da pressão.
 Sob quais condições a reação tem melhor rendimento?
 
-  ## Valor de mínimo/máximo e ponto de mínimo/máximo
-  Intuitivamente, é muito fácil compreender o valor de máximo e mínimo de uma função, então vamos definir o que é o máximo
-  e o mínimo de uma função de uma perspectiva matemática e introduzir os máximos e mínimos locais.
+## Valor de mínimo/máximo e ponto de mínimo/máximo
+Intuitivamente, é muito fácil compreender o valor de máximo e mínimo de uma função, então definiremos o que é o máximo
+e o mínimo de uma função de uma perspectiva matemática e introduzir os máximos e mínimos locais.
 
-  ### Máximo/Mínimo Global
+### Máximo/Mínimo Global
 
-  #### Máximo
+#### Máximo
 
-  Seja $f(x,y)$ uma função cuja imagem são valores reais. Considere o ponto $(x_0, y_0)$, dizemos que o ponto é um ponto
-  de máximo global de $f$ se, para todo $(x,y)$ pertencente ao domínio da função,
-  $$
-  f(x_0, y_0) \geq f(x,y)
-  $$
-  Ou seja, um ponto $(x_0, y_0)$ é de máximo global se, dentre todos os valores que a função pode assumir, $f(x_0, y_0)$
-  é o maior deles. Dessa definição, podemos tirar que algumas funções têm mais do que apenas um máximo global. Pegue,
-  por exemplo, $f(x,y)= \sin(x) + \cos(y)$. A função tem valor máximo igual a $2$ e ela atinge tal valor em infinitos pontos
-  no seu domínio.
+Seja $f(x,y)$ uma função cuja imagem são valores reais. Considere o ponto $(x_0, y_0)$, dizemos que o ponto é um ponto
+de máximo global de $f$ se, para todo $(x,y)$ pertencente ao domínio da função,
+$$
+f(x_0, y_0) \geq f(x,y)
+$$
+Ou seja, um ponto $(x_0, y_0)$ é de máximo global se, dentre todos os valores que a função pode assumir, $f(x_0, y_0)$
+é o maior deles. Dessa definição, podemos tirar que algumas funções têm mais do que apenas um máximo global. Pegue,
+por exemplo, $f(x,y)= \sin(x) + \cos(y)$. A função tem valor máximo igual a $2$ e ela atinge tal valor em infinitos pontos
+no seu domínio.
 
-  #### Mínimo
+#### Mínimo
 
-  Seja $f(x,y)$ uma função cuja imagem são valores reais. Considere o ponto $(x_0, y_0)$, dizemos que o ponto é um ponto de
-  mínimo global de $f$ se, para todo $(x,y)$ pertencente ao domínio da função,
-  $$
-  f(x_0, y_0) \leq f(x,y)
-  $$
-  Ou seja, um ponto $(x_0, y_0)$ é de mínimo global se, dentre todos os valores que a função pode assumir, $f(x_0, y_0)$
-  é o menor deles. Dessa definição, podemos tirar que algumas funções têm mais do que apenas um máximo global. Usando a mesma
-  função descrita anteriormente, ela tem valor mínimo igual a $-2$ e ela atinge tal valor em infinitos pontos no seu domínio.
+Seja $f(x,y)$ uma função cuja imagem são valores reais. Considere o ponto $(x_0, y_0)$, dizemos que o ponto é um ponto de
+mínimo global de $f$ se, para todo $(x,y)$ pertencente ao domínio da função,
+$$
+f(x_0, y_0) \leq f(x,y)
+$$
+Ou seja, um ponto $(x_0, y_0)$ é de mínimo global se, dentre todos os valores que a função pode assumir, $f(x_0, y_0)$
+é o menor deles. Dessa definição, podemos tirar que algumas funções têm mais do que apenas um máximo global. Usando a mesma
+função descrita anteriormente, ela tem valor mínimo igual a $-2$ e ela atinge tal valor em infinitos pontos no seu domínio.
 
-  ### Máximo/Mínimo Local
+### Máximo/Mínimo Local
 
-  o [Teorema de Weierstrass](weierstrass.qmd) não se restringe apenas ao cálculo univariado!
-  Tome como exemplo $F: \mathbb{R}^2 \rightarrow \mathbb{R}$ uma função diferenciável. Se limitarmos um retângulo em $R^2$,
-  teremos um intervalo fechado como domínio, e, portanto, mínimo e máximo de $F$:
-  ``` tikz
-  %%| format: svg
-  %%| filename: quadradoFechadoMinMax
-  \begin{tikzpicture}[domain=-2:2]
-      \draw[very thin, color =gray] (0,0) grid (3.9,3.9);
-      \draw[->] (0,0) -- (4.1,0) node[right] {$\mathbb{R}$};
-      \draw[->] (0,0) -- (0,4.1) node[above] {$\mathbb{R}$};
-      \draw (0,0)
-      \draw[pattern=north west lines, pattern color=blue] (1,1) rectangle (3,3);
-  \end{tikzpicture}
-  ```
+O [Teorema de Weierstrass](weierstrass.qmd) não se restringe apenas ao cálculo de uma variável!
+Tome como exemplo $F: \mathbb{R}^2 \rightarrow \mathbb{R}$ uma função diferenciável. Se limitarmos um retângulo em $R^2$,
+teremos um intervalo fechado como domínio, e, portanto, mínimo e máximo de $F$:
 
-  #### Máximo
+``` tikz
+%%| format: svg
+%%| filename: quadradoFechadoMinMax
+\begin{tikzpicture}[domain=-2:2]
+    \draw[very thin, color =gray] (0,0) grid (3.9,3.9);
+    \draw[->] (0,0) -- (4.1,0) node[right] {$\mathbb{R}$};
+    \draw[->] (0,0) -- (0,4.1) node[above] {$\mathbb{R}$};
+    \draw (0,0)
+    \draw[pattern=north west lines, pattern color=blue] (1,1) rectangle (3,3);
+\end{tikzpicture}
+```
 
-  Seja $f(x,y)$ uma função cuja imagem são valores reais. Considere o ponto $(x_0, y_0)$, dizemos que o ponto é um ponto
-  de máximo local de $f$ se existir uma bola aberta B de centro $(x_0, y_0)$ tal que, para todo $(x,y)$ dentro da bola aberta,
-  $$
-  f(x_0,y_0) \geq f(x,y)
-  $$
-  Ou seja, um ponto $(x_0, y_0)$ é dito máximo local se ele é o ponto em que a função atinge o maior valor em sua redondeza,
-  por menor que possa ser essa redondeza. Para enxergar o que são máximos globais, pense no planeta Terra, o máximo global
-  é o pico do Monte Everest, mas o topo do [Pico da Neblina](https://pt.wikipedia.org/wiki/Pico_da_Neblina), a 2.995m de altura,
-  pode ser considerado um máximo local. Analogamente, quando você está de pé, o topo da sua cabeça também é um máximo local!
+#### Máximo
 
-  #### Mínimo
+Seja $f(x,y)$ uma função cuja imagem são valores reais. Considere o ponto $(x_0, y_0)$, dizemos que o ponto é um ponto
+de máximo local de $f$ se existir uma bola aberta B de centro $(x_0, y_0)$ tal que, para todo $(x,y)$ dentro da bola aberta,
+$$
+f(x_0,y_0) \geq f(x,y)
+$$
+Ou seja, um ponto $(x_0, y_0)$ é dito máximo local se ele é o ponto em que a função atinge o maior valor em sua redondeza,
+por menor que possa ser essa redondeza. Para enxergar o que são máximos globais, pense no planeta Terra, o máximo global
+é o pico do Monte Everest, mas o topo do [Pico da Neblina](https://pt.wikipedia.org/wiki/Pico_da_Neblina), a $2.995$ m de altura,
+pode ser considerado um máximo local. Analogamente, quando você está de pé, o topo da sua cabeça também é um máximo local!
 
-  Seja $f(x,y)$ uma função cuja imagem são valores reais. Considere o ponto $(x_0, y_0)$, dizemos que o ponto é um ponto
-  de máximo local de $f$ se existir uma bola aberta B de centro $(x_0, y_0)$ tal que, para todo $(x,y)$ dentro da bola aberta,
-  $$
-  f(x_0,y_0) \leq f(x,y)
-  $$
-  Ou seja, um ponto $(x_0, y_0)$ é dito mínimo local se ele é o ponto em que a função atinge o menor valor em sua redondeza,
-  por menor que possa ser essa redondeza. Ainda considerando o planeta Terra, a [Fossa das Marianas](https://pt.wikipedia.org/wiki/Fossa_das_Marianas),
-  a 10.984m abaixo do nível do mar, é um mínimo global, mas o [Mar Cáspio](https://pt.wikipedia.org/wiki/Mar_Cáspio),
-  localizado 28m abaixo do nível do mar é um mínimo local. Analogamente, qualquer buracos que vemos na rua também é um mínimo local,
-  pois é o ponto mais baixo em seu entorno.
+#### Mínimo
 
-  ## Encontrando Ponto de Máximo/Mínimo locais
+Seja $f(x,y)$ uma função cuja imagem são valores reais. Considere o ponto $(x_0, y_0)$, dizemos que o ponto é um ponto
+de máximo local de $f$ se existir uma bola aberta B de centro $(x_0, y_0)$ tal que, para todo $(x,y)$ na bola aberta,
+$$
+f(x_0,y_0) \leq f(x,y)
+$$
+Ou seja, um ponto $(x_0, y_0)$ é dito mínimo local se ele é o ponto em que a função atinge o menor valor em sua redondeza,
+por menor que possa ser essa redondeza. Ainda considerando o planeta Terra, a [Fossa das Marianas](https://pt.wikipedia.org/wiki/Fossa_das_Marianas),
+a 10.984m abaixo do nível do mar, é um mínimo global, mas o [Mar Cáspio](https://pt.wikipedia.org/wiki/Mar_Cáspio),
+localizado 28m abaixo do nível do mar é um mínimo local. Analogamente, quaisquer buracos que observamos na rua também é um mínimo local,
+pois é o ponto mais baixo em seu entorno.
 
-  Ao procurar pontos de máximo/mínimo (ou extremantes), devemos ter cuidado para não elegermos um ponto de sela, isso é,
-  um ponto que, numa direção é máximo local, mas em outra direção é mínimo local, como no exemplo abaixo.
+## Encontrando Ponto de Máximo/Mínimo locais
 
-  <Colocar imagem>
+Ao procurar pontos de máximo/mínimo (ou extremantes), devemos ter cuidado para não elegermos um ponto de sela, isso é,
+um ponto que, numa direção é máximo local, mas em outra direção é mínimo local, como no exemplo abaixo.
 
-  Recordando os métodos usados para encontrar máximos e mínimos de funções de uma variável, um ponto $x_0$ no interior de um
-  intervalo é máximo se $f'(x_0)=0$. 
+<!--<Colocar imagem>-->
 
-  Antes de vermos os teoremas, vamos relembrar o cálculo do determinante da Matriz Hessiano no ponto $(x_0, y_0)$, ou $H(x_0, y_0)$.
-  Para mais detalhes, leia o capítulo de [Derivadas de Ordem Superior](d-ordem-superior.qmd)
+Recordando os métodos usados para encontrar máximos e mínimos de funções de uma variável, um ponto $x_0$ no interior de um
+intervalo é máximo se $f'(x_0)=0$. 
 
-  $$
-  \begin{aligned}
-  H(x_0, y_0) 
-  & = \left. det \left( \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
-  \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix} 
-  \right |_{(x_0,y_0)} \right )  &\\
-  & = \ptd{f(x,y)}{x}{x} -2\ptd{f(x,y)}{x}{y}+\ptd{f(x,y)}{y}{y} &\\
-  \end{aligned}
-  $$
+Antes de vermos os teoremas, vamos relembrar o cálculo do determinante da Matriz Hessiano no ponto $(x_0, y_0)$, ou $H(x_0, y_0)$.
+Para mais detalhes, leia o capítulo de [Derivadas de Ordem Superior](d-ordem-superior.qmd).
 
-
-  Por mais que pareça complicado, basta determinar a Matriz Hessiana, calcular seu valor no ponto e, por fim, calcular
-  seu valor no ponto.
-
-  Finalmente, usaremos o seguinte teorema pare determinar máximos e mínimos:
-
-  1. Se $f(x,y)$ tem um máximo ou mínimo local no ponto $(x_0, y_0)$, então o plano tangente é horizontal. Alternativamente,
-  $\left. \frac{\partial f(x,y)}{\partial x} \right\rvert_{(x_0,y_0)} = \left. \frac{\partial f(x,y)}{\partial y} \right|_{(x_0,y_0)} = 0 \text{ ou } \nabla f(x_0,y_0)=0$
-  2. A segunda derivada parcial nos revela:
-  1. Se $\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right\rvert_{(x_0,y_0)}>0 \text{ e } H(x_0,y_0)>0, \Rightarrow (x_0,y_0)$ é *mínimo local*
-  2. Se $\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right\rvert_{(x_0,y_0)}<0 \text{ e } H(x_0,y_0)>0 \Rightarrow (x_0,y_0)$ é *máximo local*
-  3. Se $H(x_0,y_0)<0$, então $(x_0,y_0)$ é *ponto de sela*
-  4. Se $H(x_0,y_0)=0$, então *nada podemos afirmar sobre $(x_0,y_0)$*
+$$
+\begin{aligned}
+H(x_0, y_0) 
+& = \left. \mathrm{det} \left( \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
+\pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix} 
+\right |_{(x_0,y_0)} \right )  &\\
+& = \ptd{f(x,y)}{x}{x} -2\ptd{f(x,y)}{x}{y}+\ptd{f(x,y)}{y}{y}
+\end{aligned}
+$$
 
 
-  Da primeira parte, ganhamos uma maneira de encontrar os candidatos a pontos de máximo e mínimo local, chamados de pontos
-  críticos, ou candidatos a extremantes. Todavia, precisamos de mais critérios para discriminar os pontos de máximo, mínimo e sela.
+Por mais que pareça complicado, basta determinar a Matriz Hessiana, calcular seu valor no ponto e, por fim, calcular
+seu valor no ponto.
 
-  Da segunda parte, podemos, a partir de uma seleção de pontos críticos, determinar quais são máximo, mínimos e sela. Em resumo,
-  o Hessiano ($H(x_0, y_0)$) nos revela se um ponto é sela ou extremante e a derivada parcial nos revela se o extremante é
-  máximo ou mínimo local. O teorema foi escrito usando as derivadas parciais em relação a $x$, mas a relação ainda vale se
-  calcularmos em relação a $y$. Tal parte do teorema é "análogo" ao calculo da segunda derivada de uma função de uma variável
-  para verificarmos se o ponto é de máximo, mínimo ou inflexão.
+Finalmente, usaremos o seguinte teorema pare determinar máximos e mínimos:
 
-  ### Exemplos:
+1. Se $f(x,y)$ tem um máximo ou mínimo local no ponto $(x_0, y_0)$, então o plano tangente é horizontal. Alternativamente,
+$\left. \frac{\partial f(x,y)}{\partial x} \right\rvert_{(x_0,y_0)} = \left. \frac{\partial f(x,y)}{\partial y} \right|_{(x_0,y_0)} = 0 \text{ ou } \nabla f(x_0,y_0)=0$;
 
-  $f(x,y)=2x^2 + y^2 − 2xy + x − y$
+2. A segunda derivada parcial nos revela:
 
-  $$
-  \begin{aligned}
-  & \nabla f(x,y)=
-  \begin{bmatrix} 4x-2y+1 & 2y-2x-1\end{bmatrix}=0 \rightarrow 
-  \begin{cases} \phantom{-}4x-2y+1=0 \\ -2x+2y-1 = 0 \end{cases} \rightarrow 
-  (x,y) = (0, 0.5) & \\ \\
-  &  H(0, 0.5) = 
-  \left. det \left( \begin{bmatrix} 4 & -2 \\ 
-                  -2 & 2 \end{bmatrix}
-  \right |_{(0, 0.5)} \right ) = 4 & \\ \\
-  &\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right|_{(0, 0.5)}=
-  4>0
-  & \end{aligned}
-  $$
+1. Se $\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right\rvert_{(x_0,y_0)}>0 \text{ e } H(x_0,y_0)>0, \Rightarrow (x_0,y_0)$ é *mínimo local*;
+
+2. Se $\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right\rvert_{(x_0,y_0)}<0 \text{ e } H(x_0,y_0)>0 \Rightarrow (x_0,y_0)$ é *máximo local*;
+
+3. Se $H(x_0,y_0)<0$, então $(x_0,y_0)$ é *ponto de sela*;
+
+4. Se $H(x_0,y_0)=0$, então *nada podemos afirmar sobre $(x_0,y_0)$*.
 
 
-  Portanto, o ponto $(0, 0.5)$ é um ponto de mínimo local da função.
+Da primeira parte, ganhamos uma maneira de encontrar os candidatos a pontos de máximo e mínimo local, chamados de pontos
+críticos, ou candidatos a extremantes. Todavia, precisamos de mais critérios para discriminar os pontos de máximo, mínimo e sela.
 
-  $f(x,y)=x^3 + y^3 − xy$
+Da segunda parte, podemos, a partir de uma seleção de pontos críticos, determinar quais são máximos, mínimos e sela. Em resumo,
+o Hessiano ($H(x_0, y_0)$) nos revela se um ponto é sela ou extremante e a derivada parcial nos revela se o extremante é
+máximo ou mínimo local. O teorema foi escrito usando as derivadas parciais em relação a $x$, mas a relação ainda vale se
+calcularmos em relação a $y$. Tal parte do teorema é "análogo" ao cálculo da segunda derivada de uma função de uma variável
+para verificarmos se o ponto é de máximo, mínimo ou inflexão.
 
-  $$
-  \begin{aligned}
-  & \nabla f(x,y)=
-  \begin{bmatrix} 3x^2-y & 3y^2-x \end{bmatrix}=0 \rightarrow 
-  \begin{cases} 3x^2-y = 0 \\ 3y^2-x = 0 \end{cases} \rightarrow 
-  (x,y) \in \{(0, 0), (\frac{1}{3},\frac{1}{3})\}& \\ \\
-  &  H(x,y) = 
-  \left. det \left( \begin{bmatrix} 6x & -1 \\ 
-                  -1 & 6y \end{bmatrix}
-  \right |_{(x,y)} \right ) = 36xy-1 & \\ \\
-  & H(0,0) = -1  &\\ 
-  & H(\frac{1}{3},\frac{1}{3}) = 3  &\\ \\
-  &\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right|_{(0,0)}=
-  6(0)=0 &\\ \\
-  &\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right|_{(\frac{1}{3},\frac{1}{3})}=
-  6(\frac{1}{3})=2>0
+### Exemplos:
+
+$f(x,y)=2x^2 + y^2 − 2xy + x − y$
+
+$$
+\begin{aligned}
+& \nabla f(x,y)=
+\begin{bmatrix} 4x-2y+1 & 2y-2x-1\end{bmatrix}=0 \rightarrow 
+\begin{cases} \phantom{-}4x-2y+1=0 \\ -2x+2y-1 = 0 \end{cases} \rightarrow 
+(x,y) = (0, 0.5) & \\ \\
+&  H(0, 0.5) = 
+\left. \mathrm{det} \left( \begin{bmatrix} 4 & -2 \\ 
+                -2 & 2 \end{bmatrix}
+\right |_{(0, 0.5)} \right ) = 4 & \\ \\
+&\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right|_{(0, 0.5)}=
+4>0
+& \end{aligned}
+$$
+
+
+Portanto, o ponto $(0, 0.5)$ é um ponto de mínimo local da função.
+
+$f(x,y)=x^3 + y^3 − xy$
+
+$$
+\begin{aligned}
+& \nabla f(x,y)=
+\begin{bmatrix} 3x^2-y & 3y^2-x \end{bmatrix}=0 \rightarrow 
+\begin{cases} 3x^2-y = 0 \\ 3y^2-x = 0 \end{cases} \rightarrow 
+(x,y) \in \{(0, 0), (\frac{1}{3},\frac{1}{3})\}& \\ \\
+&  H(x,y) = 
+\left. \mathrm{det} \left( \begin{bmatrix} 6x & -1 \\ 
+                -1 & 6y \end{bmatrix}
+\right |_{(x,y)} \right ) = 36xy-1 & \\ \\
+& H(0,0) = -1  &\\ 
+& H(\frac{1}{3},\frac{1}{3}) = 3  &\\ \\
+&\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right|_{(0,0)}=
+6(0)=0 &\\ \\
+&\left. \frac{\partial^2 f(x,y)}{\partial x \partial x} \right|_{(\frac{1}{3},\frac{1}{3})}=
+6(\frac{1}{3})=2>0
 & \end{aligned}
 $$
 

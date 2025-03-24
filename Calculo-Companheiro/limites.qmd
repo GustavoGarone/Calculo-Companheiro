@@ -1,7 +1,49 @@
 # Limites
 
-Limites são importantes!
+## Um conceito intuitivo
+
+Você provavelmente já se encontrou com limites ao longo do ensino médio e até mesmo fundamental e, em sua ingenuidade,
+nem percebeu. Duvida? Um exemplo simples.
+
+Provavelmente enquanto aprendia divisão, especialmente envolvendo frações, você se deparou com a dúvida universal "O
+que acontece quando dividimos por $0$?". Ainda nesse cenário, seu professor pode ter pedido que você perguntasse à
+calculadora, em que você teria a triste resposta "erro", ou em casos mais interessantes, $\infty$. O que está acontecendo
+aqui?
+
+Intuitivamente, sabemos que, quanto maior o divisor, menor será o quociente. Quando começamos a aprender frações e
+desbloqueamos o mundo mágico em que o resto da divisão passa a importar, também percebemos que, quando dividimos um
+número por outro menor que $1$, obtemos um quociente maior que nosso dividendo:
+
+$$
+\frac{1}{1} = 1,\; \frac{1}{0.5} = 2,\; \frac{1}{0.25} = 4,\; \frac{1}{0.01} = 100,\; \dots ?
+$$
+
+Mas e o que acontece se continuamos diminuindo nosso divisor? Claro, caso seja um número menor que $0$, temos resultados
+simétricos aos positivos, mas o que acontece quando chegamos cada vez mais perto de $0$?
+
+$$
+\frac{1}{x\rightarrow 0} = ?
+$$
+
+Da mesma forma, e se pegamos números cada vez maiores no divisor? Sabemos que quanto maior o divisor, menor o número,
+mas existe algum limiar, algum *limite* de quão pequeno esse número pode ser? Chegaria algum momento que cairíamos de
+ponta-cabeça nos números negativos, ou há algo nos barrando de descer "para o outro lado" da reta real?
+
+$$
+\frac{1}{x\rightarrow \infty} = ?
+$$
+
+```{julia}
+using Plots, LaTeXStrings
+
+f(x) = 1/x
+plot(f,title=L"f(x) = \frac{1}{x}", label="", ylims=(-10,10), framestyle=:origin)
+```
+
+Para responder essas e outras perguntas importantes sobre o comportamento de funções, partimos para o estudo formal
+de limites.
+
+## Uma sondagem informal
+
 
 ## Teorema do Confronto {#sec-confronto}
-
-oi teorema do confronto
