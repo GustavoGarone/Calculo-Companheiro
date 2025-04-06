@@ -25,7 +25,7 @@ $$
 \frac{1}{x\rightarrow 0} = ?
 $$
 
-Da mesma forma, e se pegamos números cada vez maiores no divisor? Sabemos que quanto maior o divisor, menor o número,
+Da mesma forma, e se pegarmos números cada vez maiores no divisor? Sabemos que quanto maior o divisor, menor o número,
 mas existe algum limiar, algum *limite* de quão pequeno esse número pode ser? Chegaria algum momento que cairíamos de
 ponta-cabeça nos números negativos, ou há algo nos barrando de descer "para o outro lado" da reta real?
 
@@ -33,17 +33,59 @@ $$
 \frac{1}{x\rightarrow \infty} = ?
 $$
 
-```{julia}
-using Plots, LaTeXStrings
-
-f(x) = 1/x
-plot(f,title=L"f(x) = \frac{1}{x}", label="", ylims=(-10,10), framestyle=:origin)
+```{.tikz width=150%}
+%%| format: svg
+%%| filename: limite1divx
+\begin{tikzpicture}
+\begin{axis}[xmin=-4.2,xmax=4.2,ymin=-6.2, ymax=6.2,
+axis lines = middle,
+title = {$f(x) = \frac{1}{x}$},
+xlabel= $x$,
+ylabel= $\frac{1}{x}$]
+\addplot[color=red, samples = 500, domain=-4.2:-0.001]{1/x};
+\addplot[color=red, samples = 500, domain=0.001:4.2]{1/x};
+\end{axis}  
+\end{tikzpicture}
 ```
 
 Para responder essas e outras perguntas importantes sobre o comportamento de funções, partimos para o estudo formal
 de limites.
 
-## Uma sondagem informal
+## Limites e continuidade
 
+Você provavelmente já ouviu a "definição" querida pelos professores para funções contínuas. Uma função é contínua, claro,
+se, e somente se, podemos desenhá-la sem tirar o lápis do papel!
+
+Deixando as brincadeiras de lado, há certa verdade nessa interpretação. Considere a seguinte função de domínio e contradomínio reais,
+isto é, $f : \mathbb{R} \rightarrow \mathbb {R}$:
+$$
+f(x) =\left\{\begin{array}{ll}
+1, & \mathrm{se}\ x < 1 \\
+2, & \mathrm{se}\ x \geq 1
+\end{array}\right.
+$$
+
+Antes de ver o gráfico, tente pensar um pouco se essa função é contínua para todo $x$ real. Exite algum ponto com "salto",
+ou que a função não está bem definida?
+
+```{.tikz width=150%}
+%%| format: svg
+%%| filename: limitefuncaochave1
+\begin{tikzpicture}
+\begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
+axis lines = left,
+title = {Função chave},
+xlabel= $x$,
+ylabel= $f(x)$]
+\draw(0,1) -- (0.95,1);
+\draw(1,1) circle[radius=0.05];
+\draw(1,2) -- (4,2);
+\draw(1,2) circle[radius=0.05];
+\fill[black](1,2) circle [radius=0.05];
+\end{axis}  
+\end{tikzpicture}
+```
+
+Do gráfico, vemos que a função não é contínua no ponto $x=1$, mas é contínua em todos os outros pontos da reta real.
 
 ## Teorema do Confronto {#sec-confronto}
