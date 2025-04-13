@@ -1,4 +1,0 @@
-::: {.hidden}
-\newcommand{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}}
-\newcommand{\ptd}[3]{\left. \frac{\partial^2{#1}}{\partial{#2}\partial{#3}} \right \rvert_{(x_0,y_0)}}
-:::

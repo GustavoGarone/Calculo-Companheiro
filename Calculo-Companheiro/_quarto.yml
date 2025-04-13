@@ -23,7 +23,6 @@ book:
   date: last-modified
   chapters:
     - index.qmd
-    - prefacio.qmd
     - part: "Bem-Vindo!"
       chapters:
         - intro.qmd
@@ -36,7 +35,6 @@ book:
         - limites.qmd
         - weierstrass.qmd
         - mins-maxs.qmd
-    - part: "Aplicações do Cálculo"
     - part: "Álgebra Linear"
       chapters:
         - espacos-vetoriais.qmd
@@ -58,10 +56,6 @@ format:
     theme: cosmo
     # cite-method: biblatex
     extract-media: ./tikzdesigns/
-    include-in-body:
-      text: |
-        \newcommand*{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}}
-        \newcommand*{\ptd}[3]{\left. \frac{\partial^2{#1}}{\partial{#2}\partial{#3}} \right \rvert_{(x_0,y_0)}}
 
   pdf:
     documentclass: scrreprt

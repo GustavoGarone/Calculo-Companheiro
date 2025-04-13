@@ -1,4 +1,4 @@
-{{< include macros.qmd >}}
+<!-- {{< include macros.qmd >}} -->
 # Polinômio de Taylor de Duas Variáveis
 
 Familiarizado com o Polinômio de Taylor de Uma Variável e com o conceito de funções de duas variáveis, é natural que também
@@ -47,8 +47,8 @@ P_2(x,y) = & \phantom{;;} f(x_0, y_0) +
 \left. \frac{\partial f(x,y)}{\partial x} \right |_{(x_0,y_0)} (x-x_0) +
 \left. \frac{\partial f(x,y)}{\partial y} \right |_{(x_0,y_0)} (y-y_0) \\ \\
 & + \frac{1}{2} \begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}
-\left. \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
-				\pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix}\right |_{(x_0,y_0)}
+\left. \begin{bmatrix} \frac{\partial^2 f(x,y)}{\partial x\partial x} & \frac{\partial^2 f(x,y)}{\partial x\partial y}\\ 
+				\frac{\partial^2f(x,y)}{\partial x\partial x} & \frac{\partial^2 f(x,y)}{\partial y \partial y} \end{bmatrix}\right |_{(x_0,y_0)}
 \begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix}
 \end{aligned}
 $$
@@ -59,8 +59,8 @@ facilitar a compreensão. Note que a primeira linha é exatamente igual ao polin
 necessário atentarmo-nos à segunda linha.
 
 $\frac{1}{2} \begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}
-\left. \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
-				\pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix}\right |_{(x_0,y_0)}
+\left. \begin{bmatrix} \frac{\partial^2 f(x,y)}{\partial x\partial x} & \frac{\partial^2 f(x,y)}{\partial x\partial y}\\ 
+				\frac{\partial^2 f(x,y)}{\partial x \partial x} & \frac{\partial^2 f(x,y)}{\partial y\partial y} \end{bmatrix}\right |_{(x_0,y_0)}
 \begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix}$: Trata-se da metade do produto do vetor linha
 $\begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}$ pela Matriz Jacobiana calculada no ponto $(x_0, y_0)$ multiplicado pelo vetor
 coluna $\begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix}$. Note que, ao final das operações, temos um produto de matrizes de
@@ -68,7 +68,7 @@ tamanho $1 \times 2$, $2 \times 2$ e $2 \times 1$, respectivamente, o que result
 interpretar como um mero número ou, neste caso, uma função.
 
 Ao calcular a matriz jacobiana no ponto, recomendamos atenção redobrada para evitar substituir uma das variáveis pelo valor
-no ponto. Tal erro acarreta em um novo polinômio de primeira ordem que está a uma constante de distância do Polinômio de
+no ponto. Tal erro acarreta um novo polinômio de primeira ordem que está a uma constante de distância do Polinômio de
 Taylor de Primeira Ordem, além de ser muito diferente do Polinômio de Taylor de Segunda Ordem, que seria o polinômio buscado.
 
 ## Exemplos de Polinômios de Taylor de Duas Variáveis
@@ -84,8 +84,8 @@ $\left. \frac{\partial f(x,y)}{\partial y} \right |_{(0,0)} (y-y_0) = \left. 2y+
 $$
 \begin{aligned}
 & \frac{1}{2} \begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}
-\left. \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
-      \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix}
+\left. \begin{bmatrix} \frac{\partial^2 f(x,y)}{\partial x\partial x} & \frac{\partial^2 f(x,y)}{\partial x\partial y}\\ 
+      \frac{\partial^2f(x,y)}{\partial x\partial x} & \frac{\partial^2f(x,y)}{\partial y\partial y} \end{bmatrix}
       \right |_{(x_0,y_0)}
 \begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix} & \\ \\
 & = \frac{1}{2} \begin{bmatrix} x-0 & y-0 \end{bmatrix}
@@ -109,7 +109,6 @@ usando um polinômio de até segundo grau é o próprio polinômio! Tente fazer 
 você deve obter a mesma função.
 
 
-
 $f(x,y) = x \sin(y) \phantom{---} (x_0,y_0) = (1,0)$
 
 $f(1,0) = (1) \sin(0) = 0$
@@ -120,8 +119,8 @@ $\left. \frac{\partial f(x,y)}{\partial y} \right |_{(1,0)} (y-y_0) = \left.  x\
 $$
 \begin{aligned}
 & \frac{1}{2} \begin{bmatrix} x-x_0 & y-y_0 \end{bmatrix}
-\left. \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
-      \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix}
+\left. \begin{bmatrix} \frac{\partial^2f(x,y)}{\partial x\partial x} & \frac{\partial^2f(x,y)}{\partial x \partial y}\\ 
+      \frac{\partial^2f(x,y)}{\partial x\partial x} & \frac{\partial^2f(x,y)}{\partial y\partial y} \end{bmatrix}
       \right |_{(x_0,y_0)}
 \begin{bmatrix} x-x_0 \\ y-y_0 \end{bmatrix} & \\ \\
 & = \frac{1}{2} \begin{bmatrix} x-1 & y-0 \end{bmatrix}

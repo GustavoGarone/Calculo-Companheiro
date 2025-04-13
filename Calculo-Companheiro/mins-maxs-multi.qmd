@@ -1,6 +1,6 @@
 # Mínimos e Máximos de Funções de Duas Variáveis
-\newcommand{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}}
-\newcommand{\ptd}[3]{\left. \frac{\partial^2{#1}}{\partial{#2}\partial{#3}} \right \rvert_{(x_0,y_0)}}
+<!-- \newcommand{\pt}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}} -->
+<!-- \newcommand{\ptd}[3]{\left. \frac{\partial^2{#1}}{\partial{#2}\partial{#3}} \right \rvert_{(x_0,y_0)}} -->
 
 Antes de prosseguir para uma análise multivariada de mínimos e máximos, recomendamos que você releia nosso capítulo sobre
 o [Polinômio de Taylor com mais Variáveis](taylor-multi.qmd) e sobre [Derivadas de Ordem Superior](d-ordem-superior.qmd).
@@ -105,11 +105,10 @@ Para mais detalhes, leia o capítulo de [Derivadas de Ordem Superior](d-ordem-su
 $$
 \begin{aligned}
 H(x_0, y_0) 
-& = \left. \mathrm{det} \left( \begin{bmatrix} \pt{f(x,y)}{x}{x} & \pt{f(x,y)}{x}{y}\\ 
-\pt{f(x,y)}{x}{x} & \pt{f(x,y)}{y}{y} \end{bmatrix} 
+& = \left. \mathrm{det} \left( \begin{bmatrix} \frac{\partial^2 f(x,y)}{\partial x\partial x} & \frac{\partial^2f(x,y)}{\partial x\partial y}\\ 
+\frac{\partial^2f(x,y)}{\partial x\partial x} & \frac{\partial^2f(x,y)}{\partial y \partial y} \end{bmatrix} 
 \right |_{(x_0,y_0)} \right )  &\\
-& = \ptd{f(x,y)}{x}{x} -2\ptd{f(x,y)}{x}{y}+\ptd{f(x,y)}{y}{y}
-\end{aligned}
+& = \left.\frac{\partial^2f(x,y)}{\partial x\partial x}\right \rvert_{(x_0,y_0)} -2\left.\frac{\partial^2f(x,y)}{\partial x\partial y}\right \rvert_{(x_0,y_0)}+\left.\frac{\partial^2f(x,y)}{\partial y\partial y}\right \rvert_{(x_0,y_0)}\end{aligned}
 $$
 
 
