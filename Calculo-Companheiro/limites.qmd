@@ -88,4 +88,220 @@ ylabel= $f(x)$]
 
 Do gráfico, vemos que a função não é contínua no ponto $x=1$, mas é contínua em todos os outros pontos da reta real.
 
+Algumas funções são mais enganosas. Vamos considerar $f : \mathbb{R} \rightarrow \mathbb{R}$:
+$$
+f(x) =\left\{\begin{array}{ll}
+x, & \mathrm{se}\ x \neq 2 \\
+1, & \mathrm{se}\ x = 2
+\end{array}\right.
+$$
+
+:::{#fig-enganosa}
+```{.tikz width=150%}
+%%| format: svg
+%%| filename: limitefuncaochave2
+\begin{tikzpicture}
+\begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
+axis lines = left,
+title = {Função Enganosa},
+xlabel= $x$,
+ylabel= $f(x)$]
+\draw(0,0) -- (2,2);
+\draw(2,2) circle[radius=0.05];
+\draw(2,2) -- (4,4);
+\draw(2,1) circle[radius=0.05];
+\draw[dash dot](2,1.05) -- (2,1.95);
+\fill[black](2,1) circle [radius=0.05];
+\fill[white](2,2) circle [radius=0.05];
+\end{axis}  
+\end{tikzpicture}
+```
+:::
+
+Essa função nos mostra algo curioso: se nos aproximamos de $x=2$, a função se aproxima de $2$, isto é,
+$$
+f(x) \stackrel{x\rightarrow 2}{\rightarrow} 2,
+$$
+por outro lado,
+$$
+f(2) = 1.
+$$
+
+De fato, o valor que se espera que a função tenha no ponto $x$ é o conceito intuitivo de limite! Podemos escrever que o
+limite $L$ da função $f(x)$ conforme $x$ se aproxima de $2$ é $2$:
+$$
+\lim_{x\rightarrow 2} f(x) = L = 2 \neq f(2).
+$$
+
+Disso, temos uma definição *formal* de continuidade:
+
+::: {.callout-note title="Definição de continuidade"}
+Uma função é dita ser contínua no ponto $x_0$ se, e somente se,
+$$
+\lim_{x\rightarrow x_0} f(x) = f(x_0).
+$$
+:::
+
+Com essa definição, conseguimos afirmar que nossa função enganosa não é contínua no ponto $x=2$.
+
+Vamos experimentar calculando alguns limites! 
+
+$$
+\begin{aligned}
+\lim_{x \rightarrow 0} \frac{x^2}{x} &= \lim_{x\rightarrow 0} x = 0 \\
+\lim_{x\rightarrow 1} \frac{x^2 - 1}{x - 1} &= \lim_{x\rightarrow 1} \frac{(x+1)(x-1)}{(x-1)} = \lim_{x\rightarrow 1} x+1 = 2
+\end{aligned}
+$$
+
+::: {.callout-tip title="Lidando com indefinições"}
+Como estratégia, queremos simplificar as expressões o máximo possível, buscando eliminar indefinições,
+antes de calcularmos o valor limite.
+
+Nos exemplos acima, não poderíamos substituir o valor de $x$ diretamente antes de resolvermos o limite, ou estaríamos
+dividindo por 0, um crime!
+:::
+
+Nem sempre é possível lidar com as indeterminações. Trataremos delas posteriormente, mas você já pode pensar em que
+acontece quando nos aproximamos de monstruosidades como a divisão por $0$.
+
+## Formalizando limites
+
+Nosso objetivo nessa seção é tentar entender o seguinte:
+
+::: {.callout-note title="Definição de limite"}
+Seja $f$ uma função e $a$ um ponto no domínio (ou extremidade do domínio) de $f$, $D_f$. Dizemos que $f$ tem limite $L$
+no ponto $a$ se, e somente se, para todo $\epsilon>0$ fixo, existe um $\delta > 0$ tal que para todo $x$ em $D_f$,
+$$
+0 < | x-a | < \delta \Rightarrow | f(x) - L | < \epsilon.
+$$
+
+Quando existe, esse $L$ é único e escrevemos $\lim\limits_{x \rightarrow a}f(x) = L$.
+:::
+
+Que confusão! Tentaremos entender em outras palavras, ou melhor, desenhando! Vamos considerar uma função simples, como
+$f(x) = x$. Com uma relação entre $a$ e $\delta$, esperamos escrever $\delta$ no eixo $x$, enquanto
+$\epsilon, L$, por se relacionarem com o valor da função, $f(x)$, estarão descritos no outro eixo:
+
+
+```{.tikz width=150%}
+%%| format: svg
+%%| filename: limiteidentidadedef
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=0, xmax=4,
+  ymin=0, ymax=4,
+  axis lines=left,
+  title={Visualizando a Definição},
+  xlabel=$x$,
+  ylabel=$f(x)$,
+  clip=false, % Disable clipping to render nodes outside the axis
+  %after end axis/.code={ % Optional: Re-clip the main plot area (keeps lines/curves clean)
+  %  \path[clip] (current axis.south west) rectangle (current axis.north east);
+  %} % This is needed for examples where curves and plots might extend over the axis.
+  xtick=\empty,
+  ytick=\empty,
+  xlabel style={
+    font=\scriptsize,     % Smaller font
+    at={(axis description cs:1,0)}, % Position at end of x-axis
+    anchor=north east,    % Anchor to align near the arrow tip
+    xshift=-2pt           % Fine-tune horizontal position
+  },
+  ylabel style={
+    font=\scriptsize,     % Smaller font
+    at={(axis description cs:0,1)}, % Position at end of y-axis
+    anchor=south east,    % Anchor to align near the arrow tip
+    yshift=2pt            % Fine-tune vertical position
+  },
+]
+
+\draw (0,0) -- (4,4);
+
+% Hatched area
+\fill[pattern=north east lines, pattern color=gray] (1.5,1.5) rectangle (2.5,2.5);
+
+% Y-axis
+\draw[dash dot] (0,1.5) node[left, xshift=-2pt] {$L - \epsilon$} -- (4,1.5);
+\draw[dotted] (0,2) node[left, xshift=-2pt] {$L$} -- (2,2);
+\draw[dash dot] (0,2.5) node[left, xshift=-2pt] {$L + \epsilon$} -- (4,2.5);
+
+% X-axis
+\draw[dash dot] (1.5,0) node[below, yshift=-2pt] {$a + \delta$} -- (1.5,4);
+\draw[dotted] (2,0) node[below, yshift=-2pt] {$a$} -- (2,2);
+\draw[dash dot] (2.5,0) node[below, yshift=-2pt] {$a - \delta$} -- (2.5,4);
+
+\draw(2,2) circle[radius=0.03]
+\fill[black](2,2) circle [radius=0.03];
+
+\end{axis}
+\end{tikzpicture}
+```
+
+Nosso objetivo é verificar e é possível "comprimir" essa área até o ponto $f(a)$. Caso consigamos, podemos dizer que $L$
+é o limite de $f$ no ponto $a$. Sabemos que, como $f(x) = x$ é uma função contínua, esse limite $L$ existe no ponto $a$
+e é o próprio valor da função neste ponto, $f(a) = a$. Consideraremos novamente nossa [função enganosa](#fig-enganosa)
+e visualizaremos que seu limite no ponto $2$ é $2$.
+
+```{.tikz width=150%}
+%%| format: svg
+%%| filename: limitedefEnganosa
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=0, xmax=4,
+  ymin=0, ymax=4,
+  axis lines=left,
+  title={Aplicando na Enganosa},
+  xlabel=$x$,
+  ylabel=$f(x)$,
+  clip=false, % Disable clipping to render nodes outside the axis
+  %after end axis/.code={ % Optional: Re-clip the main plot area (keeps lines/curves clean)
+  %  \path[clip] (current axis.south west) rectangle (current axis.north east);
+  %} % This is needed for examples where curves and plots might extend over the axis.
+  xtick=\empty,
+  ytick=\empty,
+  xlabel style={
+    font=\scriptsize,     % Smaller font
+    at={(axis description cs:1,0)}, % Position at end of x-axis
+    anchor=north east,    % Anchor to align near the arrow tip
+    xshift=-2pt           % Fine-tune horizontal position
+  },
+  ylabel style={
+    font=\scriptsize,     % Smaller font
+    at={(axis description cs:0,1)}, % Position at end of y-axis
+    anchor=south east,    % Anchor to align near the arrow tip
+    yshift=2pt            % Fine-tune vertical position
+  },
+]
+
+\draw (0,0) -- (4,4);
+
+% Hatched area
+\fill[pattern=north east lines, pattern color=gray] (0.5,0.5) rectangle (3.5,3.5);
+
+% Y-axis
+\draw[dash dot] (0,0.5) node[left, xshift=-2pt] {$L - \epsilon$} -- (4,0.5);
+\draw[dash dot] (0,3.5) node[left, xshift=-2pt] {$L + \epsilon$} -- (4,3.5);
+
+% X-axis
+\draw[dash dot] (0.5,0) node[below, yshift=-2pt] {$a + \delta$} -- (0.5,4);
+\draw[dotted] (2,0) node[below, yshift=-2pt] {$a$} -- (2,2);
+\draw[dash dot] (3.5,0) node[below, yshift=-2pt] {$a - \delta$} -- (3.5,4);
+
+\draw(2,2) circle[radius=0.03]
+\fill[white](2,2) circle [radius=0.03];
+
+\draw(2,1) circle[radius=0.03];
+\fill[black](2,1) circle [radius=0.03];
+
+\end{axis}
+\end{tikzpicture}
+```
+
+A definição formal não nos ajuda muito a encontrar limites, mas podemos confirmar nossa intuição usando essa formalidade.
+
+Se fixarmos um ponto $a$ no domínio de $f$ e um número, $\epsilon$, queremos encontrar outro número, $\delta$, tal que
+se a distância entre o argumento da função $x$ e o ponto $a$ for menor que $\delta$, a distância entre o valor da função
+em $x$, $f(x)$, e o valor $L$ é menor que esse o $\epsilon$ fixado. Isso, a princípio, é simples. Pense na função
+$f(x) = x$ 
+
+
 ## Teorema do Confronto {#sec-confronto}
