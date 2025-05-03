@@ -241,6 +241,10 @@ Nosso objetivo é verificar e é possível "comprimir" essa área até o ponto $
 e é o próprio valor da função neste ponto, $f(a) = a$. Consideraremos novamente nossa [função enganosa](#fig-enganosa)
 e visualizaremos que seu limite no ponto $2$ é $2$.
 
+Vamos assumir, por absurdo, que $L = 1$, ou seja, que o limite no ponto $a=2$ da função enganosa seja na verdade $1$.
+Note que, mesmo escolhendo um valor muito pequeno para $\delta$, não satisfazeriamos as condições para um $\epsilon$
+pequeno!
+
 ```{.tikz width=150%}
 %%| format: svg
 %%| filename: limitedefEnganosa
@@ -272,20 +276,24 @@ e visualizaremos que seu limite no ponto $2$ é $2$.
   },
 ]
 
-\draw (0,0) -- (4,4);
+\draw (0,0) -- (1.5,1.5);
+\draw (2.5,2.5) -- (4,4);
 
 % Hatched area
-\fill[pattern=north east lines, pattern color=gray] (0.5,0.5) rectangle (3.5,3.5);
+\fill[pattern=north east lines, pattern color=gray] (1.5,0.5) rectangle (2.5,1.5);
 
 % Y-axis
 \draw[dash dot] (0,0.5) node[left, xshift=-2pt] {$L - \epsilon$} -- (4,0.5);
-\draw[dash dot] (0,3.5) node[left, xshift=-2pt] {$L + \epsilon$} -- (4,3.5);
+\draw[dotted] (0,1) node[left, xshift=-2pt] {$L$} -- (2,1);
+\draw[dash dot] (0,1.5) node[left, xshift=-2pt] {$L + \epsilon$} -- (4,1.5);
 
 % X-axis
-\draw[dash dot] (0.5,0) node[below, yshift=-2pt] {$a + \delta$} -- (0.5,4);
+\draw[dash dot] (1.5,0) node[below, yshift=-2pt] {$a + \delta$} -- (1.5,4);
 \draw[dotted] (2,0) node[below, yshift=-2pt] {$a$} -- (2,2);
-\draw[dash dot] (3.5,0) node[below, yshift=-2pt] {$a - \delta$} -- (3.5,4);
+\draw[dash dot] (2.5,0) node[below, yshift=-2pt] {$a - \delta$} -- (2.5,4);
 
+\draw[color=red, dashed] (1.5,1.5) -- (2.5,2.5);
+\node[align=center, color=red] at (2,2.6) {\tiny$|L - f(x)| > \epsilon$}
 \draw(2,2) circle[radius=0.03]
 \fill[white](2,2) circle [radius=0.03];
 
@@ -296,12 +304,56 @@ e visualizaremos que seu limite no ponto $2$ é $2$.
 \end{tikzpicture}
 ```
 
+Dessa forma, toda a seção em vermelho (tracejada) não obedece $|f(x) - L| < \epsilon$ para pelo menos algum $\epsilon$,
+logo, esse valor de $L$ não pode ser o limite nesse ponto desta função! Tente desenhar e observar que o limite intuitivo
+dessa função no ponto $x=2$ é de fato $2$ pela definição.
+
+
+
 A definição formal não nos ajuda muito a encontrar limites, mas podemos confirmar nossa intuição usando essa formalidade.
+Tomemos o exemplo acima. Para deixar mais claro a relação de implicação, podemos também escrever
 
-Se fixarmos um ponto $a$ no domínio de $f$ e um número, $\epsilon$, queremos encontrar outro número, $\delta$, tal que
-se a distância entre o argumento da função $x$ e o ponto $a$ for menor que $\delta$, a distância entre o valor da função
-em $x$, $f(x)$, e o valor $L$ é menor que esse o $\epsilon$ fixado. Isso, a princípio, é simples. Pense na função
-$f(x) = x$ 
+$$
+|f(x) - L| < \epsilon \text{ quando } |x-2| < \delta
+$$
 
+Substituindo os valores de $L$ (queremos testar se $L=2$ é o limite neste ponto) e $f(x) =x$,
+
+$$
+|x - 2| < \epsilon \text{ quando } |x-2| < \delta
+$$
+
+<!-- TODO: Criar uma seção de lógica? (e linkar aqui) -->
+Uma vez que para todo $\epsilon$ podemos escolher $\delta = \epsilon$, isso é sempre verdade
+(algo implicar si mesmo é uma [tautologia](https://pt.wikipedia.org/wiki/Tautologia_(l%C3%B3gica))!). Logo, podemos afirmar
+que, pela definição, $\lim\limits_{x\rightarrow2}f(x) = 2$.
+
+Partiremoss para outra função, como $f(x) = x^2$, para aprendermos a manipular um pouco as expressões e verificar o
+limite.
+
+Sabemos que $x^2$ é uma função contínua, logo, qualquer valor da função será seu limite nesse ponto. Verificaremos esse
+fato usando a definição para o ponto $x=0$.
+
+$$
+\begin{aligned}
+|f(x) - L| < \epsilon &\text{ quando } |x-0| < \delta \\
+|x^2 - 0| < \epsilon &\text{ quando } |x-0| < \delta \\
+|x^2| < \epsilon &\text{ quando } |x| < \delta \\
+|x^2| < \epsilon &\text{ quando } |x| < \delta \\
+|x| < \sqrt{\epsilon} &\text{ quando } |x| < \delta \\
+\end{aligned}
+$$
+
+Logo, com $\delta = \sqrt{\epsilon}$, verificamos que o limite de $f(x) = x^2$ quando $x$ se aproxima de $0$ é, como
+esperávamos pela continuidade, $0$.
+
+Contudo, até em verificar nossa intuição a definição pode ser de pouca ajuda. No exemplo anterior, caso escolhessemos
+o ponto $a=1$, aplicar a definição seria um pouco mais complicado (tente você mesmo!). Por isso, como veremos na próxima
+seção, grande parte da importância da definição formal de limites está em fornecer ferramentas para facilitar o cálculo
+desses limites.
+
+## Propriedades importantes dos limites
+
+<!-- TODO: além da continuidade, limite de continua "passa pra dentro", limite do módulo, limite de -f, etc. -->
 
 ## Teorema do Confronto {#sec-confronto}
