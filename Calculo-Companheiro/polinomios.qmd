@@ -6,8 +6,8 @@ funções compostas, interpolação, introdução aos números complexos e uma m
 # Funções Polinomiais
 
 ## Introdução
-Neste, capítulo, daremos início ao estudo de funções polinomiais, ou apenas polinômios daqui para frente. Funções 
-polinomiais são um conjunto de funções muito bem definidas e simples, o que torna-as adequadas para modelar situações 
+Neste capítulo, daremos início ao estudo de funções polinomiais, ou apenas polinômios daqui para frente. Funções 
+polinomiais são um conjunto de funções muito bem definidas e simples, o que as torna adequadas para modelar situações 
 extremamente variadas. Ademais, funções polinomiais geralmente são as funções mais simples que podemos trabalhar em 
 diversos contextos (desde cálculo a modelagem de dados), então serão as primeiras funções a efetivamente aprofundarmos!
 
@@ -22,7 +22,7 @@ função do tempo após o lançamento, pode ser descrita por $h(t) = 4.9t^2+100t
 
 >3- Uma bióloga, ao medir várias vezes o volume de oxigênio (em unidade desconhecida) produzido por uma população de 
 algas, notou que a produção variava de acordo com a concentração de algas em seu aquário. A concentração variava de 0 
-gramas de algas por L a 100g de algas por litro. A biólogo notou que a produção era modelada pela função 
+gramas de algas por L a 100g de algas por litro. A bióloga notou que a produção era modelada pela função 
 $p(c) = \frac{-5}{1000}(c^2-120c)$
 
 >4- Um triatleta precisa atravessar de um lado de um lago para o outro. Sua velocidade em terra é diferente da 
@@ -88,19 +88,19 @@ nem sempre é igual a $f(x)$. Isso ocorre por conta dos domínios das funções 
 >$f(x) = e^{ln(5 x^{-1})} = 5x^{-1}$
 >
 >Portanto, $f(x) = e^{ln(5 x^{-1})}$ não é um polinômio, pois o $x$ tem um expoente negativo, ou seja, não é positivo 
-> nem nulo.
+>nem nulo.
 
 Determinar se uma função é polinomial trata-se, portanto, de verificar se aquela função pode ser reescrita como uma soma
 de potências de $x$ multiplicadas por uma constante. Neste momento, trataremos apenas de polinômios com quantidade 
-finita de termos. O uso de polinômios com infinitos termos, apesar de parecer pouco intuitivo, é uma técnica muito 
+finita de termos. O uso de polinômios com infinitos termos, ainda que pareça pouco intuitivo, é uma técnica muito 
 usada para aproximar funções genéricas por um polinômio, o que tem aplicações nas mais diversas áreas, sobretudo na 
 computação.
 
 
 ### Grau de um polinômio
-O grau de um polinômio, notado $gr(P)$ ou $grau(P)$, refere-se ao maior expoente da variável. Genericamente, temos que o
+O grau de um polinômio (escrito em sua forma reduzida), notado $gr(P)$ ou $grau(P)$, refere-se ao maior expoente da variável. Genericamente, temos que o
 grau de um polinômio é $n$ tal que $a_n \neq 0$. Ou seja, o maior número ao qual $x$ está sendo elevado, quando 
-trata-se de um polinômio em $x$ e a constante não é 0.
+se trata de um polinômio em $x$ e a constante não é 0.
 
 Particularmente, alguns polinômios de grau pequeno recebem alguns nomes especiais.
 
@@ -118,7 +118,7 @@ Um polinômio linear é da forma $p(x) = a_1x+a_0$. Ele intercepta o eixo $y$ no
 não paralela a nenhum dos eixos.
 
 Um polinômio quadrático é da forma $p(x) = a_2x^2+a_1x+a_0$. Você já deve imaginar onde ele intercepta o eixo $y$. O 
-gráfico de um polinômio quadrático é uma parábola.
+gráfico de um polinômio quadrático é representado por um parábola.
 
 Um polinômio cúbico é da forma $p(x) = a_3x^3+a_2x^2+a_1x+a_0$. Mais uma vez, não é difícil inferir onde ele intercepta 
 o eixo $y$. Seu gráfico pode variar de acordo com os parâmetros, mas geralmente forma uma letra "n" e explode para 
@@ -128,8 +128,8 @@ Polinômios de grau superior não recebem nomes especiais, pois são menos frequ
 propriedades facilmente generalizadas, como é o caso da parábola e a reta.
 
 ### Raízes de um Polinômio
-Encontrar as raízes de um polinômio nada mais é do que encontrar os pontos em que $p(x) = 0$, ou seja, quando o 
-polinômio intercepta o eixo $x$.
+Encontrar as raízes de um polinômio nada mais é do que encontrar os valores de $x$ tais que $p(x) = 0$, ou seja, quando 
+o polinômio intercepta o eixo $x$.
 
 Encontrar as raízes de um polinômio é um processo cujo trabalho cresce exponencialmente de acordo com o grau do 
 polinômio, por isso traremos algumas técnicas algorítmicas para encontrar as raízes, fórmulas e intuições. No futuro, 
@@ -138,10 +138,10 @@ com o Teorema do Valor Intermediário, o processo de encontrar as raízes de um 
 
 #### Para polinômios de grau 0:
 Um polinômio de grau 0 pode ter zero raízes ou infinitas raízes!
-Quando $a_0=0$, o polinômio coincide com o eixo $x$ em todos os pontos, portanto todos os pontos são raízes e há 
-infinitos sobre sobre o eixo $x$.
-Quando $a_0 \neq 0$, o polinômio é paralelo ao eixo$x$ e não coincidente, portanto $p(x)$ nunca é igual a $0$, ou 
-seja, não há nenhuma raiz.
+Quando $a_0=0$, o polinômio coincide com o eixo $x$ em todos os pontos, portanto, todos os pontos são raízes e há 
+infinitos sobre o eixo $x$.
+Quando $a_0 \neq 0$, o polinômio é paralelo ao eixo$x$ e não coincidente, portanto, $p(x)$ nunca é igual a $0$, ou 
+seja, não há não há raiz alguma.
 
 
 #### Para polinômios de grau 1:
@@ -187,11 +187,8 @@ $x = \dfrac{-b \pm \sqrt{b^2-4 \cdot a \cdot c }}{2a}$
 Tomando $\Delta = b^2-4 \cdot a \cdot c$ :
 $x=\dfrac{-b \pm \sqrt{\Delta}}{2a}$
 
-Da fórmula, segue que, quando $\Delta>0$, o polinômio tem duas raízes reais, quando $\Delta=0$, o polinômio só tem uma 
-raiz distinta, quando $\Delta<0$, o polinômio não tem nenhuma raiz real.
-
-Por agora, preste muita atenção quando dizemos "o polinômio só tem uma raiz distinta" e "o polinômio não tem nenhuma 
-raiz real", pois em breve tais fatos não nos impedirão de fazer mais contas!
+Da fórmula, segue que, quando $\Delta>0$, o polinômio tem duas raízes reais, quando $\Delta=0$, o polinômio tem duas 
+raízes reais iguais e, quando $\Delta<0$, o polinômio tem duas raízes complexas distintas.
 
 ### Para polinômios de grau maior que 2:
 Existe [um ramo da matemática](https://en.wikipedia.org/wiki/Galois_theory) que nasceu do estudo das raízes de um 
