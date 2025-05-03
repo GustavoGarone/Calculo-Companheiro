@@ -339,7 +339,6 @@ $$
 |f(x) - L| < \epsilon &\text{ quando } |x-0| < \delta \\
 |x^2 - 0| < \epsilon &\text{ quando } |x-0| < \delta \\
 |x^2| < \epsilon &\text{ quando } |x| < \delta \\
-|x^2| < \epsilon &\text{ quando } |x| < \delta \\
 |x| < \sqrt{\epsilon} &\text{ quando } |x| < \delta \\
 \end{aligned}
 $$
