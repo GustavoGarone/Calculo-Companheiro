@@ -1,0 +1,94 @@
+lang: pt 
+
+project:
+  type: book
+  
+engines: ['julia'] 
+julia:
+  env: ["QT_QPA_PLATFORM=xcb"]
+
+execute:
+  echo: false
+  cache: true
+filters:
+  - diagram
+diagram:
+  cache: true
+  engine:
+    tikz:
+      header-includes:
+        - '\usetikzlibrary{patterns}'
+        - '\usetikzlibrary{arrows}'
+        - '\usepackage{pgfplots}'
+        - '\usepackage{mathrsfs}'
+        - '\pgfplotsset{compat=1.16}'
+
+book:
+  language: pt
+  title: "Cálculo Companheiro"
+  author: "Artur H. Tomita, Eduardo Yukio G. Ishihara, Gustavo S. Garone"
+  date: last-modified
+  navbar:
+    search: true
+    right:
+      - icon: github
+        href: https://github.com/GustavoGarone/anotacoes-inferencia
+        aria-label: GitHub
+      - text: "<i class='fa-solid fa-file-pdf'></i> PDF"
+        href: Cálculo-Companheiro.pdf
+  chapters:
+    - index.qmd
+    - part: "Bem-Vindo!"
+      chapters:
+        - intro.qmd
+    - part: "Matemática Elementar"
+      chapters:
+        - polinomios.qmd
+        - matrizes.qmd
+    - part: "Introdução ao Cálculo"
+      chapters:
+        - limites.qmd
+        - weierstrass.qmd
+        - mins-maxs.qmd
+    - part: "Álgebra Linear"
+      chapters:
+        - espacos-vetoriais.qmd
+    - part: "Cálculo Multivariado"
+      chapters:
+        - curvas.qmd
+        - limites-multivariados.qmd
+        - d-multi.qmd
+        - d-ordem-superior.qmd
+        - taylor-multi.qmd
+        - mins-maxs-multi.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: associacao-brasileira-de-normas-tecnicas.csl 
+
+format:
+  html:
+    theme:
+      light: [cosmo]
+      dark: [cosmo, theme-dark.scss]
+    respect-user-color-scheme: true
+    include-in-header: 
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    extract-media: ./tikzdesigns/
+
+  pdf:
+    documentclass: scrreport
+    cite-method: biblatex
+    include-in-header:
+      - text: |
+          \usepackage{cancel}
+          \usepackage{unicode-math}
+  latex:
+    documentclass: scrreport
+    cite-method: biblatex
+    include-in-header:
+      - text: |
+          \usepackage{cancel}
+          \usepackage{unicode-math}
+

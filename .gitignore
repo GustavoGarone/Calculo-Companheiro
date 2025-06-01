@@ -1,4 +1,3 @@
-./.vscode/
-*.quarto
-*_book
-.vscode/
+/.quarto/
+*book/
+*_files/
