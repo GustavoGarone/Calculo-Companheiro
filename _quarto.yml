@@ -32,7 +32,7 @@ book:
     search: true
     right:
       - icon: github
-        href: https://github.com/GustavoGarone/anotacoes-inferencia
+        href: https://github.com/GustavoGarone/Calculo-Companheiro
         aria-label: GitHub
       - text: "<i class='fa-solid fa-file-pdf'></i> PDF"
         href: Cálculo-Companheiro.pdf
