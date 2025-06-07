@@ -52,9 +52,10 @@ O [Teorema de Weierstrass](weierstrass.qmd) não se restringe apenas ao cálculo
 Tome como exemplo $F: \mathbb{R}^2 \rightarrow \mathbb{R}$ uma função diferenciável. Se limitarmos um retângulo em $R^2$,
 teremos um intervalo fechado como domínio, e, portanto, mínimo e máximo de $F$:
 
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: quadradoFechadoMinMax
+%%| fig-cap: Região limitada
 \begin{tikzpicture}[domain=-2:2]
     \draw[very thin, color =gray] (0,0) grid (3.9,3.9);
     \draw[->] (0,0) -- (4.1,0) node[right] {$\mathbb{R}$};

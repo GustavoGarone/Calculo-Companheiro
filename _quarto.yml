@@ -76,6 +76,8 @@ format:
       text: |
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     extract-media: ./tikzdesigns/
+    fig-cap-location: top
+    fig-align: center
 
   pdf:
     documentclass: scrreport
@@ -84,6 +86,10 @@ format:
       - text: |
           \usepackage{cancel}
           \usepackage{unicode-math}
+    fig-cap-location: top
+    fig-align: center
+    default-image-extension: tex
+
   latex:
     documentclass: scrreport
     cite-method: biblatex
@@ -91,4 +97,7 @@ format:
       - text: |
           \usepackage{cancel}
           \usepackage{unicode-math}
+    fig-cap-location: top
+    fig-align: center
+    default-image-extension: tex
 

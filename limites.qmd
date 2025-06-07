@@ -33,13 +33,13 @@ $$
 \frac{1}{x\rightarrow \infty} = ?
 $$
 
-```{.tikz width=150%}
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: limite1divx
+%%| fig-cap: $f(x) = \frac{1}{x}$
 \begin{tikzpicture}
 \begin{axis}[xmin=-4.2,xmax=4.2,ymin=-6.2, ymax=6.2,
 axis lines = middle,
-title = {$f(x) = \frac{1}{x}$},
 xlabel= $x$,
 ylabel= $\frac{1}{x}$]
 \addplot[color=red, samples = 500, domain=-4.2:-0.001]{1/x};
@@ -68,13 +68,13 @@ $$
 Antes de ver o gráfico, tente pensar um pouco se essa função é contínua para todo $x$ real. Exite algum ponto com "salto",
 ou que a função não está bem definida?
 
-```{.tikz width=150%}
-%%| format: svg
+```{.tikz width=100%}
+%%| format: tex
 %%| filename: limitefuncaochave1
+%%| fig-cap: Função chave
 \begin{tikzpicture}
 \begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
 axis lines = left,
-title = {Função chave},
 xlabel= $x$,
 ylabel= $f(x)$]
 \draw(0,1) -- (0.95,1);
@@ -96,14 +96,14 @@ x, & \mathrm{se}\ x \neq 2 \\
 \end{array}\right.
 $$
 
-:::{#fig-enganosa}
-```{.tikz width=150%}
-%%| format: svg
+```{.tikz width=100%}
+%%| format: tex
 %%| filename: limitefuncaochave2
+%%| fig-cap: Ponto de descontinuidade numa função chave
+%%| fig-label: fig-enganosa
 \begin{tikzpicture}
 \begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
 axis lines = left,
-title = {Função Enganosa},
 xlabel= $x$,
 ylabel= $f(x)$]
 \draw(0,0) -- (2,2);
@@ -116,9 +116,8 @@ ylabel= $f(x)$]
 \end{axis}  
 \end{tikzpicture}
 ```
-:::
 
-Essa função nos mostra algo curioso: se nos aproximamos de $x=2$, a função se aproxima de $2$, isto é,
+Essa "função enganosa" nos mostra algo curioso: se nos aproximamos de $x=2$, a função se aproxima de $2$, isto é,
 $$
 f(x) \stackrel{x\rightarrow 2}{\rightarrow} 2,
 $$
@@ -183,15 +182,15 @@ $f(x) = x$. Com uma relação entre $a$ e $\delta$, esperamos escrever $\delta$ 
 $\epsilon, L$, por se relacionarem com o valor da função, $f(x)$, estarão descritos no outro eixo:
 
 
-```{.tikz width=150%}
-%%| format: svg
+```{.tikz width=100%}
+%%| format: tex
 %%| filename: limiteidentidadedef
+%%| fig-cap: Visualizando a definição de limites
 \begin{tikzpicture}
 \begin{axis}[
   xmin=0, xmax=4,
   ymin=0, ymax=4,
   axis lines=left,
-  title={Visualizando a Definição},
   xlabel=$x$,
   ylabel=$f(x)$,
   clip=false, % Disable clipping to render nodes outside the axis
@@ -245,15 +244,15 @@ Vamos assumir, por absurdo, que $L = 1$, ou seja, que o limite no ponto $a=2$ da
 Note que, mesmo escolhendo um valor muito pequeno para $\delta$, não satisfazeriamos as condições para um $\epsilon$
 pequeno!
 
-```{.tikz width=150%}
-%%| format: svg
+```{.tikz width=100%}
+%%| format: tex
 %%| filename: limitedefEnganosa
+%%| fig-cap: Visualizando a definição na "função enganosa"
 \begin{tikzpicture}
 \begin{axis}[
   xmin=0, xmax=4,
   ymin=0, ymax=4,
   axis lines=left,
-  title={Aplicando na Enganosa},
   xlabel=$x$,
   ylabel=$f(x)$,
   clip=false, % Disable clipping to render nodes outside the axis
@@ -346,7 +345,7 @@ $$
 Logo, com $\delta = \sqrt{\epsilon}$, verificamos que o limite de $f(x) = x^2$ quando $x$ se aproxima de $0$ é, como
 esperávamos pela continuidade, $0$.
 
-Contudo, até em verificar nossa intuição a definição pode ser de pouca ajuda. No exemplo anterior, caso escolhessemos
+Contudo, até em verificar nossa intuição a definição pode ser de pouca ajuda. No exemplo anterior, caso escolhêssemos
 o ponto $a=1$, aplicar a definição seria um pouco mais complicado (tente você mesmo!). Por isso, como veremos na próxima
 seção, grande parte da importância da definição formal de limites está em fornecer ferramentas para facilitar o cálculo
 desses limites.
@@ -354,5 +353,13 @@ desses limites.
 ## Propriedades importantes dos limites
 
 <!-- TODO: além da continuidade, limite de continua "passa pra dentro", limite do módulo, limite de -f, etc. -->
+
+1. Se $g$ é uma função contínua, então $\lim\limits_{x\rightarrow a} g(f(x)) = g(\lim\limits_{x\rightarrow a} f(x))$
+
+2. Se $\lim\limits_{x\rightarrow a} f(x) = L_1, \lim\limits_{x\rightarrow a} g(x) = L_2, L_1, L_2 \in \mathbb{R}$, então:
+2.1. $\lim\limits_{x\rightarrow a} (f(x) + g(x)) = L_1 + L_2$
+2.2. $\lim\limits_{x\rightarrow a} kf(x) = kL_1, k \in \mathbb{R}$ (isso é especialmente útil com $k=-1$, o que permite que 2.1. se apliquee também em subtrações!
+2.3. $\lim\limits_{x\rightarrow a} (f(x) \cdot g(x)) = L_1 \cdot L_2$
+2.4. $\lim\limits_{x\rightarrow a} \frac{f(x)}{g(x)} = \frac{f(x)}{g(x)}, L_2 \neq 0$
 
 ## Teorema do Confronto {#sec-confronto}

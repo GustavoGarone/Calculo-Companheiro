@@ -17,9 +17,10 @@ Também podemos considerar, ao invés de mínimos e máximos de toda a função,
 
 Algumas funções possuem mínimo global, mas não máximo, como a clássica parábola $f(x) = x^2$.
 
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: parabolaMin
+%%| fig-cap: Mínimo em parábola convexa
 \begin{tikzpicture}[domain=-2:2]
     \draw[very thin, color =gray] (-3.9,-0.9) grid (3.9,3.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
@@ -31,9 +32,10 @@ Algumas funções possuem mínimo global, mas não máximo, como a clássica par
 
 Outras, por sua vez, possuem máximo,
 mas não mínimo, como o gêmeo do mal dessa última função: $g(x) = -x^2$. 
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: parabolaMax
+%%| fig-cap: Máximo em parábola côncava
 \begin{tikzpicture}[domain=-2:2]
     \draw[very thin, color =gray] (-3.9,-3.9) grid (3.9,0.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
@@ -43,9 +45,10 @@ mas não mínimo, como o gêmeo do mal dessa última função: $g(x) = -x^2$.
 \end{tikzpicture}
 ```
 Outras funções, por sua vez, não gostam de se limitar: $h(x) = x$ não possuí máximo ou mínimo.
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: identidade
+%%| fig-cap: Função identidade: ilimitada
 \begin{tikzpicture}[domain=-2.2:2.2]
     \draw[very thin, color =gray] (-2.1,-2.1) grid (2.1,2.1);
     \draw[->] (-2.1,0) -- (2.1,0) node[right] {$x$};
@@ -58,9 +61,10 @@ Se você está bem iterado com nosso capítulo sobre o Teorema de Weierstrass do
 que, para uma função garantidamente possuir máximo e mínimo, basta que seu domínio seja *limitado* (ou seja, não vá para
 mais ou menos infinito) e *fechado*. Uma consequência disso é que, caso escolhamos olhar para uma função qualquer em um intervalo fechado de seu domínio, conseguiremos encontrar pontos de *máximo e mínimo locais*. Vamos tomar nossa última função, $f(x) = x$ como exemplo limitando-a ao intervalo $[-1,1]$
 
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: identidadeLimitada
+%%| fig-cap: Função identidade: limitada
 \begin{tikzpicture}[domain=-2.2:2.2]
     \draw[very thin, color =gray] (-2.1,-2.1) grid (2.1,2.1);
     \draw[->] (-2.1,0) -- (2.1,0) node[right] {$x$};
@@ -85,9 +89,10 @@ teremos quase sempre uma reta horizontal/perpendicular ao eixo $x$ (Verifique o 
 identidade: isso nem sempre vale!).
 
 
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: parabolaMinTangente
+%%| fig-cap: Reta tangente ao mínimo
 \begin{tikzpicture}[domain=-1.8:1.8]
     \draw[very thin, color =gray] (-3.9,-0.9) grid (3.9,3.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
@@ -98,9 +103,10 @@ identidade: isso nem sempre vale!).
 \end{tikzpicture}
 ```
 
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: parabolaMaxTangente
+%%| fig-cap: Reta tangente ao máximo
 \begin{tikzpicture}[domain=-1.8:1.8]
     \draw[very thin, color =gray] (-3.9,-3.9) grid (3.9,0.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
@@ -137,9 +143,10 @@ $$
 
 Vamos visualizar o gráfico dessa função e conferir se $(0,0)$ é ponto de máximo ou mínimo:
 
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: xcuboSemMinMax
+%%| fig-cap: Nem toda reta tangente aponta máxima ou mínimo
 \begin{tikzpicture}[domain=-1.5:1.5]
     \draw[very thin, color =gray] (-1.9,-1.9) grid (1.9,1.9);
     \draw[->] (-1.6,0) -- (1.6,0) node[right] {$x$};
@@ -162,9 +169,10 @@ rápido e quando cresce, cresce cada vez mais rápido). Dessa forma, como no pon
 a função passa de decrescente para crescente e, pela segunda derivada, a concavidade dessa parábola está para cima. Por
 isso, esse ponto é o ponto de mínimo da função.
 
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: parabolaMinSetas
+%%| fig-cap: Parábolas convexas têm segunda derivada positiva
 \begin{tikzpicture}[domain=-2:2]
     \draw[very thin, color =gray] (-3.9,-0.9) grid (3.9,3.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
@@ -179,9 +187,10 @@ isso, esse ponto é o ponto de mínimo da função.
 Com a mesma lógica, usando a segunda derivada da função $f(x) = -2x^2, f''(x) = -2$, temos que a concavidade de nossa
 parábola está para baixo.
 
-``` tikz
-%%| format: svg
+``` {.tikz width=100%}
+%%| format: tex
 %%| filename: parabolaMaxSetas
+%%| fig-cap: Parábolas côncavas têm segunda derivada negativa
 \begin{tikzpicture}[domain=-2:2]
     \draw[very thin, color =gray] (-3.9,-3.9) grid (3.9,0.9);
     \draw[->] (-4.1,0) -- (4.1,0) node[right] {$x$};
