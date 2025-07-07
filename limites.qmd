@@ -354,12 +354,12 @@ desses limites.
 
 <!-- TODO: além da continuidade, limite de continua "passa pra dentro", limite do módulo, limite de -f, etc. -->
 
-1. Se $g$ é uma função contínua, então $\lim\limits_{x\rightarrow a} g(f(x)) = g(\lim\limits_{x\rightarrow a} f(x))$
+1) Se $g$ é uma função contínua, então $\lim\limits_{x\rightarrow a} g(f(x)) = g(\lim\limits_{x\rightarrow a} f(x))$
 
 2. Se $\lim\limits_{x\rightarrow a} f(x) = L_1, \lim\limits_{x\rightarrow a} g(x) = L_2, L_1, L_2 \in \mathbb{R}$, então:
-2.1. $\lim\limits_{x\rightarrow a} (f(x) + g(x)) = L_1 + L_2$
-2.2. $\lim\limits_{x\rightarrow a} kf(x) = kL_1, k \in \mathbb{R}$ (isso é especialmente útil com $k=-1$, o que permite que 2.1. se apliquee também em subtrações!
-2.3. $\lim\limits_{x\rightarrow a} (f(x) \cdot g(x)) = L_1 \cdot L_2$
-2.4. $\lim\limits_{x\rightarrow a} \frac{f(x)}{g(x)} = \frac{f(x)}{g(x)}, L_2 \neq 0$
+    1. $\lim\limits_{x\rightarrow a} (f(x) + g(x)) = L_1 + L_2$
+    2. $\lim\limits_{x\rightarrow a} kf(x) = kL_1, k \in \mathbb{R}$ (isso é especialmente útil com $k=-1$, o que permite que 2.1. se apliquee também em subtrações!
+    3. $\lim\limits_{x\rightarrow a} (f(x) \cdot g(x)) = L_1 \cdot L_2$
+    4. $\lim\limits_{x\rightarrow a} \frac{f(x)}{g(x)} = \frac{f(x)}{g(x)}, L_2 \neq 0$
 
 ## Teorema do Confronto {#sec-confronto}
