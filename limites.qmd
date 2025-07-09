@@ -38,13 +38,13 @@ $$
 %%| filename: limite1divx
 %%| fig-cap: $f(x) = \frac{1}{x}$
 \begin{tikzpicture}
-\begin{axis}[xmin=-4.2,xmax=4.2,ymin=-6.2, ymax=6.2,
-axis lines = middle,
-xlabel= $x$,
-ylabel= $\frac{1}{x}$]
-\addplot[color=red, samples = 500, domain=-4.2:-0.001]{1/x};
-\addplot[color=red, samples = 500, domain=0.001:4.2]{1/x};
-\end{axis}  
+  \begin{axis}[xmin=-4.2,xmax=4.2,ymin=-6.2, ymax=6.2,
+      axis lines = middle,
+      xlabel= $x$,
+    ylabel= $\frac{1}{x}$]
+    \addplot[color=red, samples = 500, domain=-4.2:-0.001]{1/x};
+    \addplot[color=red, samples = 500, domain=0.001:4.2]{1/x};
+  \end{axis}
 \end{tikzpicture}
 ```
 
@@ -73,16 +73,17 @@ ou que a função não está bem definida?
 %%| filename: limitefuncaochave1
 %%| fig-cap: Função chave
 \begin{tikzpicture}
-\begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
-axis lines = left,
-xlabel= $x$,
-ylabel= $f(x)$]
-\draw(0,1) -- (0.95,1);
-\draw(1,1) circle[radius=0.05];
-\draw(1,2) -- (4,2);
-\draw(1,2) circle[radius=0.05];
-\fill[black](1,2) circle [radius=0.05];
-\end{axis}  
+  \begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
+      axis lines = left,
+      xlabel= $x$,
+    ylabel= $f(x)$]
+    \draw(0,1) -- (0.95,1);
+    \draw(1,1) circle[radius=0.05];
+    \draw(1,2) -- (4,2);
+    \draw(1,2) circle[radius=0.05];
+    \fill[black](1,2) circle [radius=0.05];
+    \fill[white](1,1) circle [radius=0.05];
+  \end{axis}
 \end{tikzpicture}
 ```
 
@@ -102,18 +103,18 @@ $$
 %%| fig-cap: Ponto de descontinuidade numa função chave
 %%| fig-label: fig-enganosa
 \begin{tikzpicture}
-\begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
-axis lines = left,
-xlabel= $x$,
-ylabel= $f(x)$]
-\draw(0,0) -- (2,2);
-\draw(2,2) circle[radius=0.05];
-\draw(2,2) -- (4,4);
-\draw(2,1) circle[radius=0.05];
-\draw[dash dot](2,1.05) -- (2,1.95);
-\fill[black](2,1) circle [radius=0.05];
-\fill[white](2,2) circle [radius=0.05];
-\end{axis}  
+  \begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
+      axis lines = left,
+      xlabel= $x$,
+    ylabel= $f(x)$]
+    \draw(0,0) -- (2,2);
+    \draw(2,2) circle[radius=0.05];
+    \draw(2,2) -- (4,4);
+    \draw(2,1) circle[radius=0.05];
+    \draw[dash dot](2,1.05) -- (2,1.95);
+    \fill[black](2,1) circle [radius=0.05];
+    \fill[white](2,2) circle [radius=0.05];
+  \end{axis}
 \end{tikzpicture}
 ```
 
@@ -187,51 +188,55 @@ $\epsilon, L$, por se relacionarem com o valor da função, $f(x)$, estarão des
 %%| filename: limiteidentidadedef
 %%| fig-cap: Visualizando a definição de limites
 \begin{tikzpicture}
-\begin{axis}[
-  xmin=0, xmax=4,
-  ymin=0, ymax=4,
-  axis lines=left,
-  xlabel=$x$,
-  ylabel=$f(x)$,
-  clip=false, % Disable clipping to render nodes outside the axis
-  %after end axis/.code={ % Optional: Re-clip the main plot area (keeps lines/curves clean)
-  %  \path[clip] (current axis.south west) rectangle (current axis.north east);
-  %} % This is needed for examples where curves and plots might extend over the axis.
-  xtick=\empty,
-  ytick=\empty,
-  xlabel style={
-    font=\scriptsize,     % Smaller font
-    at={(axis description cs:1,0)}, % Position at end of x-axis
-    anchor=north east,    % Anchor to align near the arrow tip
-    xshift=-2pt           % Fine-tune horizontal position
-  },
-  ylabel style={
-    font=\scriptsize,     % Smaller font
-    at={(axis description cs:0,1)}, % Position at end of y-axis
-    anchor=south east,    % Anchor to align near the arrow tip
-    yshift=2pt            % Fine-tune vertical position
-  },
-]
+  \begin{axis}[
+      xmin=0, xmax=4,
+      ymin=0, ymax=4,
+      axis lines=left,
+      xlabel=$x$,
+      ylabel=$f(x)$,
+      clip=false, % Disable clipping to render nodes outside the axis
+      %after end axis/.code={ % Optional: Re-clip the main plot area
+      % (keeps lines/curves clean)
+      %  \path[clip] (current axis.south west) rectangle (current
+      % axis.north east);
+      %} % This is needed for examples where curves and plots might
+      % extend over the axis.
+      xtick=\empty,
+      ytick=\empty,
+      xlabel style={
+        font=\scriptsize,     % Smaller font
+        at={(axis description cs:1,0)}, % Position at end of x-axis
+        anchor=north east,    % Anchor to align near the arrow tip
+        xshift=-2pt           % Fine-tune horizontal position
+      },
+      ylabel style={
+        font=\scriptsize,     % Smaller font
+        at={(axis description cs:0,1)}, % Position at end of y-axis
+        anchor=south east,    % Anchor to align near the arrow tip
+        yshift=2pt            % Fine-tune vertical position
+      },
+    ]
 
-\draw (0,0) -- (4,4);
+    \draw (0,0) -- (4,4);
 
-% Hatched area
-\fill[pattern=north east lines, pattern color=gray] (1.5,1.5) rectangle (2.5,2.5);
+    % Hatched area
+    \fill[pattern=north east lines, pattern color=gray] (1.5,1.5)
+    rectangle (2.5,2.5);
 
-% Y-axis
-\draw[dash dot] (0,1.5) node[left, xshift=-2pt] {$L - \epsilon$} -- (4,1.5);
-\draw[dotted] (0,2) node[left, xshift=-2pt] {$L$} -- (2,2);
-\draw[dash dot] (0,2.5) node[left, xshift=-2pt] {$L + \epsilon$} -- (4,2.5);
+    % Y-axis
+    \draw[dash dot] (0,1.5) node[left, xshift=-2pt] {$L - \epsilon$} -- (4,1.5);
+    \draw[dotted] (0,2) node[left, xshift=-2pt] {$L$} -- (2,2);
+    \draw[dash dot] (0,2.5) node[left, xshift=-2pt] {$L + \epsilon$} -- (4,2.5);
 
-% X-axis
-\draw[dash dot] (1.5,0) node[below, yshift=-2pt] {$a + \delta$} -- (1.5,4);
-\draw[dotted] (2,0) node[below, yshift=-2pt] {$a$} -- (2,2);
-\draw[dash dot] (2.5,0) node[below, yshift=-2pt] {$a - \delta$} -- (2.5,4);
+    % X-axis
+    \draw[dash dot] (1.5,0) node[below, yshift=-2pt] {$a + \delta$} -- (1.5,4);
+    \draw[dotted] (2,0) node[below, yshift=-2pt] {$a$} -- (2,2);
+    \draw[dash dot] (2.5,0) node[below, yshift=-2pt] {$a - \delta$} -- (2.5,4);
 
-\draw(2,2) circle[radius=0.03]
-\fill[black](2,2) circle [radius=0.03];
+    \draw(2,2) circle[radius=0.03]
+    \fill[black](2,2) circle [radius=0.03];
 
-\end{axis}
+  \end{axis}
 \end{tikzpicture}
 ```
 
@@ -249,57 +254,61 @@ pequeno!
 %%| filename: limitedefEnganosa
 %%| fig-cap: Visualizando a definição na "função enganosa"
 \begin{tikzpicture}
-\begin{axis}[
-  xmin=0, xmax=4,
-  ymin=0, ymax=4,
-  axis lines=left,
-  xlabel=$x$,
-  ylabel=$f(x)$,
-  clip=false, % Disable clipping to render nodes outside the axis
-  %after end axis/.code={ % Optional: Re-clip the main plot area (keeps lines/curves clean)
-  %  \path[clip] (current axis.south west) rectangle (current axis.north east);
-  %} % This is needed for examples where curves and plots might extend over the axis.
-  xtick=\empty,
-  ytick=\empty,
-  xlabel style={
-    font=\scriptsize,     % Smaller font
-    at={(axis description cs:1,0)}, % Position at end of x-axis
-    anchor=north east,    % Anchor to align near the arrow tip
-    xshift=-2pt           % Fine-tune horizontal position
-  },
-  ylabel style={
-    font=\scriptsize,     % Smaller font
-    at={(axis description cs:0,1)}, % Position at end of y-axis
-    anchor=south east,    % Anchor to align near the arrow tip
-    yshift=2pt            % Fine-tune vertical position
-  },
-]
+  \begin{axis}[
+      xmin=0, xmax=4,
+      ymin=0, ymax=4,
+      axis lines=left,
+      xlabel=$x$,
+      ylabel=$f(x)$,
+      clip=false, % Disable clipping to render nodes outside the axis
+      %after end axis/.code={ % Optional: Re-clip the main plot area
+      % (keeps lines/curves clean)
+      %  \path[clip] (current axis.south west) rectangle (current
+      % axis.north east);
+      %} % This is needed for examples where curves and plots might
+      % extend over the axis.
+      xtick=\empty,
+      ytick=\empty,
+      xlabel style={
+        font=\scriptsize,     % Smaller font
+        at={(axis description cs:1,0)}, % Position at end of x-axis
+        anchor=north east,    % Anchor to align near the arrow tip
+        xshift=-2pt           % Fine-tune horizontal position
+      },
+      ylabel style={
+        font=\scriptsize,     % Smaller font
+        at={(axis description cs:0,1)}, % Position at end of y-axis
+        anchor=south east,    % Anchor to align near the arrow tip
+        yshift=2pt            % Fine-tune vertical position
+      },
+    ]
 
-\draw (0,0) -- (1.5,1.5);
-\draw (2.5,2.5) -- (4,4);
+    \draw (0,0) -- (1.5,1.5);
+    \draw (2.5,2.5) -- (4,4);
 
-% Hatched area
-\fill[pattern=north east lines, pattern color=gray] (1.5,0.5) rectangle (2.5,1.5);
+    % Hatched area
+    \fill[pattern=north east lines, pattern color=gray] (1.5,0.5)
+    rectangle (2.5,1.5);
 
-% Y-axis
-\draw[dash dot] (0,0.5) node[left, xshift=-2pt] {$L - \epsilon$} -- (4,0.5);
-\draw[dotted] (0,1) node[left, xshift=-2pt] {$L$} -- (2,1);
-\draw[dash dot] (0,1.5) node[left, xshift=-2pt] {$L + \epsilon$} -- (4,1.5);
+    % Y-axis
+    \draw[dash dot] (0,0.5) node[left, xshift=-2pt] {$L - \epsilon$} -- (4,0.5);
+    \draw[dotted] (0,1) node[left, xshift=-2pt] {$L$} -- (2,1);
+    \draw[dash dot] (0,1.5) node[left, xshift=-2pt] {$L + \epsilon$} -- (4,1.5);
 
-% X-axis
-\draw[dash dot] (1.5,0) node[below, yshift=-2pt] {$a + \delta$} -- (1.5,4);
-\draw[dotted] (2,0) node[below, yshift=-2pt] {$a$} -- (2,2);
-\draw[dash dot] (2.5,0) node[below, yshift=-2pt] {$a - \delta$} -- (2.5,4);
+    % X-axis
+    \draw[dash dot] (1.5,0) node[below, yshift=-2pt] {$a + \delta$} -- (1.5,4);
+    \draw[dotted] (2,0) node[below, yshift=-2pt] {$a$} -- (2,2);
+    \draw[dash dot] (2.5,0) node[below, yshift=-2pt] {$a - \delta$} -- (2.5,4);
 
-\draw[color=red, dashed] (1.5,1.5) -- (2.5,2.5);
-\node[align=center, color=red] at (2,2.6) {\tiny$|L - f(x)| > \epsilon$}
-\draw(2,2) circle[radius=0.03]
-\fill[white](2,2) circle [radius=0.03];
+    \draw[color=red, dashed] (1.5,1.5) -- (2.5,2.5);
+    \node[align=center, color=red] at (2,2.6) {\tiny$|L - f(x)| > \epsilon$}
+    \draw(2,2) circle[radius=0.03]
+    \fill[white](2,2) circle [radius=0.03];
 
-\draw(2,1) circle[radius=0.03];
-\fill[black](2,1) circle [radius=0.03];
+    \draw(2,1) circle[radius=0.03];
+    \fill[black](2,1) circle [radius=0.03];
 
-\end{axis}
+  \end{axis}
 \end{tikzpicture}
 ```
 
@@ -327,7 +336,7 @@ Uma vez que para todo $\epsilon$ podemos escolher $\delta = \epsilon$, isso é s
 (algo implicar si mesmo é uma [tautologia](https://pt.wikipedia.org/wiki/Tautologia_(l%C3%B3gica))!). Logo, podemos afirmar
 que, pela definição, $\lim\limits_{x\rightarrow2}f(x) = 2$.
 
-Partiremoss para outra função, como $f(x) = x^2$, para aprendermos a manipular um pouco as expressões e verificar o
+Partiremos para outra função, como $f(x) = x^2$, para aprendermos a manipular um pouco as expressões e verificar o
 limite.
 
 Sabemos que $x^2$ é uma função contínua, logo, qualquer valor da função será seu limite nesse ponto. Verificaremos esse
@@ -358,8 +367,100 @@ desses limites.
 
 2. Se $\lim\limits_{x\rightarrow a} f(x) = L_1, \lim\limits_{x\rightarrow a} g(x) = L_2, L_1, L_2 \in \mathbb{R}$, então:
     1. $\lim\limits_{x\rightarrow a} (f(x) + g(x)) = L_1 + L_2$
-    2. $\lim\limits_{x\rightarrow a} kf(x) = kL_1, k \in \mathbb{R}$ (isso é especialmente útil com $k=-1$, o que permite que 2.1. se apliquee também em subtrações!
+    2. $\lim\limits_{x\rightarrow a} kf(x) = kL_1, k \in \mathbb{R}$ (isso é especialmente útil com $k=-1$, o que permite que 2.1. se aplique também em subtrações!
     3. $\lim\limits_{x\rightarrow a} (f(x) \cdot g(x)) = L_1 \cdot L_2$
     4. $\lim\limits_{x\rightarrow a} \frac{f(x)}{g(x)} = \frac{f(x)}{g(x)}, L_2 \neq 0$
+
+## Limites laterais
+
+Retomaremos a função com partes
+
+$$
+f(x) = \begin{cases}
+1, & \mathrm{se}\ x < 1 \\
+2, & \mathrm{se}\ x \geq 1
+\end{cases}
+$$
+
+E seu gráfico
+```{.tikz width=100%}
+%%| format: tex
+%%| filename: limitefuncaochave1
+%%| fig-cap: Função chave
+\begin{tikzpicture}
+  \begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
+      axis lines = left,
+      xlabel= $x$,
+    ylabel= $f(x)$]
+    \draw(0,1) -- (0.95,1);
+    \draw(1,1) circle[radius=0.05];
+    \draw(1,2) -- (4,2);
+    \draw(1,2) circle[radius=0.05];
+    \fill[black](1,2) circle [radius=0.05];
+    \fill[white](1,1) circle [radius=0.05];
+  \end{axis}
+\end{tikzpicture}
+```
+
+Uma pergunta surge naturalmente, qual o limite dessa função quando $x$ se
+aproxima de $1$?
+
+Analisando o gráfico, não conseguimos uma resposta óbvia. Seria $2$, pois é o
+valor real da função? Seria $1$, pois seguimos a ordem crescente do $x$? Que tal
+$1.5$, para uma média entre os dois?
+
+Na verdade, a resposta é que *não existe limite neste ponto* para essa função.
+Pelo menos, não um limite *bilateral*. Logo, precisaremos analisar a função de
+dois lados distintos: "pela direita" e "pela esquerda"!
+
+Analisando o gráfico, quando o $x$ se aproxima pela esquerda, isto é, valores
+crescentes de $x$, temos que
+$$
+\lim_{x \rightarrow 1^{-}} f(x) = 1
+$$
+enquanto pela direita, ou seja, valores decrescentes de $x$, temos que
+$$
+\lim_{x \rightarrow 1^{+}} f(x) = 2
+$$
+
+```{.tikz width=100%}
+%%| format: tex
+%%| filename: limitefuncaochavelaterais
+%%| fig-cap: Limites laterais na função chave
+\begin{tikzpicture}
+  \begin{axis}[xmin=0,xmax=4,ymin=0, ymax=4,
+      axis lines = left,
+      xlabel= $x$,
+    ylabel= $f(x)$]
+    \draw(0,1) -- (0.95,1);
+    \draw(1,1) circle[radius=0.05];
+    \draw(1,2) -- (4,2);
+    \draw(1,2) circle[radius=0.05];
+    \fill[black](1,2) circle [radius=0.05];
+    \fill[white](1,1) circle [radius=0.05];
+    \node[align=center, color=red] at (1.5,2.2) {$\leftarrow^+$};
+    \node[align=center, color=red] at (0.5,0.8) {$\rightarrow^-$};
+  \end{axis}
+\end{tikzpicture}
+```
+
+Note que o limite lateral pela direita coincide com a função no ponto. Isso
+significa que a função é contínua neste ponto? Não! Para haver continuidade,
+deve existir o limite completo, bilateral.
+
+:::{.callout-note title="Notação"}
+Usamos os símbolos de $+$ e $-$ no mesmo lugar que ficaria um expoente para 
+indicarmos a direção do limite.
+
+Limite lateral a esquerda ou pela esquerda no ponto $a$
+$$
+\lim_{x \rightarrow a^{-}} f(x) = L^-
+$$
+
+Limite lateral a direita ou pela direita no ponto $a$
+$$
+\lim_{x \rightarrow a^{+}} f(x) = L^+
+$$
+:::
 
 ## Teorema do Confronto {#sec-confronto}
