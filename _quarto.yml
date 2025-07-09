@@ -1,9 +1,9 @@
-lang: pt 
+lang: pt
 
 project:
   type: book
-  
-engines: ['julia'] 
+
+engines: ['julia']
 julia:
   env: ["QT_QPA_PLATFORM=xcb"]
 
@@ -19,6 +19,10 @@ diagram:
       header-includes:
         - '\usetikzlibrary{patterns}'
         - '\usetikzlibrary{arrows}'
+        - '\usetikzlibrary{automata}'
+        - '\usetikzlibrary{calc}'
+        - '\usetikzlibrary{positioning}'
+        - '\usetikzlibrary{quotes}'
         - '\usepackage{pgfplots}'
         - '\usepackage{mathrsfs}'
         - '\pgfplotsset{compat=1.16}'
@@ -31,11 +35,14 @@ book:
   navbar:
     search: true
     right:
-      - icon: github
-        href: https://github.com/GustavoGarone/Calculo-Companheiro
-        aria-label: GitHub
+      # - icon: github
+      #   href: https://github.com/GustavoGarone/Calculo-Companheiro
+      #   aria-label: GitHub
       - text: "<i class='fa-solid fa-file-pdf'></i> PDF"
         href: Cálculo-Companheiro.pdf
+  reader-mode: true
+  repo-url: https://github.com/GustavoGarone/Calculo-Companheiro
+  repo-actions: [edit, source, issue]
   chapters:
     - index.qmd
     - part: "Bem-Vindo!"
@@ -64,7 +71,7 @@ book:
     - references.qmd
 
 bibliography: references.bib
-csl: associacao-brasileira-de-normas-tecnicas.csl 
+csl: associacao-brasileira-de-normas-tecnicas.csl
 
 format:
   html:
@@ -72,7 +79,7 @@ format:
       light: [cosmo]
       dark: [cosmo, theme-dark.scss]
     respect-user-color-scheme: true
-    include-in-header: 
+    include-in-header:
       text: |
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     extract-media: ./tikzdesigns/
@@ -100,4 +107,3 @@ format:
     fig-cap-location: top
     fig-align: center
     default-image-extension: tex
-
