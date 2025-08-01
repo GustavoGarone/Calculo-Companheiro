@@ -32,6 +32,7 @@ book:
   title: "Cálculo Companheiro"
   author: "Artur H. Tomita, Eduardo Yukio G. Ishihara, Gustavo S. Garone"
   date: last-modified
+  favicon: ime.png
   navbar:
     search: true
     right:

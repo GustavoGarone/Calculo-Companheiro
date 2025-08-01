@@ -635,3 +635,5 @@ numerador vai para 1 enquanto o denominador vai para $\infty$, o useja, o limite
 é 0.
 
 ## Teorema do Confronto {#sec-confronto}
+
+Às vezes, alguns limites podem ser difíceis.
