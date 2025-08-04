@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Limites – Cálculo Companheiro</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./weierstrass.html" rel="next">
+<link href="./matrizes.html" rel="prev">
+<link href="./ime.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-435aadd45b2f86c10154d301ab38f5fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-11c9c26306f3a29e9d3261ce822421c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-435aadd45b2f86c10154d301ab38f5fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Cálculo Companheiro</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Procurar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./Cálculo-Companheiro.pdf"> 
+<span class="menu-text"><i class="fa-solid fa-file-pdf"></i> PDF</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/GustavoGarone/Calculo-Companheiro" title="Código fonte" class="quarto-navigation-tool px-1" aria-label="Código fonte"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo escuro"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo de leitor">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./limites.html">Introdução ao Cálculo</a></li><li class="breadcrumb-item"><a href="./limites.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Limites</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculo Companheiro</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Bem-Vindo!</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Matemática Elementar</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./polinomios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funções Polinomiais</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matrizes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Matrizes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introdução ao Cálculo</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./limites.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Limites</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./weierstrass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Teorema de Weierstrass</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mins-maxs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mínimos e Máximos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Álgebra Linear</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./espacos-vetoriais.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Espaços Vetoriais</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Cálculo Multivariado</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./curvas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Curvas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./limites-multivariados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Limites de mais de uma variável</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./d-multi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Derivadas em múltiplas dimensões</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./d-ordem-superior.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Derivadas de Ordem Superior</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taylor-multi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Polinômio de Taylor de Duas Variáveis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mins-maxs-multi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Mínimos e Máximos de Funções de Duas Variáveis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referências</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#um-conceito-intuitivo" id="toc-um-conceito-intuitivo" class="nav-link active" data-scroll-target="#um-conceito-intuitivo"><span class="header-section-number">4.1</span> Um conceito intuitivo</a></li>
+  <li><a href="#limites-e-continuidade" id="toc-limites-e-continuidade" class="nav-link" data-scroll-target="#limites-e-continuidade"><span class="header-section-number">4.2</span> Limites e continuidade</a></li>
+  <li><a href="#formalizando-limites" id="toc-formalizando-limites" class="nav-link" data-scroll-target="#formalizando-limites"><span class="header-section-number">4.3</span> Formalizando limites</a></li>
+  <li><a href="#propriedades-importantes-dos-limites" id="toc-propriedades-importantes-dos-limites" class="nav-link" data-scroll-target="#propriedades-importantes-dos-limites"><span class="header-section-number">4.4</span> Propriedades importantes dos limites</a></li>
+  <li><a href="#limites-laterais" id="toc-limites-laterais" class="nav-link" data-scroll-target="#limites-laterais"><span class="header-section-number">4.5</span> Limites laterais</a></li>
+  <li><a href="#limites-no-infinito-e-infinitos" id="toc-limites-no-infinito-e-infinitos" class="nav-link" data-scroll-target="#limites-no-infinito-e-infinitos"><span class="header-section-number">4.6</span> Limites no infinito e infinitos</a></li>
+  <li><a href="#sec-confronto" id="toc-sec-confronto" class="nav-link" data-scroll-target="#sec-confronto"><span class="header-section-number">4.7</span> Teorema do Confronto</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/GustavoGarone/Calculo-Companheiro/edit/main/limites.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/GustavoGarone/Calculo-Companheiro/blob/main/limites.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/GustavoGarone/Calculo-Companheiro/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./limites.html">Introdução ao Cálculo</a></li><li class="breadcrumb-item"><a href="./limites.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Limites</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Limites</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="um-conceito-intuitivo" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="um-conceito-intuitivo"><span class="header-section-number">4.1</span> Um conceito intuitivo</h2>
+<p>Você provavelmente já se encontrou com limites ao longo do ensino médio e até mesmo fundamental e, em sua ingenuidade, nem percebeu. Duvida? Um exemplo simples.</p>
+<p>Provavelmente enquanto aprendia divisão, especialmente envolvendo frações, você se deparou com a dúvida universal “O que acontece quando dividimos por <span class="math inline">\(0\)</span>?”. Ainda nesse cenário, seu professor pode ter pedido que você perguntasse à calculadora, em que você teria a triste resposta “erro”, ou em casos mais interessantes, <span class="math inline">\(\infty\)</span>. O que está acontecendo aqui?</p>
+<p>Intuitivamente, sabemos que, quanto maior o divisor, menor será o quociente. Quando começamos a aprender frações e desbloqueamos o mundo mágico em que o resto da divisão passa a importar, também percebemos que, quando dividimos um número por outro menor que <span class="math inline">\(1\)</span>, obtemos um quociente maior que nosso dividendo:</p>
+<p><span class="math display">\[
+\frac{1}{1} = 1,\; \frac{1}{0.5} = 2,\; \frac{1}{0.25} = 4,\; \frac{1}{0.01} = 100,\; \dots ?
+\]</span></p>
+<p>Mas e o que acontece se continuamos diminuindo nosso divisor? Claro, caso seja um número menor que <span class="math inline">\(0\)</span>, temos resultados simétricos aos positivos, mas o que acontece quando chegamos cada vez mais perto de <span class="math inline">\(0\)</span>?</p>
+<p><span class="math display">\[
+\frac{1}{x\rightarrow 0} = ?
+\]</span></p>
+<p>Da mesma forma, e se pegarmos números cada vez maiores no divisor? Sabemos que quanto maior o divisor, menor o número, mas existe algum limiar, algum <em>limite</em> de quão pequeno esse número pode ser? Chegaria algum momento que cairíamos de ponta-cabeça nos números negativos, ou há algo nos barrando de descer “para o outro lado” da reta real?</p>
+<p><span class="math display">\[
+\frac{1}{x\rightarrow \infty} = ?
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption><span class="math inline">\(f(x) = \frac{1}{x}\)</span></figcaption>
+<p><img src="tikzdesigns/limites_files/mediabag/limite1divx.svg" class="img-fluid figure-img" style="width:100.0%" data-format="tex"></p>
+</figure>
+</div>
+<p>Para responder essas e outras perguntas importantes sobre o comportamento de funções, partimos para o estudo formal de limites.</p>
+</section>
+<section id="limites-e-continuidade" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="limites-e-continuidade"><span class="header-section-number">4.2</span> Limites e continuidade</h2>
+<p>Você provavelmente já ouviu a “definição” querida pelos professores para funções contínuas. Uma função é contínua, claro, se, e somente se, podemos desenhá-la sem tirar o lápis do papel!</p>
+<p>Deixando as brincadeiras de lado, há certa verdade nessa interpretação. Considere a seguinte função de domínio e contradomínio reais, isto é, <span class="math inline">\(f : \mathbb{R} \rightarrow \mathbb {R}\)</span>: <span class="math display">\[
+f(x) =\left\{\begin{array}{ll}
+1, &amp; \mathrm{se}\ x &lt; 1 \\
+2, &amp; \mathrm{se}\ x \geq 1
+\end{array}\right.
+\]</span></p>
+<p>Antes de ver o gráfico, tente pensar um pouco se essa função é contínua para todo <span class="math inline">\(x\)</span> real. Exite algum ponto com “salto”, ou que a função não está bem definida?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption>Função chave</figcaption>
+<p><img src="tikzdesigns/limites_files/mediabag/limitefuncaochave1.svg" class="img-fluid figure-img" style="width:100.0%" data-format="tex"></p>
+</figure>
+</div>
+<p>Do gráfico, vemos que a função não é contínua no ponto <span class="math inline">\(x=1\)</span>, mas é contínua em todos os outros pontos da reta real.</p>
+<p>Algumas funções são mais enganosas. Vamos considerar <span class="math inline">\(f : \mathbb{R} \rightarrow \mathbb{R}\)</span>: <span class="math display">\[
+f(x) =\left\{\begin{array}{ll}
+x, &amp; \mathrm{se}\ x \neq 2 \\
+1, &amp; \mathrm{se}\ x = 2
+\end{array}\right.
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption>Ponto de descontinuidade numa função chave</figcaption>
+<p><img src="tikzdesigns/limites_files/mediabag/limitefuncaochave2.svg" class="img-fluid figure-img" style="width:100.0%" data-format="tex"></p>
+</figure>
+</div>
+<p>Essa “função enganosa” nos mostra algo curioso: se nos aproximamos de <span class="math inline">\(x=2\)</span>, a função se aproxima de <span class="math inline">\(2\)</span>, isto é, <span class="math display">\[
+f(x) \stackrel{x\rightarrow 2}{\rightarrow} 2,
+\]</span> por outro lado, <span class="math display">\[
+f(2) = 1.
+\]</span></p>
+<p>De fato, o valor que se espera que a função tenha no ponto <span class="math inline">\(x\)</span> é o conceito intuitivo de limite! Podemos escrever que o limite <span class="math inline">\(L\)</span> da função <span class="math inline">\(f(x)\)</span> conforme <span class="math inline">\(x\)</span> se aproxima de <span class="math inline">\(2\)</span> é <span class="math inline">\(2\)</span>: <span class="math display">\[
+\lim_{x\rightarrow 2} f(x) = L = 2 \neq f(2).
+\]</span></p>
+<p>Disso, temos uma definição <em>formal</em> de continuidade:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definição de continuidade">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definição de continuidade
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Uma função é dita ser contínua no ponto <span class="math inline">\(x_0\)</span> se, e somente se, <span class="math display">\[
+\lim_{x\rightarrow x_0} f(x) = f(x_0).
+\]</span></p>
+</div>
+</div>
+<p>Com essa definição, conseguimos afirmar que nossa função enganosa não é contínua no ponto <span class="math inline">\(x=2\)</span>.</p>
+<p>Vamos experimentar calculando alguns limites!</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x \rightarrow 0} \frac{x^2}{x} &amp;= \lim_{x\rightarrow 0} x = 0 \\
+\lim_{x\rightarrow 1} \frac{x^2 - 1}{x - 1} &amp;= \lim_{x\rightarrow 1} \frac{(x+1)(x-1)}{(x-1)} = \lim_{x\rightarrow 1} x+1 = 2
+\end{aligned}
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lidando com indefinições">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lidando com indefinições
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Como estratégia, queremos simplificar as expressões o máximo possível, buscando eliminar indefinições, antes de calcularmos o valor limite.</p>
+<p>Nos exemplos acima, não poderíamos substituir o valor de <span class="math inline">\(x\)</span> diretamente antes de resolvermos o limite, ou estaríamos dividindo por 0, um crime!</p>
+</div>
+</div>
+<p>Nem sempre é possível lidar com as indeterminações. Trataremos delas posteriormente, mas você já pode pensar em que acontece quando nos aproximamos de monstruosidades como a divisão por <span class="math inline">\(0\)</span>.</p>
+</section>
+<section id="formalizando-limites" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="formalizando-limites"><span class="header-section-number">4.3</span> Formalizando limites</h2>
+<p>Nosso objetivo nessa seção é tentar entender o seguinte:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definição de limite">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definição de limite
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Seja <span class="math inline">\(f\)</span> uma função e <span class="math inline">\(a\)</span> um ponto no domínio (ou extremidade do domínio) de <span class="math inline">\(f\)</span>, <span class="math inline">\(D_f\)</span>. Dizemos que <span class="math inline">\(f\)</span> tem limite <span class="math inline">\(L\)</span> no ponto <span class="math inline">\(a\)</span> se, e somente se, para todo <span class="math inline">\(\epsilon&gt;0\)</span> fixo, existe um <span class="math inline">\(\delta &gt; 0\)</span> tal que para todo <span class="math inline">\(x\)</span> em <span class="math inline">\(D_f\)</span>, <span class="math display">\[
+0 &lt; | x-a | &lt; \delta \Rightarrow | f(x) - L | &lt; \epsilon.
+\]</span></p>
+<p>Quando existe, esse <span class="math inline">\(L\)</span> é único e escrevemos <span class="math inline">\(\lim\limits_{x \rightarrow a}f(x) = L\)</span>.</p>
+</div>
+</div>
+<p>Que confusão! Tentaremos entender em outras palavras, ou melhor, desenhando! Vamos considerar uma função simples, como <span class="math inline">\(f(x) = x\)</span>. Com uma relação entre <span class="math inline">\(a\)</span> e <span class="math inline">\(\delta\)</span>, esperamos escrever <span class="math inline">\(\delta\)</span> no eixo <span class="math inline">\(x\)</span>, enquanto <span class="math inline">\(\epsilon, L\)</span>, por se relacionarem com o valor da função, <span class="math inline">\(f(x)\)</span>, estarão descritos no outro eixo:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption>Visualizando a definição de limites</figcaption>
+<p><img src="tikzdesigns/limites_files/mediabag/limiteidentidadedef.svg" class="img-fluid figure-img" style="width:100.0%" data-format="tex"></p>
+</figure>
+</div>
+<p>Nosso objetivo é verificar e é possível “comprimir” essa área até o ponto <span class="math inline">\(f(a)\)</span>. Caso consigamos, podemos dizer que <span class="math inline">\(L\)</span> é o limite de <span class="math inline">\(f\)</span> no ponto <span class="math inline">\(a\)</span>. Sabemos que, como <span class="math inline">\(f(x) = x\)</span> é uma função contínua, esse limite <span class="math inline">\(L\)</span> existe no ponto <span class="math inline">\(a\)</span> e é o próprio valor da função neste ponto, <span class="math inline">\(f(a) = a\)</span>. Consideraremos novamente nossa <a href="#fig-enganosa">função enganosa</a> e visualizaremos que seu limite no ponto <span class="math inline">\(2\)</span> é <span class="math inline">\(2\)</span>.</p>
+<p>Vamos assumir, por absurdo, que <span class="math inline">\(L = 1\)</span>, ou seja, que o limite no ponto <span class="math inline">\(a=2\)</span> da função enganosa seja na verdade <span class="math inline">\(1\)</span>. Note que, mesmo escolhendo um valor muito pequeno para <span class="math inline">\(\delta\)</span>, não satisfazeriamos as condições para um <span class="math inline">\(\epsilon\)</span> pequeno!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption>Visualizando a definição na “função enganosa”</figcaption>
+<p><img src="tikzdesigns/limites_files/mediabag/limitedefEnganosa.svg" class="img-fluid figure-img" style="width:100.0%" data-format="tex"></p>
+</figure>
+</div>
+<p>Dessa forma, toda a seção em vermelho (tracejada) não obedece <span class="math inline">\(|f(x) - L| &lt; \epsilon\)</span> para pelo menos algum <span class="math inline">\(\epsilon\)</span>, logo, esse valor de <span class="math inline">\(L\)</span> não pode ser o limite nesse ponto desta função! Tente desenhar e observar que o limite intuitivo dessa função no ponto <span class="math inline">\(x=2\)</span> é de fato <span class="math inline">\(2\)</span> pela definição.</p>
+<p>A definição formal não nos ajuda muito a encontrar limites, mas podemos confirmar nossa intuição usando essa formalidade. Tomemos o exemplo acima. Para deixar mais claro a relação de implicação, podemos também escrever</p>
+<p><span class="math display">\[
+|f(x) - L| &lt; \epsilon \text{ quando } |x-2| &lt; \delta
+\]</span></p>
+<p>Substituindo os valores de <span class="math inline">\(L\)</span> (queremos testar se <span class="math inline">\(L=2\)</span> é o limite neste ponto) e <span class="math inline">\(f(x) =x\)</span>,</p>
+<p><span class="math display">\[
+|x - 2| &lt; \epsilon \text{ quando } |x-2| &lt; \delta
+\]</span></p>
+<!-- TODO: Criar uma seção de lógica? (e linkar aqui) -->
+<p>Uma vez que para todo <span class="math inline">\(\epsilon\)</span> podemos escolher <span class="math inline">\(\delta = \epsilon\)</span>, isso é sempre verdade (algo implicar si mesmo é uma <a href="https://pt.wikipedia.org/wiki/Tautologia_(l%C3%B3gica)">tautologia</a>!). Logo, podemos afirmar que, pela definição, <span class="math inline">\(\lim\limits_{x\rightarrow2}f(x) = 2\)</span>.</p>
+<p>Partiremos para outra função, como <span class="math inline">\(f(x) = x^2\)</span>, para aprendermos a manipular um pouco as expressões e verificar o limite.</p>
+<p>Sabemos que <span class="math inline">\(x^2\)</span> é uma função contínua, logo, qualquer valor da função será seu limite nesse ponto. Verificaremos esse fato usando a definição para o ponto <span class="math inline">\(x=0\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+|f(x) - L| &lt; \epsilon &amp;\text{ quando } |x-0| &lt; \delta \\
+|x^2 - 0| &lt; \epsilon &amp;\text{ quando } |x-0| &lt; \delta \\
+|x^2| &lt; \epsilon &amp;\text{ quando } |x| &lt; \delta \\
+|x| &lt; \sqrt{\epsilon} &amp;\text{ quando } |x| &lt; \delta \\
+\end{aligned}
+\]</span></p>
+<p>Logo, com <span class="math inline">\(\delta = \sqrt{\epsilon}\)</span>, verificamos que o limite de <span class="math inline">\(f(x) = x^2\)</span> quando <span class="math inline">\(x\)</span> se aproxima de <span class="math inline">\(0\)</span> é, como esperávamos pela continuidade, <span class="math inline">\(0\)</span>.</p>
+<p>Contudo, até em verificar nossa intuição a definição pode ser de pouca ajuda. No exemplo anterior, caso escolhêssemos o ponto <span class="math inline">\(a=1\)</span>, aplicar a definição seria um pouco mais complicado (tente você mesmo!). Por isso, como veremos na próxima seção, grande parte da importância da definição formal de limites está em fornecer ferramentas para facilitar o cálculo desses limites.</p>
+<p>Ainda assim, existem diversas técnicas que trabalhamos na resolução de limites. Considere a função</p>
+<p><span class="math display">\[
+f(x) = \frac{x^4 + x^2 + x}{x^5 + x^4 + 3x}
+\]</span></p>
+<p>Quando <span class="math inline">\(x\rightarrow 0\)</span>, ambos o denominador e numerador tendem a 0. Ainda assim, o valor do limite pode não ser claro, ainda assim, existe. Tente plotar a função para verificar isto!</p>
+<p>Uma forma de resolver este limite é simplesmente simplificando a fração:</p>
+<p><span class="math display">\[
+\lim_{x\rightarrow 0} \frac{x^4 + x^2 + x}{x^5 + x^4 + 3x} =
+\lim_{x\rightarrow 0} \frac{x}{x} \frac{x^3 + x + 1}{x^4 + x^3 + 3} =
+\frac{1}{3}.
+\]</span></p>
+<p>Contudo, nem sempre isto é simples. Considere uma função similar:</p>
+<p><span class="math display">\[
+f(x) = \frac{x^4 + x^2 + x - 1}{x^5 + x^4 + 3x + 3}
+\]</span></p>
+<p>Quando <span class="math inline">\(x\rightarrow -1\)</span>, temos que ambos o denominador e numerador tendem a <span class="math inline">\(0\)</span>. Uma pergunta natural é descobrir qual o limite da função neste ponto:</p>
+<p><span class="math display">\[
+\lim_{x\rightarrow -1} \frac{x^4 + x^2 + x - 1}{x^5 + x^4 + 3x + 3} = ?
+\]</span></p>
+<p>Plotando essa função, conseguimos ver que este limite, aparentemente, existe. Mas encontrá-lo com técnicas simples não é trivial (você consegue encontar alguma forma de simplificar isso, como fizemos anteriormente?). Bem posteriormente, quando tratarmos de derivadas, desenvolveremos técnicas mais sofisticadas para resolver limites deste tipo.</p>
+</section>
+<section id="propriedades-importantes-dos-limites" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="propriedades-importantes-dos-limites"><span class="header-section-number">4.4</span> Propriedades importantes dos limites</h2>
+<!-- TODO: além da continuidade, limite de continua "passa pra dentro", limite do módulo, limite de -f, etc. -->
+<ol type="1">
+<li>Se <span class="math inline">\(g\)</span> é uma função contínua, então <span class="math inline">\(\lim\limits_{x\rightarrow a} g(f(x)) = g(\lim\limits_{x\rightarrow a} f(x))\)</span></li>
+</ol>
+<ol start="2" type="1">
+<li>Se <span class="math inline">\(\lim\limits_{x\rightarrow a} f(x) = L_1, \lim\limits_{x\rightarrow a} g(x) = L_2, L_1, L_2 \in \mathbb{R}\)</span>, então:
+<ol type="1">
+<li><span class="math inline">\(\lim\limits_{x\rightarrow a} (f(x) + g(x)) = L_1 + L_2\)</span></li>
+<li><span class="math inline">\(\lim\limits_{x\rightarrow a} kf(x) = kL_1, k \in \mathbb{R}\)</span> (isso é especialmente útil com <span class="math inline">\(k=-1\)</span>, o que permite que 2.1. se aplique também em subtrações!</li>
+<li><span class="math inline">\(\lim\limits_{x\rightarrow a} (f(x) \cdot g(x)) = L_1 \cdot L_2\)</span></li>
+<li><span class="math inline">\(\lim\limits_{x\rightarrow a} \frac{f(x)}{g(x)} = \frac{f(x)}{g(x)}, L_2 \neq 0\)</span></li>
+</ol></li>
+</ol>
+</section>
+<section id="limites-laterais" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="limites-laterais"><span class="header-section-number">4.5</span> Limites laterais</h2>
+<p>Retomaremos a função com partes</p>
+<p><span class="math display">\[
+f(x) = \begin{cases}
+1, &amp; \mathrm{se}\ x &lt; 1 \\
+2, &amp; \mathrm{se}\ x \geq 1
+\end{cases}
+\]</span></p>
+<p>E seu gráfico</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption>Função chave</figcaption>
+<p><img src="tikzdesigns/limites_files/mediabag/limitefuncaochave1.svg" class="img-fluid figure-img" style="width:100.0%" data-format="tex"></p>
+</figure>
+</div>
+<p>Uma pergunta surge naturalmente, qual o limite dessa função quando <span class="math inline">\(x\)</span> se aproxima de <span class="math inline">\(1\)</span>?</p>
+<p>Analisando o gráfico, não conseguimos uma resposta óbvia. Seria <span class="math inline">\(2\)</span>, pois é o valor real da função? Seria <span class="math inline">\(1\)</span>, pois seguimos a ordem crescente do <span class="math inline">\(x\)</span>? Que tal <span class="math inline">\(1.5\)</span>, para uma média entre os dois?</p>
+<p>Na verdade, a resposta é que <em>não existe limite neste ponto</em> para essa função. Pelo menos, não um limite <em>bilateral</em>. Logo, precisaremos analisar a função de dois lados distintos: “pela direita” e “pela esquerda”!</p>
+<p>Analisando o gráfico, quando o <span class="math inline">\(x\)</span> se aproxima pela esquerda, isto é, valores crescentes de <span class="math inline">\(x\)</span>, temos que <span class="math display">\[
+\lim_{x \rightarrow 1^{-}} f(x) = 1
+\]</span> enquanto pela direita, ou seja, valores decrescentes de <span class="math inline">\(x\)</span>, temos que <span class="math display">\[
+\lim_{x \rightarrow 1^{+}} f(x) = 2
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption>Limites laterais na função chave</figcaption>
+<p><img src="tikzdesigns/limites_files/mediabag/limitefuncaochavelaterais.svg" class="img-fluid figure-img" style="width:100.0%" data-format="tex"></p>
+</figure>
+</div>
+<p>Note que o limite lateral pela direita coincide com a função no ponto. Isso significa que a função é contínua neste ponto? Não! Para haver continuidade, deve existir o limite completo, bilateral.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Notação">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notação
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Usamos os símbolos de <span class="math inline">\(+\)</span> e <span class="math inline">\(-\)</span> no mesmo lugar que ficaria um expoente para indicarmos a direção do limite.</p>
+<p>Limite lateral a esquerda ou pela esquerda no ponto <span class="math inline">\(a\)</span> <span class="math display">\[
+\lim_{x \rightarrow a^{-}} f(x) = L^-
+\]</span></p>
+<p>Limite lateral a direita ou pela direita no ponto <span class="math inline">\(a\)</span> <span class="math display">\[
+\lim_{x \rightarrow a^{+}} f(x) = L^+
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="limites-no-infinito-e-infinitos" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="limites-no-infinito-e-infinitos"><span class="header-section-number">4.6</span> Limites no infinito e infinitos</h2>
+<p>Uma das maiores utilidades dos limites é tratar indefinições. Com eles, podemos estudar o comportamento de funções como <span class="math inline">\(f(x) = 1/x\)</span> próximo a pontos que costumávamos evitar, como, neste caso <span class="math inline">\(x=0\)</span>.</p>
+<p>Se voltarmos ao início do capítulo, em que discutimos o conceito intuitivo de limites usando esta mesma função como exemplo, conseguimos agora, após formalizarmos um pouco mais nosso raciocínio, dizer que <span class="math display">\[
+\lim_{x\rightarrow 0} f(x) = \lim_{x \rightarrow 0} \frac{1}{x}
+\]</span> não existe, uma vez que, pela esquerda, vamos para valores cada vez menores da função conforme nos aproximamos de <span class="math inline">\(0\)</span>, e, pela direita, para valores cada vez maiores. Usando nossa discussão sobre limites laterais, podemos explorar <span class="math display">\[
+\lim_{x\rightarrow 0^-}\frac{1}{x}\ \ \text{e}\ \ \lim_{x\rightarrow 0^+}\frac{1}{x}.
+\]</span></p>
+<p>A realidade é que estes valores ainda não “existem”, pelo menos não como números reais! Tomano o limite à esquerda, por exemplo, conforme nos aproximamos de <span class="math inline">\(0\)</span>, o valor da função decresce até valores (absolutos) exorbitantemente grandes: <span class="math display">\[
+\frac{1}{-1} = -1,\ \frac{1}{0.1} = -10,\ \dots \, \frac{1}{1 \cdot 10^{-100}} =
+-1 \cdot 10^{100}
+\]</span></p>
+<p>Quando finalmente chegarmos no <span class="math inline">\(0\)</span>, portanto, estaremos em um valor inimaginavelmente grande, na verdade, é tão incompreensível que sequer podemos chamá-lo de número. Para representar esse conceito, usamos o símbolo <span class="math inline">\(\infty\)</span>, “Infinito”. Nesse caso, como estamos em valores negativos, temos que <span class="math display">\[
+\lim_{x\rightarrow 0^-} \frac{1}{x} = -\infty.
+\]</span></p>
+<p>Analogamente, <span class="math display">\[
+\lim_{x\rightarrow 0^+} \frac{1}{x} = \infty.
+\]</span></p>
+<p>Como <span class="math display">\[
+\lim_{x\rightarrow 0^-} \frac{1}{x} \neq \lim_{x \rightarrow 0^+},
+\]</span> o limite em si não existe, apenas suas formas laterais.</p>
+<p>Uma função próxima, como <span class="math inline">\(f(x) = \frac{1}{x^2}\)</span>, terá limite no infito pois lidamos com o sinal:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption><span class="math inline">\(f(x) = \frac{1}{x^2}\)</span></figcaption>
+<p><img src="tikzdesigns/limites_files/mediabag/limite1divx2.svg" class="img-fluid figure-img" style="width:100.0%" data-format="tex"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\lim_{x\rightarrow 0^-} \frac{1}{x^2} = \lim_{x\rightarrow 0^+} \frac{1}{x^2} = \infty.
+\]</span></p>
+<p>Podemos também analisar limites quando o próprio <span class="math inline">\(x\)</span> tende a infinito. Sabemos que</p>
+<p><span class="math display">\[
+\lim_{x\rightarrow 0} \frac{x}{x} = \lim_{x\rightarrow 0} 1 = 1.
+\]</span></p>
+<p>Isso não muda quando tendemos <span class="math inline">\(x\)</span> à infinito, apesar do sinal: <span class="math display">\[
+\lim_{x\rightarrow -\infty} \frac{x}{x} = \lim_{x\rightarrow -\infty} 1 = 1.
+\]</span> isso ocorre pois se trata de uma função constante igual a 1. Dessa forma, mesmo nos infinitos, seu limite ainda é o mesmo em todo ponto da reta real. Por outro lado, podemos analisar valores como</p>
+<p><span class="math display">\[
+\lim_{x\rightarrow \infty} \frac{1}{x} = ?
+\]</span></p>
+<p>Se pensarmos neste caso como simétrico a quando <span class="math inline">\(x\)</span> tende a <span class="math inline">\(0\)</span>, obtemos um resultado intuitivo: <span class="math display">\[
+\lim_{x\rightarrow \infty} \frac{1}{x} = 0
+\]</span></p>
+<p>Esperamos esse resultado uma vez que, quanto maior o valor absoluto (em módulo) do denominador, menor o valor absoluto da fração. Neste sentido, com um denominador inimaginavelmente grande, o valor absoluto da fração será o menor possível, 0. Use uma plataforma como o Desmos para esboçar este gráfico e verificar esse comportamento! Neste caso, como <span class="math inline">\(f(x)\)</span> se aproxima cada vez mais do eixo <span class="math inline">\(x\)</span>, de 0, mas sem tocá-la (lembre-se que infinito é um conceito, não um número, logo não pode ser alcançado), chamamos o eixo <span class="math inline">\(x\)</span> neste caso de reta assintota da função. Note que, como analisamos no caso de <span class="math inline">\(x\rightarrow0\)</span>, o eixo <span class="math inline">\(y\)</span> também é uma assintota desta função!</p>
+<p>Com essa análise, podemos resolver limites que antes nos pareciam um pouco assustadores, vamos retomar a função</p>
+<p><span class="math display">\[
+f(x) = \frac{x^4 + x^2 + x}{x^5 + x^4 + 3x}
+\]</span></p>
+<p>Dessa vez, analisaremos <span class="math inline">\(x\rightarrow \infty\)</span>, temos que ambos o denominador e numerador tendem a <span class="math inline">\(\infty\)</span>. Contudo, como Podemos observar em um gráfico da função (você plotou o gráfico, não plotou?), o valor da função não tende a infinito! Por quê?</p>
+<p>A técnica utilizada para resolver este limite é pelo majorante. Isto é, buscaremos o termo dominante nesta expressão ao analisarmos os polinômios no numerador e denominador. Faremos isso fatorando <span class="math inline">\(\frac{x^4}{x^4}\)</span>:</p>
+<p><span class="math display">\[
+\lim_{x\rightarrow \infty} \frac{x^4 + x^2 + x}{x^5 + x^4 + 3x} =
+\lim_{x\rightarrow \infty} \frac{x^4}{x^4} \frac{1 + \frac{1}{x^2} + \frac{1}{x^3}}
+{x + 1 + \frac{3}{x^3}} =
+\lim_{x\rightarrow \infty} \frac{1 + \frac{1}{x^2} + \frac{1}{x^3}}
+{x + 1 + \frac{3}{x^3}}
+\]</span></p>
+<p>Como <span class="math inline">\(\lim\limits_{x\rightarrow \infty} \frac{1}{x^a} = 0, \forall a &gt; 0\)</span>, temos que o numerador vai para 1 enquanto o denominador vai para <span class="math inline">\(\infty\)</span>, o useja, o limite é 0.</p>
+</section>
+<section id="sec-confronto" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="sec-confronto"><span class="header-section-number">4.7</span> Teorema do Confronto</h2>
+<p>Às vezes, alguns limites podem ser difíceis.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./matrizes.html" class="pagination-link" aria-label="Matrizes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Matrizes</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./weierstrass.html" class="pagination-link" aria-label="Teorema de Weierstrass">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Teorema de Weierstrass</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/GustavoGarone/Calculo-Companheiro/edit/main/limites.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/GustavoGarone/Calculo-Companheiro/blob/main/limites.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/GustavoGarone/Calculo-Companheiro/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
